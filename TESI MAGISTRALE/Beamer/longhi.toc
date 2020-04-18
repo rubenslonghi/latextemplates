@@ -1,0 +1,8 @@
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{Spacetimes with timelike boundary}{11}{0}{2}
+\beamer@sectionintoc {3}{Green operators}{16}{0}{3}
+\beamer@sectionintoc {4}{Maxwell's equations}{21}{0}{4}
+\beamer@sectionintoc {5}{Boundary conditions for $\Box $}{31}{0}{5}
+\beamer@sectionintoc {6}{Boundary triples for $\Box $}{40}{0}{6}
+\beamer@sectionintoc {7}{Maxwell's equations with boundary}{47}{0}{7}
+\beamer@sectionintoc {8}{Conclusions}{51}{0}{8}

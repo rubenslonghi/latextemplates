@@ -1,0 +1,1631 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{anyt/global//global/global}
+  \entry{Ake-Flores-Sanchez-18}{article}{}
+    \name{author}{3}{}{%
+      {{hash=AL}{%
+         family={Ak{\'e}},
+         familyi={A\bibinitperiod},
+         given={Luis},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=FJL}{%
+         family={Flores},
+         familyi={F\bibinitperiod},
+         given={Jos{\'e}\bibnamedelima L},
+         giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={S{\'a}nchez},
+         familyi={S\bibinitperiod},
+         given={Miguel},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ALFJLSM1}
+    \strng{fullhash}{ALFJLSM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{AFS18}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{title}{Structure of globally hyperbolic spacetimes with timelike
+  boundary}
+    \field{journaltitle}{arXiv preprint arXiv:1808.04412}
+    \field{year}{2018}
+  \endentry
+
+  \entry{Axelsson-McIntosh-04}{incollection}{}
+    \name{author}{2}{}{%
+      {{hash=AA}{%
+         family={Axelsson},
+         familyi={A\bibinitperiod},
+         given={Andreas},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=MA}{%
+         family={McIntosh},
+         familyi={M\bibinitperiod},
+         given={Alan},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{AAMA1}
+    \strng{fullhash}{AAMA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{AM04}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{booktitle}{Advances in analysis and geometry}
+    \field{pages}{3\bibrangedash 29}
+    \field{title}{Hodge decompositions on weakly Lipschitz domains}
+    \field{year}{2004}
+  \endentry
+
+  \entry{Amar-17}{article}{}
+    \name{author}{1}{}{%
+      {{hash=AE}{%
+         family={Amar},
+         familyi={A\bibinitperiod},
+         given={Eric},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{AE1}
+    \strng{fullhash}{AE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Ama17}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{number}{3-4}
+    \field{pages}{751\bibrangedash 795}
+    \field{title}{On the $L^r$ Hodge theory in complete non compact Riemannian
+  manifolds}
+    \field{volume}{287}
+    \field{journaltitle}{Mathematische Zeitschrift}
+    \field{year}{2017}
+  \endentry
+
+  \entry{Zulfikar-Stroock-00}{article}{}
+    \true{moreauthor}
+    \name{author}{2}{}{%
+      {{hash=AZM}{%
+         family={Ahmed},
+         familyi={A\bibinitperiod},
+         given={Zulfikar\bibnamedelima M},
+         giveni={Z\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=SDW}{%
+         family={Stroock},
+         familyi={S\bibinitperiod},
+         given={Daniel\bibnamedelima W},
+         giveni={D\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Lehigh University}%
+    }
+    \strng{namehash}{AZMSDW+1}
+    \strng{fullhash}{AZMSDW+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{AS+00}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{number}{1}
+    \field{pages}{177\bibrangedash 225}
+    \field{title}{A Hodge theory for some non-compact manifolds}
+    \field{volume}{54}
+    \field{journaltitle}{Journal of Differential Geometry}
+    \field{year}{2000}
+  \endentry
+
+  \entry{Alonso-Valli-96}{article}{}
+    \name{author}{2}{}{%
+      {{hash=AA}{%
+         family={Alonso},
+         familyi={A\bibinitperiod},
+         given={Ana},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=VA}{%
+         family={Valli},
+         familyi={V\bibinitperiod},
+         given={Alberto},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{AAVA1}
+    \strng{fullhash}{AAVA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{AV96}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{number}{1}
+    \field{pages}{159\bibrangedash 178}
+    \field{title}{Some remarks on the characterization of the space of
+  tangential traces of H (rot; $\Omega$) and the construction of an extension
+  operator}
+    \field{volume}{89}
+    \field{journaltitle}{Manuscripta mathematica}
+    \field{year}{1996}
+  \endentry
+
+  \entry{Buffa-Costabel-Sheen-02}{article}{}
+    \name{author}{3}{}{%
+      {{hash=BA}{%
+         family={Buffa},
+         familyi={B\bibinitperiod},
+         given={Annalisa},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=CM}{%
+         family={Costabel},
+         familyi={C\bibinitperiod},
+         given={Martin},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SD}{%
+         family={Sheen},
+         familyi={S\bibinitperiod},
+         given={Dongwoo},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{BACMSD1}
+    \strng{fullhash}{BACMSD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{BCS02}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{number}{2}
+    \field{pages}{845\bibrangedash 867}
+    \field{title}{On traces for H (curl, $\Omega$) in Lipschitz domains}
+    \field{volume}{276}
+    \field{journaltitle}{Journal of Mathematical Analysis and Applications}
+    \field{year}{2002}
+  \endentry
+
+  \entry{Benini:2013tra}{article}{}
+    \name{author}{3}{}{%
+      {{hash=BM}{%
+         family={Benini},
+         familyi={B\bibinitperiod},
+         given={Marco},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=DC}{%
+         family={Dappiaggi},
+         familyi={D\bibinitperiod},
+         given={Claudio},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Schenkel},
+         familyi={S\bibinitperiod},
+         given={Alexander},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{BMDCSA1}
+    \strng{fullhash}{BMDCSA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{BDS14}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{number}{1}
+    \field{pages}{123\bibrangedash 152}
+    \field{title}{Quantized Abelian principal connections on Lorentzian
+  manifolds}
+    \field{volume}{330}
+    \field{journaltitle}{Communications in Mathematical Physics}
+    \field{year}{2014}
+  \endentry
+
+  \entry{Benini-16}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BM}{%
+         family={Benini},
+         familyi={B\bibinitperiod},
+         given={Marco},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {AIP Publishing}%
+    }
+    \strng{namehash}{BM1}
+    \strng{fullhash}{BM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Ben16}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{number}{5}
+    \field{pages}{053502}
+    \field{title}{Optimal space of linear classical observables for Maxwell
+  k-forms via spacelike and timelike compact de Rham cohomologies}
+    \field{volume}{57}
+    \field{journaltitle}{Journal of Mathematical Physics}
+    \field{year}{2016}
+  \endentry
+
+  \entry{Brunetti-Fredenhagen-Verch-03}{article}{}
+    \name{author}{3}{}{%
+      {{hash=BR}{%
+         family={Brunetti},
+         familyi={B\bibinitperiod},
+         given={Romeo},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=FK}{%
+         family={Fredenhagen},
+         familyi={F\bibinitperiod},
+         given={Klaus},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=VR}{%
+         family={Verch},
+         familyi={V\bibinitperiod},
+         given={Rainer},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{BRFKVR1}
+    \strng{fullhash}{BRFKVR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{BFV03}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{number}{1-2}
+    \field{pages}{31\bibrangedash 68}
+    \field{title}{The generally covariant locality principle--a new paradigm
+  for local quantum field theory}
+    \field{volume}{237}
+    \field{journaltitle}{Communications in Mathematical Physics}
+    \field{year}{2003}
+  \endentry
+
+  \entry{Baer-Ginoux-12}{incollection}{}
+    \name{author}{2}{}{%
+      {{hash=BC}{%
+         family={B{\"a}r},
+         familyi={B\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=GN}{%
+         family={Ginoux},
+         familyi={G\bibinitperiod},
+         given={Nicolas},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{BCGN1}
+    \strng{fullhash}{BCGN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{BG12}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{Global differential geometry}
+    \field{pages}{359\bibrangedash 400}
+    \field{title}{Classical and quantum fields on Lorentzian manifolds}
+    \field{year}{2012}
+  \endentry
+
+  \entry{Baer-Ginoux-Pfaffle-07}{book}{}
+    \name{author}{3}{}{%
+      {{hash=BC}{%
+         family={B{\"a}r},
+         familyi={B\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=GN}{%
+         family={Ginoux},
+         familyi={G\bibinitperiod},
+         given={Nicolas},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=PF}{%
+         family={Pf{\"a}ffle},
+         familyi={P\bibinitperiod},
+         given={Frank},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {European Mathematical Society}%
+    }
+    \strng{namehash}{BCGNPF1}
+    \strng{fullhash}{BCGNPF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{BGP07}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{title}{Wave equations on Lorentzian manifolds and quantization}
+    \field{volume}{3}
+    \field{year}{2007}
+  \endentry
+
+  \entry{Benini-Dappiaggi-Hack-Schenkel-14}{article}{}
+    \name{author}{3}{}{%
+      {{hash=BMCD}{%
+         family={Benini},
+         familyi={B\bibinitperiod},
+         suffix={Claudio\bibnamedelima Dappiaggi},
+         suffixi={C\bibinitperiod\bibinitdelim D\bibinitperiod},
+         given={Marco},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=HTP}{%
+         family={Hack},
+         familyi={H\bibinitperiod},
+         given={Thomas-Paul},
+         giveni={T\bibinitperiod-P\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Schenkel},
+         familyi={S\bibinitperiod},
+         given={Alexander},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{BCDMHTPSA1}
+    \strng{fullhash}{BCDMHTPSA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{BHS14}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{number}{1}
+    \field{pages}{477\bibrangedash 504}
+    \field{title}{A $C^*$-algebra for quantized principal $U(1)$-connections on
+  globally hyperbolic Lorentzian manifolds}
+    \field{volume}{332}
+    \field{journaltitle}{Communications in Mathematical Physics}
+    \field{year}{2014}
+  \endentry
+
+  \entry{Behrndt-Langer-12}{article}{}
+    \name{author}{2}{}{%
+      {{hash=BJ}{%
+         family={Behrndt},
+         familyi={B\bibinitperiod},
+         given={Jussi},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=LM}{%
+         family={Langer},
+         familyi={L\bibinitperiod},
+         given={Matthias},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BJLM1}
+    \strng{fullhash}{BJLM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{BL12}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{pages}{121\bibrangedash 160}
+    \field{title}{Elliptic operators, Dirichlet-to-Neumann maps and quasi
+  boundary triples}
+    \field{volume}{404}
+    \field{journaltitle}{London Math. Soc. Lecture Note Series}
+    \field{year}{2012}
+  \endentry
+
+  \entry{Bernal-Sanchez-05}{article}{}
+    \name{author}{2}{}{%
+      {{hash=BAN}{%
+         family={Bernal},
+         familyi={B\bibinitperiod},
+         given={Antonio\bibnamedelima N},
+         giveni={A\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={S{\'a}nchez},
+         familyi={S\bibinitperiod},
+         given={Miguel},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{BANSM1}
+    \strng{fullhash}{BANSM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{BS05}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{number}{1}
+    \field{pages}{43\bibrangedash 50}
+    \field{title}{Smoothness of time functions and the metric splitting of
+  globally hyperbolic spacetimes}
+    \field{volume}{257}
+    \field{journaltitle}{Communications in Mathematical Physics}
+    \field{year}{2005}
+  \endentry
+
+  \entry{Bott-Tu-82}{book}{}
+    \name{author}{2}{}{%
+      {{hash=BR}{%
+         family={Bott},
+         familyi={B\bibinitperiod},
+         given={Raoul},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=TLW}{%
+         family={Tu},
+         familyi={T\bibinitperiod},
+         given={Loring\bibnamedelima W},
+         giveni={L\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Science \& Business Media}%
+    }
+    \strng{namehash}{BRTLW1}
+    \strng{fullhash}{BRTLW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{BT13}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{title}{Differential forms in algebraic topology}
+    \field{volume}{82}
+    \field{year}{2013}
+  \endentry
+
+  \entry{Baer-15}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BC}{%
+         family={B{\"a}r},
+         familyi={B\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{BC1}
+    \strng{fullhash}{BC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{B{\"a}r15}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{number}{3}
+    \field{pages}{1585\bibrangedash 1615}
+    \field{title}{Green-hyperbolic operators on globally hyperbolic spacetimes}
+    \field{volume}{333}
+    \field{journaltitle}{Communications in Mathematical Physics}
+    \field{year}{2015}
+  \endentry
+
+  \entry{Baer-19}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BC}{%
+         family={B{\"a}r},
+         familyi={B\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {AIP Publishing}%
+    }
+    \strng{namehash}{BC1}
+    \strng{fullhash}{BC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{B{\"a}r19}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{number}{3}
+    \field{pages}{031501}
+    \field{title}{The curl operator on odd-dimensional manifolds}
+    \field{volume}{60}
+    \field{journaltitle}{Journal of Mathematical Physics}
+    \field{year}{2019}
+  \endentry
+
+  \entry{Dappiaggi-Drago-Ferreira-19}{article}{}
+    \name{author}{3}{}{%
+      {{hash=DC}{%
+         family={Dappiaggi},
+         familyi={D\bibinitperiod},
+         given={Claudio},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=DN}{%
+         family={Drago},
+         familyi={D\bibinitperiod},
+         given={Nicol{\'o}},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=FH}{%
+         family={Ferreira},
+         familyi={F\bibinitperiod},
+         given={Hugo},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{DCDNFH1}
+    \strng{fullhash}{DCDNFH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{DDF19}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{pages}{1\bibrangedash 30}
+    \field{title}{Fundamental solutions for the wave operator on static
+  Lorentzian manifolds with timelike boundary}
+    \field{journaltitle}{Letters in Mathematical Physics}
+    \field{year}{2019}
+  \endentry
+
+  \entry{DDL19}{article}{}
+    \name{author}{3}{}{%
+      {{hash=DC}{%
+         family={Dappiaggi},
+         familyi={D\bibinitperiod},
+         given={Claudio},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=DN}{%
+         family={Drago},
+         familyi={D\bibinitperiod},
+         given={Nicol{\'o}},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=LR}{%
+         family={Longhi},
+         familyi={L\bibinitperiod},
+         given={Rubens},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DCDNLR1}
+    \strng{fullhash}{DCDNLR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{DDL19}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{title}{On Maxwell’s Equations on Globally Hyperbolic Spacetimes
+  with Timelike Boundary}
+    \field{journaltitle}{arXiv preprint arXiv:1908.09504}
+    \field{year}{2019}
+  \endentry
+
+  \entry{Dappiaggi:2018pju}{article}{}
+    \name{author}{3}{}{%
+      {{hash=DC}{%
+         family={Dappiaggi},
+         familyi={D\bibinitperiod},
+         given={Claudio},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=FHR}{%
+         family={Ferreira},
+         familyi={F\bibinitperiod},
+         given={Hugo\bibnamedelima RC},
+         giveni={H\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=JABA}{%
+         family={Ju{\'a}rez-Aubry},
+         familyi={J\bibinitperiod-A\bibinitperiod},
+         given={Benito\bibnamedelima A},
+         giveni={B\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {APS}%
+    }
+    \strng{namehash}{DCFHRJABA1}
+    \strng{fullhash}{DCFHRJABA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{DFJA18}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{number}{8}
+    \field{pages}{085022}
+    \field{title}{Mode solutions for a Klein-Gordon field in anti--de Sitter
+  spacetime with dynamical boundary conditions of Wentzell type}
+    \field{volume}{97}
+    \field{journaltitle}{Physical Review D}
+    \field{year}{2018}
+  \endentry
+
+  \entry{dappiaggi2012quantization}{article}{}
+    \name{author}{2}{}{%
+      {{hash=DC}{%
+         family={Dappiaggi},
+         familyi={D\bibinitperiod},
+         given={Claudio},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=LB}{%
+         family={Lang},
+         familyi={L\bibinitperiod},
+         given={Benjamin},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{DCLB1}
+    \strng{fullhash}{DCLB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{DL12}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{number}{3}
+    \field{pages}{265\bibrangedash 287}
+    \field{title}{Quantization of Maxwell’s equations on curved backgrounds
+  and general local covariance}
+    \field{volume}{101}
+    \field{journaltitle}{Letters in Mathematical Physics}
+    \field{year}{2012}
+  \endentry
+
+  \entry{Malamud}{article}{}
+    \name{author}{2}{}{%
+      {{hash=DV}{%
+         family={Derkach},
+         familyi={D\bibinitperiod},
+         given={VA},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=MM}{%
+         family={Malamud},
+         familyi={M\bibinitperiod},
+         given={MM},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{DVMM1}
+    \strng{fullhash}{DVMM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{DM95}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{number}{2}
+    \field{pages}{141\bibrangedash 242}
+    \field{title}{The extension theory of Hermitian operators and the moment
+  problem}
+    \field{volume}{73}
+    \field{journaltitle}{Journal of mathematical sciences}
+    \field{year}{1995}
+  \endentry
+
+  \entry{Dappiaggi:2011cj}{article}{}
+    \name{author}{2}{}{%
+      {{hash=DC}{%
+         family={Dappiaggi},
+         familyi={D\bibinitperiod},
+         given={Claudio},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=SD}{%
+         family={Siemssen},
+         familyi={S\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {World Scientific}%
+    }
+    \strng{namehash}{DCSD1}
+    \strng{fullhash}{DCSD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{DS13}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{number}{01}
+    \field{pages}{1350002}
+    \field{title}{Hadamard states for the vector potential on asymptotically
+  flat spacetimes}
+    \field{volume}{25}
+    \field{journaltitle}{Reviews in Mathematical Physics}
+    \field{year}{2013}
+  \endentry
+
+  \entry{Everitt-Markus-03}{book}{}
+    \name{author}{2}{}{%
+      {{hash=EWN}{%
+         family={Everitt},
+         familyi={E\bibinitperiod},
+         given={William\bibnamedelima Norrie},
+         giveni={W\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+      {{hash=ML}{%
+         family={Markus},
+         familyi={M\bibinitperiod},
+         given={Lawrence},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Mathematical Soc.}%
+    }
+    \strng{namehash}{EWNML1}
+    \strng{fullhash}{EWNML1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{EM03}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \field{title}{Elliptic partial differential operators and symplectic
+  algebra}
+    \field{year}{2003}
+  \endentry
+
+  \entry{Everitt-Markus-05}{article}{}
+    \name{author}{2}{}{%
+      {{hash=EW}{%
+         family={Everitt},
+         familyi={E\bibinitperiod},
+         given={W},
+         giveni={W},
+      }}%
+      {{hash=ML}{%
+         family={Markus},
+         familyi={M\bibinitperiod},
+         given={L},
+         giveni={L},
+      }}%
+    }
+    \strng{namehash}{EWML1}
+    \strng{fullhash}{EWML1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{EM05}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \field{number}{4}
+    \field{pages}{461\bibrangedash 500}
+    \field{title}{Complex symplectic spaces and boundary value problems}
+    \field{volume}{42}
+    \field{journaltitle}{Bulletin of the American mathematical society}
+    \field{year}{2005}
+  \endentry
+
+  \entry{Everitt-Markus-99}{article}{}
+    \name{author}{2}{}{%
+      {{hash=EW}{%
+         family={Everitt},
+         familyi={E\bibinitperiod},
+         given={W},
+         giveni={W},
+      }}%
+      {{hash=ML}{%
+         family={Markus},
+         familyi={M\bibinitperiod},
+         given={L},
+         giveni={L},
+      }}%
+    }
+    \strng{namehash}{EWML1}
+    \strng{fullhash}{EWML1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{EM99}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \field{number}{12}
+    \field{pages}{4905\bibrangedash 4945}
+    \field{title}{Complex symplectic geometry with applications to ordinary
+  differential operators}
+    \field{volume}{351}
+    \field{journaltitle}{Transactions of the American mathematical society}
+    \field{year}{1999}
+  \endentry
+
+  \entry{Fewster-Pfenning-03}{article}{}
+    \name{author}{2}{}{%
+      {{hash=FCJ}{%
+         family={Fewster},
+         familyi={F\bibinitperiod},
+         given={Christopher\bibnamedelima J},
+         giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=PMJ}{%
+         family={Pfenning},
+         familyi={P\bibinitperiod},
+         given={Michael\bibnamedelima J},
+         giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {AIP}%
+    }
+    \strng{namehash}{FCJPMJ1}
+    \strng{fullhash}{FCJPMJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{FP03}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{number}{10}
+    \field{pages}{4480\bibrangedash 4513}
+    \field{title}{A quantum weak energy inequality for spin-one fields in
+  curved space--time}
+    \field{volume}{44}
+    \field{journaltitle}{Journal of Mathematical Physics}
+    \field{year}{2003}
+  \endentry
+
+  \entry{Gaffney-55}{article}{}
+    \name{author}{1}{}{%
+      {{hash=GMP}{%
+         family={Gaffney},
+         familyi={G\bibinitperiod},
+         given={Matthew\bibnamedelima P},
+         giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {JSTOR}%
+    }
+    \strng{namehash}{GMP1}
+    \strng{fullhash}{GMP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Gaf55}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{number}{2}
+    \field{pages}{426\bibrangedash 444}
+    \field{title}{Hilbert space methods in the theory of harmonic integrals}
+    \field{volume}{78}
+    \field{journaltitle}{Transactions of the American Mathematical Society}
+    \field{year}{1955}
+  \endentry
+
+  \entry{Georgescu-79}{article}{}
+    \name{author}{1}{}{%
+      {{hash=GV}{%
+         family={Georgescu},
+         familyi={G\bibinitperiod},
+         given={V},
+         giveni={V},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{GV1}
+    \strng{fullhash}{GV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Geo79}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{number}{1}
+    \field{pages}{159\bibrangedash 198}
+    \field{title}{Some boundary value problems for differential forms on
+  compact Riemannian manifolds}
+    \field{volume}{122}
+    \field{journaltitle}{Annali di Matematica Pura ed Applicata}
+    \field{year}{1979}
+  \endentry
+
+  \entry{Gromov-91}{article}{}
+    \true{moreauthor}
+    \name{author}{1}{}{%
+      {{hash=GM}{%
+         family={Gromov},
+         familyi={G\bibinitperiod},
+         given={Mikhail},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Lehigh University}%
+    }
+    \strng{namehash}{GM+1}
+    \strng{fullhash}{GM+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Gro+91}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{number}{1}
+    \field{pages}{263\bibrangedash 292}
+    \field{title}{K{\"a}hler hyperbolicity and $L_2$-Hodge theory}
+    \field{volume}{33}
+    \field{journaltitle}{Journal of differential geometry}
+    \field{year}{1991}
+  \endentry
+
+  \entry{Grosse-Schneider-13}{article}{}
+    \name{author}{2}{}{%
+      {{hash=GN}{%
+         family={Gro{\ss}e},
+         familyi={G\bibinitperiod},
+         given={Nadine},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=SC}{%
+         family={Schneider},
+         familyi={S\bibinitperiod},
+         given={Cornelia},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley Online Library}%
+    }
+    \strng{namehash}{GNSC1}
+    \strng{fullhash}{GNSC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{GS13}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{number}{16}
+    \field{pages}{1586\bibrangedash 1613}
+    \field{title}{Sobolev spaces on Riemannian manifolds with bounded geometry:
+  general coordinates and traces}
+    \field{volume}{286}
+    \field{journaltitle}{Mathematische Nachrichten}
+    \field{year}{2013}
+  \endentry
+
+  \entry{gannot2018propagation}{article}{}
+    \name{author}{2}{}{%
+      {{hash=GO}{%
+         family={Gannot},
+         familyi={G\bibinitperiod},
+         given={Oran},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=WM}{%
+         family={Wrochna},
+         familyi={W\bibinitperiod},
+         given={Micha{\l}},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GOWM1}
+    \strng{fullhash}{GOWM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{GW18}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{title}{Propagation of singularities on AdS spacetimes for general
+  boundary conditions and the holographic Hadamard condition}
+    \field{journaltitle}{arXiv preprint arXiv:1812.06564}
+    \field{year}{2018}
+  \endentry
+
+  \entry{Hiptmair-Kotiuga-Tordeux-12}{article}{}
+    \name{author}{3}{}{%
+      {{hash=HR}{%
+         family={Hiptmair},
+         familyi={H\bibinitperiod},
+         given={Ralf},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=KPR}{%
+         family={Kotiuga},
+         familyi={K\bibinitperiod},
+         given={Peter\bibnamedelima Robert},
+         giveni={P\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=TS}{%
+         family={Tordeux},
+         familyi={T\bibinitperiod},
+         given={S{\'e}bastien},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{HRKPRTS1}
+    \strng{fullhash}{HRKPRTS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{HKT12}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{number}{3}
+    \field{pages}{431\bibrangedash 457}
+    \field{title}{Self-adjoint curl operators}
+    \field{volume}{191}
+    \field{journaltitle}{Annali di matematica pura ed applicata}
+    \field{year}{2012}
+  \endentry
+
+  \entry{Higson-Roe-00}{book}{}
+    \name{author}{2}{}{%
+      {{hash=HN}{%
+         family={Higson},
+         familyi={H\bibinitperiod},
+         given={Nigel},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=RJ}{%
+         family={Roe},
+         familyi={R\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {OUP Oxford}%
+    }
+    \strng{namehash}{HNRJ1}
+    \strng{fullhash}{HNRJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{HR00}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{title}{Analytic K-homology}
+    \field{year}{2000}
+  \endentry
+
+  \entry{Hack-Schenkel-13}{article}{}
+    \name{author}{2}{}{%
+      {{hash=HTP}{%
+         family={Hack},
+         familyi={H\bibinitperiod},
+         given={Thomas-Paul},
+         giveni={T\bibinitperiod-P\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Schenkel},
+         familyi={S\bibinitperiod},
+         given={Alexander},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{HTPSA1}
+    \strng{fullhash}{HTPSA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{HS13}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{number}{5}
+    \field{pages}{877\bibrangedash 910}
+    \field{title}{Linear bosonic and fermionic quantum gauge theories on curved
+  spacetimes}
+    \field{volume}{45}
+    \field{journaltitle}{General Relativity and Gravitation}
+    \field{year}{2013}
+  \endentry
+
+  \entry{husemoller1966fibre}{book}{}
+    \name{author}{1}{}{%
+      {{hash=HD}{%
+         family={Husemoller},
+         familyi={H\bibinitperiod},
+         given={Dale},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{HD1}
+    \strng{fullhash}{HD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Hus66}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{title}{Fibre bundles}
+    \field{volume}{5}
+    \field{year}{1966}
+  \endentry
+
+  \entry{Jackson-99}{book}{}
+    \name{author}{1}{}{%
+      {{hash=JJD}{%
+         family={Jackson},
+         familyi={J\bibinitperiod},
+         given={John\bibnamedelima David},
+         giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley}%
+    }
+    \strng{namehash}{JJD1}
+    \strng{fullhash}{JJD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Jac99}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{edition}{3rd ed}
+    \field{isbn}{9780471309321}
+    \field{title}{Classical electrodynamics}
+    \field{year}{1999}
+  \endentry
+
+  \entry{khavkine2015algebraic}{incollection}{}
+    \name{author}{2}{}{%
+      {{hash=KI}{%
+         family={Khavkine},
+         familyi={K\bibinitperiod},
+         given={Igor},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=MV}{%
+         family={Moretti},
+         familyi={M\bibinitperiod},
+         given={Valter},
+         giveni={V\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{KIMV1}
+    \strng{fullhash}{KIMV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{KM15}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{booktitle}{Advances in algebraic quantum field theory}
+    \field{pages}{191\bibrangedash 251}
+    \field{title}{Algebraic QFT in curved spacetime and quasifree Hadamard
+  states: an introduction}
+    \field{year}{2015}
+  \endentry
+
+  \entry{Kodaira-49}{article}{}
+    \name{author}{1}{}{%
+      {{hash=KK}{%
+         family={Kodaira},
+         familyi={K\bibinitperiod},
+         given={Kunihiko},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {JSTOR}%
+    }
+    \strng{namehash}{KK1}
+    \strng{fullhash}{KK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Kod49}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{pages}{587\bibrangedash 665}
+    \field{title}{Harmonic fields in Riemannian manifolds (generalized
+  potential theory)}
+    \field{journaltitle}{Annals of Mathematics}
+    \field{year}{1949}
+  \endentry
+
+  \entry{Li-09}{article}{}
+    \name{author}{1}{}{%
+      {{hash=LXD}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Xiang-Dong},
+         giveni={X\bibinitperiod-D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{LXD1}
+    \strng{fullhash}{LXD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Li09}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{number}{11}
+    \field{pages}{3617\bibrangedash 3646}
+    \field{title}{On the Strong $L^p$-Hodge decomposition over complete
+  Riemannian manifolds}
+    \field{volume}{257}
+    \field{journaltitle}{Journal of Functional Analysis}
+    \field{year}{2009}
+  \endentry
+
+  \entry{Maunder}{book}{}
+    \name{author}{1}{}{%
+      {{hash=MCRF}{%
+         family={Maunder},
+         familyi={M\bibinitperiod},
+         given={Charles Richard\bibnamedelima Francis},
+         giveni={C\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim
+  F\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Courier Corporation}%
+    }
+    \strng{namehash}{MCRF1}
+    \strng{fullhash}{MCRF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Mau96}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{title}{Algebraic topology}
+    \field{year}{1996}
+  \endentry
+
+  \entry{Mcintosh-Morris-13}{article}{}
+    \name{author}{2}{}{%
+      {{hash=MA}{%
+         family={McIntosh},
+         familyi={M\bibinitperiod},
+         given={Alan},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=MA}{%
+         family={Morris},
+         familyi={M\bibinitperiod},
+         given={Andrew},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MAMA1}
+    \strng{fullhash}{MAMA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{MM13}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{number}{10}
+    \field{pages}{3515\bibrangedash 3527}
+    \field{title}{Finite propagation speed for first order systems and
+  Huygens’ principle for hyperbolic equations}
+    \field{volume}{141}
+    \field{journaltitle}{Proceedings of the American Mathematical Society}
+    \field{year}{2013}
+  \endentry
+
+  \entry{Moretti-18}{book}{}
+    \name{author}{1}{}{%
+      {{hash=MV}{%
+         family={Moretti},
+         familyi={M\bibinitperiod},
+         given={Valter},
+         giveni={V\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{MV1}
+    \strng{fullhash}{MV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Mor18}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{title}{Spectral theory and quantum mechanics: mathematical
+  foundations of quantum theories, symmetries and introduction to the algebraic
+  formulation}
+    \field{year}{2018}
+  \endentry
+
+  \entry{Nakahara-90}{book}{}
+    \name{author}{1}{}{%
+      {{hash=NM}{%
+         family={Nakahara},
+         familyi={N\bibinitperiod},
+         given={Mikio},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {CRC Press}%
+    }
+    \strng{namehash}{NM1}
+    \strng{fullhash}{NM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Nak90}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \field{title}{Geometry, topology and physics}
+    \field{year}{1990}
+  \endentry
+
+  \entry{Paquet-82}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=PL}{%
+         family={Paquet},
+         familyi={P\bibinitperiod},
+         given={Luc},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PL1}
+    \strng{fullhash}{PL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Paq82}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{booktitle}{Annales de la Facult{\'e} des sciences de Toulouse:
+  Math{\'e}matiques}
+    \field{number}{2}
+    \field{pages}{103\bibrangedash 141}
+    \field{title}{Problemes mixtes pour le systeme de Maxwell}
+    \field{volume}{4}
+    \field{year}{1982}
+  \endentry
+
+  \entry{Peshkin-Tonomura-89}{incollection}{}
+    \name{author}{1}{}{%
+      {{hash=PM}{%
+         family={Peshkin},
+         familyi={P\bibinitperiod},
+         given={Murray},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{PM1}
+    \strng{fullhash}{PM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Pes89}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{booktitle}{The Aharonov-Bohm Effect}
+    \field{pages}{1\bibrangedash 34}
+    \field{title}{The Aharonov-Bohm effect Part one: Theory}
+    \field{year}{1989}
+  \endentry
+
+  \entry{Pfenning:2009nx}{article}{}
+    \name{author}{1}{}{%
+      {{hash=PMJ}{%
+         family={Pfenning},
+         familyi={P\bibinitperiod},
+         given={Michael\bibnamedelima J},
+         giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IOP Publishing}%
+    }
+    \strng{namehash}{PMJ1}
+    \strng{fullhash}{PMJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Pfe09}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{number}{13}
+    \field{pages}{135017}
+    \field{title}{Quantization of the Maxwell field in curved spacetimes of
+  arbitrary dimension}
+    \field{volume}{26}
+    \field{journaltitle}{Classical and Quantum Gravity}
+    \field{year}{2009}
+  \endentry
+
+  \entry{Schwarz-95}{book}{}
+    \name{author}{1}{}{%
+      {{hash=SG}{%
+         family={Schwarz},
+         familyi={S\bibinitperiod},
+         given={G{\"u}nter},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{SG1}
+    \strng{fullhash}{SG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Sch95}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{Hodge Decomposition -- A method for solving boundary value
+  problems}
+    \field{year}{1995}
+  \endentry
+
+  \entry{Scott-95}{article}{}
+    \name{author}{1}{}{%
+      {{hash=SC}{%
+         family={Scott},
+         familyi={S\bibinitperiod},
+         given={Chad},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SC1}
+    \strng{fullhash}{SC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Sco95}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{number}{6}
+    \field{pages}{2075\bibrangedash 2096}
+    \field{title}{$L^p$ theory of differential forms on manifolds}
+    \field{volume}{347}
+    \field{journaltitle}{Transactions of the American Mathematical Society}
+    \field{year}{1995}
+  \endentry
+
+  \entry{Dappiaggi-Hack-Sanders-14}{article}{}
+    \name{author}{3}{}{%
+      {{hash=SK}{%
+         family={Sanders},
+         familyi={S\bibinitperiod},
+         given={Ko},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=DC}{%
+         family={Dappiaggi},
+         familyi={D\bibinitperiod},
+         given={Claudio},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=HTP}{%
+         family={Hack},
+         familyi={H\bibinitperiod},
+         given={Thomas-Paul},
+         giveni={T\bibinitperiod-P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{SKDCHTP1}
+    \strng{fullhash}{SKDCHTP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{SDH14}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{number}{2}
+    \field{pages}{625\bibrangedash 667}
+    \field{title}{Electromagnetism, local covariance, the Aharonov--Bohm effect
+  and Gauss’ law}
+    \field{volume}{328}
+    \field{journaltitle}{Communications in Mathematical Physics}
+    \field{year}{2014}
+  \endentry
+
+  \entry{Weck-04}{article}{}
+    \name{author}{1}{}{%
+      {{hash=WN}{%
+         family={Weck},
+         familyi={W\bibinitperiod},
+         given={Norbert},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {De Gruyter Oldenbourg}%
+    }
+    \strng{namehash}{WN1}
+    \strng{fullhash}{WN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Wec04}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{number}{2}
+    \field{pages}{147\bibrangedash 170}
+    \field{title}{Traces of differential forms on Lipschitz boundaries}
+    \field{volume}{24}
+    \field{journaltitle}{Analysis}
+    \field{year}{2004}
+  \endentry
+
+  \entry{Zahn:2015due}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=ZJ}{%
+         family={Zahn},
+         familyi={Z\bibinitperiod},
+         given={Jochen},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{ZJ1}
+    \strng{fullhash}{ZJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Zah18}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \field{booktitle}{Annales Henri Poincar{\'e}}
+    \field{number}{1}
+    \field{pages}{163\bibrangedash 187}
+    \field{title}{Generalized Wentzell boundary conditions and quantum field
+  theory}
+    \field{volume}{19}
+    \field{year}{2018}
+  \endentry
+\enddatalist
+\endinput

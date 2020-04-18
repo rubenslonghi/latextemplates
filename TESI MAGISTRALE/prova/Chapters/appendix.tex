@@ -1,0 +1,99 @@
+\appendix
+\chapter{Distributions and Fourier Transform}
+
+Firstly, we recall the main concepts of the theory of distributions on manifolds following the approach of [\citealp{fried2}].\\
+
+\noindent For a manifold $\mM$ we define $\mD(\mM):=C_0^\infty(\mM)$ as the space of test-functions on $\mM$. We say a sequence $\{\varphi_k\}_{k\in\mathbb{N}}$ of $\mD(\mM)$ (with $j\in\mathbb{N}\cup+\infty$) converges to $\varphi\in \mD(\mM)$ if there exists a compact subset $K\subset\mM$ such that $\supp\,\varphi_k\subset K$ and, fixed any connection on $\mM$, all the derivatives of $\varphi_k$ up to the $j$-th order converge uniformly in $K$.\\
+A linear map $u:\mD(\mM)\to\mC$ is continuous if for all sequences $\{\varphi_k\}_{k\in\mathbb{N}}$ of $\mD(\mM)$ that converge to $\varphi\in\mD(\mM)$, $(u,\varphi_k)\to(u,\varphi)$, where with $(u,\varphi)$ we denote the map $u$ tested against $\varphi$.
+
+
+\begin{definition}
+	The space of distributions over $\mM$ is defined as
+	\[	\mD'(\mM)=\{u:\mD(\mM)\to\mC\text{ linear and continuous }   \}.				\]
+	The support of a distribution is the set $\mM\setminus X$, where $X$ is the set of points $x\in\mM$ such that there exists a neighborhood $U$ of $x$ such that $u|_{\mD(U)}\neq0$. We say $u\in\mathcal{E}'(\mM)$ if $\supp\,u$ is a compact subset of $\mM$.
+\end{definition}
+
+\noindent We call $u\in\mD'(\mM)$ the \textbf{weak limit} of a sequence of distributions $\{u_i\}_{i\in\mathbb{N}}$ if for all $\varphi\in\mD(\mM)$ holds $\lim_{i\to\infty}(u_i,\varphi)=(u,\varphi)$.
+
+
+\begin{rem}
+	For any fixed $f\in C^\infty(\mM)$ the map $\varphi\mapsto\int_{\mM}f(x)\,\varphi(x)\,\dd\mu$ defines a distribution on $\mM$. We denote this distribution again by $f$, hence we identify $C^\infty(\mM)$ as a subset of $\mD'(\mM)$.
+\end{rem}
+
+
+\begin{definition}
+	We define the translation operator $T_{x_0}:\mD'(\mR^n)\to\mD'(\mR^n)$ such that if $u\in\mD'(\mR^n)$,
+	\[	(T_{x_0}u,\varphi(x))=\left(u,\varphi(x+x_0)\right),		\]
+	for all $\varphi\in\mD(\mR^n)$. We write $u(x-x_0):=T_{x_0}u$.
+	\label{defn:transl}
+\end{definition}
+
+\begin{example}
+	Given $x\in\mM$ the \textbf{Dirac delta} $\delta_x$ is a distribution defined for $\varphi\in\mD'(\mM)$ by
+	\[	(\delta_x,\varphi)=\varphi(x).		\]
+	If $\mM$ is isomorphic to $\mR^n$, a particularly useful formula gives
+	\begin{equation}
+	\delta(x^2-a^2)=\frac{1}{2|a|}[\delta(x-a)+\delta(x+a)].
+	\label{eq:delta1}
+	\end{equation}
+\end{example}
+
+
+\begin{definition}
+	We define the tensor product of two distributions $u\in\mD'(\mM)$ and $v\in\mD'(\mathrm{N})$ as the unique distribution $u\otimes v\in\mD'(\mM\times\mathrm{N})$ such that for any $f\otimes g\in\mD(\mM)\otimes\mD(\mathrm{N})$
+	\[	(u\otimes v,f(x)\,g(y))=(u,f)(v,g).		\] 
+\end{definition}
+\noindent Given a differential operator $P:C^\infty(\mM)\to C^\infty(\mM)$ there is a unique $P^*:C^\infty(\mM)\to C^\infty(\mM)$, called the \textbf{formal adjoint} of $P$ such that for any $\varphi,\psi\in\mD(\mM)$ holds
+\[	\int_{\mM}	\psi(P\varphi)\,\dd\mu=\int_{\mM}(P^*\psi)\varphi\,\dd\mu.	\]
+Any linear differential operator $P$ extends canonically to $P:\mD'(\mM)\to\mD'(\mM)$ by
+\[	(Pu,\varphi)=(u,P^*\varphi).		\]
+In particular, we define the product of a distribution $u\in\mD'(\mM)$ with a function $f\in C^\infty(\mM)$ as the distribution $f\cdot u$ such that $(f\cdot u,\varphi)=(u,f\varphi)$ for any $\varphi\in\mD(\mM)$.
+\begin{definition}
+	Let $u\in\mathcal{E}'(\mR^n)$ and $v\in\mD'(\mR^n)$. We define the \textbf{convolution} of $u$ and $v$ as the unique distribution $u*v\in\mD'(\mR^n)$ such that
+	\[	(u*v,\varphi)=\big(u\otimes v,\varphi(x+y)\big)=\big(v,(T_yu,\varphi)\big)=\big(u,(T_yv,\varphi)\big).		\]
+	
+\end{definition}
+
+\begin{theorem}
+	Let $u\in\mD'(\mR^n)$ and $\rho\in\mD(\mR^n)$. Then $\rho*u\in C^\infty(\mR^n)$.
+	\label{th:convolutionregularity}
+\end{theorem}
+
+Now we recall the main concepts of Fourier theory on $\mR^n$.\\
+
+\noindent We call Schwartz space $\mathcal{S}(\mR^n)$ the set of rapidly decreasing functions, i.e. the functions $f\in C^\infty(\mR^n)$ such that 
+\[	\lim_{|x|\to\infty}x^\alpha\partial^\beta f(x)=0,		\]
+for any multi-index $\alpha,\beta\in\mathbb{N}^n$. A sequence $\{f_j\}_{j\in\mathbb{N}}$ of rapidly decreasing functions converge to $f$ in $\mathcal{S}(\mR^n)$ if for any multi-index $\alpha,\beta\in\mathbb{N}^n$
+\[	\sup_{x\in\mR^n}|x^\alpha\partial^\beta (f_j-f)(x)|\to 0,	\]
+as $j\to\infty$.
+
+\begin{definition}
+	A linear functional $u:\mathcal{S}(\mM)\to\mC$ is called a \textbf{tempered distribution} if for all sequences $\{f_k\}_{k\in\mathbb{N}}$ of $\mathcal{S}(\mR^n)$ that converge to $f\in\mathcal{S}(\mR^n)$, $(u,f_k)\to(u,f)$. The set of tempered distribution is denoted with $\mathcal{S}'(\mR^n)$.
+\end{definition}
+
+\noindent Given a scalar product $\langle\cdot,\cdot\rangle$ on $\mR^n$, the Fourier transform $\hat{f}$ of a function $f\in L^1(\mR^n)$ is defined as
+\begin{equation}
+\hat{f}(k)=\int_{\mR^n}f(x)e^{-i\langle k,x\rangle}\,\dd x
+\end{equation}
+
+
+\noindent We naturally extend the Fourier transform to a unitary map $L^2(\mR^n)\to L^2(\mR^n)$ and to a map on tempered distributions in such a way that for $u\in\mathcal{S}'(\mR^n)$ holds
+
+\[	(\widehat{u},\varphi)=(u,\widehat{\varphi}),	\]
+for any $\varphi\in\mathcal{S}(\mR^n)$.
+If $u\in\mathcal{E}'(\mR^n)$ holds
+\[	\hat{u}(k)=\left(u,e^{-i\langle k,x\rangle}\right),	\]
+and $\hat{u}$ results a smooth function which extends to an entire function $\hat{u}(z)$, $z\in\mathbb{C}$.\\
+
+The inverse Fourier transform of $f\in L^1(\mR^n)$ is given as $\widecheck{f}(x):=(2\pi)^{-n}\hat{f}(-x)$ and it holds that $f=\widecheck{\hat{f}}$.\\
+
+\noindent	The Fourier transform of the distribution $\delta\in\mathcal{E}'(\mathcal{U})$ is $\hat{\delta}(k)=1$. This is a straightforward computation:
+\[\hat{\delta}(k)=(\delta(x),e^{-i\langle k,x\rangle})=e^0=1.\]
+
+\noindent Other useful formulas that holds for $\varphi\in\mathcal{S}'(\mR^n)$ and for any multi-index $\alpha$ are
+\begin{itemize}
+	\item 	$\hat{\partial^\alpha\varphi }(k)=(ik)^\alpha \hat{\varphi}(k)$
+	\item	$\hat{x^\alpha\varphi}(k)=(i\partial)^\alpha\hat{\varphi}(k)$.
+\end{itemize}
+
+

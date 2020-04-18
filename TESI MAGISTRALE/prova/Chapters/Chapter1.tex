@@ -1,0 +1,208 @@
+% Chapter 1
+
+\chapter{Geometric preliminaries} % Main chapter title
+
+\label{Chapter1} % For referencing the chapter elsewhere, use \ref{Chapter1}
+
+
+In this chapter, we begin by recalling the basic definitions in order to fix the geometric setting in which we will work.\\
+Globally hyperbolic spacetimes $(M,g)$ are used in context of geometric analysis and mathematical relativity because in them there exists a smooth and spacelike Cauchy hypersurface $\Sigma$ and that ensures the well-posedness of the Cauchy problem. Moreover, as shown by Bernal and Sánchez \cite[Th. 1.1]{Bernal-Sanchez-05}, in such spacetimes there exists a splitting for the full spacetime $M$ as an orthogonal product $\mathbb{R}\times\Sigma$. %, where the metric decomposes as $g=-\Lambda \mathrm{d}t^2+g_t$, where $\Lambda$ is a smooth positive function.
+These results corroborate the idea that in globally hyperbolic spacetimes one can preserve the notion of a global passing of time. In a globally hyperbolic spacetime, the entire future and past history of the universe can be predicted from conditions imposed at a fixed instant represented by the hypersurface $\Sigma$.\\
+%Standard globally hyperbolic spacetimes can otherwise be defined as the strongly causal spacetimes\footnote{$M$ satisfies the strong causality condition if there are no almost closed causal curves, i.e. if for any	$p \in M$ there exists a neighborhood $U$ of $p$ such that there exists no timelike curve that passes through $U$ more than once.} whose intrinsic causal boundary points are not naked singularities.\\
+%
+%In a natural way, the timelike boundary $\partial M$ of our class of spacetimes is composed by all
+%the naked singularities so, these singularities become the natural
+%place to impose boundary conditions.
+
+\section{Globally Hyperbolic spacetimes with timelike boundary}
+The main goal of this section is to analyse the main properties of globally hyperbolic spacetimes and to generalise them to a natural class of spacetimes where boundary values problems can be formulated. This class is that of globally hyperbolic spacetimes with timelike boundary.While, in the case of $\partial M=\emptyset$ global hyperbolicity is a standard concept, in presence of a timelike boundary it has been properly defined and studied recently in \cite{Ake-Flores-Sanchez-18}.\\
+
+\noindent\textbf{Manifolds with boundary.} From now on $M$ will denote a smooth manifold with boundary with dimension $m>1$. $M$ is then locally diffeomorphic to open subsets of the closed half space of $\mathbb{R}^n$. We will assume that the boundary $\partial M$ is smooth and, for simplicity, connected. A point $p\in M$ such that there exists an open neighbourhood $U$ containing $p$, diffeomorphic to an open subset of $\mathbb{R}^m$, is called an {\em interior point} and the collection of these points is indicated with $\operatorname{Int}(M)\equiv\mathring{M}$. As a consequence $\partial M\doteq M\setminus\mathring{M}$, if non empty, can be read as an embedded submanifold $(\partial M,\iota_{\partial M})$ of dimension $n-1$ with $\iota_{\partial M}\in C^\infty(\partial M; M)$.\\
+In addition we endow $M$ with a smooth Lorentzian metric $g$ of signature $(-,+,...,+)$ so that $\iota^*g$ identifies a Lorentzian metric on $\partial M$ and we require $(M,g)$ to be time oriented. As a consequence $(\partial M,\iota^*_{\partial M}g)$ acquires the induced time orientation and we say that $(M,g)$ has a {\em timelike boundary}. 
+
+\begin{Definition}\label{Def: spacetime timelike boundary}\hfill\\
+	\vspace{-0.6cm}
+	\begin{itemize}
+	\item A spacetime with timelike boundary is a time-oriented Lorentzian manifold with timelike boundary.
+	\item A spacetime with timelike boundary is {\em causal} if it possesses no closed, causal curve,
+	\item A causal spacetime with timelike boundary $M$ such that for all $p,q\in M$ $J_+(p)\cap J_-(q)$ is compact is called \textbf{globally hyperbolic}.
+	\end{itemize}
+\end{Definition}
+
+These conditions entail the following consequences, see \cite[Th. 1.1 \& 3.14]{Ake-Flores-Sanchez-18}:
+
+\begin{theorem}
+	Let $(M,g)$ be a spacetime of dimension $m$. Then 
+	\begin{enumerate}
+		\item $(M,g)$ is a globally hyperbolic spacetime with timelike boundary if and only if it possesses a Cauchy surface, namely an achronal subset of $M$ which is intersected only once by every inextensible timelike curve,
+		\item if $(M,g)$ is globally hyperbolic, then it is isometric to $\mathbb{R}\times\Sigma$ endowed with the metric
+		\begin{equation}\label{eq:line_element}
+		g=-\beta d\tau^2+h_\tau,
+		\end{equation}
+		where $\tau:M\to\mathbb{R}$ is a Cauchy temporal function\footnote{Given a generic time oriented Lorentzian manifold $(N,\tilde{g})$, a Cauchy temporal function is a map $\tau:M\to\mathbb{R}$ such that its gradient is timelike and past-directed, while its level surfaces are Cauchy hypersurfaces.}, whose gradient is tangent to $\partial M$, $\beta\in C^\infty(\mathbb{R}\times\Sigma;(0,\infty))$ while $\mathbb{R}\ni\tau\to (\{\tau\}\times\Sigma,h_\tau)$ identifies a one-parameter family of $(n-1)-$dimensional spacelike, Riemannian manifolds with boundaries. Each $\{\tau\}\times\Sigma$ is a Cauchy surface for $(M,g)$.
+	\end{enumerate}
+\end{theorem}
+
+
+Henceforth we will be tacitly assuming that, when referring to a globally hyperbolic spacetime with timelike boundary $(M,g)$, we work directly with \eqref{eq:line_element} and we shall refer to $\tau$ as the time coordinate. Furthermore each Cauchy surface $\Sigma_\tau\doteq\{\tau\}\times\Sigma$ acquires an orientation induced from that of $M$.
+
+\begin{Definition}
+	A spacetime $(M,g)$ is {\em static} if it possesses a timelike Killing vector field $\chi\in\Gamma(TM)$ whose restriction to $\partial M$ is tangent to the boundary, {\it i.e.} $g_p(\chi,\nu)=0$ for all $p\in\partial M$ where $\nu$ is the unit vector, normal to the boundary at $p$.
+\end{Definition}
+With reference to \eqref{eq:line_element} this translates simply into the request that both $\beta$ and $h_\tau$ are independent from $\tau$.
+
+\begin{Example}
+	We first consider some examples of globally hyperbolic spacetimes without boundary ($\partial M=\emptyset$).
+	\begin{itemize}
+		\item The Minkowski spacetime $M=(\mathbb{R}^m,\eta)$ is stati and globally hyperbolic. Every spacelike hyperplane is a Cauchy hypersurface. We have $M=\mathbb{R}\times \Sigma$ with $\Sigma = \mathbb{R}^{m-1}$, endowed with the time-independent Euclidean metric.
+		\item Let $\Sigma$ be a Riemannian manifold with time independent metric $h$ and $I\subset\mathbb{R}$ an interval. Let $f: I\to\mathbb{R}$	be a smooth positive function. The manifold $M=I \times \Sigma$ with the metric $g = -\mathrm{d} t^2 + f^2(t)\, h$, called \textbf{cosmological spacetime}, is globally hyperbolic if and only if $(\Sigma,h)$ is a complete Riemannian manifold, see \cite[Lem A.5.14]{Baer-Ginoux-Pfaffle-07}. This applies in particular if $(\Sigma,h)$ is compact.
+		\item The interior and exterior \textbf{Schwarzschild spacetimes}, that represent non-rotating black holes of mass $\mathrm{m}>0$ are static and globally hyperbolic.
+		Denoting $S^2$ the $2$-dimensional sphere embedded in $\mathbb{R}^3$, we set
+		\[	 M_{\text{ext}}:=\mathbb{R}\times(2\mathrm{m},+\infty)	\times S^2,	\] 
+		
+		\[	 M_{\text{int}}:=\mathbb{R}\times(0,2\mathrm{m})	\times S^2.	\] 
+		The metric is given by
+		\[	g=-f(r) \mathrm{d} t^2+\frac{1}{f(r)} \mathrm{d} r^2	+r^2\,g_{S^2},	\]
+		where $f(r)=1-\frac{2\mathrm{m}}{r}$, while $g_{S^2}=r^2\, \mathrm{d}\theta^2+r^2\sin^2\theta \mathrm{d}\varphi^2$ is the polar coordinates metric on the sphere. For the exterior Schwarzschild spacetime we have $ M_{\text{ext}}=\mathbb{R}\times \Sigma$ with $\Sigma=(2\mathrm{m},+\infty)\times S^2$, $\beta=f$ and $h=\frac{1}{f(r)} \mathrm{d} r^2	+r^2\,g_{S^2}$.
+	\end{itemize}
+\end{Example}
+
+\begin{Example}
+	Now we consider some examples of globally hyperbolic spacetimes with timelike boundary in which the boundary is not empty.
+	\begin{itemize}
+		\item The Half Minkowski spacetime $M=(\mathbb{R}^{m-1}\times[0,+\infty),\eta)$ is static and globally hyperbolic. Every spacelike half-hyperplane is a Cauchy hypersurface. We have $M=\mathbb{R}\times \Sigma$ with $\Sigma= \mathbb{R}^{m-2}\times[0,+\infty)$, endowed with the time-independent Euclidean metric.
+		\item Let $\Sigma$ be a Riemannian manifold with boundary with time independent metric $h$ and $I\subset\mathbb{R}$ an interval. Let $f: I\to\mathbb{R}$	be a smooth positive function. The manifold $M=I \times \Sigma$ with the metric $g = -\mathrm{d} t^2 + f^2(t)\, h$ is globally hyperbolic if and only if $(\Sigma,h)$ is a complete Riemannian manifold with boundary.
+	\end{itemize}
+\end{Example}
+
+ A particular role will be played by the support of the functions that we consider. In the following definition we introduce the different possibilities that we will consider - \textit{cf.} \cite{Baer-15}.
+\begin{Definition}\label{Def: space of forms}
+	Let $(M,g)$ be a Lorentzian spacetime with timelike boundary. We denote with 
+	\begin{enumerate}
+		\item 	$ C^\infty_{\mathrm{c}}(M)$ the space of smooth functions with compact support in $M$ while with $ C^\infty_{\mathrm{cc}}(M)\subset C^\infty_{\mathrm{c}}(M)$ the collection of smooth and compactly supported functions $ f$ such that $\textrm{supp}( f)\cap\partial M=\emptyset$.
+		\item
+		$ C^\infty_{\mathrm{spc}}(M)$ (\textit{resp}. $ C^\infty_{\mathrm{sfc}}(M)$) the space of strictly past compact (\textit{resp.} strictly future compact) functions, that is the collection of $ f\in C^\infty(M)$ such that there exists a compact set $K\subseteq M$ for which $J^+(\textrm{supp}( f))\subseteq J^+(K)$ (\textit{resp.} $J^-(\textrm{supp}( f))\subseteq J^-(K)$), where $J^\pm$ denotes the causal future and the causal past in $M$.  Notice that $ C^\infty_{\mathrm{sfc}}(M)\cap C^\infty_{\mathrm{spc}}(M)= C^\infty_{\mathrm{c}}(M)$.
+		\item
+		$ C^\infty_{\mathrm{pc}}(M)$ (\textit{resp}. $ C^\infty_{\mathrm{fc}}(M)$) denotes the space of future compact (\textit{resp.} past compact) functions, that is, $ f\in C^\infty(M)$ for which
+		${\rm supp}( f)\cap J^-(K)$ (\textit{resp.} ${\rm supp}( f)\cap J^+(K)$) is compact for all compact $K\subset M$.
+		\item $ C^\infty_{\mathrm{tc}}(M):= C^\infty_{\mathrm{fc}}(M)\cap C^\infty_{\mathrm{pc}}(M)$, the space of timelike compact functions.
+		\item $ C^\infty_{\mathrm{sc}}(M):= C^\infty_{\mathrm{sfc}}(M)\cap C^\infty_{\mathrm{spc}}(M)$, the space of spacelike compact functions.
+	\end{enumerate}
+\end{Definition}
+
+\section{Differential forms and operators on manifolds with boundary}
+
+To treat Maxwell equations properly and to be able to generalise them, we will use the language of differential forms.
+In this section $(E,g)$ will denote a generic oriented pseudo-Riemannian manifold with boundary with signature $(-,+,\dots,+,+)$ or $(+,+,\dots,+,+)$. In the former case, when the manifold is Lorentzian, it is understood that the boundary is timelike in the sense of Definition \ref{Def: spacetime timelike boundary}. We present the following definitions in such a general framework since we will work both on spacetimes $(M,g)$ with timelike boundary and on their Cauchy hypersurfaces $(\Sigma,h)$, which are Riemannian manifolds with boundary.\\
+
+
+
+On top of a pseudo-Riemannian Hausdorff, connected, oriented and paracompact manifold $(E,g)$ with boundary we consider the spaces of complex valued $k$-forms $\Omega^k(E)$ as smooth sections of $\wedge^kT^*E$. Since $(E,g)$ is oriented, we can identify a unique, metric-induced, Hodge operator $\ast:\Omega^k(E)\to\Omega^{m-k}(E)$, $m=\dim E$ such that, for all $\alpha,\beta\in\Omega^k(E)$, $\alpha\wedge\ast\beta=(\alpha,\beta)\mathrm{d}\mu_g$, where $\wedge$ is the exterior product of forms and $\mathrm{d}\mu_g$ the metric induced volume form. We endow $\Omega^k(E)$ with the standard, metric induced, pairing
+\begin{align}
+(\alpha,\beta):=\int_E\overline{\alpha}\wedge\ast\beta\,,
+\end{align}
+
+
+\begin{remark}
+	One can easily generalize of the spaces defined for scalar fields in Definition \ref{Def: space of forms} respectively to the following spaces of $k$-forms: $\Omega_\mathrm{c}^k(M)$, $\Omega_{\mathrm{cc}}^k(M)$, $\Omega_{\mathrm{spc}/\mathrm{sfc}}^k(M)$, $\Omega_{\mathrm{pc}/\mathrm{fc}}^k(M)$, $\Omega_{\mathrm{tc}/\mathrm{sc}}^k(M)$.
+\end{remark}
+
+
+We indicate the exterior derivative with $\mathrm{d}:\Omega^k(E)\to\Omega^{k+1}(E)$. A differential form $\alpha$ is called closed when $\mathrm{d}\alpha=0$ and exact when $\alpha=\mathrm{d}\beta$ for some differential form $\beta$. Since $E$ is endowed with a pseudo-Riemannian metric it holds that, when acting on smooth $k$-forms, $\ast^{-1}=(-1)^{k(m-k)}\ast$. Combining these data we define the {\em codifferential} operator $\delta:\Omega^{k+1}(E)\to\Omega^k(E)$ as $\delta\doteq\ast^{-1}\circ \mathrm{d}\circ\ast$.
+
+%
+%If the spacetime is static, $M$ can be decomposed as $\mathbb{R}\times\Sigma$, where $(\Sigma, h)$ is an oriented Riemannian Manifold with boundary.
+%In this case we distinguish, on $(\Sigma,h)$ for $k\in\mathbb{N}\cup\{0\}$:
+%\begin{itemize}
+%	\item the space of smooth forms $C^\infty\Omega^k(\Sigma)$,
+%	\item the space of compactly supported smooth forms $C^\infty_c\Omega^k(\Sigma)$,
+%	\item the space of square integrable forms (with respect to $(\,,\,)\ $) $\mathrm{L}^2\Omega^k(\Sigma)$,
+%\end{itemize}
+%
+
+
+
+%
+%Now we define the main operators with which we will deal along the thesis.
+%\begin{Definition}
+%	We introduce the {\em D'Alembert-de Rham} wave operator $\Box_k:\Omega^k(M)\to\Omega^k(M)$ such that $$\Box_k\doteq \mathrm{d}\delta+\delta \mathrm{d},$$ as well as the {\em Maxwell} operator $\mathcal{M}_k:\Omega^k(M)\to\Omega^k(M)$ such that $$\mathcal{M}_k\doteq\delta \mathrm{d}.$$
+%\end{Definition}
+%The subscript $k$ is here introduced to make explicit on which space of $k$-forms the operator is acting. Usually, the subscript $k$ is dropped because if there are no boundary conditions the operators act separately on each component of the forms. Observe, furthermore, that $\Box_k$ differs by the more commonly used D'Alembert wave operator acting on $k$-forms by $0$-order term built out of the metric and whose explicit form depends on the value of $k$, see for example \cite[Sec. II]{Pfenning:2009nx}.
+%
+%The name {\em Maxwell operator} for $\delta\mathrm{d}$ was given in view of Maxwell equations for electromagnetism. Written in terms of the potential $1$-form $A$, they look like
+%\begin{equation}\label{Eqn: maxwell}
+%	-\mathcal{M}_1A=-\delta\mathrm{d}A=J,
+%\end{equation}
+%where $J$ is the current $1$-form, which vanishes in vacuum. The higher order Maxwell operators lead to a generalisation of electromagnetism to forms of higher degree, which will be treated along the thesis, letting $k$ be in $\mathbb{N}$.
+
+To conclude the section, we focus on the boundary $\partial E$ and on the interplay with $k$-forms lying in $\Omega^k(E)$. The first step consists of defining two notable maps. These relate $k$-forms defined on the whole $E$ with suitable counterparts living on $\partial E$ and, in the special case of $k=0$, they coincide either with the restriction to the boundary of a scalar function or with that of its projection along the direction normal to $\partial E$.
+
+\begin{remark}
+	Since we will be considering not only form lying in $\Omega^k(E)$, $k\in\mathbb{N}\cup\{0\}$, but also those in $\Omega^k(\partial E)$, we shall distinguish the operators acting on this space with a subscript $_\partial$, {\it e.g.} $\mathrm{d}_\partial$, $\ast_\partial$, $\delta_\partial$ or $(,)_\partial$.
+\end{remark}
+
+
+
+\begin{Definition}\label{Def: tangential and normal component}
+	Let $(E,g)$ be a pseudo-Riemannian manifold with boundary together with the embedding map $\iota_{\partial}:\partial E\hookrightarrow E$. We call {\em tangential} and {\em normal} maps 
+	\begin{subequations}\label{Eqn: tangential and normal maps}
+		\begin{equation}\label{Eqn: tangential map}
+		\mathrm{t}\colon\Omega^k(E)\to\Omega^k(\partial E)\qquad\omega\mapsto\mathrm{t}\omega\doteq\iota_{\partial}^*\omega
+		\end{equation}
+		\begin{equation}\label{Eqn: normal maps}
+		\mathrm{n}\colon\Omega^k(E)\to\Omega^{k-1}(\partial E)\qquad\omega\mapsto\mathrm{n}\omega\doteq\ast_{\partial}^{-1}\circ\mathrm{t}\circ\ast_E\,,
+		\end{equation}
+	\end{subequations}
+	In particular, for all $k\in\mathbb{N}\cup\{0\}$ we define
+	\begin{align}\label{Eqn: k-forms with vanishing tangential or normal component}
+	\Omega_{\mathrm{t}}^k(E):=\lbrace\omega\in\Omega^k(E)\;|\;\mathrm{t}\omega=0\rbrace\,,\qquad
+	\Omega_{\mathrm{n}}^k(E):=\lbrace\omega\in\Omega^k(E)\;|\;\mathrm{n}\omega=0\rbrace\,.
+	\end{align}
+\end{Definition}
+
+\begin{remark}
+	The normal map $\mathrm{n}:\Omega^k(E)\to\Omega^{k-1}(\partial E)$ can be equivalently read as the restriction to $\partial E$ of the contraction $\nu\operatorname{\lrcorner}\omega$ between $\omega\in\Omega^k(E)$ and the vector field $\nu\in\Gamma(TE)|_{\partial E}$ which corresponds pointwisely to the unit vector, normal to $\partial E$.
+\end{remark}
+
+\noindent As last step, we observe that \eqref{Eqn: tangential and normal maps} together with \eqref{Eqn: k-forms with vanishing tangential or normal component} entail the following series of identities on $\Omega^k(E)$ for all $k\in\mathbb{N}\cup\{0\}$.
+\begin{subequations}\label{Eqn: relations between d,delta,t,n}
+	\begin{equation}\label{Eqn: relations-bulk}
+	\ast\delta=(-1)^k\mathrm{d}\ast\,,\quad
+	\delta\ast=(-1)^{k+1}\ast\mathrm{d}\,,
+	\end{equation}
+	\begin{equation}\label{Eqn: relations-bulk-to-boundary}
+	\ast_\partial\mathrm{n}=\mathrm{t}\ast\,,\quad
+	\ast_\partial\mathrm{t}=(-1)^k\mathrm{n}\ast\,,\quad
+	\mathrm{d}_\partial\mathrm{t}=\mathrm{t}\mathrm{d}\,,\quad
+	\delta_\partial\mathrm{n}=\mathrm{n}\delta\,.
+	\end{equation}
+\end{subequations}
+A notable consequence of \eqref{Eqn: relations-bulk-to-boundary} is that, while on manifolds with empty boundary, the operators $\mathrm{d}$ and $\delta$ are one the formal adjoint of the other, in the case in hand, the situation is different. Indeed, a direct application of Stokes' theorem yields that 
+\begin{align}\label{Eqn: boundary terms for delta and d}
+(\mathrm{d}\alpha,\beta)-(\alpha,\delta\beta)=
+(\mathrm{t}\alpha,\mathrm{n}\beta)_\partial\qquad
+\forall\alpha\in\Omega_{\mathrm{c}}^k(E)\,,\;
+\forall\beta\in\Omega_{\mathrm{c}}^{k+1}(E)\,,
+\end{align}
+where the pairing in the right-hand side is the one associated to forms living on $\partial E$.
+
+\section{Maxwell equations for $k$-forms}\label{Sec: Maxwell introduction}
+We now focus our attention on a $m$-dimensional spacetime $(M,g)$.
+As usual, the electromagnetic field will be regarded as a $2$-form $F$, called Faraday field, and the potential as a $1$-form $A$ such that, locally, holds $F=\mathrm{d}A$. This is permitted by the first Maxwell equation, namely
+\begin{equation}\label{Eqn: first maxwell}
+	\mathrm{d}F=0,
+\end{equation}
+that ensures the Faraday form $F$ being closed, hence locally exact. The equation $F=\mathrm{d}A$ holds globally whenever one can rely on the Poincaré lemma, which cannot be always applied since it fails to hold true if the second cohomology group $H^2 (M )$ is not trivial.\\
+
+From a physical point of view, one wonders whether it is $A$ or it is $F$ the observable field of the dynamical system, because $F$ encodes the usual electric and magnetic fields $E,B\in\Omega^1(\Sigma)$ (if $M$ is static with $M=\mathbb{R}\times\Sigma$, holds the decomposition $F=\ast_{\Sigma}B+\mathrm{d}t\wedge E$). Moreover, one can object that the choice of $A\in\Omega^{1}(M)$ is not unique. Indeed if for a moment one assumes, for simplicity, $M$ to be globally hyperbolic with empty boundary, the configuration $A':=A+\mathrm{d}\chi$, $\chi\in\Omega^0(M)$ is equivalent to $A$ since it gives rise to the same Faraday field $F$. This freedom in the choice of $A$ is extensively used and it is called \textbf{gauge freedom}.\\
+
+To recap, one can regard the electromagnetism as a theory for $F\in\Omega^2(M)$ or as a theory for a non-unique $A\in\Omega^1(M)$ and wonder if the initial and boundary value problem for Maxwell equations is well-posed in both cases. The former case for $F$ will be covered in Chapter \ref{Chapter2} and the latter for $A$ in Chapter \ref{Chapter3}.\\
+
+The second Maxwell equations tells us the dynamics of the electromagnetic field. If $J$ denotes the co-closed current $1$-form ($\delta J=0$), which encodes the charge density and the electric current, the second Maxwell equation can be written as
+\begin{equation}\label{Eqn: second maxwell}
+	\delta F=-J,
+\end{equation}
+and the corresponding
+
+In the homogeneous case ($J=0$), one can generalise the Maxwell field to be $F\in\Omega^k(M)$, imposing $\mathrm{d}F=0$ and $\delta F=0$ and the equation for $A\in\Omega^{k-1}(M)$ becomes $\delta\mathrm{d}A=0$. In this case gauge freedom is understood as a transformation $A\mapsto A+\mathrm{d}\chi$, $\chi\in\Omega^{k-2}(M)$.
+

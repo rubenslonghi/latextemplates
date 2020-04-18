@@ -1,0 +1,39 @@
+
+\chapter*{Introduction}
+\label{introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+
+\thispagestyle{plain}
+Wave-like equations are a class of differential equations which rule the dynamics of many physical processes, from electromagnetism to quantum field theory. Such equations contain a differential operator $P$, which is a generalization of the d'Alembert wave operator
+\[\Box:=\frac{\partial^2}{\partial t^2}-\sum_{j=1}^{n-1}\frac{\partial^2}{\partial x_j^2}, \]
+that describes the propagation of a wave with velocity $c\equiv 1$ in an $n$-dimensional spacetime.
+In this thesis will be presented a constructive method of fundamental solutions to solve wave-like differential equations, firstly on a flat background and then on suitable manifolds of physical interest, where the standard methods used in the Minkowskian scenario are not applicable.\\
+
+\noindent Fundamental solutions are used to solve inhomogeneous equations of the form $Pf=\psi$, where $\psi$ is a generic source. They can be thought as the distributional solutions to a differential equation in which the source is a point-like instantaneous perturbation, namely the Dirac delta. To be more precise, if $P$ is a differential operator, a fundamental solution $u_x$ for $P$ at $x$ is a distributional solution to the equation
+\[	Pu_x=\delta_x.	\]
+
+\noindent Once a fundamental solution $u_x$ is found, it is easy to find the desired solution $f$ of the equation $Pf=\psi$ and deduce the properties of the solution.\\
+In a flat spacetime, when dealing with wave operator $\Box$, it turns out that the fundamental solutions can be constructed by applying the methods of the Fourier transform to the underlying partial differential equation. Moreover, the translational symmetry of the background allows the solution for $Pf=\psi$ to be given simply by the convolution $u_0*\psi$, namely it suffices to solve the problem at any but fixed point of the background, which can thus be chosen without loss of generality to be. In particular we will describe two fundamental solutions at $0$, denoted with $G_+$ and $G_-$, the \emph{retarded} and the \emph{advanced} one, that propagate the source of the equation respectively in the causal future and in the causal past, in accordance with the causality principle.\\
+When dealing with wave-like operators on generic Lorentzian manifolds, there is no symmetry available. Hence, in order to find fundamental solutions it is necessary to follow another path. In Chapter \ref{chapter2}, following the construction of [\citealp{bar1}] and [\citealp{ginoux}], we define on Minkowski spacetime a family of distributions, dubbed \emph{Riesz distributions} $R_\pm(\alpha)$, supported respectively on the future and on the past of $0$, depending on a complex parameter $\alpha$, when $\Re\alpha >n$. Subsequently through analytic continuation the family $R_\pm(\alpha)$ is extended to the whole complex plane and some important properties are deduced. It is noteworthy that for the specific value of $\alpha=2$, one finds the aforementioned advanced and retarded fundamental solutions. In addition their support properties can be inferred for any dimension of the underlying flat background, hence proving the so-called \emph{Huygens' principle} (see Section \ref{sec:fundafourier} and Theorem \ref{th:Huygens}).\\
+Within the framework of flat space, we will address the Cauchy problem for $\Box f=\psi$, with initial data to be set on a particular class of hypersurfaces: Cauchy hypersurfaces (see Definition \ref{defn:Cauchyhyper}). These surfaces are strongly related to the causality principle. In fact any point of a Cauchy hypersurface is not in the past nor in the future of any other point of the surface, i.e. the initial data cannot influence each other. In view of these considerations, the existence and uniqueness of the solution will be shown.\\
+
+\thispagestyle{plain}
+\noindent Then we will focus on the problem of analyzing the solutions of wave-like operators on a suitable class of Lorentzian manifolds. We give examples of such operators on backgrounds of physical interest, such as the cosmological and the Schwartzschild spacetimes. Then we will try to use Riesz distributions, which are well-suited for generalization, to solve the problem locally. To tackle this problem our strategy is the following: At any but fixed point $x\in\mM$ we can consider the tangent space and a coordinate system such that the metric reads as the Minkowski one at $x$. On $T_x\mM$ one can define the Riesz distributions as in the flat scenario. Via the exponential map these can be pulled-back to a local neighbourhood of $x\in\mM$. While this operations preserves most of the desired properties, it fails to yield fundamental solutions for the operator of interest, neither locally. However, if one combines in a proper manner certain Riesz distributions to form a formal series, one can find local approximate fundamental solutions for a generic wave-like operator that converge to the true one in a suitable way.\\
+The Cauchy problem will be addressed locally, proving that the local solution exists and it is unique, while the support properties, that we found in the flat case, survive on generic manifolds. To find global solutions, we will have to restrict to a particular class of manifolds, the \emph{globally hyperbolic} spacetimes, in order to ensure the existence of a Cauchy hypersurface (see Theorem \ref{th:Bernal}) where to set initial data.\\[1.5cm]
+
+
+
+
+
+
+\thispagestyle{plain}
+
+
+\noindent A synopsis of the thesis is the following:\\
+In the first chapter, it will be presented an overview of the main mathematical notions needed in order to set the discussion on a curved background. The main topics will be \emph{differentiable manifolds}, \emph{tangent space}, \emph{Lorentzian manifolds}, \emph{causality and global hyperbolicity}, \emph{hyperbolic differential operators} as well as the \emph{theory of integration} on manifolds.\\
+
+\noindent In the second chapter, it will be discussed the concept of fundamental solutions and we will focus on the particular case of the d'Alembert wave operator in Minkowski spacetime. Two approaches will be followed: the first relies on the theory of Fourier transform while the second is based on the identification of a particular class of distributions, the \emph{Riesz distributions}, that allow to construct the sought fundamental solutions for any spacetime dimension. At last, an overview of the Cauchy problem for the wave operator will be discussed in the simplest cases.\\
+
+\noindent In the third chapter, we will give some examples of Lorentzian manifolds of physical interest, whose associated, metric induced, wave-like operator is such that the associated fundamental solutions cannot be constructed with the same methods used in Minkowski spacetime. To avoid this hurdle, the first step will be to extend of Riesz distributions to Lorentzian manifolds to be able to identify fundamental solutions of a wave-like operator, first locally and then globally provided that the underlying manifolds abides to suitable, physically and structurally motivated constraints. The Cauchy problem will be solved both in a local and a global setting, and it will give information on the regularity as well as on the support of the solutions.\\
+
+\thispagestyle{plain}

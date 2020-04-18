@@ -1,0 +1,5 @@
+\contentsline {chapter}{\numberline {1}Geometric preliminaries}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Globally Hyperbolic spacetimes with timelike boundary}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Poincar\'e-Lefschetz duality for manifold with boundary}{5}{section.1.2}
+\contentsline {chapter}{\numberline {A}Frequently Asked Questions}{11}{appendix.A}
+\contentsline {section}{\numberline {A.1}How do I change the colors of links?}{11}{section.A.1}

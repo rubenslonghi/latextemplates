@@ -1,0 +1,122 @@
+% Appendix A
+
+\chapter{An explicit computation} % Main appendix title
+\label{App: an explicit decomposition}
+
+
+\begin{lemm}\label{Lem: equivalence between M-boundary conditions and Sigma-boundary conditions}
+	Let $M=\mathbb{R}\times\Sigma$ be a globally hyperbolic spacetime -- \textit{cf.} Theorem \ref{Thm: Ake-Flores-Sanchez}.
+	Moreover, for all $\tau\in\mathbb{R}$, let $\mathrm{t}_{\Sigma_\tau}\colon\Omega^k(M)\to\Omega^k(\Sigma_\tau)$, $\mathrm{n}_{\Sigma_\tau}\colon\Omega^k(\Sigma_\tau)\to\Omega^{k-1}(\Sigma)$ be the tangential and normal maps on $\Sigma_\tau\doteq\{\tau\}\times\Sigma$, where $M=\mathbb{R}\times\Sigma$ -- \textit{cf.} Definition \ref{Def: tangential and normal component}.
+	Moreover, let $\mathrm{t}_{\partial\Sigma_\tau}\colon\Omega^k(\Sigma_\tau)\to\Omega^k(\partial\Sigma_\tau)$ and let $\mathrm{n}_{\partial\Sigma_\tau}\colon\Omega^k(\Sigma_\tau)\to\Omega^{k-1}(\partial\Sigma_\tau)$ be the tangential and normal maps on $\partial\Sigma_\tau\doteq\{\tau\}\times\partial\Sigma$.
+	Let $f\in C^\infty(\partial\Sigma)$ and set $f_\tau\doteq f|_{\partial\Sigma_\tau}$ .
+	Then for $\sharp\in\lbrace\mathrm{D},\parallel,\perp,f_\parallel,f_\perp\rbrace$ it holds
+	\begin{align}\label{Eqn: equivalence between M-boundary conditions and Sigma-boundary conditions}
+	\omega\in\Omega_\sharp^k(M)\Longleftrightarrow
+	\mathrm{t}_{\Sigma_\tau}\omega,\mathrm{n}_{\Sigma_\tau}\omega\in\Omega_\sharp^k(\Sigma_\tau)
+	\quad\forall \tau\in\mathbb{R}\,.
+	\end{align}
+	More precisely this entails that 
+	\begin{align*}
+	\omega\in\ker\mathrm{t}_{\partial M}\cap\ker\mathrm{n}_{\partial M}&\Longleftrightarrow
+	\mathrm{t}_{\Sigma_\tau}\omega,\mathrm{n}_{\Sigma_\tau}\omega\in
+	\ker\mathrm{t}_{\partial\Sigma_\tau}\cap\ker\mathrm{n}_{\partial\Sigma_\tau}\,,\forall \tau\in\mathbb{R}\,;\\
+	\omega\in\ker\mathrm{n}_{\partial M}\cap\ker\mathrm{n}_{\partial M}\mathrm{d}&\Longleftrightarrow
+	\mathrm{t}_{\Sigma_\tau}\omega,\mathrm{n}_{\Sigma_\tau}\omega\in
+	\ker\mathrm{n}_{\partial\Sigma_\tau}\cap\ker\mathrm{n}_{\partial\Sigma_\tau}\mathrm{d}_{\Sigma_\tau}\,,\forall \tau\in\mathbb{R}\,;\\
+	\omega\in\ker\mathrm{t}_{\partial M}\cap\ker\mathrm{t}_{\partial M}\delta&\Longleftrightarrow
+	\mathrm{t}_{\Sigma_\tau}\omega,\mathrm{n}_{\Sigma_\tau}\omega\in
+	\ker\mathrm{t}_{\partial\Sigma_\tau}\cap\ker\mathrm{t}_{\partial\Sigma_\tau}\delta_{\Sigma_\tau}\,,\forall \tau\in\mathbb{R}\,;\\
+	\omega\in\ker\mathrm{n}_{\partial M}\cap\ker(\mathrm{n}_{\partial M}\mathrm{d}-f\mathrm{t}_{\partial M})&\Longleftrightarrow
+	\mathrm{t}_{\Sigma_\tau}\omega,\mathrm{n}_{\Sigma_\tau}\omega\in
+	\ker\mathrm{n}_{\partial\Sigma_\tau}\cap\ker(\mathrm{n}_{\partial\Sigma_\tau}\mathrm{d}_{\Sigma_\tau}-f_t\mathrm{t}_{\partial\Sigma_\tau})\,,\forall \tau\in\mathbb{R}\,;\\
+	\omega\in\ker\mathrm{t}_{\partial M}\cap\ker(\mathrm{t}_{\partial M}\delta-f\mathrm{n}_{\partial M})&\Longleftrightarrow
+	\mathrm{t}_{\Sigma_\tau}\omega,\mathrm{n}_{\Sigma_\tau}\omega\in
+	\ker\mathrm{t}_{\partial\Sigma_\tau}\cap\ker(\mathrm{t}_{\partial\Sigma_\tau}\delta_{\Sigma_\tau}-f_t\mathrm{n}_{\partial\Sigma_\tau})\,,\forall t \in\mathbb{R}\,.
+	\end{align*}
+\end{lemm}
+\begin{proof}
+	The equivalence \eqref{Eqn: equivalence between M-boundary conditions and Sigma-boundary conditions} is shown for $\perp$-boundary condition.
+	The proof for $\parallel$-boundary conditions follows per duality -- \textit{cf.} \eqref{Rmk: duality of bc under Hodge action} -- while the one for $\mathrm{D}$-, $f_\parallel$-, $f_\perp$-boundary conditions can be carried out in a similar way.
+	
+	On account of Theorem \ref{Thm: Ake-Flores-Sanchez} we have that for all $\tau\in\mathbb{R}$ we can decompose any $\omega\in\Omega^k(M)$ as follows:
+	\begin{align*}
+	\omega|_{\Sigma_\tau}=
+	\mathrm{t}_{\Sigma_\tau}\omega+
+	\mathrm{n}_{\Sigma_\tau}\omega\wedge\mathrm{d}\tau\,.
+	\end{align*}
+	Notice that, being the decomposition $M=\mathbb{R}\times\Sigma$ smooth we have that $\tau\to\mathrm{t}_{\Sigma_\tau}\omega \in C^\infty(\mathbb{R},\Omega^k(\Sigma))$ while $\tau\to\mathrm{n}_{\Sigma_\tau}\omega \in C^\infty(\mathbb{R},\Omega^{k-1}(\Sigma))$. Here we have implicitly identified $\Sigma\simeq\Sigma_\tau$.
+	
+	A similar decomposition holds near the boundary of $\Sigma_\tau$. Indeed for all $(\tau,p)\in\{\tau\}\times\partial\Sigma$ we consider a neighbourhood of the form $U=[0,\epsilon_\tau)\times U_{\partial\Sigma}$.
+	Let $U_x\doteq\{x\}\times U_{\partial\Sigma}$ for $x\in [0,\epsilon_\tau)$ and let $\mathrm{t}_{U_x}$, $\mathrm{n}_{U_x}$ be the corresponding tangential and normal maps -- \textit{cf.} Definition \ref{Def: tangential and normal component}.
+	With this definition we can always split $\mathrm{t}_{\Sigma_\tau}\omega$ and $\mathrm{n}_{\Sigma_\tau}\omega$ as follows:
+	\begin{align}
+	\omega|_{U}=
+	\mathrm{t}_{U_x}\mathrm{t}_{\Sigma_\tau}\omega+
+	\mathrm{n}_{U_x}\mathrm{t}_{\Sigma_\tau}\omega\wedge\mathrm{d}x+
+	\mathrm{t}_{U_x}\mathrm{n}_{\Sigma_\tau}\omega\wedge\mathrm{d}\tau+
+	\mathrm{n}_{U_x}\mathrm{n}_{\Sigma_\tau}\omega\wedge\mathrm{d}x\wedge\mathrm{d}\tau\,.
+	\end{align}
+	If $p$ ranges on a compact set of $\partial\Sigma$ it follows that $(\tau,x)\to\mathrm{t}_{U_x}\mathrm{t}_{\Sigma_\tau}\omega\in C^\infty(\mathbb{R}\times[0,\epsilon),\Omega^k(\partial\Sigma))$ and similarly $\mathrm{t}_{U_x}\mathrm{n}_{\Sigma_\tau}\omega$, $\mathrm{n}_{U_x}\mathrm{t}_{\Sigma_\tau}\omega$ and $\mathrm{n}_{U_x}\mathrm{n}_{\Sigma_\tau}\omega$. Once again we have implicitly identified $U_{\partial\Sigma}\simeq\{x\}\times U_{\partial\Sigma}$.
+	
+	According to this splitting we have
+	\begin{align*}
+	\mathrm{t}_{\partial M}\omega|_{(\tau,p)}&=
+	\mathrm{t}_{U_0}\mathrm{t}_{\Sigma_\tau}\omega+
+	\mathrm{t}_{U_0}\mathrm{n}_{\Sigma_\tau}\omega\wedge\mathrm{d}\tau=
+	\mathrm{t}_{\partial\Sigma_\tau}\mathrm{t}_{\Sigma_\tau}\omega+
+	\mathrm{t}_{\partial\Sigma_\tau}\mathrm{n}_{\Sigma_\tau}\omega\wedge\mathrm{d}\tau\,,\\
+	\mathrm{n}_{\partial M}\omega|_{(\tau,p)}&=
+	\mathrm{n}_{U_0}\mathrm{t}_{\Sigma_{\tau}}\omega+
+	\mathrm{n}_{U_0}\mathrm{n}_{\Sigma_\tau}\omega\wedge\mathrm{d}\tau=
+	\mathrm{n}_{\partial\Sigma_\tau}\mathrm{t}_{\Sigma_\tau}\omega+
+	\mathrm{n}_{\partial\Sigma_\tau}\mathrm{n}_{\Sigma_\tau}\omega\wedge\mathrm{d}\tau\,.
+	\end{align*}
+	It follows that $\mathrm{n}_{\partial M}\omega=0$ if and only if $\mathrm{n}_{\partial\Sigma_\tau}\mathrm{n}_{\Sigma_\tau}\omega=0$ and $\mathrm{n}_{\partial\Sigma_\tau}\mathrm{t}_{\Sigma_\tau}\omega=0$ and similarly $\mathrm{t}_{\partial M}\omega=0$ if and only if $\mathrm{t}_{\partial\Sigma_\tau}\mathrm{t}_{\Sigma_\tau}\omega=0$ and $\mathrm{t}_{\partial\Sigma_\tau}\mathrm{n}_{\Sigma_\tau}\omega=0$. This proves the thesis for Dirichlet boundary conditions. A similar computation leads to
+	\begin{align*}
+	\mathrm{n}_{\partial M}\mathrm{d}\omega&=
+	(-1)^k\partial_x\mathrm{t}_{U_x}\mathrm{t}_{\Sigma_\tau}\omega|_{x=0}+
+	\mathrm{d}_{\partial\Sigma_\tau}\mathrm{n}_{U_0}\mathrm{t}_{\Sigma_\tau}\omega+
+	(-1)^{k-1}\partial_\tau\mathrm{n}_{U_0}\mathrm{t}_{\Sigma_\tau}\omega\wedge\mathrm{d}\tau\\&+
+	(-1)^k\partial_x\mathrm{t}_{U_x}\mathrm{n}_{\Sigma_\tau}\omega|_{x=0}\wedge\mathrm{d}\tau-
+	\mathrm{d}_{\partial\Sigma_\tau}\mathrm{n}_{U_0}\mathrm{n}_{\Sigma_\tau}\omega\wedge\mathrm{d}\tau\\&=
+	(-1)^k\partial_x\mathrm{t}_{U_x}\mathrm{t}_{\Sigma_\tau}\omega|_{x=0}+
+	(-1)^k\partial_x\mathrm{t}_{U_x}\mathrm{n}_{\Sigma_\tau}\omega|_{x=0}\wedge\mathrm{d}\tau\,.
+	\end{align*}
+	where the second equality holds true since $\mathrm{n}_{\partial M}\omega=0$.
+	It follows that $\mathrm{n}_{\partial M}\mathrm{d}\omega=0$ if and only if $\partial_x\mathrm{t}_{U_x}\mathrm{t}_{\Sigma_\tau}\omega|_{x=0}=0$ and $\partial_x\mathrm{n}_{U_x}\mathrm{n}_{\Sigma_\tau}\omega|_{x=0}=0$.
+	When $\mathrm{n}_{\partial\Sigma_\tau}\mathrm{t}_{\Sigma_\tau}\omega=0$ and $\mathrm{n}_{\partial\Sigma_\tau}\mathrm{n}_ {\Sigma_\tau}\omega=0$ the latter conditions are equivalent to $\mathrm{n}_{\partial\Sigma_\tau}\mathrm{d}_{\Sigma_\tau}\mathrm{n}_{\Sigma_\tau}\omega=0$ and $\mathrm{n}_{\partial\Sigma_\tau}\mathrm{d}_{\Sigma_\tau}\mathrm{t}_{\Sigma_\tau}\omega=0$.
+\end{proof}
+
+Finally, we prove a very useful Lemma.
+\begin{lemm}\label{Lem: on boundary conditions preserving splitting}
+	Let $\sharp\in\lbrace\mathrm{D},\parallel,\perp,f_\parallel,f_\perp\rbrace$, with $f\in C^\infty(\partial M)$.
+	The following statements hold true:
+	\begin{enumerate}
+		\item
+		for all $\omega\in\Omega_{\mathrm{sc}}^k(M)\cap\Omega_\sharp^k(M)$ there exists $\omega^+\in\Omega_{\mathrm{spc}}^k(M)\cap\Omega_\sharp^k(M)$ and $\omega^-\in\Omega_{\mathrm{sfc}}^k(M)\cap\Omega_{\sharp}^k(M)$ such that $\omega=\omega^++\omega^-$.
+		\item 
+		for all $\omega\in\Omega_\sharp^k(M)$ there exists $\omega^+\in\Omega_{\mathrm{pc}}^k(M)\cap\Omega_\sharp^k(M)$ and $\omega^-\in\Omega_{\mathrm{fc}}^k(M)\cap\Omega_{\sharp}^k(M)$ such that $\omega=\omega^++\omega^-$.
+	\end{enumerate}
+\end{lemm}
+\begin{proof}
+	We prove the result in the first case, the second one can be proved in complete analogy.
+	Let $\omega\in\Omega_{\mathrm{sc}}^k(M)\cap\Omega_\sharp^k(M)$.
+	Consider $\Sigma_1,\Sigma_2$, two Cauchy surfaces on $M$ -- \textit{cf.} \cite[Def. 3.10]{Ake-Flores-Sanchez-18} -- such that $J^+(\Sigma_1)\subset J^+(\Sigma_2)$.
+	Moreover, let $\varphi_+\in \Omega_{\mathrm{pc}}^0(M)$ be such that $\varphi_+|_{J^+(\Sigma_2)}=1$ and $\varphi_+|_{J^-(\Sigma_1)}=0$.
+	We define $\varphi_-:=1-\varphi_+\in \Omega_{\mathrm{fc}}^0(M)$.
+	Notice that we can always choose $\varphi$ so that, for all $x\in M$, $\varphi(x)$ depends only on the value $\tau(x)$, where $\tau$ is the global time function defined in Theorem \ref{Thm: Ake-Flores-Sanchez}.
+	We set $\omega_\pm\doteq\varphi_\pm\omega$ so that $\omega^+\in\Omega_{\mathrm{spc}}^k(M)\cap\Omega_\sharp^k(M)$ while $\omega^-\in\Omega_{\mathrm{sfc}}^k(M)\cap\Omega_{\sharp}^k(M)$.
+	This is automatic for $\sharp=\mathrm{D}$ on account of the equality
+	\begin{align*}
+	\mathrm{t}\omega^\pm=\varphi_\pm\mathrm{t}\omega=0\,,\qquad
+	\mathrm{n}\omega^\pm=\varphi_\pm\mathrm{n}\omega=0\,.
+	\end{align*}
+	We now check that $\omega^\pm\in\Omega^k_\sharp(M)$ for $\sharp=\perp$. The proof for the remaining boundary conditions $\perp,f_\parallel,f_\perp$ follows by a similar computation -- or by duality \textit{cf.} Remark \ref{Rmk: duality of bc under Hodge action}. It holds
+	\begin{align*}
+	\mathrm{n}\omega_\pm=\varphi_\pm|_{\partial M}\mathrm{n}\omega=0\,,\qquad
+	\mathrm{n}\mathrm{d}\omega_\pm=\mathrm{n}(\mathrm{d}\chi\wedge\omega)=\partial_\tau\chi\,\mathrm{n}_{\partial\Sigma_\tau}\mathrm{t}_{\Sigma_\tau}\omega=0\,.
+	\end{align*}
+	In the last equality
+	%	\clacomment{Siete d'accordo?}
+	$\mathrm{t}_{\Sigma_\tau}\colon\Omega^k(M)\to\Omega^k(\Sigma_\tau)$ and $\mathrm{n}_{\partial\Sigma_\tau}\colon\Omega^k(\Sigma_\tau)\to\Omega^{k-1}(\partial\Sigma_\tau)$ are the maps from Definition \ref{Def: tangential and normal component} with $N\equiv\Sigma_\tau\doteq\{\tau\}\times\Sigma$, where $M=\mathbb{R}\times\Sigma$. The last identity follows because the condition $\mathrm{n}\omega=0$ is equivalent to $\mathrm{n}_{\partial\Sigma_\tau}\mathrm{t}_{\Sigma_\tau}\omega=0$ and $\mathrm{n}_{\partial\Sigma_\tau}\mathrm{n}_{\Sigma_\tau}\omega=0$ for all $\tau\in\mathbb{R}$ -- \textit{cf.} Lemma \ref{Lem: equivalence between M-boundary conditions and Sigma-boundary conditions}.
+\end{proof}

@@ -1,0 +1,495 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Masters/Doctoral Thesis 
+% LaTeX Template
+% Version 2.5 (27/8/17)
+%
+% This template was downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Version 2.x major modifications by:
+% Vel (vel@latextemplates.com)
+%
+% This template is based on a template by:
+% Steve Gunn (http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/)
+% Sunil Patel (http://www.sunilpatel.co.uk/thesis-template/)
+%
+% Template license:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+11pt, % The default document font size, options: 10pt, 11pt, 12pt
+%oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
+english, % ngerman for German
+singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
+%draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
+%nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
+%liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
+%toctotoc, % Uncomment to add the main table of contents to the table of contents
+%parskip, % Uncomment to add space between paragraphs
+%nohyperref, % Uncomment to not load the hyperref package
+headsepline, % Uncomment to get a line under the header
+%chapterinoneline, % Uncomment to place the chapter title next to the number on one line
+%consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
+]{MastersDoctoralThesis} % The class file specifying the document structure
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+
+%\usepackage{mathptmx}
+\usepackage{lmodern} % Use the Palatino font by default
+\renewcommand\rmdefault{ptm}
+
+\usepackage[backend=bibtex,style=alphabetic,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+
+\addbibresource{example.bib} % The filename of the bibliography
+
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+
+\usepackage{amsmath,amssymb,amsthm,amsfonts,amscd,color,eucal,latexsym,mathrsfs,mathtools,cancel,tikz}
+\usepackage{epsfig}  % ciao
+%\usepackage{refcheck} % to check references
+\usepackage{simplewick}
+%\usepackage{tikz-cd}
+\usepackage{hyperref}
+\usepackage[all,cmtip]{xy}
+\usetikzlibrary{matrix,calc}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{verbatim}
+
+%\definecolor{NicoColor}{RGB}{56, 174, 199}
+\definecolor{NiColor}{RGB}{77,77,255}
+\definecolor{NiColoRed}{RGB}{255,77,77}
+\definecolor{NiCitation}{RGB}{77,255,77}
+\newcommand{\nicomment}[1]{\textbf{\textcolor{NiColor}{#1}}}
+\newcommand{\nicorrection}[1]{\textbf{\textcolor{NiColoRed}{#1}}}
+\newcommand{\nicitation}[1]{\textbf{\textcolor{NiCitation}{#1}}}
+
+\newtheoremstyle{TheoremStyle}% <name>
+{10pt}% <Space above>
+{10pt}% <Space below>
+{\slshape}% <Body font>
+{}% <Indent amount>
+{\bf}%{\itshape}% <Theorem head font>
+{.}% <Punctuation after theorem head>
+{.5em}% <Space after theorem head>
+{}% <Theorem head spec (can be left empty, meaning 'normal')>
+\newtheoremstyle{ExampleAndRemarkStyle}% <name>
+{5pt}% <Space above>
+{10pt}% <Space below>
+{}% <Body font>
+{}% <Indent amount>
+{\bf}%{\itshape}% <Theorem head font>
+{.}% <Punctuation after theorem head>
+{.5em}% <Space after theorem head>
+{}% <Theorem head spec (can be left empty, meaning 'normal')>
+\newtheoremstyle{ProofStyle}% <name>
+{5pt}% <Space above>
+{10pt}% <Space below>
+{}% <Body font>
+{}% <Indent amount>
+{\bf}%{\itshape}% <Theorem head font>
+{.}% <Punctuation after theorem head>
+{.5em}% <Space after theorem head>
+{}% <Theorem head spec (can be left empty, meaning 'normal')>
+
+\theoremstyle{TheoremStyle}
+%\theoremstyle{classicthm}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{assumption}[theorem]{Assumption}
+
+\newtheorem{theore}{Theorem}[chapter]
+\newtheorem{propositio}[theore]{Proposition}
+\newtheorem{lemm}[theore]{Lemma}
+
+%\theoremstyle{definition}[theorem]{Definition}
+\newtheorem{Definition}[theorem]{Definition}
+\newtheorem{Definitio}[theore]{Definition}
+\theoremstyle{ExampleAndRemarkStyle}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{remar}[theore]{Remark}
+\newtheorem{example}[theorem]{Example} %[theorem]{Example}
+\theoremstyle{ProofStyle}
+\newtheorem*{Proof}{Proof}
+
+
+
+\renewenvironment{proof}{\begin{Proof}}{\hfill$\blacksquare$ \end{Proof}}
+
+
+
+\newenvironment{Example}{\begin{example}}{\hfill$\blacksquare$ \end{example}}
+
+%----------------------------------------------------------------------------------------
+%	MARGIN SETTINGS
+%----------------------------------------------------------------------------------------
+
+\geometry{
+	paper=a4paper, % Change to letterpaper for US letter
+	inner=2.3cm, % Inner margin
+	outer=3.5cm, % Outer margin
+	bindingoffset=.5cm, % Binding offset
+	top=2.5cm, % Top margin
+	bottom=2.5cm, % Bottom margin
+	%showframe, % Uncomment to show how the type block is set on the page
+}
+
+%\onehalfspacing
+\linespread{1.15}
+\setlength{\parindent}{0pt}
+
+%----------------------------------------------------------------------------------------
+%	THESIS INFORMATION
+%----------------------------------------------------------------------------------------
+
+\thesistitle{On the role of boundary conditions in the construction of fundamental solutions for Maxwell's equations on spacetimes with timelike boundary} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
+\supervisor{Prof. Claudio Dappiaggi} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
+\examiner{} % Your examiner's name, this is not currently used anywhere in the template, print it elsewhere with \examname
+\degree{Master Degree} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
+\author{Rubens Longhi} % Your name, this is used in the title page and abstract, print it elsewhere with \authorname
+\addresses{} % Your address, this is not currently used anywhere in the template, print it elsewhere with \addressname
+
+\subject{Physics} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
+\keywords{} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
+\university{\href{http://www.unipv.eu}{University of Pavia}} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
+\department{\href{http://fisica.unipv.it}{Department of Physics}} % Your department's name and URL, this is used in the title page and abstract, print it elsewhere with \deptname
+\group{} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
+\faculty{} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
+
+\AtBeginDocument{
+\hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
+\hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
+\hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
+}
+
+\begin{document}
+
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.3\textwidth]{unipv}\par\vspace{0.5cm}
+	{\scshape\huge Universit\`a degli Studi di Pavia\par}
+	\vspace{0.5cm}
+	{\scshape\LARGE Dipartimento di Fisica\par
+		\vspace{0.2cm}
+		\Large\textit{Corso di Laurea Magistrale in Scienze Fisiche}\par}
+	\vspace{1cm}
+	\rule{14cm}{0.1pt}
+	
+	\vspace{1cm}
+	{\LARGE\bfseries On the role of boundary conditions in the construction of fundamental solutions for Maxwell's equations on spacetimes with timelike boundary \par}
+	\vspace{1.5cm}
+	\vfill\large\begin{flushright} Tesi per la Laurea Magistrale di:\\ \textbf{Rubens Longhi} % Text prior to the author name - right aligned and bold
+	\end{flushright}
+	\vspace{.5cm}
+	\begin{flushleft}
+		Relatore:\\
+		\textbf{Prof. Claudio Dappiaggi}\\[.3cm] % Advisor's/supervisor's name
+		Correlatore:\\
+		\textbf{Dott. Nicol\'o Drago}\\[.3cm] % Advisor's/supervisor's name
+	\end{flushleft}
+	
+	
+	
+	\vfill
+	
+	% Bottom of the page
+	{\large A.A. 2018-2019\par}
+\end{titlepage}
+
+%\begin{titlepage}
+%\begin{center}
+%
+%\vspace*{.06\textheight}
+%{\scshape\LARGE \univname\par}\vspace{1.5cm} % University name
+%\textsc{\Large Doctoral Thesis}\\[0.5cm] % Thesis type
+%
+%\HRule \\[0.4cm] % Horizontal line
+%{\huge \bfseries \ttitle\par}\vspace{0.4cm} % Thesis title
+%\HRule \\[1.5cm] % Horizontal line
+% 
+%\begin{minipage}[t]{0.4\textwidth}
+%\begin{flushleft} \large
+%\emph{Author:}\\
+%\href{http://www.johnsmith.com}{\authorname} % Author name - remove the \href bracket to remove the link
+%\end{flushleft}
+%\end{minipage}
+%\begin{minipage}[t]{0.4\textwidth}
+%\begin{flushright} \large
+%\emph{Supervisor:} \\
+%\href{http://www.jamessmith.com}{\supname} % Supervisor name - remove the \href bracket to remove the link  
+%\end{flushright}
+%\end{minipage}\\[3cm]
+% 
+%\vfill
+%
+%\large \textit{A thesis submitted in fulfillment of the requirements\\ for the degree of \degreename}\\[0.3cm] % University requirement text
+%\textit{in the}\\[0.4cm]
+%\groupname\\\deptname\\[2cm] % Research group name and department name
+% 
+%\vfill
+%
+%{\large \today}\\[4cm] % Date
+%%\includegraphics{Logo} % University/department logo - uncomment to place it
+% 
+%\vfill
+%\end{center}
+%\end{titlepage}
+
+%%----------------------------------------------------------------------------------------
+%%	DECLARATION PAGE
+%%----------------------------------------------------------------------------------------
+%
+%\begin{declaration}
+%\addchaptertocentry{\authorshipname} % Add the declaration to the table of contents
+%\noindent I, \authorname, declare that this thesis titled, \enquote{\ttitle} and the work presented in it are my own. I confirm that:
+%
+%\begin{itemize} 
+%\item This work was done wholly or mainly while in candidature for a research degree at this University.
+%\item Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
+%\item Where I have consulted the published work of others, this is always clearly attributed.
+%\item Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this thesis is entirely my own work.
+%\item I have acknowledged all main sources of help.
+%\item Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.\\
+%\end{itemize}
+% 
+%\noindent Signed:\\
+%\rule[0.5em]{25em}{0.5pt} % This prints a line for the signature
+% 
+%\noindent Date:\\
+%\rule[0.5em]{25em}{0.5pt} % This prints a line to write the date
+%\end{declaration}
+
+\cleardoublepage
+
+%----------------------------------------------------------------------------------------
+%	QUOTATION PAGE
+%----------------------------------------------------------------------------------------
+
+\vspace*{0.2\textheight}
+
+\noindent\enquote{\itshape The mathematician plays a game in which he himself invents the rules while the physicist plays a game in which the rules are provided by nature, but as time goes on it becomes increasingly evident that the rules which the mathematician finds interesting are the same as those which nature has chosen. }\bigbreak
+
+\hfill Paul A.M. Dirac
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{abstract}
+\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
+Studiamo le equazioni di Maxwell su spazitempi globalmente iperbolici con bordo di tipo tempo, dapprima in termini del tensore di Faraday $F$ in presenza di un'interfaccia tra due mezzi e successivamente in termini del potenziale vettore $A$, ridefinendo opportunamente il significato di invarianza di gauge. Con metodi di analisi funzionale e teoria degli operatori su spazi di Hilbert, costruiamo le soluzioni fondamentali per una particolare classe di condizioni al contorno in uno spaziotempo ultrastatico per l'operatore delle onde. Basandoci su di esse, descriviamo lo spazio delle soluzioni delle equazioni di Maxwell. In vista di possibili applicazioni alla teoria quantistica dei campi algebrica, costruiamo infine l'algebra delle osservabili associata, studiandone le proprietà.\\
+
+\vskip1cm
+
+We study Maxwell's equations on globally hyperbolic spacetimes with timelike boundary, at first formulated in terms of the electromagnetic tensor $F$ in presence of an interface between two media and secondly formulated in terms of the vector potential $A$, redefining properly the notion of gauge invariance. With methods from functional analysis and operator theory on Hilbert spaces, we construct fundamental solutions for a particular class of boundary conditions in an ultrastatic background for the wave operator. Relying on their existence, we characterize the space of solutions of Maxwell's equations. In view of possible applications in algebraic quantum field theory, we build the algebra of observables associated, outlining its properties.
+\end{abstract}
+
+
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+
+\tableofcontents % Prints the main table of contents
+
+%----------------------------------------------------------------------------------------
+%	DEDICATION
+%----------------------------------------------------------------------------------------
+
+\dedicatory{To my family} 
+\thispagestyle{empty}
+
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\include{Chapters/Intro}
+
+\pagestyle{thesis} % Return the page headers back to the "thesis" style
+
+% Include the chapters of the thesis as separate files from the Chapters folder
+% Uncomment the lines as you write the chapters
+
+\include{Chapters/Chapter1}
+\include{Chapters/Chapter2bis} 
+\include{Chapters/Chapter3}
+\include{Chapters/Conclusion}
+%\include{Chapters/Chapter5} 
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+
+\appendix % Cue to tell LaTeX that the following "chapters" are Appendices
+
+% Include the appendices of the thesis as separate files from the Appendices folder
+% Uncomment the lines as you write the Appendices
+
+
+
+%\include{Appendices/AppendixC}
+\include{Appendices/AppendixB}
+\include{Appendices/AppendixA}
+\include{Appendices/AppendixC}
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+%\begin{acknowledgements}
+%	\addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
+%%Ringrazio per la gentile ospitalità durante i mesi di marzo, aprile e maggio il professor Valter Moretti dell'Università di Trento, che mi ha ospitato nel suo gruppo di ricerca dove ho potuto lavorare con Nicolò. Una parte di questi mesi di trasferta è stata finanziata dallo IUSS, che qui ringrazio.\\
+%%
+%%Una versione (troppo) estesa dei ringraziamenti, nella quale potete sperare di trovare anche il vostro nome, è disponibile al termine della versione online della tesi, che si trova al seguente indirizzo: \hyperref{http://bit.ly/tesimagistraleRLonghi}{}{}{http://bit.ly/tesimagistraleRLonghi}. Potete accedervi inquadrando il seguente QR code.
+%%\begin{center}
+%%	\includegraphics[width=0.3\textwidth]{framo}
+%%\end{center}
+%
+%	
+%	
+%	
+%	Ebbene sì. Mi dà un enorme fastidio iniziare con ebbene sì, ma, ebbene sì, lo sto facendo. \'E da parecchio che non scrivo un testo esteso in italiano, probabilmente dai tempi degli \emph{Acknowledgments} contenuti nella tesi triennale. Vediamo se mi ricordo come si fa. Di acqua sotto ai ponti ne è passata parecchia. Nel momento in cui scrivo, mi trovo nell'aeroporto di Berlino Schoenefeld in attesa dell'aereo che mi porterà a casa per passare la mia ultima settimana da disoccupato tra le mie tre case, Gandino, il collegio a Pavia e il dipartimento. Dato che la compagnia aerea con cui sto viaggiando si chiama Neos e non l'ha mai sentita nessuno, spero di atterrare vivo. Se state ascoltando da me oppure leggendo voi ad alta voce questi ringraziamenti, deduco che siete presenti rispettivamente alla mia laurea o al mio funerale. L'aeroporto di Schoenefeld sta per diventare l'analogo di quello che per cinque anni è stata la stazioncina dei treni di Pavia. Pavia, in fondo cosa mi ha dato Pavia in questi anni? L'ho sempre considerata un grande paesotto, non una vera città, ma tra me e Pavia c'è stato fin da subito un'attrazione sbocciata grazie a quello che tutti conoscono come \emph{mercoledì universitario}. \'E curioso quanto sia raro per me uscire di casa a Gandino e incontrare qualcuno che conosco, con cui scambiare volentieri due chiacchiere e quanto invece sia impossibile per me mettere il becco fuori dal collegio a Pavia senza incontrare millemila persone con cui semplicemente scambiarsi un cenno o anche fermarsi a raccontare stronzate. Tutto ciò è conseguenza di molteplici fattori. In questi anni ho enormemente snobbato Gandino e abbracciato Pavia in molte delle sue sfaccettature, a partire da quella universitaria. Avevo bisogno di un posto dove potessi essere circondato da ragazzi e ragazze della mia generazione, e l'ho trovato a Pavia.\\
+%	
+%	Potrei dire molto su quello che per me ha significato il dipartimento di Fisica di Pavia, ma probabilmente mi dilungherei troppo, anche perchè questa è la quarta volta che riscrivo sto paragrafo e non esce niente di intelligente. Dirò solo grazie ai non pochi professori che mi hanno ispirato in questi anni: Claudio, i Montagna\emph{s}, il Negri, la Rebu, Vitulo ma soprattutto grazie ai ragazzi che frequentano il dipartimento. Spero di avervi aiutati nei miei tutorati e nell'avere risposto alle vostre domande e ai vostri dubbi. Quando mi chiedevate di spiegarvi qualcosa avrei dovuto io ringraziare voi, perchè non puoi dire di conoscere veramente una cosa se non sai come spiegarla anche al più scrauso degli studenti. Spero di avervi trasmesso almeno un po' della enorme passione che ho nei confronti della fisica matematica. Lascio il dipartimento nella speranza che nel prossimo periodo possa operare un rinnovamento di cui ha tanto bisogno e sul quale si discute da ormai troppo tempo.\\
+%	
+%	Sto tirando questi ringraziamenti un po' per le lunghe: lo so che vi sto annoiando e che non aspettate altro che il momento in cui verrete nominati personalmente. Eccovi accontentati.\\
+%	
+%	Ringrazio tanto Katino Karino che è la luce dei miei occhi che mi illumina il cammino nel buio della vita. Ringrazio anche Bianka che è la stella nel cieloh che mi guida nel perkorso e mi dà molto da mangiare.\\
+%	
+%	Ringrazio la mia famiglia, che mi ha sempre supportato e non mi ha fatto mancare niente in questi anni. Ringrazio Pietro e tutti i miei zii che hanno creduto in me e mi hanno dato sempre tantissimo, molto di più di quanto mi meritassi.\\
+%	
+%	Ringrazio Martina, Cane, Allegria, Maria Ganja, Uolter, Frollo, Zio Sam, Virgi e Vale (Tinelli avrà una sezione a parte). Noi siamo i SuperSopravvissuti, reduci di quel \emph{Caffè a 90} nella camera 90 di Allegria, che ha raggiunto il punto di maggior splendore durante il nostro mitico terzo anno di Uni, con anche Mago, Angelo e Francesca Rinaudo. Grazie per tutti i video idioti guardati insieme, per i discorsi campati per aria, per le lacrime, per le risate e soprattutto per le enormi quantità di caffè trangugiate in questi anni. A presto.\\
+%	
+%	Ringrazio il Collegio Ghislieri, il quale mi ha accolto in questi anni. Nonostante tutti i suoi difetti, ho amato molto quel posto e le persone che ho potuto conoscervi.
+%	
+%	Ringrazio i miei compagni d'anno collegiale, specialmente Germe, Elmo, Livia, Chiara, Gigio, Camilla, Max, Ciccio, Sonia, Lisa, Sebo, Maria Chiara, Dania, Giulia, Sunny, Brock... Puntini puntini perchè stavo per metterne tanti. Non dimenticherò mai il nostro primo anno: certi periodi capitano una e una sola volta nella vita.
+%	
+%	Ringrazio le mie matricoline, che ora sono in procinto di diventare quart'anni: Gioia, Zullo, D per Vendetta, Marsu, Bolo, Jack, Baffo, Tratto, Roberta, Marcello (Silvia), Silvia (Marcello), Sandio e tutti gli altri che non riesco ad elencare perchè l'aereo sta per partire, ma che sanno che questo ringraziamento è anche per loro. Con alcuni di voi, in particolare con Gioia, ho condiviso i momenti più belli e gioiosi, ma anche quelli più provanti della mia vita collegiale. A presto, sono sicuro che ve la caverete anche senza i miei inutili consigli.\\
+%	
+%	Grazie ai miei amici camperisti Tinelli, Elena, Nonno, Betta e Chiara. Il viaggio con voi e i mesi passati con voi nel 2018 sono stati di una spensieratezza unica nel suo genere. Mi sono divertito tantissimo a fare l'uomo-camper tuttofare, abbaiare come un cane di piccola taglia e a sopravvivere con voi in 6 in 6 metri quadri nel nostro viaggio europeo.
+%	
+%	In particolare grazie a Tinelli. In questi ultimi due anni sei stato non solo un amico fedele, ma anche la mia certezza che la vita collegiale non fosse solo studio, ma che fosse soprattutto cazzeggio. Le risate, le stronzate, la voglia di stare insieme alla gente, di uscire, di divertirsi non ti mancano mai. E quando sono con te, tutte queste cose si attivano anche dentro di me. \'E come se la tua terronaggine mi contagiasse, ma la tua è una \emph{malattia} che sono disposto a contrarre.
+%	
+%	Grazie ad Indiscienza e agli indiscienziati, perchè ogni anno hanno tenuto viva in me la sempre meno presente componente sperimentale.\\
+%	
+%	
+%	Grazie ai miei amici storici, in particolare Daniel, che è stato in tutti questi anni il mio legame con la realtà gandinese e uno dei principali amici, oltre ai miei compagni di liceo, per i quali tornavo a casa al weekend. Ti chiedo di non perdere mai la tua voglia di fare e di non perderti d'animo. La via della scienza è a volte tortuosa, ma è la più soddisfacente da percorrere.
+%	
+%	Già che li ho citati fatemi ringraziare Giordano, Michela, Martina, Giulia, Pizzo, Manny il mammuth, Nicole, Pozzo, Losa e gli altri amaldini dei bei tempi. I momenti passati in quegli anni di liceo e dopo il liceo ci hanno legati incredibilmente. Non perdiamoci mai di vista. MAI!
+%	
+%	Grazie all'inquietantissimo Berti.\\
+%	
+%	Grazie ai miei compagni di facoltà e in particolare a Alice, Monte, Bonfo, Vix, Nicole e Ale Triacca. Ad Alice devo moltissimo: abbiamo passato praticamente tutta la magistrale seguendo gli stessi corsi e siamo sempre stati accomunati da un unico sogno eretico, ovvero la matematica. Buona fortuna a Vienna. Le nostre strade si reincontreranno sicuramente. Grazie ad Ale Triacca per non aver mai perso i contatti e le speranze con me, fin dai tempi del primo anno. Un ringraziamento anche alla tua famiglia!
+%	
+%	Per quanto riguarda il Boss Monte, ho con te un immenso debito. Grazie a te, Nicole, Bonfo e Vix, ho potuto conoscere un gruppo di persone fantastico e con il quale mi sono sempre divertito a passare le vacanze estive. A presto, cari Andy, Fede (Ragazza freddolosa), Fede, Giorgia, Lavi, Barbara, Michela, Andre, Lara, Simona.\\
+%	
+%	Ringrazio le mie compagne d'ufficio (Elisabetta e Valentina) e i miei coinquilini di Trento (Viviana, Bobo, Mattia e Lisa). Sono stato a Trento solo tre mesi, ma sono contento di averli passati con voi. Siete stati degli ottimi compagni di avventura.
+%	
+%	Grazie ai miei relatori Claudio e Nicolò. Senza Nicolò, a Trento non avrei combinato assolutamente nulla e soprattutto non avrei affinato l'arte dei pessimi giochi di parole. Senza Claudio, invece, non avrei combinato nulla in generale. Devo davvero tantissimo a Claudio e mi sono trovato spesso a domandarmi come faccia a credere in un Povero Pirla Pigrone (P.P.P.) come me. Grazie davvero. A presto.
+%	
+%	Grazie al prof Valter Moretti per l'ospitalità a Trento e per avermi fatto constatare empiricamente che essere un genio non implica necessariamente essere un pessimo insegnante (e grazie al prof D'Ariano per avermi fatto capire che anche l'implicazione opposta è falsa).\\
+%	
+%	Mentre sto scrivendo questa parte il mio aereo è partito. \'E anche atterrato, incredibilmente. Anzi, ne sono partiti molti altri di aerei. Uno di essi in particolare mi ha portato qui in Germania, da dove sto scrivendo ora a settimane di distanza dalla mia laurea. Posso quindi ringraziare tutti gli innumerevoli partecipanti alla mia discussione di laurea e alla susseguente festa. Vedervi lì tutti insieme è stato davvero toccante: un momento che porterò nella memoria per sempre. Scusate se non ho finito questi ringraziamenti prima della laurea stessa, ma sono un pigrone colossale e le cose da fare erano così tante (questo non giustifica il mio ritardo successivo).
+%	
+%	Infine devo procedere nel ringraziamento più importante e più difficile. L'ho procrastinato fino alla fine perchè non ero certo che le mie parole sarebbero state all'altezza del compito. Il compito è così arduo che preferisco fare delle scuse, prima dei ringraziamenti. E allora scusami, Bianca. Scusami se siamo partiti così piano. Scusami se mi ci è voluto del tempo per amarti. Scusami se mi ci è voluto del tempo per aprirmi e per dedicarmi a te. Scusa se ci ho messo così tanto e se nel frattempo ti ho deluso molte volte. Scusa se non sono sempre all'altezza delle tue aspettative. Ma il nostro percorso è stato un crescendo. Siamo partiti da poco e siamo arrivati a moltissimo, a non poterci staccare l'uno dall'altro. La derivata del nostro rapporto è sempre positiva: in questi due anni siamo cresciuti e abbiamo imparato a volerci bene. Passate le scuse, ora ti posso ringraziare. Grazie per tutti i momenti che abbiamo passato insieme, tutti gli hamburger, le pite, i montaditos, le crepes, i disegni, le tazze, i maghetti, i film, i gatti, i miagolii, il nostro Katino. Sei una gattina straordinaria, hai un sacco di talenti e sono stato davvero fortunato ad incontrarti. Fidati di me: la derivata è positiva, e la derivata seconda anche. Se hai studiato per l'esame di matematica di Schimperna sai che questo significa che le cose potranno solo che migliorare, nonostante i fatti della vita ci abbiano temporanemente separato. Non vedo l'ora di riabbracciarti.\\
+%	
+%	\hfill\emph{Au revoir a tout!}
+%	
+%	
+%	
+%	
+%%	
+%%	
+%%	
+%%	
+%%	
+%%	
+%%
+%\end{acknowledgements}
+%%
+%%----------------------------------------------------------------------------------------
+%%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%%----------------------------------------------------------------------------------------
+%
+%%\tableofcontents % Prints the main table of contents
+%
+%%\listoffigures % Prints the list of figures
+%
+%%\listoftables % Prints the list of tables
+%
+%%----------------------------------------------------------------------------------------
+%%	ABBREVIATIONS
+%%----------------------------------------------------------------------------------------
+%
+%%\begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
+%%	
+%%	\textbf{LAH} & \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere\\
+%%	\textbf{WSF} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or\\
+%%	
+%%\end{abbreviations}
+%
+%
+%%----------------------------------------------------------------------------------------
+%%	SYMBOLS
+%%----------------------------------------------------------------------------------------
+%
+%\begin{symbols}{ll} % Include a list of Symbols (a three column table)
+%	
+%	$(M,g)$ & globally hyperbolic spacetime of dimension $m$ (with timelike boundary)\\
+%	$(\Sigma,h)$ & Cauchy hypersurface as a Riemannian manifold (with boundary)\\
+%	$J^+(p)$ & causal future of $p\in M$\\
+%	$J^-(p)$ & causal past of $p\in M$\\
+%	$\mathbb{M}^m$ & $m$-dimensional Minkowski spacetime\\
+%	$\mathbb{M}_+^m$ & $m$-dimensional half-Minkowski spacetime\\
+%	$ E\to M$ & a finite rank vector bundle on $M$\\
+%	$\Gamma(E)$ & sections of $E$\\
+%	$\Gamma_{\mathrm{c}}(E)$ & compactly supported sections of $E$\\
+%	$\Omega^k(M)$ & differential $k$-forms on $M$\\
+%	$\Omega_{\mathrm{c}}^k(M)$ & compactly supported differential $k$-forms on $M$\\
+%	$\star$ & Hodge dual operator\\
+%	$(\,,\,)$, $(\,,\,)_M$ & metric induced pairing $\int_M \cdot\,\wedge\star\,\cdot$\\
+%	$\mathrm{d},\delta$ & differential and codifferential operators\\
+%	
+%	\addlinespace % Gap to separate the Roman symbols from the Greek
+%	
+%	
+%	
+%\end{symbols}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\printbibliography[heading=bibintoc]
+
+
+%\bibliography{example}		% expects file "myrefs.bib"
+%\bibliographystyle{plain}	% (uses file "plain.bst")
+
+
+
+
+%----------------------------------------------------------------------------------------
+
+\end{document}  

@@ -1,0 +1,69 @@
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+
+Algebraic quantum field theory is a mathematically rigorous framework that allows to quantize classical fields. It does not give a quantum theory from first principles, but it is a technique that, whenever one is able to construct a classical relativistic field theory, permits to characterize the observables and the states of the associated quantum system. Moreover, this framework is suitable for a generalization to curved backgrounds.
+When dealing with quantum field theories, a formulation in terms of a fixed Hilbert space is inadequate, since on the one hand the system possesses an infinite number of degrees of freedom and on the other hand on curved spacetimes there is no Poincar\'e invariance to rely on. Hence, in the algebraic formulation, a physical system is described no more by self-adjoint operators on a Hilbert space, but by self-adjoint elements of an abstract $*$-algebra called the \emph{algebra of observables}, which encodes the collection of physical quantities that can be measured on the system.\\
+
+Our aim in this thesis is to build the algebra of observables for a free electromagnetic system in a suitable class of curved spacetimes with boundary. This is based on the construction of the classical Maxwell field in terms of differential $k$-forms, proving the existence of distinguished advanced and retarded fundamental solutions for the Maxwell operator under suitable boundary conditions.\\
+
+A fundamental solution or Green operator $\mathrm{G}$ for a differential operator $P$ is an \emph{inverse} of $P$ with prescribed support properties. It allows to solve the equation $Pu=f$ for any compactly supported source $f$. More precisely, fundamental solutions for $P$ acting on sections of a vector bundle $E$ are defined as $\mathrm{G} : \Gamma_c(E) \rightarrow \Gamma(E)$ satisfying
+\begin{equation*}
+P \circ \mathrm{G}=\mathrm{G} \circ P=\left.\mathrm{id}\right|_{\Gamma_c(E)}.
+\end{equation*}
+
+We plan to construct explicitly, for each choice of boundary conditions, two operators $\mathrm{G}^{\pm}$ for Maxwell operator, called \emph{advanced} and \emph{retarded} fundamental solutions, such that $\operatorname{supp}\left(\mathrm{G}^{\pm}(f)\right) \subseteq J^{\pm}(\operatorname{supp}(f))$ for any $f$, where the symbols $J^\pm$ denote the causal future $(+)$ and the causal past $(-)$. These conditions ensures a \emph{finite speed of propagation}.
+
+Analyzing the support properties of the Green operators gives us information about the propagation of initial data. Moreover fundamental solutions are important for the construction of (causal) propagators, that allow to implement quantum commutation relations at the level of the algebra of observables for a quantum field theory.
+
+We will construct such operators choosing physically meaningful classes of boundary conditions, namely those that ensure that the flux of physically relevant quantities, such as those built from the stress-energy tensor, through the boundary is vanishing. This, combined with the requirement of unitary evolution,  translates mathematically in the condition of self-adjointness of the operators involved.\\
+
+From a geometric point of view, we will focus on {globally hyperbolic spacetimes} with timelike boundary $({M},g)$, which have been introduced in a very recent paper by Aké, Flores and Sanchez -- \emph{cf.} \cite{Ake-Flores-Sanchez-18}. They are the natural class of spacetimes where boundary conditions can be assigned.
+In the \emph{ultrastatic} case, when there exists a global irrotational timelike Killing field, $M$ splits smoothly as a product $\mathbb{R}\times\Sigma$, where the metric admits a decomposition $g=-\mathrm{d} t^{2}+h$, where $\Sigma$ is a {Riemannian manifold} with boundary such that the Cauchy surface $\{t\} \times {\Sigma}$ has Riemannian metric $h$ for any time $t$.\\
+
+We focus initially on homogeneous Maxwell equations for the Faraday $2$-form $F$.
+%The motivation of our interest lies in the fact that Maxwell action
+%%\begin{equation}
+%%\mathcal{S}_{EM}=-\frac14\int_{\overline{M}}F\wedge\star F,%=-\frac14\int_{\overline{M}}F^{ab}F_{ab}\,\mathrm{d}\mu_g,%=-\frac14\int_{\overline{M}}g_{ac}g_{bd}F^{ab}F^{cd}\,\mathrm{d}\mu_g,
+%%\end{equation}
+%is {invariant} under a {conformal} {scaling} $g\mapsto \Omega^2 g$ of the metric, hence with a conformal transformation we can recover the case of $\operatorname{AdS}$ spacetimes. $\operatorname{AdS}$ are spacetimes with conformal timelike boundary, together with a metric which is related to that being under our exam. The study of quantum field theories and boundary conditions on $\operatorname{AdS}$ spacetime is motivated by the long-term ambition to understand in rigorous mathematical terms the $\operatorname{AdS}$/CFT conjecture.
+
+Maxwell's equations read
+\begin{equation}
+\begin{cases}
+\mathrm{d} F=0\\
+\delta F=0,
+\end{cases}
+\end{equation} 
+where $\mathrm{d},\delta$ are the exterior derivative and the codifferential, respectively, while $F\in\Omega^2({M})$ is the Faraday $2$-form, which in a {static} case has the following decomposition in terms of electric and magnetic time-dependent differential forms $E\in C^\infty(\mathbb{R},\Omega^1(\Sigma))$ and $B\in C^\infty(\mathbb{R},\Omega^2(\Sigma))$:
+\begin{equation}
+F=B+\mathrm{d} t\wedge E.
+\end{equation}
+In the second chapter of this thesis we will be able to construct fundamental solutions to Maxwell's equations for $F$ with prescribed conditions at an interface between two media, which will be regarded as two different globally hyperbolic spacetimes with timelike boundary.\\
+
+Otherwise, Maxwell's equations can be written in terms of a generic vector potential $A\in\Omega^k(M)$, $0<k<\dim M$ that is locally defined as a primitive of $F\in\Omega^{k+1}(M)$, in other words $F=\mathrm{d} A$ locally. In this case the equations of motion are $\delta\mathrm{d}A=0$ and we have to take into account the \emph{gauge invariance} of the theory and the interplay between the gauge freedom and the choice of boundary conditions on a globally hyperbolic spacetime with timelike boundary.
+
+At first, we will prove the existence of fundamental solutions for the D'alembert--de Rham wave operator $\Box=\delta\mathrm{d}+\mathrm{d}\delta$ in this framework for a certain class of boundary conditions in static spacetimes. Usually, in solving Maxwell's equations in a spacetime with no boundary, one works in the so called \emph{Lorenz gauge} $\delta A=0$ so to recast the problem into an hyperbolic form $\Box A=0$. We shall employ the same technique, which is available only for two restricted classes of boundary conditions for $A$ that we named $\delta\mathrm{d}$-tangential (vanishing tangential component) and $\delta\mathrm{d}$-normal (vanishing normal derivative). Relying on these results we will be able to characterize the space of solutions of Maxwell's equations, but it will become clear that two distinct notions of gauge invariance have to be defined for each of the aforementioned boundary conditions.\\
+
+In conclusion, as we mentioned earlier, we construct the algebra of observables for Maxwell's equations for the vector potential $A$ under those boundary conditions. We will prove that the algebras so constructed are physically sound: they are \emph{optimal}. This means that they contain enough and no more elements to distinguish between different configurations of the field.
+
+Furthermore, we will show that, in analogy with the case without boundary, the algebra possesses a non-trivial centre: This topological obstruction is a feature which is common in Abelian gauge theories such as electromagnetism and it translates the impossibility to interpret such models as \emph{locally covariant quantum field theories}. In fact, electromagnetism is not a local theory: It possesses non-local observables which measure the electric flux through surfaces that include monopoles. -- \emph{cf.} \cite{Dappiaggi-Hack-Sanders-14}.\\
+
+\vskip2cm
+
+The thesis is organized as follows.\\
+The first chapter is devoted to establishing the geometric and analytic framework in which we will work. In particular, we define globally hyperbolic spacetimes with timelike boundary and we recall the notion of differential forms. Subsequently, we give an account of Sobolev spaces for Riemannian manifolds of bounded geometry. Then we recall the definition of fundamental solutions (or Green operators) and we give some example. In conclusion we state Maxwell's equations and we outline the problems that we tackle in the following chapters.\\
+
+In the second chapter we analyze Maxwell's equations for the field strength $F$ in a spacetime with a codimension $1$ interface $Z\subset \Sigma$ between two media, regarded as manifolds with timelike boundary. We will separate the equations in a non-dynamical part, that will be treated using the so-called Hodge decomposition (\emph{cf.} \cite{Schwarz-95}) and a dynamical part, whose fundamental solutions are constructed using a technique from functional analysis, namely that of \emph{Lagrangian subspaces}. These allow to discriminate physically sound interface conditions. In the end, we give an account of the possible extensions of the results to the construction of the algebra of quantum observables for $F$.\\
+
+The third and final chapter starts with the proof of the existence of advanced and retarded fundamental solutions for $\Box=\delta\mathrm{d}+\mathrm{d}\delta$ operating on $k$-forms in ultrastatic spacetimes with timelike boundary using a functional analysis technique called \emph{boundary triples}, under certain classes of boundary conditions. We apply our results to identify the space of solutions of $\delta\mathrm{d} A=0$ under the aforementioned $\delta\mathrm{d}$-tangential and $\delta\mathrm{d}$-normal boundary conditions. In addition we distinguish two different notions of gauge invariance and we show that within the two gauge equivalence classes is always possible to find a representative that abides Lorenz gauge. We give an account of the notion of algebra of observables within the framework of algebraic quantum field theory and we identify, for the two boundary conditions, the optimal algebras.\\
+
+Part of the content of this thesis has appeared as an independent 
+publication, available on the \hyperref{https://arxiv.org/abs/1908.09504}{}{}{ArXiv}: \cite{DDL19}.
+
+
+
+
+
+
+
+

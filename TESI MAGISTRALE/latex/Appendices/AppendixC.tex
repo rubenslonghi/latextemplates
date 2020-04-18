@@ -1,0 +1,159 @@
+
+\chapter{Proofs of statements in Subsection \ref{Sub: symplectic structures}} % Main appendix title
+
+\label{App: proofs symplectic}
+
+
+
+\begin{propositio}\label{Prop: proof presymplectic structure on spacelike solutions with gauge boundary conditions}
+	Let $(M,g)$ be a globally hyperbolic spacetime with timelike boundary.
+	Let $[A_1],[A_2]\in\operatorname{Sol}_{\mathrm{t}}^{\mathrm{sc}}(M)$ and, for $A_1\in[A_1]$, let $A_1=A_1^++A_1^-$ be any decomposition such that $A^+\in\Omega_{\mathrm{spc,t}}^k(M)$ while $A^-\in\Omega_{\mathrm{sfc,t}}^k(M)$
+	-- \textit{cf.} Lemma \ref{Lem: on boundary conditions preserving splitting}.
+	Then the following map $\sigma_{\mathrm{t}}\colon\operatorname{Sol}_{\mathrm{t}}^{\mathrm{sc}}(M)^{\times 2}\to\mathbb{R}$ is a presymplectic form:
+	\begin{align}\label{Eqn: proof presymplectic structure on solutions with gauge boundary conditions}
+	\sigma_{\mathrm{t}}([A_1],[A_2])=
+	(\delta\mathrm{d}A_1^+,A_2)\,,\qquad
+	\forall [A_1],[A_2]\in\operatorname{Sol}_{\mathrm{t}}^{\mathrm{sc}}(M)\,.
+	\end{align}
+	A similar result holds for $\operatorname{Sol}_{\mathrm{nd}}^{\mathrm{sc}}(M)$ and we denote the associated presymplectic form $\sigma_{\mathrm{nd}}$.
+	In particular for all $[A_1],[A_2]\in\operatorname{Sol}_{\mathrm{nd}}^{\mathrm{sc}}(M)$ we have $\sigma_{\mathrm{nd}}([A_1],[A_2])\doteq(\delta\mathrm{d}A_1^+,A_2)$ where $A_1\in[A_1]$ is such that $A\in\Omega^k_{\mathrm{sc},\perp}(M)$.
+\end{propositio}
+\begin{proof}
+	We shall prove the result for $\sigma_{\mathrm{nd}}$, the proof for $\sigma_{\mathrm{t}}$ being the same mutatis mutandis.
+	
+	First of all notice that for all $[A]\in\operatorname{Sol}_{\mathrm{nd}}^{\mathrm{sc}}(M)$ there exists $A'\in[A]$ such that $A'\in\Omega_\perp^k(M)$.
+	This is realized by picking an arbitrary $A\in[A]$ and defining $A'\doteq A+\mathrm{d}\chi$ where $\chi\in\Omega_{\mathrm{sc}}^{k-1}(M)$ is such that $\mathrm{nd}\chi=-\mathrm{n}A$ -- \textit{cf.} Remark \ref{Rmk: surjectivity of t,n,tdelta,nd}.
+	We can thus apply Lemma \ref{Lem: on boundary conditions preserving splitting} in order to split $A'=A'_++A'_-$ where $A'_+\in\Omega_{\mathrm{spc,nd}}^k(M)$ and $A'_-\in\Omega_{\mathrm{sfc,nd}}^k(M)$. Notice that this procedure is not necessary for $\delta\mathrm{d}$-tangential boundary condition since we can always split $A\in\Omega_{\mathrm{sc,t}}^k(M)$ as
+	$A=A^++A^-$ with $A_+\in\Omega_{\mathrm{spc,t}}^k(M)$ and $A_-\in\Omega_{\mathrm{sfc,t}}^k(M)$ without invoking Lemma \ref{Lem: on boundary conditions preserving splitting}.
+	
+	After these preliminary observations consider the map
+	\begin{align*}
+	\sigma_{\mathrm{nd}}\colon(\ker\delta\mathrm{d}\cap\Omega_{\mathrm{sc},\perp}^k(M))^{\times 2}\ni(A_1,A_2)\mapsto(\delta\mathrm{d}A_1^+,A_2)\,,
+	\end{align*}
+	where we used Lemma \ref{Lem: on boundary conditions preserving splitting} and we split $A_1=A_1^++A_1^-$, with $A_1^+\in\Omega_{\mathrm{spc},\perp}^k(M)$ while $A_1^-\in\Omega_{\mathrm{sfc},\perp}^k(M)$.
+	The pairing $(\delta\mathrm{d}A_1^+,A_2)$ is finite because $A_2$ is a spacelike compact $k$-form while $\delta\mathrm{d}A_1^+$ is compactly supported on account of $A_1$ being on-shell.
+	Moreover, $(\delta\mathrm{d}A_1^+,A_2)$ is independent from the splitting $A_1=A_1^++A_1^-$ and thus $\sigma_{\mathrm{nd}}$ is well-defined.
+	Indeed, let $A_1=\widetilde{A}_1^++\widetilde{A}_1^-$ be another splitting: it follows that $A_1^+-\widetilde{A}_1^+=-(A_1^--\widetilde{A}_1^-)\in\Omega_{\mathrm{c,nd}}^k(M)$. Therefore
+	\begin{align*}
+	(\delta\mathrm{d}\widetilde{A}_1^+,A_2)=
+	(\delta\mathrm{d}A_1^+,A_2)+
+	(\delta\mathrm{d}(\widetilde{A}_1^+-A_1^+),A_2)=
+	(\delta\mathrm{d}A_1^+,A_2)\,,
+	\end{align*}
+	where in the last equality we used the self-adjointness of $\delta\mathrm{d}$ on $\Omega_{\mathrm{nd}}^k(M)$.
+	
+	We show that $\sigma_{\mathrm{nd}}(A_1,A_2)=-\sigma_{\mathrm{nd}}(A_2,A_1)$ for all $A_1,A_2\in\ker\delta\mathrm{d}\cap\Omega_{\mathrm{sc},\perp}^k(M)$.
+	For that we have
+	\begin{align*}
+	\sigma_{\mathrm{nd}}(A_1,A_2)=
+	(\delta\mathrm{d}A_1^+,A_2)&=
+	(\delta\mathrm{d}A_1^+,A_2^+)+(\delta\mathrm{d}A_1^+,A_2^-)\\&=
+	-(\delta\mathrm{d}A_1^-,A_2^+)+(\delta\mathrm{d}A_1^+,A_2^-)\\&=
+	-(A_1^-,\delta\mathrm{d}A_2^+)+(A_1^+,\delta\mathrm{d}A_2^-)\\&=
+	-(A_1^-,\delta\mathrm{d}A_2^+)-(A_1^+,\delta\mathrm{d}A_2^+)\\&=
+	-(A_1,\delta\mathrm{d}A_2^+)=
+	-\sigma_{\mathrm{nd}}(A_1,A_2)\,,
+	\end{align*}
+	where we exploited Lemma \ref{Lem: on boundary conditions preserving splitting} and $A_1^\pm,A_2^\pm\in\Omega_{\mathrm{sc,nd}}^k(M)$.
+	
+	Finally we prove that $\sigma_{\mathrm{nd}}(A_1,\mathrm{d}\chi)=0$ for all $\chi\in\Omega^k_{\mathrm{sc}}(M)$.
+	Together with the antisymmetry shown before, this entails that $\sigma_{\mathrm{nd}}$ descends to a well-defined map $\sigma_{\mathrm{nd}}\colon\operatorname{Sol}_{\mathrm{nd}}^{\mathrm{sc}}(M)^{\times 2}\to\mathbb{R}$ which is bilinear and antisymmetric. Therefore it is a presymplectic form.
+	To this end let $\chi\in\Omega^{k-1}_{\mathrm{sc}}(M)$: we have
+	\begin{align*}
+	\sigma_{\mathrm{nd}}(A,\mathrm{d}\chi)=
+	(\delta\mathrm{d}A_1^+,\mathrm{d}\chi)=
+	(\delta^2\mathrm{d}A_1^+,\chi)
+	+(\mathrm{n}\delta\mathrm{d}A^+,\mathrm{t}\chi)=0\,,
+	\end{align*}
+	where we used Equation \eqref{Eqn: boundary terms for delta and d} as well as $\mathrm{n}\delta\mathrm{d}A=-\delta\mathrm{nd}A=0$.
+\end{proof}
+
+\begin{propositio}\label{Prop: proof characterization of solution space in terms of test-forms}
+	Let $(M,g)$ be a globally hyperbolic spacetime with timelike boundary.
+	Then the following linear maps are isomorphisms of vector spaces
+	\begin{align}
+	&G_\parallel\colon
+	\frac{\Omega_{\mathrm{tc},\delta}^k(M)}{\delta\mathrm{d}\Omega_{\mathrm{tc},\mathrm{t}}^k(M)}\to
+	\operatorname{Sol}_{\mathrm{t}}(M)\,,\qquad
+	G_\parallel\colon
+	\frac{\Omega_{\mathrm{c},\delta}^k(M)}{\delta\mathrm{d}\Omega_{\mathrm{c},\mathrm{t}}^k(M)}\to
+	\operatorname{Sol}_{\mathrm{t}}^\mathrm{sc}{}(M)\,,\\
+	&G_\perp\colon
+	\frac{\Omega_{\mathrm{tc},\delta}^k(M)}{\delta\mathrm{d}\Omega_{\mathrm{tc},\mathrm{nd}}^k(M)}\to
+	\operatorname{Sol}_{\mathrm{nd}}(M)\,,\qquad
+	G_\perp\colon
+	\frac{\Omega_{\mathrm{c},\delta}^k(M)}{\delta\mathrm{d}\Omega_{\mathrm{c},\mathrm{nd}}^k(M)}\to
+	\operatorname{Sol}_{\mathrm{nd}}^\mathrm{sc}{}(M)\,,
+	\end{align}
+\end{propositio} 
+
+\begin{proof}
+	Mutatis mutandis, the proof of the four isomorphisms is the same.
+	Hence we focus only on $G_\parallel\colon\frac{\Omega_{\mathrm{tc},\delta}^k(M)}{\delta\mathrm{d}\Omega_\mathrm{t}^k(M)}\to\operatorname{Sol}_{\mathrm{t}}(M)$.
+	
+	A direct computation shows that $G_\parallel\left[\Omega_{\mathrm{tc},\delta}^k(M)\right]\subseteq\mathcal{S}^\Box_{\mathrm{t},k}(M)$. The condition $\delta G_\parallel\omega=0$ follows from Corollary \ref{Cor: G commutes with d, delta}.
+	Moreover, $G_\parallel$ descends to the quotient since for all $\eta\in\Omega_{\mathrm{tc},\mathrm{t}}^k(M)$ we have $G_\parallel\delta\mathrm{d}\eta=-G_\parallel\mathrm{d}\delta\eta=-\mathrm{d}G_\parallel\delta\eta\in\mathrm{d}\Omega_{\mathrm{t}}^{k-1}(M)$ on account of Corollary \ref{Cor: G commutes with d, delta}.
+	
+	We prove that $G_\parallel$ is surjective. Let $[A]\in\operatorname{Sol}_{\mathrm{t}}(M)$.
+	In view of Proposition \ref{Prop: Lorentz gauge for deltad-tangential bc} there exists $A^\prime\in[A]$ such that $\Box_\parallel A^\prime=0$ as well as $\delta A^\prime=0$.
+	Proposition \ref{Prop: exact sequence and duality relations} ensures that there exists $\alpha\in\Omega_{\mathrm{tc}}^k(M)$ such that $A^\prime=G_\parallel\alpha$.
+	Moreover, condition $\delta A^\prime =0$ and Corollary \ref{Cor: G commutes with d, delta} implies that $\delta\alpha\in\ker G_\parallel$, therefore $\delta\alpha=\Box_\parallel\eta$ for some $\eta\in\Omega_{\mathrm{tc},\parallel}^k(M)$ -- \textit{cf.} Proposition \ref{Prop: exact sequence and duality relations} and Remark \ref{Rmk: extension of short exact sequence}.
+	Applying $\delta$ to the equality $\delta\alpha=\Box_\parallel\eta$ we find $\Box\delta\eta=0$, that is, $\delta\eta=0$ -- \textit{cf} Remark \ref{Rmk: compactly supported solutions of the wave operator}.
+	It follows that $\delta\alpha=\delta\mathrm{d}\eta$.
+	Moreover we have $[A]=[G_\parallel\alpha]=[G_\parallel\alpha-\mathrm{d}G_\parallel\eta]=[G_\parallel(\alpha-\mathrm{d}\eta)]$, where now $\alpha-\mathrm{d}\eta\in\Omega_{\mathrm{tc},\delta}^k(M)$.
+	
+	Finally we prove that $G_\parallel$ is injective: let $[\alpha]\in\frac{\Omega_{\mathrm{tc},\delta}^k(M)}{\delta\mathrm{d}\Omega_{\mathrm{tc},\mathrm{t}}^k(M)}$ be such that $[G_\parallel\alpha]=[0]$.
+	This entails that there exists $\chi\in\Omega^{k-1}_{\mathrm{tc,t}}(M)$ such that $G_\parallel\alpha=\mathrm{d}\chi$.
+	Corollary \ref{Cor: G commutes with d, delta} and $\alpha\in\Omega_{\mathrm{tc},\delta}^k(M)$ ensures that $\delta\mathrm{d}\chi=0$, therefore $\chi\in\operatorname{Sol}_{\mathrm{t}}(M)$.
+	Proposition \ref{Prop: Lorentz gauge for deltad-tangential bc}, Remark \ref{Rmk: extension of short exact sequence} and Corollary \ref{Cor: G commutes with d, delta} ensures that $\mathrm{d}\chi=\mathrm{d}G_\parallel\beta$ with $\beta\in\Omega_{\mathrm{tc},\delta}^k(M)$.
+	It follows that $\alpha-\mathrm{d}\beta\in\ker G_\parallel$ and therefore $\alpha-\mathrm{d}\beta=\Box_\parallel\eta$ for $\eta\in\Omega_{\mathrm{tc},\parallel}^k(M)$ -- \textit{cf.} Remark \ref{Rmk: extension of short exact sequence}.
+	Applying $\delta$ to the last equality we find $\Box\beta=\Box\delta\eta$, hence $\beta=\delta\eta$ because of Remark \ref{Rmk: compactly supported solutions of the wave operator}.
+	It follows that $\alpha=\delta\mathrm{d}\eta$ with $\eta\in\Omega_{\mathrm{c,t}}^k(M)$, that is, $[\alpha]=[0]$.
+\end{proof} 
+
+\begin{propositio}\label{Prop: proof presymplectomorphism for spacelike solution spaces}
+	Let $(M,g)$ be a globally hyperbolic spacetime with timelike boundary.
+	The following statements hold true:
+	\begin{enumerate}
+		\item
+		$\frac{\Omega^k_{\mathrm{c},\delta}(M)}{\delta\mathrm{d}\Omega_{\mathrm{c},\mathrm{t}}^k(M)}$ is a pre-symplectic space if endowed with the bilinear map $\widetilde{G}_\parallel([\alpha],[\beta])\doteq(\alpha,G_\parallel\beta)$.
+		
+		Moreover $\bigg(\frac{\Omega^k_{\mathrm{c},\delta}(M)}{\delta\mathrm{d}\Omega_{\mathrm{c},\mathrm{t}}^k(M)},\widetilde{G}_\parallel\bigg)$ is symplectomorphic to $(\operatorname{Sol}_{\mathrm{t}}(M),\sigma_{\mathrm{t}})$.
+		\item
+		$\frac{\Omega^k_{\mathrm{c},\delta}(M)}{\delta\mathrm{d}\Omega_{\mathrm{c,nd}}^k(M)}$ is a pre-symplectic space
+		if endowed with the bilinear map $\widetilde{G}_\perp([\alpha],[\beta])\doteq(\alpha,G_\perp\beta)$.
+		
+		Moreover $\bigg(\frac{\Omega^k_{\mathrm{c},\delta}(M)}{\delta\mathrm{d}\Omega_{\mathrm{c},\mathrm{nd}}^k(M)},\widetilde{G}_\perp\bigg)$ is pre-symplectomorphic to $(\operatorname{Sol}_{\mathrm{nd}}(M),\sigma_{\mathrm{nd}})$.
+	\end{enumerate}  
+\end{propositio}
+
+\begin{proof}
+	The proof of the two statements is the same. Hence we focus only on the first one. We observe that $\widetilde{G}_\parallel$ is well-defined.
+	As a matter of fact, let $\alpha,\beta\in\Omega_{\mathrm{c},\delta}^k(M)$, then $G_\parallel\beta\in\Omega_{\mathrm{sc}}^k(M)$ and therefore the pairing $(\alpha,G_\parallel\beta)$ is finite.
+	Moreover if $\eta\in\Omega_{\mathrm{c},\parallel}^k(M)$ we have
+	\begin{align*}
+	(\delta\mathrm{d}\eta,G_\parallel\beta)&=
+	(\eta,\delta\mathrm{d}G_\parallel\beta)=
+	-(\eta,\mathrm{d}\delta G_\parallel\beta)=
+	-(\eta,\mathrm{d}G_\parallel\delta\beta)=0\,,\\
+	(\alpha,G_\parallel\delta\mathrm{d}\eta)&=
+	-(\alpha,G_\parallel\mathrm{d}\delta\eta)=
+	-(\alpha,\mathrm{d}G_\parallel\delta\eta)=0\,,
+	\end{align*}
+	where we used that $G_\parallel\beta,\eta\in\Omega_{\mathrm{c},\mathrm{t}}^k(M)$ -- \textit{cf.} Equation \eqref{Eqn: boundary terms for delta d operator} -- as well as $\delta G_\parallel\beta=G_\parallel\delta\beta=0$ -- \textit{cf.} Corollary \ref{Cor: G commutes with d, delta}.
+	Therefore $\widetilde{G}_\parallel$ is well-defined: Moreover, it is per construction bilinear and antisymmetric, therefore it induces a pre-symplectic structure.
+	
+	We now show that the isomorphism $G_\parallel\colon\frac{\Omega_{\mathrm{c},\delta}^k(M)}{\delta\mathrm{d}\Omega_{\mathrm{c},\parallel}^k(M)}\to\operatorname{Sol}_{\mathrm{t}}(M)$ is a pre-symplectomorphism. Let $[\alpha],[\beta]\in\frac{\Omega^k_{\mathrm{c},\delta}(M)}{\delta\mathrm{d}\Omega_{\mathrm{c},\parallel}^k(M)}$.
+	As a direct consequence of the properties of $G_\parallel=G_\parallel^+-G_\parallel^-$, calling $A_1=G_\parallel\alpha$ and $A_2=G_\parallel\beta$, we can consider $A_1^\pm=G_\parallel^\pm\alpha$ in Equation \eqref{Eqn: proof presymplectic structure on solutions with gauge boundary conditions}.
+	This leads us to
+	\begin{align*}
+	\sigma_{\mathrm{t}}([G_\parallel\alpha],[G_\parallel\beta])=
+	(\delta\mathrm{d}G_\parallel^+\alpha,G_\parallel\beta)=
+	(\Box G_\parallel^+\alpha-\mathrm{d}\delta G_\parallel^+\alpha,G_\parallel\beta)=
+	(\alpha,G_\parallel\beta)=
+	\widetilde{G}_\parallel([\alpha],[\beta])\,,
+	\end{align*}
+	where we used Corollary \ref{Cor: G commutes with d, delta} so that $\mathrm{d}\delta G_\parallel^+\alpha=\mathrm{d}G_\parallel^+\delta\alpha=0$.
+\end{proof}
+
+

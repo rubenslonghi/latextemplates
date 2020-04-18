@@ -1,0 +1,706 @@
+\chapter{Maxwell's equations for the field strength and interface conditions} % Main chapter title
+
+\label{Chapter2} % For referencing the chapter elsewhere, use \ref{Chapter1}
+
+
+
+
+As outlined in Section \ref{Sec: Maxwell introduction}, the form of Maxwell's equations allows us to use both $F$ and $A$ as variables with which we can describe electromagnetic phenomena. Whenever the second cohomology group $H^2(M)$ is trivial, the two theories are equivalent, since $F=\mathrm{d}A$.
+
+
+In this chapter, we regard $F\in\Omega^2(M)$ as the physical dynamical variable which describes electromagnetism. This is not always true, whenever the first cohomology group with integer coefficients is non-trivial, as previously discussed in Section \ref{Sec: Maxwell introduction}. The aim of this chapter is to present a technique which allows to characterize, in a class of manifolds with the presence of an interface between two media, the existence of fundamental solutions for Maxwell's equations, written in terms of the Faraday form $F\in\Omega^2(M)$. The presence of an interface on the one hand generalizes the idea of a timelike boundary, allowing to recover the geometric setting outlined in Chapter \ref{Chapter1} if one side of the interface is a perfect insulator. On the other hand, in order to make use of geometric techniques such as Hodge decomposition, we will have to make several geometric assumptions which ensure global hyperbolicity, but unfortunately they lead to a loss in generality.
+
+\section{Geometrical setup}\label{Sec: static decomposition}
+The physical and practical situation we want to approach is that of a manifold split into two parts, filled with two media, each of them with different electromagnetic properties. The two media will be separated by an hypersurface, on which our aim will be that of putting \emph{jump conditions}.
+
+We consider a globally hyperbolic, standard static Lorentzian manifold $(M,g)$ with \emph{empty boundary}, such that $M$ can be decomposed as $\mathbb{R}\times\Sigma$, where the Cauchy hypersurface $(\Sigma,h)$ is assumed to be a complete, connected, odd-dimensional, \emph{closed} Riemannian manifold. Under these conditions, $\Sigma$ is of \emph{bounded geometry} (see \ref{Def: bounded geometry empty bound}).  In this chapter, we denote with $\mathrm{d}_M,\delta_M$ the differential and co-differential over $M$, while $\mathrm{d},\delta$ denote those over $\Sigma$.
+%\\\nicomment{(We should look for references where the (weak) Hodge decomposition is established for non-compact Riemannian manifold with boundary. If this is the case and if the results presented below remain valid with the weak Hodge decomposition, we will drop the closedness assumption.)}\\
+%The assumptions we made so far on imply that $(M,g)$ is a globally hyperbolic spacetime without boundary.
+
+\noindent Maxwell's equations read
+\begin{align}\label{Eqn: covariant Maxwell's equations}
+\mathrm{d}_MF=0\,,\quad\delta_M F=0\,,\quad  F\in\Omega^2(M).
+\end{align}
+
+Given the decomposition $M\simeq\mathbb{R}\times\Sigma$ and recalling Theorem \ref{Thm: Ake-Flores-Sanchez}, let us indicate with $\iota_ t\colon\Sigma\to M$ the smooth one-parameter group of embedding maps which realizes $\Sigma$ at time $t$ as $\iota_t\Sigma=\lbrace  t\rbrace\times\Sigma\doteq\Sigma_t$. Then, it holds the diffeomorphism $\Sigma_t\simeq\Sigma_{t^\prime}\simeq \Sigma$ for all $t,t^\prime\in\mathbb{R}$.
+Hence, for all $\omega\in\Omega^k(M)$ and $t\in\mathbb{R}$, $\omega|_{\Sigma_t}\in \Gamma(\iota_t^*\Lambda^kT^*M)$, where  $\iota_t^*(\Lambda^kT^*M)$ denotes the pull-back bundle over $\Sigma_t\simeq\Sigma$ built out of $\Lambda^kT^*M$ via $\iota_t$ -- \textit{cf.} \cite{husemoller1966fibre}.
+Moreover, recalling Definition \ref{Def: tangential and normal component}, it holds that $\omega|_{\Sigma_t}$ can be further decomposed as
+\begin{align*}
+\omega|_{\Sigma_t}:=
+(\star_{\Sigma_t}^{-1}\iota_t^*\star_M)\omega\wedge\mathrm{d}t+
+\iota_t^*\omega=
+\mathrm{n}_{\Sigma_t}\omega\wedge\mathrm{d}t+
+\mathrm{t}_{\Sigma_t}\omega\,.
+\end{align*}
+where $\mathrm{t}_{\Sigma_t}\omega\in\Omega^k(\Sigma_t)$ while $\mathrm{n}_{\Sigma_t}\omega\in\Omega^{k-1}(\Sigma_t)$ -- \textit{cf.} Definition \ref{Def: tangential and normal component}.
+With the identification $\Sigma_t\simeq\Sigma_{t^\prime}$ the decomposition induces the isomorphisms
+\begin{align}
+\nonumber\Gamma(\iota_\tau^*\Lambda^kT^*M)\simeq\,\, &\Omega^{k-1}(\Sigma)\oplus \Omega^k(\Sigma)\\
+\omega\to&\,\,(\omega_0\oplus\omega_1)\,,\\
+%\label{Eqn: identification isomorphism for k-forms on ultrastatic spacetimes}
+\nonumber \Omega^k(M)\simeq\, &C^\infty(\mathbb{R},\Omega^{k-1}(\Sigma))\oplus C^\infty(\mathbb{R},\Omega^k(\Sigma))\,\\
+\omega\to&\,\,(\tau\mapsto\mathrm{n}_{\Sigma_\tau}\omega)\oplus(\tau\mapsto\mathrm{t}_{\Sigma_\tau}\omega)\,.
+\end{align}
+In this way, we have rewritten any differential form as a pair of differential form valued functions of time.\\
+To recover the electric and magnetic components of $F$, we simply define $E\doteq-\mathrm{t}_{\Sigma_t}F$ and $\star_\Sigma B=\mathrm{n}_{\Sigma_t} F$, such that
+\begin{align}\label{Eqn: electric and magnetic components}
+F=\star_\Sigma B+\mathrm{d}t\wedge E\,,
+\end{align}
+where now $E,B\in C^\infty(\mathbb{R},\Omega^1(\Sigma))$ while $\star_\Sigma$ is the Hodge dual on $\Sigma$.
+\noindent Maxwell's equations reduce to
+\begin{subequations}\label{Eqn: Maxwell's equations}
+	\begin{align}
+	\label{Eqn: dynamical Maxwell's equations}
+	\partial_tE-\mathrm{curl}B=0\,,\qquad
+	\partial_tB+\mathrm{curl}E=0\,,\\
+	\label{Eqn: non-dynamical Maxwell's equations}
+	\mathrm{div}(E)=\mathrm{div}(B)=0\,,
+	\end{align}
+\end{subequations}
+where $\mathrm{div}=\delta$ is the co-differential on $\Sigma$, while $\mathrm{curl}$ is defined in Equation \eqref{Eqn: curl convention} -- in particular $\mathrm{curl}=\star_\Sigma\mathrm{d}$ if $\dim\Sigma=3$.\\
+To model the presence of an interface that divides $M$ in two distinct regions, we consider $Z$ a codimension $1$ smooth embedded hypersurface of $\Sigma$.
+
+In this setting we consider Maxwell's equations with $Z$-interface boundary conditions, that is we allow discontinuities to occur on $\mathbb{R}\times Z$.
+%\\\nicomment{(We should decide whether we want to consider $k$-Maxwell's equations or not.	In the former case the $\mathrm{curl}$ operator acts as $\mathrm{curl}\colon\Omega^k(\Sigma)\to\Omega^k(\Sigma)$ where $\dim\Sigma=2k+1$.)}\\
+Hence, we split $\Sigma=\Sigma_+\cup\Sigma_-$, such that
+\begin{equation}\label{Eqn: Sigma Z splitting}
+	 \Sigma_Z:=\Sigma\setminus Z=\mathring{\Sigma}_+\cup\mathring{\Sigma}_-,
+\end{equation} and we refer to $\Sigma_-$ (\textit{resp}. $\Sigma_+$) as the left (\textit{resp}. right) component of $\Sigma$.
+Moreover, $\Sigma_\pm$ are compact manifolds with boundary $\partial \Sigma_\pm= Z$, and the orientation on $Z$ induced by $\Sigma_+$ is the opposite of the one induced by $\Sigma_-$.
+Hence, the manifolds $(\mathbb{R}\times\Sigma_\pm,g=-\mathrm{d}t^2+h)$ are \emph{globally hyperbolic spacetimes with timelike boundary} (see \ref{Def: spacetime timelike boundary}), which is $\mathbb{R}\times Z$.\\
+
+Whenever the interface $Z\neq\emptyset$ the system \eqref{Eqn: Maxwell's equations} has to be modified, in particular the non-dynamical equations \eqref{Eqn: non-dynamical Maxwell's equations} involving the divergence operator $\mathrm{div}$ have to be suitably interpreted -- \textit{cf.} Subsection \ref{Rmk: Hodge formulation of non-dynamical Maxwell's equations}.
+In particular one expects that the condition $\operatorname{div}(E)=\mathrm{div}(B)=0$ should be read at a distributional level, leading to a constraint on the values at $Z$ of the normal component of $E$.
+In addition, the dynamical equations \eqref{Eqn: dynamical Maxwell's equations} have to be combined with boundary conditions at the interface $Z$ -- \textit{cf.} \parencite[Sec. I.5]{Jackson-99}.
+
+In what follows we will state the precise meaning of the problem \eqref{Eqn: Maxwell's equations} with interface $Z$ with the help of Hodge theory and of Lagrangian subspaces \parencite{Everitt-Markus-99,Everitt-Markus-03,Everitt-Markus-05}.
+%boundary triples theory \parencite{Behrndt-Langer-12}.
+
+
+\section{Constraint equations: Hodge theory with interface}\label{Sec: Non-dynamical equations: Hodge theory with interface}
+In this section we present a Hodge decomposition a the closed Riemannian manifold $(\Sigma,h)$ with interface $Z$.
+This generalizes the known results on classical Hodge decomposition on manifolds possibly with non-empty boundary \parencite{Amar-17,Axelsson-McIntosh-04,Gaffney-55,Gromov-91,Kodaira-49,Li-09,Schwarz-95,Scott-95,Zulfikar-Stroock-00}.\\
+
+Hodge theory is a generalization of Helmholtz decomposition. The latter was formulated as a splitting of vector fields into vortices and gradients, which can be understood as a rudimentary form of what is now called the \emph{Hodge decomposition}. The idea behind Helmholtz decomposition is that any vector field $\mathbf{F}$ in $\mathbb{R}^3$ can be read as a sum of an irrotational field $\mathbf{U}$, i.e. such that $\operatorname{curl}\mathbf{U}=\mathrm{d}\mathbf{U}=0$, and a solenoidal field $\mathbf{V}$, i.e. such that $\operatorname{div}\mathbf{V}=\delta\mathbf{V}=0$. In other words, for $\mathbf{F}\in C^2(\mathbb{R}^3,\mathbb{R}^3)$, one can write
+\begin{equation}
+\mathbf{F}=-\nabla\Phi+\operatorname{curl}\mathbf{A},
+\end{equation}
+where we used the fact that in $\mathbb{R}^3$ $\operatorname{curl}\mathbf{U}=0$ implies $\mathbf{U}=-\nabla\Phi$, since  $\mathbb{R}^3$ is simply connected.
+
+\begin{remark}%\label{Def: L2 space of forms}
+	With reference to Definition \ref{Def: measurable and integrable} and Remark \ref{Rmk: L2 space of forms}, in what follows $\mathrm{L}^2\Omega^k(\Sigma)$ will denote the closure of $\Omega^k_{\mathrm{c}}(\Sigma)$ (see Section \ref{Sec: Differential forms}) with respect to the pairing $(\;,\;)_\Sigma$ between $k$-forms
+	\begin{align}\label{Eqn: L2-scalar product}
+	(\alpha,\beta)_\Sigma:=\int_\Sigma\overline{\alpha}\wedge\star_\Sigma\beta\,\quad \alpha,\beta\in\Omega^k_{\mathrm{c}}(\Sigma)\,,
+	\end{align}
+	where $\star_\Sigma$ is the Hodge dual on $\Sigma$.
+\end{remark}
+
+\begin{remark}\label{Rem: abuse of notation}
+	With a slight abuse of notation we denote still with $\mathrm{d}$ and $\delta$ the extension to the space of square-integrable $k$-forms $\mathrm{L}^2\Omega^k(\Sigma)$ of the action of the differential and of the codifferential on $\Omega^k_{\mathrm{c}}(\Sigma)$.
+\end{remark}
+
+\begin{remark}
+	In agreement with Remark \ref{Rem: space of forms}, we denote with $\Omega_\mathrm{c}^k(\Sigma)$ the space of smooth and compactly supported $k$-forms. Moreover, since $\Sigma$ is of bounded geometry, for $\ell\geq\frac12$, we use the Sobolev spaces $\mathrm{H}^\ell\Omega^k(\Sigma)$ and $\mathrm{H}_0^\ell\Omega^k(\Sigma)$ of $k$-forms as defined in Definition \ref{Def: Sobolev} and in Subsection \ref{Sub: Restriction}.
+	
+	If $\Sigma$ is compact, $\Omega_\mathrm{c}^k(\Sigma)$ coincides with the space of smooth $k$-forms $\Omega^k(\Sigma)$, but we will still use $\Omega_{\mathrm{c}}^k(\Sigma)$ in view of possible generalizations. In addition, we remark that $\mathrm{H}^{-\ell}\Omega^k(\Sigma)=\mathrm{H}_0^\ell\Omega^k(\Sigma)^*$, where $\ast$ indicates the dual with respect to the scalar product $(\,,\,)_\Sigma$.
+\end{remark}
+
+%\nicomment{(If $\Sigma$ is not compact we only have that only $\mathrm{H}^\ell_{\mathrm{loc}}(\Sigma)$ is independent from the choice of the connection.	If we assume $(\Sigma,h)$ to be of bounded geometry the ambiguity disappears because of the results of \parencite{Eichorn-93}.)}
+
+
+The Hodge theorem for a closed manifold $\Sigma$ states that there is an $\mathrm{L}^2$-orthogonal decomposition
+\begin{align}\label{Eqn: Hodge decomposition on closed manifolds}
+	\mathrm{L}^2\Omega^k(\Sigma)=\mathrm{d} \mathrm{H}^1\Omega^{k-1}(\Sigma)\oplus\delta \mathrm{H}^1\Omega^{k+1}(\Sigma)\oplus{\ker(\Delta)_{\mathrm{H}^1\Omega^k(\Sigma)}}\,,
+\end{align}
+where $\Delta=\mathrm{d}\delta+\delta\mathrm{d}$ is the Laplace operator and $\ker(\Delta)_{\mathrm{H}^1\Omega^k(\Sigma)}$ denotes the space of \emph{harmonic forms}.
+If $\Sigma$ has an empty boundary, the space of harmonic forms coincides with that of \emph{harmonic fields}, $\ker(\delta)_{\mathrm{H}^1\Omega^k(\Sigma)}\cap\ker(\mathrm{d})_{\mathrm{H}^1\Omega^k(\Sigma)}$ (see \parencite{Kodaira-49} and \parencite{Schwarz-95}).
+The last result can be stated as follows and it is very easy to prove.
+\begin{proposition}
+	Let $\alpha\in\mathrm{H}^2\Omega^k(\Sigma)$, where $\Sigma$ is a closed manifold. Then $\Delta\alpha=0$ if and only if $\mathrm{d}\alpha=0$ and $\delta\alpha=0$.
+\end{proposition}
+\begin{proof}
+	If $\mathrm{d}\alpha=0$ and $\delta\alpha=0$, $\Delta\alpha=0$. On the other hand if $\Delta\alpha=0$,
+	\begin{align}
+		0=&\left(\Delta\alpha,\alpha\right)_\Sigma=\left((\mathrm{d}\delta+\delta\mathrm{d})\alpha,\alpha\right)_\Sigma=\left(\mathrm{d}\delta\alpha,\alpha\right)_\Sigma+\left(\delta\mathrm{d}\alpha,\alpha\right)_\Sigma=\\
+		=&\left(\delta\alpha,\delta\alpha\right)_\Sigma+\left(\mathrm{d}\alpha,\mathrm{d}\alpha\right)_\Sigma=\|\delta\alpha\|^2+\|\mathrm{d}\alpha\|^2.
+	\end{align}
+	So both $\mathrm{d}\alpha=0$ and $\delta\alpha=0$.
+\end{proof}
+
+\subsection{Hodge decomposition on compact manifold with non-empty boundary}
+For a compact manifold $\Sigma$ with non-empty boundary $\partial\Sigma$ the decomposition \eqref{Eqn: Hodge decomposition on closed manifolds} requires a slight adjustment and harmonic forms do not coincide with harmonic fields anymore.
+Because of boundary terms, $\ker\Delta$ no longer coincides with the closed and co-closed forms. It turns out that every harmonic field is a harmonic form, but the converse is false. To show this, consider the following example.
+\begin{Example}
+	Let $U$ be a bounded subset of $\mathbb{R}^2$, endowed with the standard Euclidean metric. On $U$, the 1-form $\omega=x \,dy$ is harmonic, since its second derivatives vanish, but $\omega\notin\ker \mathrm{d}$, since
+	
+	\[\mathrm{d}(x\, \mathrm{d}y) = \partial_x\, x\, \mathrm{d}x \wedge \mathrm{d}y + \partial_y\, x\, \mathrm{d}y \wedge \mathrm{d}y = \mathrm{d}x \wedge \mathrm{d}y.\] $\omega$ is though in $\ker \delta$ as $\star\, \mathrm{d} \star (x\, \mathrm{d}y) =\star\, \mathrm{d}(x \,\mathrm{d}x) = 0$.
+\end{Example}
+\begin{Definition}
+	We call $\mathcal{H}^k(\Sigma)$ the $\mathrm{L}^2$-closure of the space of harmonic fields
+	\begin{equation}\label{Eqn: harmonic fields}
+		\mathcal{H}^k(\Sigma)=\overline{\lbrace\omega\in \mathrm{H}^1\Omega^k(\Sigma)|\;\mathrm{d}\omega=0\,,\;\delta\omega=0\rbrace}\,.
+	\end{equation}
+	With a slight abuse of notation, we will refer to the elements of $\mathcal{H}^k(\Sigma)$ as \emph{harmonic fields}
+\end{Definition}
+
+
+
+In fact, the space of harmonic fields is infinite dimensional and the spaces $\mathrm{d} \mathrm{H}^1\Omega^{k-1}(\Sigma)$, $\delta H^{1}\Omega^{k+1}(\Sigma)$, $\mathcal{H}^k(\Sigma)$ are not orthogonal unless suitable boundary conditions are imposed.
+Therefore, one has to give a precise meaning to the boundary value of a differential form. Since differential forms are not scalar quantities, one can define a normal and a tangential projection along the boundary.
+
+\begin{remark}\label{Rmk: extension of tangential and normal maps to Sobolev spaces}
+	We recall that the tangential and normal traces $\mathrm{t}$ and $\mathrm{n}$ of a differential form are defined according to Definition \ref{Def: tangential and normal component} and are extended as in Subsection \ref{Sub: Restriction} to continuous surjective maps as in Equation \eqref{Eqn: Sobolev tangential and normal trace maps}, that we recall for completeness:
+	\begin{align}
+	\mathrm{t}\oplus\mathrm{n}\colon
+	\mathrm{H}^\ell\Omega^k(\Sigma)\to
+	\mathrm{H}^{\ell-\frac{1}{2}}\Omega^k(\partial\Sigma)\oplus
+	\mathrm{H}^{\ell-\frac{1}{2}}\Omega^k(\partial\Sigma)\,\qquad\forall\ell\geq\frac{1}{2}\,.
+	\end{align}
+\end{remark}
+Next, we present the Hodge decomposition for compact manifolds with boundary, a proof of which can be found at \parencite[Thm. 2.4.2]{Schwarz-95}.
+\begin{theorem}\label{Thm: Hodge decomposition for manifolds with boundary}
+	Let $(\Sigma,h)$ be a compact, connected, Riemannian manifold with non-empty boundary %$\partial\Sigma\stackrel{\iota_{\partial\Sigma}}{\hookrightarrow}\Sigma$.
+	\begin{enumerate}
+		\item
+		For all $\omega\in \Omega_\mathrm{c}^{k-1}(\Sigma)$ and $\eta\in \Omega_\mathrm{c}^{k}(\Sigma)$ it holds
+		\begin{align}\label{Eqn: boundary terms}
+			(\mathrm{d}\omega,\eta)_\Sigma-(\omega,\delta\eta)_\Sigma=
+			(\mathrm{t}\omega,\mathrm{n}\eta)_{\partial\Sigma}\,,
+%			\int_{\partial\Sigma}\mathrm{t}\overline{\omega}\wedge\ast_{\Sigma}\mathrm{n}\eta\,,
+		\end{align}
+		where $(\;,\;)_\Sigma$ has been defined in Equation \eqref{Eqn: L2-scalar product} while $(\;,\;)_{\partial\Sigma}$ is defined similarly.
+		Equation \eqref{Eqn: boundary terms} still holds true for $\omega\in \mathrm{H}^\ell\Omega^{k-1}(\Sigma)$ and $\eta\in \mathrm{H}^\ell\Omega^{k}(\Sigma)$.
+		\item
+		The Hilbert space $\mathrm{L}^2\Omega^k(\Sigma)$ of square integrable $k$-forms splits in the $\mathrm{L}^2$-orthogonal direct sum
+		\begin{align}\label{Eqn: Hodge decomposition for manifold with boundary}
+			\mathrm{L}^2\Omega^k(\Sigma)=
+			\mathrm{d} \mathrm{H}^1\Omega^k_{\mathrm{t}}(\Sigma)\oplus
+			\delta \mathrm{H}^1\Omega^{k+1}_{\mathrm{n}}(\Sigma)
+			\oplus\mathcal{H}^k(\Sigma)\,,		
+		\end{align}
+		where $\mathcal{H}^k(\Sigma)$ is defined per Equation \eqref{Eqn: harmonic fields} while, in view of Equation \eqref{Eqn: k-forms with vanishing tangential or normal component}
+		\begin{align}\label{Eqn: Dirichlet and Neumann forms}
+			\mathrm{H}^1\Omega^{k-1}_{\mathrm{t}}(\Sigma):=\lbrace\alpha\in \mathrm{H}^1\Omega^{k-1}(\Sigma)|\;\mathrm{t}\alpha=0\rbrace\,,\\
+			\mathrm{H}^1\Omega^{k+1}_{\mathrm{n}}(\Sigma):=\lbrace\beta\in \mathrm{H}^1\Omega^{k+1}(\Sigma)|\;\mathrm{n}\beta=0\rbrace\,.
+		\end{align} 
+	\end{enumerate}
+\end{theorem}
+%\noindent\emph{Sketch of proof.} We first observe that the decomposition is direct. The spaces $\mathrm{d} \mathrm{H}^1\Omega^k_{\mathrm{t}}(\Sigma)$, $\delta \mathrm{H}^1\Omega^{k+1}_{\mathrm{n}}(\Sigma)$ and $\mathcal{H}^k(\Sigma)$ are mutually orthogonal to each other with respect to the inner product on $\mathrm{L}^2\Omega^k(\Sigma)$, which is an immediate consequence of Equation \eqref{Eqn: boundary terms}. Hence the Hodge
+%decomposition - if it is established - is a $\mathrm{L}^2$-orthogonal splitting. It remains to show that the decomposition \eqref{Eqn: Hodge decomposition for manifold with boundary} is complete. In particular it suffices to show that
+%\begin{enumerate}
+%	\item each $\omega\in\mathrm{L}^2\Omega^k(\Sigma)$ splits uniquely as $\omega=\mathrm{d}\alpha+\delta\beta+\kappa$, with $\alpha\in \mathrm{H}^1\Omega^{k-1}_{\mathrm{t}}(\Sigma)$, $\beta\in\mathrm{H}^1\Omega^{k+1}_{\mathrm{n}}(\Sigma)$ and $\kappa\in\left(\mathrm{d} \mathrm{H}^1\Omega^k_{\mathrm{t}}(\Sigma)\oplus
+%	\delta \mathrm{H}^1\Omega^{k+1}_{\mathrm{n}}(\Sigma)\right)^\perp$;
+%	\item the spaces $\mathrm{d} \mathrm{H}^1\Omega^k_{\mathrm{t}}(\Sigma)$ and $\delta \mathrm{H}^1\Omega^{k+1}_{\mathrm{n}}(\Sigma)$ are closed in the $\mathrm{L}^2$ topology;
+%	\item the $\mathrm{L}^2$-orthogonal complement $\left(\mathrm{d} \mathrm{H}^1\Omega^k_{\mathrm{t}}(\Sigma)\oplus
+%	\delta \mathrm{H}^1\Omega^{k+1}_{\mathrm{n}}(\Sigma)\right)^\perp$ coincides with $\mathcal{H}^k(\Sigma)$.
+%\end{enumerate}
+
+%e tu sei un orsottopotto
+
+\begin{remark}
+		The previous decomposition generalizes to Sobolev spaces, in particular for all $\ell\in\mathbb{N}\cup\{0\}$ we have
+		\begin{align}\label{Eqn: Hodge decomposition for manifold with boundary for Sobolev spaces}
+			\mathrm{H}^\ell\Omega^k(\Sigma)=\mathrm{d} \mathrm{H}^{\ell+1}\Omega^k_{\mathrm{t}}(\Sigma)\oplus\delta \mathrm{H}^{\ell+1}\Omega^{k+1}_{\mathrm{n}}\oplus
+			\mathrm{H}^\ell \mathcal{H}^k(\Sigma)\,,		
+		\end{align}
+		where $\mathrm{H}^\ell \mathcal{H}^k(\Sigma)=\mathcal{H}^k(\Sigma)\cap\mathrm{H}^\ell\Omega^k(\Sigma)$, since $\mathrm{H}^\ell\Omega^k(\Sigma)\hookrightarrow\mathrm{L}^2\Omega^k(\Sigma)$.
+\end{remark}
+
+
+\subsection{Hodge decomposition for compact manifold with interface}
+In this section we generalize Theorem \ref{Thm: Hodge decomposition for manifolds with boundary} to the case of a closed Riemannian manifold $\Sigma$ together with an interface $Z$. As starting point, we need to distinguish between regular $k$-forms which are defined on the whole manifold, and hence continuous, and pairs of forms which are regular separately on the two sides $\Sigma_\pm$ and are allowed to be discontinuous on $Z$.
+\begin{Definition}
+	We call
+	\begin{equation}\label{Eqn: splitting of k-forms with interface}
+		\Omega^k(\Sigma_Z):=\Omega^k(\Sigma_+)\oplus\Omega^k(\Sigma_-)\,,
+	\end{equation}
+	where it is understood that the pair $\omega+\eta\in\Omega^k(\Sigma_+)\oplus\Omega^k(\Sigma_-)$ identifies an element $\alpha\in\Omega^k(\Sigma_Z)$ such that $\alpha|_{\Sigma_+}=\omega$ and $\alpha|_{\Sigma_-}=\eta$.
+\end{Definition}
+
+\noindent	Following the previous definition,
+	\begin{equation}
+		\Omega_\mathrm{c}^k(\Sigma_Z)=\Omega_\mathrm{c}^k(\Sigma_+)\oplus \Omega_\mathrm{c}^k(\Sigma_-)\,.
+	\end{equation}
+	 This implies $\omega\in \Omega_\mathrm{c}^k(\Sigma_Z)$ if and only if $\omega$ is a smooth $k$-form in $\Sigma_Z$ and $\operatorname{supp}_\Sigma \omega:=\overline{\{x\in\Sigma_Z\,|\, \omega(x)\neq 0\}}^\Sigma$  is compact. Hence, forms in $\Omega_\mathrm{c}^k(\Sigma_Z)$ have support overlapping with the interface, where they are allowed to be discontinuous.\\
+
+Observe that Theorem \ref{Thm: Hodge decomposition for manifolds with boundary} applies to both $\mathrm{L}^2\Omega^k(\Sigma_\pm)$.
+In addition, since $Z$ has zero measure the space of square integrable $k$-forms splits as
+\begin{align}\label{Eqn: splitting of L^2 with interface}
+	\mathrm{L}^2\Omega^k(\Sigma)=
+	\mathrm{L}^2\Omega^k(\Sigma_Z)=
+	\mathrm{L}^2\Omega^k(\Sigma_+)\oplus\mathrm{L}^2\Omega^k(\Sigma_-)\,.
+\end{align}
+We expect that a counterpart of \eqref{Eqn: Hodge decomposition for manifold with boundary} holds true, though $\mathrm{H}^1\Omega^{k-1}_{\mathrm{t}}(\Sigma)$, $\mathrm{H}^1\Omega^{k-1}_{\mathrm{n}}(\Sigma)$ ought to be replaced by suitable jump conditions across $Z$.
+To this end, notice that the splitting \eqref{Eqn: splitting of L^2 with interface} does not generalize to the Sobolev spaces $\mathrm{H}^\ell\Omega^k(\Sigma)$, in particular
+\begin{align}
+	\mathrm{H}^\ell\Omega^k(\Sigma)\hookrightarrow
+	\mathrm{H}^\ell\Omega^k(\Sigma_Z)=
+	\mathrm{H}^\ell\Omega^k(\Sigma_+)\oplus\mathrm{H}^\ell\Omega^k(\Sigma_-)\,,
+\end{align}
+is a proper inclusion. Indeed, consider any regular form $\omega$ in $\Sigma_Z$ which has $[\mathrm{t}\omega]\neq 0$. In this case $\omega$ can not have square integrable (weak) derivatives, since a non-vanishing jump gives rise to a distributional derivative which is proportional to the Dirac delta.
+
+\begin{Definition}\label{Def: jump of tangential and normal component}
+	Let $(\Sigma,h)$ be an oriented, compact, Riemanniann manifold with interface $Z\hookrightarrow\Sigma$.
+	Moreover let $(\Sigma_\pm,h_\pm)$ the oriented, compact Riemannian manifolds with boundary $\partial\Sigma_\pm=Z$ such that $\Sigma_Z:=
+	\Sigma\setminus Z=\Sigma_+\cup\Sigma_-$.
+	For $\omega\in \Omega^k(\Sigma_Z)$ we define the tangential jump $[\mathrm{t}\omega]\in \Omega^k(Z)$ and normal jump $[\mathrm{n}\omega]\in \Omega^{k-1}(Z)$ across $Z$ by
+	\begin{align}\label{Eqn: tangential and normal jump}
+		[\mathrm{t}\omega]:=\mathrm{t}_+\omega-\mathrm{t}_-\omega\,,\qquad
+		[\mathrm{n}\omega]:=\mathrm{n}_+\omega-\mathrm{n}_-\omega\,,
+	\end{align}
+	where $\mathrm{t}_\pm$, $\mathrm{n}_\pm$ denote the tangential and normal map on $\Sigma_\pm$ as per Definition \ref{Def: tangential and normal component}.
+\end{Definition}
+\begin{remark}\label{Rmk: spaces with no jumps}
+	 The tangential and normal traces $\mathrm{t}_\pm$, $\mathrm{n}_\pm$ as well as the tangential and normal jump extend by continuity on $\mathrm{H}^1\Omega^k(\Sigma_Z)$ and are surjective if the codomain is $\mathrm{H}^{\ell-\frac{1}{2}}\Omega^k(Z)$ - \emph{cf.} Remark \ref{Rmk: extension of tangential and normal maps to Sobolev spaces}. As a consequence of Definition \ref{Def: jump of tangential and normal component} it holds that
+	\begin{align}
+		\mathrm{H}^1\Omega^k(\Sigma)=
+		\lbrace\omega\in\mathrm{H}^1\Omega^k(\Sigma_Z)|\;[\mathrm{t}\omega]=0\,,\;[\mathrm{n}\omega]=0
+		\rbrace\,.
+	\end{align}
+	An analogous equality does not hold for $\Omega^k(\Sigma)$ because it would require traces of higher order derivatives to match at $Z$.
+\end{remark}
+\begin{theorem}\label{Thm: Hodge decomposition for manifolds with interface}
+	Let $(\Sigma,h)$ be an oriented, compact, Riemanniann manifold with interface $Z$.
+	Moreover let $(\Sigma_\pm,h_\pm)$ be the oriented, compact Riemannian manifolds with boundary $\partial\Sigma_\pm= Z$ such that $\Sigma\setminus Z=\mathring{\Sigma}_+\cup\mathring{\Sigma}_-$.
+	\begin{enumerate}
+		\item 
+		For all $\omega\in \Omega_\mathrm{c}^{k-1}(\Sigma_Z)$ and $\eta\in \Omega_\mathrm{c}^k(\Sigma_Z)$ it holds
+		\begin{align}\label{Eqn: boundary terms with interface}
+			(\mathrm{d}\omega,\eta)_Z-(\omega,\delta\eta)_Z=
+			([\mathrm{t}\omega],\mathrm{n}_+\eta)_Z-(\mathrm{t}_-\omega,[\mathrm{n}\eta])_Z\,,
+%			\int_Z[\mathrm{t}\overline{\omega}]\wedge\ast_{\Sigma}\mathrm{n}_+\eta-
+%			\int_Z\mathrm{t}_-\overline{\omega}\wedge\ast[\mathrm{n}\eta]\,,
+		\end{align}
+		where $(\;,\;)_Z$ is the scalar product between forms on $Z$ -- \textit{cf}. Equation \eqref{Eqn: L2-scalar product} -- while $\mathrm{t}_\pm$, $\mathrm{n}_\pm$ are the tangential and normal maps on $\Sigma_\pm$ as per Definition \ref{Def: tangential and normal component}.
+		Equation \eqref{Eqn: boundary terms with interface} still holds true for $\omega\in \mathrm{H}^\ell\Omega^{k-1}(\Sigma_Z)$ and $\eta\in \mathrm{H}^\ell\Omega^k(\Sigma_Z)$ for all $\ell\geq 1$.
+		\item
+		The Hilbert space $\mathrm{L}^2\Omega^k(\Sigma)$ of square integrable $k$-forms splits into the $\mathrm{L}^2$-orthogonal direct sum
+		\begin{align}\label{Eqn: Hodge decomposition for manifold with interface}
+			\mathrm{L}^2\Omega^k(\Sigma)=
+			\mathrm{d} \mathrm{H}^1\Omega^k_{[\mathrm{t}]}(\Sigma_Z)\oplus
+			\delta \mathrm{H}^1\Omega^{k+1}_{[\mathrm{n}]}(\Sigma_Z)\oplus\mathcal{H}^k(\Sigma)\,,		
+		\end{align}
+	where $\mathcal{H}^k(\Sigma)$ is defined per Equation \eqref{Eqn: harmonic fields}, while
+		\begin{align}\label{Eqn: Dirichlet and Neumann jump forms}
+			\mathrm{H}^1\Omega^{k-1}_{[\mathrm{t}]}(\Sigma_Z):=\lbrace\alpha\in \mathrm{H}^1\Omega^{k-1}(\Sigma_Z)|\;[\mathrm{t}\alpha]=0\rbrace\,,\\
+			\mathrm{H}^1\Omega^{k+1}_{[\mathrm{n}]}(\Sigma_Z):=\lbrace\beta\in \mathrm{H}^1\Omega^{k+1}(\Sigma_Z)|\;[\mathrm{n}\beta]=0\rbrace\,.
+		\end{align}
+	\end{enumerate}
+\end{theorem}
+\begin{proof}
+	Equation \eqref{Eqn: boundary terms with interface} is an immediate consequence of \eqref{Eqn: boundary terms}.
+	In particular for $\omega\in \Omega_\mathrm{c}^{k-1}(\Sigma_Z)$ and $\eta\in \Omega_\mathrm{c}^k(\Sigma_Z)$ we decompose $\omega=\omega_++\omega_-$ and $\eta=\eta_++\eta_-$ where $\omega_\pm\in \Omega_\mathrm{c}^{k-1}(\Sigma_\pm)$ and $\eta_\pm\in \Omega_\mathrm{c}^k(\Sigma_\pm)$.
+	(Notice that we have $\mathrm{t}_\pm\omega=\mathrm{t}_\pm\omega_\pm$.)
+	Applying Equation \eqref{Eqn: boundary terms} it holds
+	\begin{align*}
+		(\mathrm{d}\omega,\eta)-(\omega,\delta\eta)&=
+		\sum_\pm\big((\mathrm{d}\omega_\pm,\eta_\pm)-(\omega_\pm,\delta\eta_\pm)\big)=
+		\int_Z\mathrm{t}_+\overline{\omega}\wedge\star_Z\mathrm{n}_+\eta-
+		\int_Z\mathrm{t}_-\overline{\omega}\wedge\star_Z\mathrm{n}_-\eta\\&=
+		\int_Z[\mathrm{t}\overline{\omega}]\wedge\star_Z\mathrm{n}_+\eta-
+		\int_Z\mathrm{t}_-\overline{\omega}\wedge\star_Z[\mathrm{n}\beta]\,.
+	\end{align*}
+	A density argument leads to the same identity for $\omega\in\mathrm{H}^\ell\Omega^{k-1}(\Sigma_Z)$ and $\eta\in\mathrm{H}^{\ell}\Omega^k(\Sigma_Z)$ for $\ell\geq 1$.
+	We prove the splitting \eqref{Eqn: Hodge decomposition for manifold with interface}.
+	The spaces $\mathrm{d} \mathrm{H}^1\Omega^k_{[\mathrm{t}]}(\Sigma_Z)$, $\delta \mathrm{H}^1\Omega^{k+1}_{[\mathrm{n}]}(\Sigma_Z)$, $\mathcal{H}^k(\Sigma)$ are orthogonal because of Equation \eqref{Eqn: boundary terms with interface}.
+	Let $\omega$ be in the orthogonal complement of $\mathrm{d} \mathrm{H}^1\Omega^k_{[\mathrm{t}]}(\Sigma_Z)\oplus\delta \mathrm{H}^1\Omega^{k+1}_{[\mathrm{n}]}(\Sigma_Z)$.
+	We wish to show that $\omega\in\mathcal{H}^k(\Sigma)$.
+	We split $\omega=\omega_++\omega_-$ with $\omega_\pm\in\mathrm{L}^2\Omega^k(\Sigma_\pm)$, we apply Theorem \ref{Thm: Hodge decomposition for manifolds with boundary} to each component so that
+	\begin{align*}
+		\omega=
+		\sum_\pm\big(\mathrm{d}\alpha_\pm+\delta\beta_\pm+\kappa_\pm\big)\,,
+	\end{align*}
+	where $\alpha_\pm\in\mathrm{H}^1\Omega^{k-1}_{\mathrm{t}}(\Sigma_\pm)$, $\beta_\pm\in\mathrm{H}^1\Omega^{k+1}_{\mathrm{n}}(\Sigma_\pm)$ and $\kappa_\pm\in\mathcal{H}^k(\Sigma_\pm)$.
+	Let $\hat{\alpha}\in\mathrm{H}^1\Omega^{k-1}_{\mathrm{t}}(\Sigma_+)$: This identifies an element of $\Omega^{k-1}_{[\mathrm{t}]}(\Sigma_Z)$ by considering its extension to zero on $\Sigma_-$.
+	Since $\omega\in\left[\mathrm{d}\mathrm{H}^1\Omega_{[\mathrm{t}]}(\Sigma_Z)\right]^\perp$ we have $0=(\mathrm{d}\hat{\alpha},\omega)=(\mathrm{d}\hat{\alpha},\mathrm{d}\alpha_+)$, thus $\mathrm{d}\alpha_+=0$ by the arbitrariness of $\hat{\alpha}$.
+	With a similar argument we have $\alpha_-=0$ as well as $\beta_\pm=0$.
+	\\
+	Therefore $\omega\in\mathcal{H}^k(\Sigma_Z)$.
+	In order to prove that $\omega\in\mathcal{H}^k(\Sigma)$ we need to show that $[\mathrm{t}\omega]=0$ as well as $[\mathrm{n}\omega]=0$ -- \textit{cf.} Remark \ref{Rmk: spaces with no jumps}.
+	This is a consequence of $\omega\in\left[\mathrm{d} \mathrm{H}^1\Omega^k_{[\mathrm{t}]}(\Sigma_Z)\oplus\delta \mathrm{H}^1\Omega^{k+1}_{[\mathrm{n}]}(\Sigma_Z)\right]^\perp$.
+	Indeed, let $\alpha\in\mathrm{H}^1\Omega^{k-1}_{[\mathrm{t}]}(\Sigma_Z)$. Applying Equation \eqref{Eqn: boundary terms with interface} we find
+	\begin{align}
+		0=(\mathrm{d}\alpha,\omega)=-\int_Z\mathrm{t}_-\overline{\alpha}\wedge\star_Z[\mathrm{n}\omega]\,.
+	\end{align}
+	The arbitrariness of $\mathrm{t}_-\alpha$, $\mathrm{t}_-$ being surjective, implies $[\mathrm{n}\omega]=0$.
+	Similarly $[\mathrm{t}\omega]=0$ follows by $\omega\perp\delta\mathrm{H}^1\Omega^{k+1}_{[\mathrm{n}]}(\Sigma_Z)$.
+\end{proof}
+\begin{remark}
+	The harmonic part of decomposition \eqref{Eqn: Hodge decomposition for manifold with interface} contains harmonic $k$-forms which are continuous across the interface $Z$ -- \textit{cf.} Remark \ref{Rmk: spaces with no jumps}.
+	One can also consider a decomposition which allows for a discontinuous harmonic component. In particular it can be shown that
+	\begin{align*}
+		\mathrm{L}^2\Omega^k(\Sigma)=
+		\mathrm{d}\mathrm{H}^1\Omega^{k-1}_{\mathrm{t}}(\Sigma_Z)\oplus
+		\delta\mathrm{H}^1\Omega^{k+1}_{\mathrm{n}}(\Sigma_Z)\oplus
+		\mathcal{H}^k(\Sigma_Z)\,,
+	\end{align*}
+	where now $\mathrm{H}^1\Omega^{k-1}_{\mathrm{t}}(\Sigma_Z)$ is the subspace of $\mathrm{H}^1\Omega^{k-1}_{[\mathrm{t}]}(\Sigma_Z)$ made of $(k-1)$-forms $\alpha$ such that $\mathrm{t}_\pm\omega=0$ and similarly $\beta\in\mathrm{H}^1\Omega^{k+1}_{\mathrm{n}}(\Sigma_Z)$ if and only if $\beta\in\mathrm{H}^1\Omega^{k+1}_{[\mathrm{n}]}(\Sigma_Z)$ and $\mathrm{n}_\pm\beta=0$.
+\end{remark}
+\subsection{Further perspectives on Hodge decomposition}\label{Sec: weak-Hodge decomposition}
+	The results of Theorem \ref{Thm: Hodge decomposition for manifolds with boundary} can be generalized.
+	In 1949, Kodaira (see \parencite{Kodaira-49}) proved a \emph{weak} $\mathrm{L}^2$ orthogonal decomposition, for any (non-compact) Riemannian manifold $(M,g)$ with no boundary, of the form
+	\begin{equation}
+		\mathrm{L}^2\Omega^k(M)=\overline{\mathrm{d}\Omega_\mathrm{c}^{k-1}(M)}\oplus\overline{\delta \Omega_\mathrm{c}^{k+1}(M)}\oplus\mathcal{H}^k(M)\,.
+	\end{equation}
+	Gromov, in \parencite{Gromov-91}, proved that under the assumption that the Laplacian has a spectral gap in $\mathrm{L}^2\Omega^k(M)$, i.e. there is no spectrum of $\Delta$ in an open interval $(0, \eta)$, with $\eta>0$, the following strong $\mathrm{L}^2$-orthogonal decomposition holds for any (non-compact) Riemannian manifold $(M,g)$ with empty boundary:
+	\begin{align}
+	\mathrm{L}^2\Omega^k(M)=\mathrm{d}\mathrm{H}^1\Omega^{k-1}(M)\oplus\delta \mathrm{H}^1\Omega^{k+1}(M)\oplus\mathcal{H}^k(M)\,.
+	\end{align}
+	For the case $\partial M\neq \emptyset$, the paper by Amar, \parencite{Amar-17}, recovers a strong $\mathrm{L}^p$ decomposition for complete non-compact manifolds, while both \parencite{Li-09} and \parencite{Zulfikar-Stroock-00} prove the strong $\mathrm{L}^p$ decomposition within the framework of weighted Sobolev spaces. \parencite{Scott-95} discusses instead a strong $\mathrm{L}^p$-decomposition on compact manifolds. Finally, using weighted Sobolev spaces, Schwartz \parencite{Schwarz-95} extends to the Hodge decomposition on non-compact manifolds with non-empty boundary whenever $M$ is the complement of an open bounded domain in $\mathbb{R}^n$.
+	
+	The papers by \parencite{Axelsson-McIntosh-04,Gaffney-55} are devoted to developing the Hodge decomposition from the point of view of the theory of Hilbert space, thus arriving at it without the use of differential equation theory as in \parencite{Schwarz-95}. For the case of a non-compact Riemannian manifold $\Sigma$ one may follow the results of \parencite{Axelsson-McIntosh-04} in order to achieve the following weak-Hodge decomposition -- \textit{cf}. Equation \eqref{Eqn: Hodge decomposition for manifold with boundary}.
+	We consider the operators $\mathrm{d}_{\mathrm{t}},\delta_{\mathrm{n}}$
+	\begin{align}
+		\label{Eqn: Dirichlet differential}
+		\operatorname{dom}(\mathrm{d}_{\mathrm{t}})&:=\lbrace
+		\omega\in\mathrm{L}^2\Omega^k(\Sigma)|\;\mathrm{d}\omega\in\mathrm{L}^2\Omega^{k+1}(\Sigma)\,,\;\mathrm{t}\omega=0\rbrace\qquad
+		\mathrm{d}_{\mathrm{t}}\omega:=\mathrm{d}\omega\,,\\
+		\label{Eqn: Neumann codifferential}
+		\operatorname{dom}(\delta_{\mathrm{n}})&:=\lbrace
+		\omega\in\mathrm{L}^2\Omega^k(\Sigma)|\;\delta\omega\in\mathrm{L}^2\Omega^{k-1}(\Sigma)\,,\;\mathrm{n}\omega=0\rbrace\qquad
+		\delta_{\mathrm{n}}\omega:=\delta\omega\,.
+	\end{align}
+	Notice that $\mathrm{d}_{\mathrm{t}}$ as well as $\delta_{\mathrm{n}}$ are nihilpotent because of the relations \eqref{Eqn: relations between d,delta,t,n}.
+	These operators are closed and from Equation \eqref{Eqn: boundary terms} it follows that their adjoints are:
+	\begin{align*}
+		\operatorname{dom}(\mathrm{d})&:=\lbrace
+		\omega\in\mathrm{L}^2\Omega^k(\Sigma)|\;\mathrm{d}\omega\in\mathrm{L}^2\Omega^{k+1}(\Sigma)\rbrace\,,\qquad
+		\delta_{\mathrm{n}}^*=\mathrm{d}\,,\\
+		\operatorname{dom}(\delta)&:=\lbrace
+		\omega\in\mathrm{L}^2\Omega^k(\Sigma)|\;\delta\omega\in\mathrm{L}^2\Omega^{k-1}(\Sigma)\rbrace\,,\qquad
+		\mathrm{d}_{\mathrm{t}}^*=\delta\,.
+	\end{align*}
+	It follows that $(\overline{\operatorname{Ran}(\mathrm{d}_{\mathrm{t}})}\oplus\overline{\operatorname{Ran}(\delta_{\mathrm{n}})})^\perp=\overline{\ker(\mathrm{d})\cap\ker\delta}=\mathcal{H}^k(\Sigma)$ so that
+	\begin{align}\label{Eqn: weak-Hodge decomposition for boundary}
+		\mathrm{L}^2\Omega^k(\Sigma)=
+		\overline{\operatorname{Ran}(\mathrm{d}_{\mathrm{t}})}\oplus
+		\overline{\operatorname{Ran}(\delta_{\mathrm{n}})}\oplus
+		\mathcal{H}^k(\Sigma)\,.
+	\end{align}
+	Following the same steps of the proof of Theorem \ref{Thm: Hodge decomposition for manifolds with interface} it descends that a similar weak-Hodge decomposition holds for the case of non-compact Riemannian manifolds $\Sigma$ with interface $Z$:
+	\begin{align}\label{Eqn: weak-Hodge decomposition for interface}
+		\mathrm{L}^2\Omega^k(\Sigma)=
+		\overline{\operatorname{Ran}(\mathrm{d}_{[\mathrm{t}]})}\oplus
+		\overline{\operatorname{Ran}(\delta_{[\mathrm{n}]})}\oplus
+		\mathcal{H}^k(\Sigma)\,,
+	\end{align}
+	where $\mathrm{d}_{[\mathrm{t}]}, \delta_{[\mathrm{n}]}$ are
+	\begin{align*}
+	\operatorname{dom}(\mathrm{d}_{[\mathrm{t}]})&:=\lbrace
+	\omega\in\mathrm{L}^2\Omega^k(\Sigma)|\;\mathrm{d}\omega\in\mathrm{L}^2\Omega^{k+1}(\Sigma)\,,\;[\mathrm{t}\omega]=0\rbrace\qquad
+	\mathrm{d}_{[\mathrm{t}]}\omega:=\mathrm{d}\omega\,,\\
+	\operatorname{dom}(\delta_{[\mathrm{n}]})&:=\lbrace
+	\omega\in\mathrm{L}^2\Omega^k(\Sigma)|\;\delta\omega\in\mathrm{L}^2\Omega^{k-1}(\Sigma)\,,\;[\mathrm{n}\omega]=0\rbrace\qquad
+	\delta_{[\mathrm{n}]}\omega:=\delta\omega\,.
+	\end{align*}
+It holds $\mathrm{d}_{[\mathrm{t}]}^*=\delta_{[\mathrm{n}]}$ as well as $\delta_{[\mathrm{n}]}^*=\mathrm{d}_{[\mathrm{t}]}$ so that in particular $\ker\mathrm{d}_{[\mathrm{t}]}^*\cap\ker\delta_{[\mathrm{n}]}=\mathcal{H}^k(\Sigma)$.
+	%\\\nicomment{(The notation is sloppy, in principle $\mathrm{d}_{\Sigma,\mathrm{t}},\delta_{\Sigma,\mathrm{n}}$ depend on $k$.)}
+	
+
+	
+	
+\subsection{Non-dynamical Maxwell's equations}\label{Rmk: Hodge formulation of non-dynamical Maxwell's equations}
+	The Hodge decomposition with interface proved in Theorem \ref{Thm: Hodge decomposition for manifolds with interface} can be exploited to formulate the correct generalization of the non-dynamical components of Maxwell's equations \eqref{Eqn: non-dynamical Maxwell's equations} as follows.\\
+	We interpret the constraint $\operatorname{div} E=\delta E=0$ (and analogously $\operatorname{div} B=0$) in a distributional sense. Recalling Stokes' theorem in Equation \ref{Eqn: boundary terms for delta and d}, we can write formally:
+	\begin{equation}
+		(\mathrm{d}\psi,E)_{\Sigma_\pm}=(\psi,\delta E)_{\Sigma_\pm}+
+		(\mathrm{t}\psi,\mathrm{n}E)_{\partial\Sigma_\pm}\,,\quad \text{for } \psi\in\mathrm{H}^1\Omega^0(\Sigma).
+	\end{equation}
+	By a formal manipulation one obtains that, if $\operatorname{supp}\psi \cap Z\neq\emptyset$,
+	\begin{align}\label{Eqn: formal manipulation}
+		\nonumber(\mathrm{d}\psi,E)_{\Sigma}=&(\mathrm{d}\psi,E)_{\Sigma_+}+(\mathrm{d}\psi,E)_{\Sigma_-}=\\ =&(\psi,\delta E)_{\Sigma_+}+		(\mathrm{t}\psi,\mathrm{n}_+E)_Z+(\psi,\delta E)_{\Sigma_-}-(\mathrm{t}\psi,\mathrm{n}_-E)_Z=\\
+		\nonumber=&(\psi,\delta E)_\Sigma+(\mathrm{t}\psi,[\mathrm{n}E])_Z.
+	\end{align}
+	
+	\begin{Definition}
+		We say that $E\in \mathrm{H}^1\Omega^1(\Sigma_Z)$ satisfies $\delta E=0$ weakly if both terms of the right hand side of Equation \eqref{Eqn: formal manipulation} vanish for any $\psi\in \mathrm{H}^1\Omega^0(\Sigma)\equiv\mathrm{H}^1\Omega^0_{[\mathrm{t}]}(\Sigma_Z)$, i.e.
+		\begin{equation}
+			(\mathrm{d}\psi,E)_{\Sigma}=0\,,\ \text{for any } \psi\in \mathrm{H}^1\Omega^0_{[\mathrm{t}]}(\Sigma_Z)\,.
+		\end{equation}
+		
+	\end{Definition}
+	
+	\noindent In view of the previous definition, in what follows we will replace equations \eqref{Eqn: non-dynamical Maxwell's equations} with the requirement
+	\begin{align}\label{Eqn: non-dynamical Maxwell's equations with Hodge decomposition}
+		E,B\perp\mathrm{d}\mathrm{H}^1\Omega^0_{[\mathrm{t}]}(\Sigma_Z)\,.
+	\end{align}
+	Notice that, because of Equation \eqref{Eqn: formal manipulation}, this entails $\delta E=\delta B=0$ pointwisely in $\Sigma_\pm$ as well as $[\mathrm{n}E]=[\mathrm{n}B]=0$.
+	Configurations of the electric field $E$ in presence of a charge density $\rho$ on $\Sigma_\pm$ and a surface charge density $\sigma$ over $Z$ are described by expanding $E=\mathrm{d}\alpha+\delta\beta+\kappa$ and demanding $\alpha\in\mathrm{H}^1\Omega^0_{[\mathrm{t}]}(\Sigma_Z)$ to satisfy
+	\begin{align*}
+		(\mathrm{d}\varphi,\mathrm{d}\alpha)_\Sigma=
+		(\varphi,\rho)_\Sigma+(\mathrm{t}\varphi,\sigma)_{Z}\qquad
+		\forall\varphi\in C^\infty_{\mathrm{c}}(\Sigma)\,.
+	\end{align*}
+	This provides a weak formulation for the electrostatic boundary problem. For sufficiently regular $\alpha$ this is equivalent to the Poisson problem $\Delta_\Sigma\alpha=\rho$, $[\mathrm{n}\mathrm{d}\alpha]=\sigma$, recovering the classical equations outlined in \parencite[Sec. I.5]{Jackson-99}.
+
+\section{Dynamical equations: Lagrangian subspaces}\label{Sec: dynamical equations: boundary triples}
+In this section we will discuss the dynamical equations \eqref{Eqn: dynamical Maxwell's equations}. They can be written in a Schr\"odinger-like form as a complex evolution equation, solutions can be found imposing suitable interface conditions on $Z$.
+\begin{Definition}
+	We call \emph{first order Maxwell's equations} the following system of partial differential equations:
+	\begin{align}\label{Eqn: dynamical eqns in Schroedinger form}
+	i\partial_t\psi=H\psi\,\qquad
+	\psi:=\bigg[\begin{matrix}E\\B\end{matrix}\bigg]\,,\qquad
+	H:=\bigg[\begin{matrix}0&i\operatorname{curl}\\-i\operatorname{curl}&0\end{matrix}\bigg]\,,
+	\end{align}
+	where $H$ will be called the \emph{first order Maxwell operator}, or simply the \emph{Maxwell operator}. Here we adopt the convention of \parencite{Baer-19} according to which
+	\begin{align}\label{Eqn: curl convention}
+	\operatorname{curl}:=i\star_\Sigma\mathrm{d}\quad\textrm{if }\dim\Sigma=1\mod 4\,,\quad
+	\operatorname{curl}:=\star_\Sigma\mathrm{d}\quad\textrm{if }\dim\Sigma=3\mod 4\,.
+	\end{align}
+	With this convention $\operatorname{curl}$ is a formally a selfadjoint operator on $\Omega_\mathrm{c}^1(\Sigma)$.
+\end{Definition}
+
+
+
+As outlined in Section \ref{Sec: Non-dynamical equations: Hodge theory with interface} we consider Equation \eqref{Eqn: dynamical eqns in Schroedinger form} on $\Sigma_Z$, allowing for jump discontinuities across the interface $Z$. To this end we regard $H$ as a densely defined operator on the Cartesian product \begin{equation}\label{Eqn: L^2 with H}
+	\mathrm{L}^2\Omega^1(\Sigma)\times \mathrm{L}^2\Omega^1(\Sigma)=:\mathrm{L}^2\Omega^1(\Sigma)^{\times 2}=\mathrm{L}^2\Omega^1(\Sigma_Z)^{\times 2}
+\end{equation} (the former equality follows from Equation \eqref{Eqn: splitting of L^2 with interface}) with domain
+\begin{align}\label{Eqn: curl-Hamiltonian domain}
+	\operatorname{dom}(H):=
+	\Omega_\mathrm{cc}^1(\Sigma_+)^{\times 2}\oplus \Omega_\mathrm{cc}^1(\Sigma_-)^{\times 2}\,,
+\end{align}
+where $\Omega_\mathrm{cc}^1(\Sigma_\pm)$ denotes the subspace of $\Omega_\mathrm{c}^1(\Sigma_\pm)$ with support in $\Sigma_\pm\setminus\partial\Sigma_\pm$.\\
+
+In solving Maxwell's equations, we require the underlying system to be isolated, so that the flux of relevant physical quantities, such as those built from the stress-energy tensor, is zero through the interface. To translate mathematically this requirement we need to look for symmetric extensions $\widehat{H}$ of $H$, in other words
+\begin{equation}
+(\widehat{H}\psi_1,\psi_2)_\Sigma-(\psi_1,\widehat{H}\psi_2)_\Sigma=\text{ vanishing interface terms}\quad \forall \psi_1,\psi_2\in\operatorname{dom}(\widehat{H})\subseteq\mathrm{L}^2\Omega^1(\Sigma)^{\times 2}.
+\end{equation}
+
+Moreover, we require the extensions of $H$ to be self-adjoint so that the spectral resolution of the operator has only real eigenvalues. This prevents the fundamental solutions of $\widehat{H}$ to have exponentially increasing modes, which would result to an unstable physical system.
+
+\begin{proposition}\label{Prop: Curl and H Green formula}
+	Let $u,v\in \Omega^k_\mathrm{c}(\Sigma_Z)$, then a Green formula holds
+	\begin{align}\label{Eqn: Green curl}
+	&(\operatorname{curl}u,v)_\Sigma-(u,\operatorname{curl}v)_\Sigma=
+	(\gamma_1u,\gamma_0v)_Z-(\gamma_0u,\gamma_1v)_Z\,,
+	\end{align}
+	where $\gamma_0u:=\frac{1}{\sqrt{2}}\star[\mathrm{t}u]$, $\star$ is the Hodge dual operator on $Z$ and
+	$\gamma_1u:=\frac{1}{\sqrt{2}}(\mathrm{t}_+u+\mathrm{t}_-u)$. Moreover, the operator $H$, defined in \eqref{Eqn: dynamical eqns in Schroedinger form} is symmetric on its domain (see Equation \eqref{Eqn: curl-Hamiltonian domain}), since for any $\psi_1,\psi_2\in \Omega_\mathrm{c}^1(\Sigma)^{\times 2}$ it holds
+	\begin{equation}\label{Eqn: Green H}
+		(H\psi_1,\psi_2)_\Sigma-(\psi_1,H\psi_2)_\Sigma=(\Gamma_1\psi_1,\Gamma_0\psi_2)_Z-(\Gamma_0\psi_1,\Gamma_1\psi_2)_Z,
+	\end{equation}
+	where $\psi=[E,B]$ and $\Gamma_0\psi=\left[i\gamma_1 B,\gamma_1 E\right]$, $\Gamma_1\psi=\left[\gamma_0 E,i\gamma_0 B\right]$.
+\end{proposition}
+\noindent The former Proposition entails that the operator $H$ is symmetric and hence closable (\emph{cf.} \parencite[Thm. 5.10]{Moretti-18}), its adjoint $H^*$ being defined on
+\begin{align}\label{Eqn: adjoint curl-Hamiltonian}
+	\operatorname{dom}(H^*)=\lbrace
+	\psi\in\mathrm{L}^2\Omega^1(\Sigma)^{\times 2}|\;H\psi\in\mathrm{L}^2\Omega^1(\Sigma)^{\times 2}\rbrace\qquad
+	H^*\psi:=H\psi\,.
+\end{align}
+Equation \eqref{Eqn: dynamical eqns in Schroedinger form} is solved by selecting a self-adjoint extension of $H$.
+We outline a technique which allows us to parametrize the self-adjoint extensions of $H$ by Lagrangian subspaces of a suitable complex symplectic space -- \emph{cf.} \parencite{Everitt-Markus-99,Everitt-Markus-03,Everitt-Markus-05}. The aim is to construct the Green operators for Equation \eqref{Eqn: dynamical eqns in Schroedinger form} together with an interface condition. This technique, even if it does not give a complete characterization of self-adjoint extensions in terms of boundary conditions, allows us to check whether a chosen interface condition admits Green operators or not.
+\begin{Definition}\label{Def: complex symplectic space, Lagrangian subspaces}
+	Let $\mathsf{S}$ be a complex vector space and let $\sigma\colon\mathsf{S}\times\mathsf{S}\to\mathbb{C}$ be a sesquilinear map.
+	The pair $(\mathsf{S},\sigma)$ is called complex symplectic space if $\sigma$ is non-degenerate -- \textit{i.e.} $\sigma(x,y)=0$ for all $y\in\mathsf{S}$ implies $x=0$ -- and $\sigma(x,y)=-\overline{\sigma(y,x)}$ for all $x,y\in\mathsf{S}$.
+	A subspace $L\subseteq\mathsf{S}$ is called Lagrangian subspace if $L=L^\perp:=\lbrace x\in\mathsf{S}|\;\sigma(x,y)=0\;\forall y\in L\rbrace$.
+\end{Definition}
+\noindent For convenience, we summarize the main results in the following theorem:
+\begin{theorem}[\parencite{Everitt-Markus-99}]\label{Thm: self-adjoint extensions with Lagrangian subspaces}
+	Let $\mathsf{H}$ be a separable Hilbert space and let $A\colon\operatorname{dom}(A)\subseteq\mathsf{H}\to\mathsf{H}$ be a densely defined, symmetric operator.
+	Then, the bilinear map
+	\begin{align}\label{Eqn: symplectic form}
+		\sigma(x,y):=(A^*x,y)-(x,A^*y)\,,\qquad\forall x,y\in\operatorname{dom}(A^*)\,,
+	\end{align}
+	satisfies $\sigma(x,y)=-\overline{\sigma(y,x)}$.
+	The symplectic form $\sigma$ descends to the quotient space $\mathsf{S}_A:=\operatorname{dom}(A^*)/\operatorname{dom}(A)$ and the pair $(\mathsf{S}_A,\sigma)$ is a complex symplectic space as per Definition \ref{Def: complex symplectic space, Lagrangian subspaces}.
+	Moreover, for all Lagrangian subspaces $L\subseteq\mathsf{S}_A$  -- \textit{cf.} Definition \ref{Def: complex symplectic space, Lagrangian subspaces} -- the operator
+	\begin{align}\label{Eqn: Lagrangian self-adjoint extension}
+		A_L:=A^*|_{L+\operatorname{dom}(A)}\,,
+	\end{align}
+	defines a self-adjoint extension of $A$, where $L+\operatorname{dom}(A)$ denotes the pre-image of $L$ with respect to the projection $\operatorname{dom}(A^*)\to\mathsf{S}_A$.
+	Finally the map
+	\begin{align}
+		\lbrace\textrm{Lagrangian subspaces $L$ of $\mathsf{S}_A$}\rbrace
+		\ni L\mapsto A_L\in
+		\lbrace\textrm{self-adjoint extensions of }A\rbrace\,,
+	\end{align}
+	is one-to-one.
+\end{theorem}
+
+\begin{remark}
+	The symplectic form $\sigma$ associated to the operator $A$ on $\mathsf{H}$ is called \emph{symplectic flux}. The physically motivated requirement of closedness of the extensions of $A$ is translated into imposing the symplectic flux to vanish.
+\end{remark}
+
+\begin{Example}\label{Ex: curl example}
+	As a concrete example of Theorem \ref{Thm: self-adjoint extensions with Lagrangian subspaces} we discuss the case of the self-adjoint extensions of the $\operatorname{curl}$ operator on a closed manifold $\Sigma$ with interface $Z$.
+	For simplicity we assume that $\dim\Sigma=2k+1$ with $\dim\Sigma=3\mod 4$, while $\operatorname{curl}$ is defined according to \eqref{Eqn: curl convention}.
+	We consider the operator $\operatorname{curl}_Z$ defined by
+	\begin{align}\label{Eqn: Z-curl operator}
+		\operatorname{dom}(\operatorname{curl}_Z):=\overline{\Omega_\mathrm{cc}^k(\Sigma_Z)}^{\|\|_{\operatorname{curl}}}\,,\qquad
+		\operatorname{curl}_Zu:=\operatorname{curl}u\,.
+	\end{align}
+	Notice that $\Omega_\mathrm{cc}^k(\Sigma_Z)=\Omega_\mathrm{cc}^k(\Sigma_+)\oplus \Omega_\mathrm{cc}^k(\Sigma_-)$.
+	The adjoint $\operatorname{curl}_Z^*$ of $\operatorname{curl}_Z$ is defined on
+	\begin{align}\label{Eqn: adjoint of Z-curl operator}
+		\operatorname{dom}(\operatorname{curl}_Z^*)&=
+		\operatorname{dom}(\operatorname{curl}_+)\oplus\operatorname{dom}(\operatorname{curl}_-)\,,\\
+		\operatorname{dom}(\operatorname{curl}_\pm)&:=\lbrace
+		u_\pm\in\mathrm{L}^2\Omega^k(\Sigma_\pm)|\;\operatorname{curl}_\pm u_\pm\in\mathrm{L}^2\Omega^k(\Sigma_\pm)\rbrace\,,\quad
+		\operatorname{curl}_\pm u:=\operatorname{curl}u\,.
+	\end{align}
+	Since complex conjugation commutes with $\operatorname{curl}$, it follows from Von Neumann's criterion \parencite[Thm. 5.43]{Moretti-18} that $\operatorname{curl}_Z$ admits self-adjoints extensions.
+	We give a description of the complex symplectic space $\mathsf{S}_{\operatorname{curl}_Z}:=(\operatorname{dom}(\operatorname{curl}_Z^*)/\operatorname{dom}(\operatorname{curl}_Z),\sigma_{\operatorname{curl}})$ whose Lagrangian subspaces allow to characterize all self-adjoint extensions of $\operatorname{curl}_Z$.
+	According to Theorem \ref{Thm: self-adjoint extensions with Lagrangian subspaces} the symplectic structure $\sigma_{\operatorname{curl}}$ on the vector space $\mathsf{S}_{\operatorname{curl}_Z}$ is defined by
+	\begin{align}\label{Eqn: presymplectic structure over the adjoint of Z-curl operator}
+		\sigma_{\operatorname{curl}}(u,v):=
+		(\operatorname{curl}_Z^*u,v)-(u,\operatorname{curl}_Z^*v)\,,\qquad
+		\forall u,v\in\operatorname{dom}(\operatorname{curl}_Z^*)\,.
+	\end{align}
+	In particular for $u\in\operatorname{dom}(\operatorname{curl}_Z^*)$ and $v\in\mathrm{H}^1\Omega^k(\Sigma_Z)$ we have
+	\begin{align}\label{Eqn: simplified form for presymplectic structure}
+	\nonumber	\sigma_{\operatorname{curl}}(u,v)&=
+		(\gamma_1u,\gamma_0v)_Z-(\gamma_0u,\gamma_1v)_Z=\\&=
+		\sum_\pm\pm\int_Z\overline{\mathrm{t}_\pm u}\wedge\mathrm{t}_\pm v=
+		\sum_\pm\mp\prescript{}{-\frac{1}{2}}{\langle}\mathrm{t}_\mp u,\star_Z\mathrm{t}_\mp v\rangle_{\frac{1}{2}}\,,
+	\end{align}
+	where $\gamma_0u:=\frac{1}{\sqrt{2}}\star[\mathrm{t}u]$,
+	$\gamma_1u:=\frac{1}{\sqrt{2}}(\mathrm{t}_+u+\mathrm{t}_-u)$ as in Proposition \ref{Prop: Curl and H Green formula} and
+	where $\prescript{}{-\frac{1}{2}}{\langle}\;,\;\rangle_{\frac{1}{2}}$ denotes the pairing between $\mathrm{H}^{-\frac{1}{2}}\Omega^k(Z)$ and $\mathrm{H}^{\frac{1}{2}}\Omega^k(Z)$.
+	In particular this shows that $\mathrm{t}_\pm u\in\mathrm{H}^{-\frac{1}{2}}\Omega^k(Z)$ for all $u\in\operatorname{dom}(\operatorname{curl}_Z^*)$ -- \textit{cf.} \parencite{Alonso-Valli-96,Buffa-Costabel-Sheen-02,Georgescu-79,Paquet-82,Weck-04} for more details on the trace space associated with the $\operatorname{curl}$-operator on a manifold with boundary.
+	
+	According to Theorem \ref{Thm: self-adjoint extensions with Lagrangian subspaces} all self-adjoint extensions of $\operatorname{curl}_Z$ are in one-to-one correspondence to the Lagrangian subspaces of $\mathsf{S}_{\operatorname{curl}_Z}$.
+	Unfortunately a complete characterization of all Lagrangian subspaces of $\mathsf{S}_{\operatorname{curl}_Z}$ is not available.
+	For our purposes, it suffices to give a family of Lagrangian subspaces -- a generalization of the results presented in \parencite{Hiptmair-Kotiuga-Tordeux-12} may provide other examples.
+	For $\theta\in\mathbb{R}$ let
+	\begin{align}
+		L_{\theta}:=\lbrace
+		u\in\operatorname{dom}(\operatorname{curl}_Z^*)|\;\mathrm{t}_+u=e^{i\theta}\mathrm{t}_-u\rbrace\,,
+	\end{align}
+	where $\mathrm{t}_\pm$ denote the tangential traces -- \textit{cf.} Definition \ref{Def: jump of tangential and normal component}, Remark \ref{Rmk: extension of tangential and normal maps to Sobolev spaces} and Equation \eqref{Eqn: simplified form for presymplectic structure}.
+	To show that $L_\theta$ are Lagrangian subspaces let $u,v\in L_\theta$ and let $v_n\in\mathrm{H}^1\Omega^k(\Sigma_Z)$ be such that $\|v-v_n\|_{\operatorname{curl}}\to 0$.
+	In particular $\|(\mathrm{t}_+-e^{i\theta}\mathrm{t}_-) v_n\|_{\mathrm{H}^{\frac{1}{2}}\Omega^k(Z)}\to 0$ so that
+	\begin{align}
+		\sigma_{\operatorname{curl}}(u,v)=
+		\lim_{n\to \infty}\sigma_{\operatorname{curl}}(u,v_n)=
+		-\lim_{n\to \infty}
+		\prescript{}{-\frac{1}{2}}{\langle}\mathrm{t}_+u,\star(\mathrm{t}_+v_n-e^{i\theta}\mathrm{t}_-v_n)\rangle_{\frac{1}{2}}=0\,.
+	\end{align}
+	It follows that $L_\theta\subseteq L_\theta^\perp$.
+	Conversely if $u\in L_\theta^\perp$ let us consider $v\in L_\theta$.
+	Since $u\in L_\theta^\perp$ we find
+	\begin{align*}
+		0=\sigma_{\operatorname{curl}}(u,v)=
+		-\prescript{}{-\frac{1}{2}}{\langle}\mathrm{t}_+u-e^{i\theta}\mathrm{t}_-u,\star\mathrm{t}_+v\rangle_{\frac{1}{2}}\,.	
+	\end{align*}
+	Since $\mathrm{t}_+\colon\mathrm{H}^1\Omega^k(\Sigma_Z)\to \mathrm{H}^{\frac12}\Omega^k(Z)$ is surjective, it follows that $\mathrm{t}_+u=e^{i\theta}\mathrm{t}_-u$.
+
+	Notice that the self-adjoint extension obtained for $\theta=0$ coincides with the closure of $\operatorname{curl}$ on $\Omega^k_{\mathrm{c}}(\Sigma)$ which is known to be self-adjoint by \parencite[Lem. 2.6]{Baer-19}.
+%	\\\nicomment{(Here we exploited the compactness property.		We may deal with non-compact manifolds too because \parencite[Lem. 2.6]{Baer-19} is based on point \textit{(i)} of \parencite[Lem. 2.3]{Baer-19} which holds true also in this setting.)}
+	Indeed, since $[\mathrm{t}]$ is continuous we have $\operatorname{dom}(\overline{\operatorname{curl}})\subseteq L_{0}$ so that $\operatorname{curl}_{Z,L_0}$ is a self-adjoint extension of $\overline{\operatorname{curl}}$.
+	Since this last operator is already self-adjoint, the two coincide.
+\end{Example}
+
+
+\begin{Example}
+	We provide a concrete example of \ref{Thm: self-adjoint extensions with Lagrangian subspaces} in the case we are mostly interested in: Maxwell's equations in the Schr\"odinger-like form as in Equation \eqref{Eqn: dynamical eqns in Schroedinger form}. According to Theorem \ref{Thm: self-adjoint extensions with Lagrangian subspaces}, the operator $H$ has an associated symplectic space $\mathsf{S}_H:=(\operatorname{dom}(H^*)/\operatorname{dom}(H),\sigma_H)$, where
+	\begin{equation}
+		\sigma_H (\psi_1,\psi_2)=(H^*\psi_1,\psi_2)-(\psi_1,H^*\psi_2), \ \forall \psi_1,\psi_2\in\operatorname{dom}(H^*).
+	\end{equation}
+	In particular, if $\psi_1\in\operatorname{dom}(H^*)$ and $\psi_2\in\mathrm{H}^1\Omega^1(\Sigma_Z)^{\times 2}$ and denoting $\psi$ as the couple $[E,B]$, we can write
+	\begin{align}
+	\nonumber	\sigma_H (\psi_1,\psi_2)=&-i\sigma_{\operatorname{curl}}(B_1,E_2)+i\sigma_{\operatorname{curl}}(E_1,B_2)=\\
+		=&i\left[	\prescript{}{-\frac{1}{2}}{\langle} \mathrm{t}_+\psi_1,\star S\,\mathrm{t}_+\psi_2 \rangle_\frac12-\prescript{}{-\frac{1}{2}}{\langle} \mathrm{t}_-\psi_1,\star S\,\mathrm{t}_-\psi_2 \rangle_\frac12	\right],
+	\end{align}
+	where $\sigma_{\operatorname{curl}}$ is defined in Equations \eqref{Eqn: presymplectic structure over the adjoint of Z-curl operator}, \eqref{Eqn: simplified form for presymplectic structure}, $\prescript{}{-\frac{1}{2}}{\langle}\,,\, \rangle_\frac12$ is the pairing between $\mathrm{H}^{-\frac12}$ and $\mathrm{H}^{\frac12}$, $$S=\begin{bmatrix}
+	0 & -1\\
+	1 & 0
+	\end{bmatrix}\in \operatorname{SO}(2),$$ $\star$ is the Hodge operator on $Z$ and, as usual, $\mathrm{t}_\pm$ denote the tangential traces -- \emph{cf.} Definition \ref{Def: jump of tangential and normal component}.
+	We give a family of Lagrangian subspaces which encode the following class of interface conditions. For $\mathrm{U}\in\operatorname{SO}(2)$, let us define the space
+	
+	\begin{equation}
+		L_\mathrm{U}:=\{\psi\in \operatorname{dom}(H^*)\,|\, \mathrm{t}_+\psi=\mathrm{U}\mathrm{t}_-\psi  \}.
+	\end{equation}
+	To show that $L_\mathrm{U}$ are Lagrangian subspaces we mimic the technique used in the former Example \ref{Ex: curl example}. Let $\psi_1=[\mathscr{E}_1,\mathscr{B}_1],\psi_2=[\mathscr{E}_2,\mathscr{B}_2]\in L_\mathrm{U}$ and let $\phi_n=[E_n,B_n]\in \mathrm{H}^1\Omega^1(\Sigma_Z)^{\times 2}$ for $n\in\mathbb{N}$ such that $\|E_2-E_n\|_{\operatorname{curl}}\to 0$ and $\|B_2-B_n\|_{\operatorname{curl}}\to 0$.\\ In particular it holds that $\|(\mathrm{t}_+-\mathrm{U}\mathrm{t}_-)\psi_n\|_{\mathrm{H}^{\frac12}\Omega^1(\Sigma_Z)^{\times 2}}\to 0$. Hence $L_\mathrm{U}\subseteq L_\mathrm{U}^\perp$ follows from
+	\begin{align}
+	\nonumber	\sigma_H (\psi_1,\psi_2)=&\lim_{n\to \infty} \sigma_H (\psi_1,\psi_n)=\\ =&\lim_{n\to \infty} i\left[	\prescript{}{-\frac{1}{2}}{\langle} \mathrm{t}_+\psi_1,\star S\,\mathrm{t}_+\psi_n \rangle_\frac12-\prescript{}{-\frac{1}{2}}{\langle} \mathrm{U}^{-1}\mathrm{t}_+\psi_1,\star S\,\mathrm{t}_-\psi_n \rangle_\frac12	\right]=\\
+	\nonumber =&\lim_{n\to \infty} i\left[	\prescript{}{-\frac{1}{2}}{\langle} \mathrm{t}_+\psi_1,\star S\,(\mathrm{t}_+\psi_n-\mathrm{U}\mathrm{t}_-\psi_n) \rangle_\frac12	\right]=0.
+	\end{align}
+	Conversely if $\psi_1\in L_\mathrm{U}^\perp$ let us consider $v\in L_\mathrm{U}$.
+	Hence, we find
+	\begin{align*}
+	0=\sigma_H (\psi_1,\psi_2)= i\left[	\prescript{}{-\frac{1}{2}}{\langle} (\mathrm{t}_+\psi_1-\mathrm{U}\mathrm{t}_-\psi_1),\star S\,\mathrm{t}_+\psi_2 \rangle_\frac12	\right]\,.	
+	\end{align*}
+	Since $\mathrm{t}_+\colon\mathrm{H}^1\Omega^1(\Sigma_Z)^{\times 2}\to \mathrm{H}^{\frac12}\Omega^1(Z)^{\times 2}$ is surjective, it follows that $\mathrm{t}_+\psi_1=\mathrm{U}\mathrm{t}_-\psi_1$.\\
+	
+	Following slavishly the passages of Example \ref{Ex: curl example}, one can also show that the following family of subspaces of $\mathsf{S}_H$, that can be expressed in terms of interface conditions, are Lagrangian and hence, give rise to a self-adjoint extensions of $H$:
+	\begin{equation}
+		L_{\theta}:=\lbrace
+		u\in\operatorname{dom}(H^*)|\;\mathrm{t}_+\psi=e^{i\theta}\mathrm{t}_-\psi\rbrace\,.
+	\end{equation}
+	
+	
+\end{Example}
+
+
+We conclude this section by introducing an exact sequence which provides a complete description of the solution space of the Maxwell's equations \eqref{Eqn: dynamical Maxwell's equations} with interface $Z$.
+
+\begin{theorem}\label{Thm: exact sequence for Maxwell's equations with interface}
+	Let $H$ be the densely defined operator on $\mathrm{L}^2\Omega^1(\Sigma)^{\times2}$ with domain defined by \eqref{Eqn: curl-Hamiltonian domain} and let $H^*$ be its adjoint, defined as in \eqref{Eqn: adjoint curl-Hamiltonian}.
+	Let $L\subset \mathsf{S}_H=(\operatorname{dom}(H^*)/\operatorname{dom}H),\sigma_H)$ be a Lagrangian subspace in the sense of Definition \ref{Def: complex symplectic space, Lagrangian subspaces} and consider the self-adjoint extension $H_L$ as per Theorem \ref{Thm: self-adjoint extensions with Lagrangian subspaces}. Furthermore, let $\mathrm{H}^\infty_L\Omega^1(\Sigma_Z)^{\times 2}:=\bigcap_{k\geq 0}\operatorname{dom}(H_L^k)$ and let $G^\pm_L$ be the operators $G^\pm_L\colon C^\infty_{\mathrm{tc}}(\mathbb{R},\mathrm{H}^\infty_L\Omega^1(\Sigma_Z)^{\times 2})\to C^\infty(\mathbb{R},\mathrm{H}^\infty_L\Omega^1(\Sigma_Z)^{\times 2})$ completely determined in terms of the bidistributions $\mathcal{G}_L^+=\theta(t-t')\mathcal{G}_L$ and $\mathcal{G}_L^-=-\theta(t'-t)\mathcal{G}_L$, with
+	\begin{equation}\label{Eqn: Fundamental H}
+	\mathcal{G}_L(\psi_1,\psi_2)=\int_{\mathbb{R}^2}\left(\psi_1(t)\Big|e^{-i(t-t')H_L}\psi_2(t')\right)\,\mathrm{d} t\,\mathrm{d} t'\quad \forall\psi_1,\psi_2\in C_\mathrm{c}^\infty(\mathbb{R},\Omega_c^1(\Sigma)^{\times 2}).
+	\end{equation}
+	The the operator $G^+_L$ (\textit{resp}. $G^-_L$) is an advanced (\textit{resp}. retarded) solution of $i\partial_t-H_L$, that is, it holds
+	\begin{align}
+		(i\partial_t-H_L)\circ G_L^\pm
+		%|_{C^\infty_{\mathrm{tc}}(\mathbb{R},\mathrm{H}^\infty_L\Omega^1(\Sigma_Z)^{\times 2})}
+		=\operatorname{Id}_{C^\infty_{\mathrm{tc}}(\mathbb{R},\mathrm{H}^\infty_L\Omega^1(\Sigma_Z)^{\times 2})}\,,\\
+		G_L^\pm\circ(i\partial_t-H_L)%|_{C^\infty_{\mathrm{tc}}(\mathbb{R},\mathrm{H}^\infty_L\Omega^1(\Sigma_Z)^{\times 2})}
+		=\operatorname{Id}_{C^\infty_{\mathrm{tc}}(\mathbb{R},\mathrm{H}^\infty_L\Omega^1(\Sigma_Z)^{\times 2})}\,.
+	\end{align}
+	Moreover, let $G_L:=G^+_L-G^-_L$.
+	Then the following is a short exact sequence
+	\begin{align}
+	\nonumber
+	0\to
+	C^\infty_{\mathrm{tc}}(\mathbb{R},&\mathrm{H}^\infty_L\Omega^1(\Sigma_Z)^{\times 2})
+	\stackrel{i\partial_t-H_L}{\longrightarrow}
+	C^\infty_{\mathrm{tc}}(\mathbb{R},\mathrm{H}^\infty_L\Omega^1(\Sigma_Z)^{\times 2})\\&
+	\label{Eqn: exact sequence}
+	\stackrel{G_L}{\longrightarrow}
+	C^\infty(\mathbb{R},\mathrm{H}^\infty_L\Omega^1(\Sigma_Z)^{\times 2})
+	\stackrel{i\partial_t-H_L}{\longrightarrow}
+	C^\infty(\mathbb{R},\mathrm{H}^\infty_L\Omega^1(\Sigma_Z)^{\times 2})
+	\to 0\,.
+	\end{align}
+\end{theorem}
+\begin{proof}
+	Most of it is an analogue of \parencite[Thm. 30- Prop. 36]{Dappiaggi-Drago-Ferreira-19}. We observe that the function $\sigma(H_L)\ni \lambda\mapsto e^{-i\lambda\tau}$ is smooth and bounded for all $\tau\in\mathbb{R}$. Hence, for any $\psi\in C_\mathrm{c}^\infty(\mathbb{R},\Omega_c^1(\Sigma_Z)^{\times 2})$, $G^\pm_L \psi\in C^\infty(\mathbb{R},\operatorname{dom}H_L)$. We have, for all $k\in\mathbb{N}\cup\{0\}$ and $t\in\mathbb{R}$
+	\[	(1+H_L)^k	[G^\pm_L \psi](t)=G^\pm_L [(1+H_L)^k\psi](t)= G^\pm_L [(1+H)^k\psi](t),	\]
+	which is an element of $\mathrm{L}^2\Omega(\Sigma)^{\times 2}$, since $(1+H)\psi\in C^\infty_\mathrm{c}(\mathbb{R},\Omega^1_\mathrm{c}(\Sigma))$. It follows that $G^\pm_L \psi(t)\in \mathrm{H}^\infty_L\Omega^1(\Sigma_Z)^{\times 2}$ and Equation \eqref{Eqn: Fundamental H} holds true.\\
+	It remains to prove the finite speed of propagation, which follows from \parencite{Higson-Roe-00,Mcintosh-Morris-13}. In particular, the hypotheses of \parencite[Thm. 1.1]{Mcintosh-Morris-13} are met since $H_L$ is self-adjoint and from a straightforward computation it holds $$\|[\eta I,H_L]\psi\|\leq\|\nabla \eta\|_\infty\|\psi\| \quad \forall\psi\in\operatorname{dom}H_L,\ \eta\in \operatorname{Lip}(\Sigma)\cap C^1(\Sigma).$$ Hence, \parencite[Thm. 1.1]{Mcintosh-Morris-13} ensures that the propagation speed of the one-parameter group $e^{itH_L}$ is finite and smaller than $1$ in the sense that
+	\[	\operatorname{supp}(e^{-itH_L}\psi)\subset J^+(\operatorname{supp}\psi),\ t\geq 0,	\]
+	where the brackets $[\,\,,\,]$ denote the commutator.\\
+	The second part of the statement regarding the exact sequence follows imitating slavishly the standard arguments of \parencite[Th. 3.4.7]{Baer-Ginoux-Pfaffle-07} \parencite[Prop. 36]{Dappiaggi-Drago-Ferreira-19}.
+\end{proof}
+	Notice that the exact sequence \eqref{Eqn: exact sequence} implies that the space of smooth solution of the dynamical equations \eqref{Eqn: dynamical Maxwell's equations} is isomorphic as a vector space to the image of $G_L$.
+	
+	
+	
+\section{Perspectives on algebraic quantization of the field strength $F$}\label{Sec: perspectives on F}
+
+Having the causal propagator $G$ in hand, for a choice of boundary conditions, the following step would be that of developing a quantization scheme for the field strength $F\in\Omega^2(M)$ on an arbitrary four dimensional globally hyperbolic spacetime with timelike boundary $(M,g)$ within the framework of the algebraic formulation of quantum field theory.\\
+
+In the case of empty boundary, the construction is obtained in \cite{dappiaggi2012quantization}. They prove in particular that the commutator between two generators of the algebra of observables of $F$ is given by the \emph{Lichnerowicz propagator} regardless of the chosen spacetime. Moreover, they prove the existence of a non trivial centre for the field algebra whenever the second de Rham cohomology group of the manifold is non trivial.
+
+To be more clear they initially prove the existence of Green operators for the wave operator $\Box=\delta_M\mathrm{d}_M+\mathrm{d}_M\delta_M$ in a globally hyperbolic spacetime with empty boundary. Then, they use the fact that $F$ itself satisfies a wave equation (since $F\in\ker\delta_M\cap\ker\mathrm{d}_M$) to entail that $F=G_\Box\omega$ with $\omega\in\Omega_{[\mathrm{t}]}\mathrm{c}^2(M)$, Eventually, exploiting the fact that $G_\Box$ commutes with $\delta_M$ and they identify the space $\operatorname{Sol}(M)$ of solutions of Maxwell's equations as the $2$-forms $F\in\Omega^2(M)$ such that
+\begin{equation}
+	F=G_\Box(\delta_M\alpha+\mathrm{d}_M\beta),\ \alpha\in\Omega^3_{\mathrm{c}}(M)\cap\ker\mathrm{d}_M,\beta\in\Omega^1_{\mathrm{c}}(M)\cap\ker\delta_M.
+\end{equation}
+Hence, they construct the field algebra as an the associative, unital $*$-algebra: the universal tensor algebra generated by elements of the form $\mathbf{F}(\omega)$, $\omega\in\Omega^2_{\mathrm{c}}(M)$ with componentwise addition, componentwise multiplication with a scalar, componentwise antilinear involution $*$ and multiplication induced by the algebraic tensor product $\otimes$, while the $*$-operation is the one induced from complex conjugation.
+In addition they impose the Maxwell's equations at a dual level and implement the canonical commutation relations (CCR) requiring
+\[	\left[	\mathbf{F}(\omega),\mathbf{F}(\omega')	\right]=i\mathsf{G}(\omega,\omega')	\mathcal{I},	\]
+where $\mathcal{I}$ is the identity and $\mathsf{G}(\omega,\omega')\doteq \int_M G_\Box(\delta \omega)\wedge\star\delta \omega'$, which is called \emph{Lichnerowicz propagator}.\\
+
+In addition, they show that the field algebra, in general, possesses a non trivial centre. This feature, thoroughly studied in \cite{Benini-Dappiaggi-Hack-Schenkel-14,Benini:2013tra,Dappiaggi-Hack-Sanders-14}, is in common with Abelian gauge theories and will be discussed in the case of the vector potential $A$ in the next chapter. Indeed, from a physical point of view, the existence of a non trivial centre leads to an obstruction in the interpretation of the model in terms of locally covariant quantum field theories.\\
+
+In the case of non-empty boundary or an interface, we could not rely on the existence of Green operators for $\Box$ such that they commute with $\delta_M$, hence we had to prove in the previous sections the existence of distinguished advanced and retarded Green operators, and consequently of a causal propagator $G$ for Maxwell's equations under suitable boundary conditions. The next step would be that of following
+\cite{dappiaggi2012quantization} once again and construct the field algebra for a manifold with timelike boundary or with interface. The passages would be identical, but now, since we have an exact sequence for the causal propagator of Maxwell's equations for $F$, the space of solutions $\operatorname{Sol}$ will be characterized as the $2$-forms $F$ such that $F=G(\eta)$. Moreover, the canonical commutation relations (CCR) will in fact be implemented as follows:
+\[	\left[	\mathbf{F}(\omega),\mathbf{F}(\omega')	\right]=i\widetilde{\mathsf{G}}(\omega,\omega')	\mathcal{I},	\]
+with $\widetilde{\mathsf{G}}(\omega,\omega')=\int_M G(\omega)\wedge\star\omega$.\\
+
+In the next chapter, we focus our efforts on the construction of Green operators for $\Box$ acting on $k$-forms on a special class of spacetimes with timelike boundary. Subsequently, relying on the existence of such operators, we will construct the algebra of observable for Maxwell's equations for the vector potential $A$.
+
+
+
+

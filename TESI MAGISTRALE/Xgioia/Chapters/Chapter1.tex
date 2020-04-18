@@ -1,0 +1,290 @@
+% Chapter 1
+
+\chapter{Geometric preliminaries} % Main chapter title
+
+\label{Chapter1} % For referencing the chapter elsewhere, use \ref{Chapter1}
+
+
+In this chapter, we begin by recalling the basic definitions in order to fix the geometric setting in which we will work.\\
+Globally hyperbolic spacetimes $(M,g)$ are used in context of geometric analysis and mathematical relativity because in them there exists a smooth and spacelike Cauchy hypersurface $\Sigma$ and that ensures the well-posedness of the Cauchy problem. Moreover, as shown by Bernal and Sánchez \cite[Th. 1.1]{Bernal-Sanchez-05}, in such spacetimes there exists a splitting for the full spacetime $M$ as an orthogonal product $\mathbb{R}\times\Sigma$. %, where the metric decomposes as $g=-\Lambda \mathrm{d}t^2+g_t$, where $\Lambda$ is a smooth positive function.
+These results corroborate the idea that in globally hyperbolic spacetimes one can preserve the notion of a global passing of time. In a globally hyperbolic spacetime, the entire future and past history of the universe can be predicted from conditions imposed at a fixed instant represented by the hypersurface $\Sigma$.\\
+%Standard globally hyperbolic spacetimes can otherwise be defined as the strongly causal spacetimes\footnote{$M$ satisfies the strong causality condition if there are no almost closed causal curves, i.e. if for any	$p \in M$ there exists a neighborhood $U$ of $p$ such that there exists no timelike curve that passes through $U$ more than once.} whose intrinsic causal boundary points are not naked singularities.\\
+%
+%In a natural way, the timelike boundary $\partial M$ of our class of spacetimes is composed by all
+%the naked singularities so, these singularities become the natural
+%place to impose boundary conditions.
+
+\section{Globally Hyperbolic spacetimes with timelike boundary}
+The main goal of this section is to analyse the main properties of globally hyperbolic spacetimes and to generalise them to a natural class of spacetimes where boundary values problems can be formulated. This class is that of globally hyperbolic spacetimes with timelike boundary.While, in the case of $\partial M=\emptyset$ global hyperbolicity is a standard concept, in presence of a timelike boundary it has been properly defined and studied recently in \cite{Ake-Flores-Sanchez-18}.\\
+
+\textbf{Manifolds with boundary.} From now on $M$ will denote a smooth manifold with boundary with dimension $m>1$. $M$ is then locally diffeomorphic to open subsets of the closed half space of $\mathbb{R}^n$. We will assume that the boundary $\partial M$ is smooth and, for simplicity, connected. A point $p\in M$ such that there exists an open neighbourhood $U$ containing $p$, diffeomorphic to an open subset of $\mathbb{R}^m$, is called an {\em interior point} and the collection of these points is indicated with $\operatorname{Int}(M)\equiv\mathring{M}$. As a consequence $\partial M\doteq M\setminus\mathring{M}$, if non empty, can be read as an embedded submanifold $(\partial M,\iota_{\partial M})$ of dimension $n-1$ with $\iota_{\partial M}\in C^\infty(\partial M; M)$.\\
+In addition we endow $M$ with a smooth Lorentzian metric $g$ of signature $(-,+,...,+)$ so that $\iota^*g$ identifies a Lorentzian metric on $\partial M$ and we require $(M,g)$ to be time oriented. As a consequence $(\partial M,\iota^*_{\partial M}g)$ acquires the induced time orientation and we say that $(M,g)$ has a {\em timelike boundary}. 
+
+\begin{Definition}\hfill\\
+	\vspace{-0.6cm}
+	\begin{itemize}
+	\item A spacetime with timelike boundary is a time-oriented Lorentzian manifold with timelike boundary.
+	\item A spacetime with timelike boundary is {\em causal} if it possesses no closed, causal curve,
+	\item A causal spacetime with timelike boundary $M$ such that for all $p,q\in M$ $J_+(p)\cap J_-(q)$ is compact is called \textbf{globally hyperbolic}.
+	\end{itemize}
+\end{Definition}
+
+These conditions entail the following consequences, see \cite[Th. 1.1 \& 3.14]{Ake-Flores-Sanchez-18}:
+
+\begin{theorem}
+	Let $(M,g)$ be a spacetime of dimension $m$. Then 
+	\begin{enumerate}
+		\item $(M,g)$ is a globally hyperbolic spacetime with timelike boundary if and only if it possesses a Cauchy surface, namely an achronal subset of $M$ which is intersected only once by every inextensible timelike curve,
+		\item if $(M,g)$ is globally hyperbolic, then it is isometric to $\mathbb{R}\times\Sigma$ endowed with the line-element
+		\begin{equation}\label{eq:line_element}
+		ds^2=-\beta d\tau^2+h_\tau,
+		\end{equation}
+		where $\tau:M\to\mathbb{R}$ is a Cauchy temporal function\footnote{Given a generic time oriented Lorentzian manifold $(N,\tilde{g})$, a Cauchy temporal function is a map $\tau:M\to\mathbb{R}$ such that its gradient is timelike and past-directed, while its level surfaces are Cauchy hypersurfaces.}, whose gradient is tangent to $\partial M$, $\beta\in C^\infty(\mathbb{R}\times\Sigma;(0,\infty))$ while $\mathbb{R}\ni\tau\to (\{\tau\}\times\Sigma,h_\tau)$ identifies a one-parameter family of $(n-1)-$dimensional spacelike, Riemannian manifolds with boundaries. Each $\{\tau\}\times\Sigma$ is a Cauchy surface for $(M,g)$.
+	\end{enumerate}
+\end{theorem}
+
+
+Henceforth we will be tacitly assuming that, when referring to a globally hyperbolic spacetime with timelike boundary $(M,g)$, we work directly with \eqref{eq:line_element} and we shall refer to $\tau$ as the time coordinate. Furthermore each Cauchy surface $\Sigma_\tau\doteq\{\tau\}\times\Sigma$ acquires an orientation induced from that of $M$. In addition we shall say that $(M,g)$ is {\em static} if it possesses a timelike Killing vector field $\chi\in\Gamma(TM)$ whose restriction to $\partial M$ is tangent to the boundary, {\it i.e.} $g_p(\chi,\nu)=0$ for all $p\in\partial M$ where $\nu$ is the unit vector, normal to the boundary at $p$. With reference to \eqref{eq:line_element} this translates simply into the request that both $\beta$ and $h_\tau$ are independent from $\tau$.
+
+\begin{Example}
+	We first consider some examples of globally hyperbolic spacetimes without boundary ($\partial M=\emptyset$).
+	\begin{itemize}
+		\item The Minkowski spacetime $M=(\mathbb{R}^m,\eta)$ is globally hyperbolic. Every spacelike hyperplane is a Cauchy hypersurface. We have $M=\mathbb{R}\times \Sigma$ with $\Sigma = \mathbb{R}^{m-1}$, endowed with the time-independent Euclidean metric.
+		\item Let $\Sigma$ be a Riemannian manifold with time independent metric $h$ and $I\subset\mathbb{R}$ an interval. Let $f: I\to\mathbb{R}$	be a smooth positive function. The manifold $M=I \times \Sigma$ with the metric $g = -\mathrm{d} t^2 + f^2(t)\, h$, called \textbf{cosmological spacetime}, is globally hyperbolic if and only if $(\Sigma,h)$ is a complete Riemannian manifold, see \cite[Lem A.5.14]{Baer-Ginoux-Pfaffle-07}. This applies in particular if $(\Sigma,h)$ is compact.
+		\item The interior and exterior \textbf{Schwarzschild spacetimes}, that represent non-rotating black holes of mass $m>0$ are globally hyperbolic.
+		Denoting $S^2$ the $2$-dimensional sphere embedded in $\mathbb{R}^3$, we set
+		\[	 M_{\text{ext}}:=\mathbb{R}\times(2m,+\infty)	\times S^2,	\] 
+		
+		\[	 M_{\text{int}}:=\mathbb{R}\times(0,2m)	\times S^2.	\] 
+		The metric is given by
+		\[	g=-f(r) \mathrm{d} t^2+\frac{1}{f(r)} \mathrm{d} r^2	+r^2\,g_{S^2},	\]
+		where $f(r)=1-\frac{2m}{r}$, while $g_{S^2}=r^2\, \mathrm{d}\theta^2+r^2\sin^2\theta \mathrm{d}\varphi^2$ is the polar coordinates metric on the sphere. For the exterior Schwarzschild spacetime we have $ M_{\text{ext}}=\mathbb{R}\times \Sigma$ with $\Sigma=(2m,+\infty)\times S^2$, $\beta=f$ and $h=\frac{1}{f(r)} \mathrm{d} r^2	+r^2\,g_{S^2}$.
+	\end{itemize}
+\end{Example}
+
+\begin{Example}
+	Now we consider some examples of globally hyperbolic spacetimes in which the boundary is not empty.
+	\begin{itemize}
+		\item The Half Minkowski spacetime $M=(\mathbb{R}^{m-1}\times[0,+\infty),\eta)$ is globally hyperbolic. Every spacelike half-hyperplane is a Cauchy hypersurface. We have $M=\mathbb{R}\times \Sigma$ with $\Sigma= \mathbb{R}^{m-2}\times[0,+\infty)$, endowed with the time-independent Euclidean metric.
+	\end{itemize}
+\end{Example}
+
+On top of a Lorentzian spacetime $(M,g)$ with timelike boundary we consider $\Omega^k(M)$, $k\in\mathbb{N}\cup\{0\}$, the space of real valued smooth $k$-forms endowed with the standard, metric induced, pairing $(,):\Omega^k(M)\times\Omega^k(M)\to\mathbb{R}$. A particular role will be played by the support of the forms that we consider. In the following definition we introduce the different possibilities that we will consider, which are a generalization of the counterpart used for scalar fields which correspond in our scenario to $k=0$, \textit{cf.} \cite{Baer-15}.
+\begin{Definition}\label{Def: space of forms}
+	Let $(M,g)$ be a Lorentzian spacetime with timelike boundary. We denote with 
+	\begin{enumerate}
+		\item 	$\Omega_{\mathrm{c}}^k(M)$ the space of smooth $k$-forms with compact support in $M$ while with $\Omega_{\mathrm{cc}}^k(M)\subset\Omega^k_{\mathrm{c}}(M)$ the collection of smooth and compactly supported $k$-forms $\omega$ such that $\textrm{supp}(\omega)\cap\partial M=\emptyset$.
+		\item
+		$\Omega_{\mathrm{spc}}^k(M)$ (\textit{resp}. $\Omega_{\mathrm{sfc}}^k(M)$) the space of strictly past compact (\textit{resp.} strictly future compact) $k$-forms, that is the collection of $\omega\in\Omega^k(M)$ such that there exists a compact set $K\subseteq M$ for which $J^+(\textrm{supp}(\omega))\subseteq J^+(K)$ (\textit{resp.} $J^-(\textrm{supp}(\omega))\subseteq J^-(K)$), where $J^\pm$ denotes the causal future and the causal past in $M$.  Notice that $\Omega_{\mathrm{sfc}}^k(M)\cap\Omega_{\mathrm{spc}}^k(M)=\Omega_{\mathrm{c}}^k(M)$.
+		\item
+		$\Omega_{\mathrm{pc}}^k(M)$ (\textit{resp}. $\Omega_{\mathrm{fc}}^k(M)$) denotes the space of future compact (\textit{resp.} past compact) $k$-forms, that is, $\omega\in\Omega^k(M)$ for which
+		${\rm supp}(\omega)\cap J^-(K)$ (\textit{resp.} ${\rm supp}(\omega)\cap J^+(K)$) is compact for all compact $K\subset M$.
+		\item $\Omega_{\mathrm{tc}}^k(M):=\Omega_{\mathrm{fc}}^k(M)\cap\Omega_{\mathrm{pc}}^k(M)$, the space of timelike compact $k$-forms.
+		\item $\Omega_{\mathrm{sc}}^k(M):=\Omega_{\mathrm{sfc}}^k(M)\cap\Omega_{\mathrm{spc}}^k(M)$, the space of spacelike compact $k$-forms.
+	\end{enumerate}
+\end{Definition}
+
+
+We indicate with $\mathrm{d}:\Omega^k(M)\to\Omega^{k+1}(M)$ the exterior derivative and, being $(M,g)$ oriented, we can identify a unique, metric-induced, Hodge operator $\ast:\Omega^k(M)\to\Omega^{m-k}(M)$, $m=\dim M$ such that, for all $\alpha,\beta\in\Omega^k(M)$, $\alpha\wedge\ast\beta=(\alpha,\beta)\mu_g$, where $\wedge$ is the exterior product of forms and $\mu_g$ the metric induced volume form. Since $M$ is endowed with a Riemannian metric it holds that, when acting on smooth $k$-forms, $\ast^{-1}=(-1)^{k(m-k)}\ast$. Combining these data first we define the {\em codifferential} operator $\delta:\Omega^{k+1}(M)\to\Omega^k(M)$ as $\delta\doteq\ast^{-1}\circ \mathrm{d}\circ\ast$. Secondly we introduce the {\em D'Alembert-de Rham} wave operator $\Box_k:\Omega^k(M)\to\Omega^k(M)$ such that $\Box_k\doteq \mathrm{d}\delta+\delta \mathrm{d}$, as well as the {\em Maxwell} operator $\mathcal{M}_k:\Omega^k(M)\to\Omega^k(M)$ such that $\mathcal{M}_k\doteq\delta \mathrm{d}$. The subscript $k$ is here introduced to make explicit on which space of $k$-forms the operator is acting. Observe, furthermore, that $\Box_k$ differs by the more commonly used D'Alembert wave operator acting on $k$-forms by $0$-order term built out of the metric and whose explicit form depends on the value of $k$, see for example \cite[Sec. II]{Pfenning:2009nx}.
+
+To conclude the section, we focus on the boundary $\partial M$ and on the interplay with $k$-forms lying in $\Omega^k(M)$. The first step consists of defining two notable maps. These relate $k$-forms defined on the whole $M$ with suitable counterparts living on $\partial M$ and, in the special case of $k=0$, they coincide either with the restriction to the boundary of a scalar function or with that of its derivative along the direction normal to $\partial M$.
+
+\begin{remark}
+	Since we will be considering not only form lying in $\Omega^k(M)$, $k\in\mathbb{N}\cup\{0\}$, but also those in $\Omega^k(\partial M)$, we shall distinguish the operators acting on this space with a subscript $_\partial$, {\it e.g.} $\mathrm{d}_\partial$, $\ast_\partial$, $\delta_\partial$ or $(,)_\partial$.
+\end{remark}
+
+\begin{Definition}\label{Def: tangential and normal component}
+	Let $(M,g)$ be a Lorentzian spacetime with timelike boundary together with the embedding map $\iota_{\partial M}:\partial M\hookrightarrow M$. We call {\em tangential} and {\em normal} maps 
+	\begin{subequations}\label{Eqn: tangential and normal maps}
+		\begin{equation}\label{Eqn: tangential map}
+		\mathrm{t}\colon\Omega^k(M)\to\Omega^k(\partial M)\qquad\omega\mapsto\mathrm{t}\omega\doteq\iota_{\partial M}^*\omega
+		\end{equation}
+		\begin{equation}\label{Eqn: normal maps}
+		\mathrm{n}\colon\Omega^k(M)\to\Omega^{k-1}(\partial M)\qquad\omega\mapsto\mathrm{n}\omega\doteq\ast_{\partial}^{-1}\circ\mathrm{t}\circ\ast_M\,,
+		\end{equation}
+	\end{subequations}
+	In particular, for all $k\in\mathbb{N}\cup\{0\}$ we define
+	\begin{align}\label{Eqn: k-forms with vanishing tangential or normal component}
+	\Omega_{\mathrm{t}}^k(M):=\lbrace\omega\in\Omega^k(M)\;|\;\mathrm{t}\omega=0\rbrace\,,\qquad
+	\Omega_{\mathrm{n}}^k(M):=\lbrace\omega\in\Omega^k(M)\;|\;\mathrm{n}\omega=0\rbrace\,.
+	\end{align}
+\end{Definition}
+
+\begin{remark}
+	The normal map $\mathrm{n}:\Omega^k(M)\to\Omega^{k-1}(\partial M)$ can be equivalently read as the restriction to $\partial M$ of the contraction $\nu\operatorname{\lrcorner}\omega$ between $\omega\in\Omega^k(M)$ and the vector field $\nu\in\Gamma(TM)|_{\partial M}$ which corresponds pointwisely to the unit vector, normal to $\partial M$.
+\end{remark}
+
+\noindent As last step, we observe that \eqref{Eqn: tangential and normal maps} together with \eqref{Eqn: k-forms with vanishing tangential or normal component} entail the following series of identities on $\Omega^k(M)$ for all $k\in\mathbb{N}\cup\{0\}$.
+\begin{subequations}\label{Eqn: relations between d,delta,t,n}
+	\begin{equation}\label{Eqn: relations-bulk}
+	\ast\delta=(-1)^k\mathrm{d}\ast\,,\quad
+	\delta\ast=(-1)^{k+1}\ast\mathrm{d}\,,
+	\end{equation}
+	\begin{equation}\label{Eqn: relations-bulk-to-boundary}
+	\ast_\partial\mathrm{n}=\mathrm{t}\ast\,,\quad
+	\ast_\partial\mathrm{t}=(-1)^k\mathrm{n}\ast\,,\quad
+	\mathrm{d}_\partial\mathrm{t}=\mathrm{t}\mathrm{d}\,,\quad
+	\delta_\partial\mathrm{n}=\mathrm{n}\delta\,.
+	\end{equation}
+\end{subequations}
+A notable consequence of \eqref{Eqn: relations-bulk-to-boundary} is that, while on globally hyperbolic spacetimes with empty boundary, the operators $\mathrm{d}$ and $\delta$ are one the formal adjoint of the other, in the case in hand, the situation is different. A direct application of Stokes' theorem yields that 
+\begin{align}\label{Eqn: boundary terms for delta and d}
+(\mathrm{d}\alpha,\beta)-(\alpha,\delta\beta)=
+(\mathrm{t}\alpha,\mathrm{n}\beta)_\partial\qquad
+\forall\alpha\in\Omega_{\mathrm{c}}^k(M)\,,\;
+\forall\beta\in\Omega_{\mathrm{c}}^{k+1}(M)\,,
+\end{align}
+where the pairing in the right-hand side is the one associated to forms living on $\partial M$.
+
+
+\section{Poincar\'e-Lefschetz duality for manifold with boundary}\label{Sec: Poincare duality for manifold with boundary}
+
+In this section we summarize a few definitions and results concerning de Rham cohomology and Poincar\'e duality, especially when the underlying manifold has a non empty boundary. A reader interested in more details can refer to \cite{Bott-Tu-82,Schwarz-95}. 
+
+For the purpose of this section $M$ refers to a smooth, oriented manifold of dimension $\dim M=d$ with a smooth boundary $\partial M$, together with an embedding map $\iota_{\partial M}:M\to\partial M$. In addition $\partial M$ comes endowed with orientation induced from $M$ via $\iota_{\partial M}$. We recall that $\Omega^\bullet(M)$ stands for the de Rham cochain complex which in degree  $k\in\mathbb{N}\cup\{0\}$ corresponds to $\Omega^k(M)$, the space of smooth $k$-forms. Observe that we shall need to work only with compactly supported forms and all definitions can be adapted accordingly. To indicate this specific choice, we shall use a subscript $c$, {\it e.g.} $\Omega^\bullet_c(M)$. We denote instead the $k$-th de Rham cohomology group of $M$ as 
+$$H^k(M)\doteq\frac{\Ker (d_k)}{\Im (d_{k-1})},$$
+where we introduce the subscript $k$ to highlight that the differential operator $d$ acts on $k$-forms. Equations \eqref{Eqn: k-forms with vanishing tangential or normal component} and \eqref{Eqn: relations-bulk-to-boundary} entail that we can define the $\Omega^\bullet_{\mathrm{t}}(M)$, the subcomplex of $\Omega^\bullet(M)$, whose degree $k$ corresponds to $\Omega^k_{\mathrm{t}}(M)\subset\Omega^k(M)$. The associated de Rham cohomology groups will be denoted as $H^k_t(M)$, $k\in\mathbb{N}\cup\{0\}$.
+
+Similarly we can work with the codifferential $\delta$ in place of $d$, hence identifying a chain complex $\Omega^\bullet(M;\delta)$ which in degree  $k\in\mathbb{N}\cup\{0\}$ corresponds to $\Omega^k(M)$, the space of smooth $k$-forms. The associated $k$-th homology groups will be denoted with 
+$$H_k(M;\delta)\doteq\frac{\Ker (\delta_k)}{\Im (\delta_{k+1})}.$$
+Equations \eqref{Eqn: k-forms with vanishing tangential or normal component} and \eqref{Eqn: relations-bulk-to-boundary} entail that we can define the $\Omega^\bullet_{\mathrm{n}}(M;\delta)$, the subcomplex of $\Omega^\bullet(M;\delta)$, whose degree $k$ corresponds to $\Omega^k_{\mathrm{n}}(M)\subset\Omega^k(M)$. The associated homology groups will be denoted as $H_{k,n}(M;\delta)$, $k\in\mathbb{N}\cup\{0\}$. Observe that, in view of its definition, the Hodge operator induces an isomorphism $H^k(M)\simeq H_{d-k}(M;\delta)$ which is realized as $H^k(M)\ni[\alpha]\mapsto [\ast\alpha]\in H_{d-k}(M;\delta)$. Similarly, on account of Equation \eqref{Eqn: relations-bulk-to-boundary}, it holds $H^k_t(M)\simeq H_{d-k,n}(M;\delta)$.
+
+As last ingredient, we introduce the notion of relative cohomology, {\it cf.} \cite{Bott-Tu-82}. We start by defining the relative de Rham cochain complex $\Omega^\bullet(M;\partial M)$  which in degree  $k\in\mathbb{N}\cup\{0\}$ corresponds to 
+\begin{align*}
+\Omega^k(M,\partial M)\doteq \Omega^k(M)\oplus\Omega^{k-1}(\partial M),
+\end{align*}
+endowed with the differential operator $\underline{\mathrm{d}}_k:\Omega^k(M;\partial M)\to\Omega^{k+1}(M;\partial M)$ such that for any $(\omega,\theta)\in\Omega^k(M;\partial M)$
+\begin{equation}\label{Eq: relative-differential}
+\underline{\mathrm{d}}_k(\omega,\theta)=(\mathrm{d}\omega,\iota^*_{\partial M}\omega-\mathrm{d}_\partial\theta)\,.
+\end{equation}
+Per construction, each $\Omega^k(M;\partial M)$ comes endowed naturally with the projections on each of the defining components, namely $\pi_1:\Omega^k(M;\partial M)\to\Omega^k(M)$ and $\pi_2:\Omega^k(M;\partial M)\to\Omega^k(\partial M)$. With a slight abuse of notation we make no explicit reference to $k$ in the symbol of these maps, since the domain of definition will be always clear from the context. The relative cohomology groups associated to $\underline{\mathrm{d}}_k$ will be denoted instead as $H^k(M;\partial M)$ and the following proposition characterizes the relation with the standard de Rham cohomology groups built on $M$ and on $\partial M$, {\it cf.} \cite[Prop. 6.49]{Bott-Tu-82}:
+
+\begin{proposition}\label{Prop: long exact sequence}
+	Under the geometric assumptions specified at the beginning of the section, there exists an exact sequence
+	\begin{equation}
+	\ldots\to H^k(M;\partial M)\operatornamewithlimits{\longrightarrow}^{\pi_{1,*}} H^k(M) \operatornamewithlimits{\longrightarrow}^{\iota_{\partial M,*}} H^k(\partial M)\operatornamewithlimits{\longrightarrow}^{\pi_{2,*}} H^{k+1}(M;\partial M)\to\ldots,
+	\end{equation}
+	where $\pi_{1,*}$, $\pi_{2,*}$ and $\iota_{\partial M,*}$ indicate the natural counterpart of the maps $\pi_1$, $\pi_2$ and $\iota_{\partial M}$ at the level of cohomology groups.
+\end{proposition}
+
+\noindent The relevance of the relative cohomology groups in our analysis is highlighted by the following statement, of which we give a concise proof:
+
+\begin{proposition}\label{Prop: equivalence description of relative cohomology}
+	Under the geometric assumptions specified at the beginning of the section, there exists an isomorphism between $H^k_t(M)$ and $H^k(M,\partial M)$ for all $k\in\mathbb{N}\cup\{0\}$.
+\end{proposition}
+
+\begin{proof}
+	Consider $\omega\in\Omega^k_t(M)\cap\ker(d)$ and let $(\omega,0)\in\Omega^k(M;\partial M)$, $k\in\mathbb{N}\cup\{0\}$. Equation \eqref{Eq: relative-differential} entails
+	\begin{align*}
+	\underline{\mathrm{d}}_k(\omega,0)=(\mathrm{d}\omega,\iota^*_{\partial M}\omega)=(\mathrm{d}\omega,\mathrm{t}\omega)=(0,0)\,,
+	\end{align*}
+	where we used \eqref{Eqn: tangential map} in the second equality. At the same time, if $\omega=\mathrm{d}\beta$ with $\beta\in\Omega_\mathrm{t}^{k-1}(M)$, then $\underline{\mathrm{d}}_{k-1}(\beta,0)=(\mathrm{d}\beta,0)$.
+	Hence the embedding $\omega\mapsto (\omega,0)$ identifies an injective map $\rho: H^k_t(M)\to  H^k(M;\partial M)$ such that $\rho([\omega])\doteq [(\omega,0)]$.
+	
+	To conclude, we need to prove that $\rho$ is surjective. Let thus $[(\omega^\prime,\theta)]\in H^k(M;\partial M)$. It holds that $d\omega^\prime=0$ and $\iota^*_{\partial M}\omega^\prime-d_\partial\theta=t(\omega^\prime)-d_\partial\theta=0$. Recalling that $t:\Omega^k(M)\to\Omega^k(\partial M)$ is surjective for all values of $k\in\mathbb{N}\cup\{0\}$, there must exist $\eta\in\Omega^{k-1}(M)$ such that $t(\eta)=\theta$. Let $\omega\doteq\omega^\prime -d\eta$. On account of \eqref{Eqn: relations-bulk-to-boundary} $\omega\in\Omega^k_t(M)\cap\ker(d)$ and $(\omega, 0)$ is a representative if $[(\omega^\prime,\theta)]$ which entails the conclusion sought.
+\end{proof}
+
+\noindent To conclude, we recall a notable result concerning the relative cohomology, which is a specialization to the case in-hand of the Poincar\'e-Lefschetz duality, an account of which can be found in \cite{Maunder}:
+\begin{theorem}\label{Prop: Poin-Lefs duality}
+	Under the geometric assumptions specified at the beginning of the section and assuming in addition that $M$ admits a finite good cover, it holds that, for all $k\in\mathbb{N}\cup\{0\}$
+	$$H^k(M;\partial M)\simeq H^{n-k}_c(M;\partial M)^*,$$
+	where $n=\dim M$ and where on the right hand side we consider the dual of the $(n-k)$-th cohomology group built out compactly supported forms.
+\end{theorem}
+\vspace{0.3cm}
+The proof proceeds in some steps. Let $\iota:\partial M\to M$ be the immersion map. First of all we have to check that the spaces are finite-dimensional and that the pairing $\langle \,,\,\rangle:H^{n-k}(M)\otimes H_{\mathrm{c}}^{k}(M,\partial M)$ defined by
+\begin{align}
+\langle\alpha,(\omega,\theta)\rangle:=\int_M\alpha\wedge\omega+\int_{\partial M}\iota^*\alpha\wedge \theta\,\qquad\forall\alpha\in H^{n-k}(M)\text{ and } (\omega,\theta)\in H_{\mathrm{c}}^{k}(M,\partial M)\,,
+\label{eq:dualitypair}
+\end{align}
+is non-degenerate, equivalently the map $\alpha\to\langle\alpha,\cdot\rangle$ should be an isomorphism.\\
+
+Since a manifold $M$ with boundary is locally homeomorphic to $\mathbb{R}^n_+:=\{(x_1,\dots,x_n)\,|\, x_1\geq 0\}$ we need Poincar\'e lemmas for $\mathbb{R}^n_+$.
+
+
+\begin{lemma}[Poincar\'e lemmas for manifolds with boundary]
+	Let $\mathbb{R}^n_+:=\{(x_1,\dots,x_n)\,|\, x_1\geq 0\}$ and $k\geq 0$. Then
+	\begin{align}
+	H^k(\mathbb{R}^n_+)\simeq\begin{cases}
+	\mathbb{R}\quad &\text{if }k=0\\
+	\{0\}\quad &\text{otherwise}
+	\end{cases}\\
+	H^k_c(\mathbb{R}^n_+,\partial\mathbb{R}^n_+)\simeq\begin{cases}
+	\mathbb{R}\quad &\text{if }k=n\\
+	\{0\}\quad &\text{otherwise}
+	\end{cases}
+	\end{align}
+\end{lemma}
+
+\begin{proof}
+	The proof for the case $n=1$, i.e. $\mathbb{R}_+=[0,+\infty)$ is straightforward and the $n$-dimensional generalisation is obtained as in (\cite[Sec. 4]{Bott-Tu-82}).
+\end{proof}
+
+\begin{lemma}[Mayer-Vietoris sequences]
+	Let $M$ be an orientable manifold with boundary $\partial M$, suppose $M=U\cup V$ with $U,V$ open and denote $\partial M_A:=\partial M\cap A$. Then the following are exact sequences:
+	\begin{align}
+	\cdots\to H^k(M,\partial M)\operatornamewithlimits{\rightarrow} H^k(U,\partial M_{U})\oplus H^k(V,\partial M_{V})  \operatornamewithlimits{\rightarrow} H^k(U\cap V,\partial M_{U\cap V})\rightarrow H^{k+1}(M,\partial M)\to\cdots
+	\end{align}
+	\vspace{-0.6cm}
+	\begin{align}
+	\cdots\leftarrow H_c^k(M,\partial M)\operatornamewithlimits{\leftarrow} H_c^k(U,\partial M_{U})\oplus H^k(V,\partial M_{V})  \operatornamewithlimits{\leftarrow} H_c^k(U\cap V,\partial M_{U\cap V})\leftarrow H_c^{k+1}(M,\partial M)\leftarrow\cdots
+	\end{align}
+\end{lemma}
+
+\begin{proof} We will only prove the non-compact cohomology line.\\
+	We have the following Mayer-Vietoris short exact sequences for $M$ and $\partial M$:
+	\begin{align*}
+	0\longrightarrow\Omega^k(M)\longrightarrow\Omega^k(U)&\oplus\Omega^k(V)\longrightarrow\Omega^k(U\cap V)\longrightarrow 0\\
+	0\to  \Omega^{k-1}(\partial M)\to\Omega^{k-1}(\partial M_U)&\oplus\Omega^{k-1}(\partial M_V)\to\Omega^{k-1}(\partial M_{U\cap V})\to 0.
+	\end{align*}
+	Hence applying the direct sum between the two sequences we obtain
+	\begin{align*}
+	0\longrightarrow\Omega^k(M,\partial M)\longrightarrow\Omega^k(U,\partial M_U)\oplus\Omega^k(V,\partial M_V)\longrightarrow\Omega^k(U\cap V,\partial M_{U\cap V})\longrightarrow 0.
+	\end{align*}
+	The last row induces the desired long sequence because of the following commutative diagram
+	\begin{equation}
+	\xymatrix{
+		0 \ar[r] &\Omega^k(M,\partial M) \ar[d]^d \ar[r] &\Omega^k(U,\partial M_U)\oplus\Omega^k(V,\partial M_V)\ar[d]^{\mathrm{d}:=d\oplus d} \ar[r] &\Omega^k(U\cap V,\partial M_{U\cap V}) \ar[d]^d \ar[r] &0 \\
+		0 \ar[r] &\Omega^{k+1}(M,\partial M) \ar[r] &\Omega^{k+1}(U,\partial M_U)\oplus\Omega^{k+1}(V,\partial M_V)\ar[r] &\Omega^{k+1}(U\cap V,\partial M_{U\cap V}) \ar[r] &0}
+	\end{equation}
+	following the arguments in \cite{Bott-Tu-82}, section 2. Fix a closed form $\omega\in\Omega^k(U\cap V,\partial M_{U\cap V})$, since the first row is exact there exists a unique $\xi\in\Omega^{k+1}(M,\partial M)$ which is mapped to $\omega$. Now, since $\mathrm{d}\omega=0$ and the diagram is commutative $\mathrm{d}\xi$ is mapped to $0$. Hence from the exactness of the second row there exists $\chi$ which is mapped to $\mathrm{d}\xi$ and it easy to see $\chi$ is closed.
+\end{proof}
+
+\begin{lemma}
+	If the manifold with boundary $M$ has a \emph{finite good cover} (see \cite[Sec. 5]{Bott-Tu-82}) then its (relative) cohomology and (relative) compact cohomology is finite dimensional.
+\end{lemma}
+
+\begin{proof}
+	The proof is based on the existence of a Mayer-Vietoris sequence in any of the desired cases (proved in the previous proposition) and follows the outline of \cite[Prop. 5.3.1]{Bott-Tu-82}.
+\end{proof}
+
+\begin{lemma}[Five lemma]
+	Given the commutative diagram with exact rows
+	\begin{equation}
+	\xymatrix{
+		\cdots \ar[r] &A \ar[d]^f \ar[r]  &B \ar[d]^g \ar[r] &C \ar[d]^h \ar[r] &D \ar[d]^r \ar[r] &E \ar[d]^s \ar[r] &\cdots\\
+		\cdots \ar[r] &A' \ar[r]  &B' \ar[r] &C' \ar[r] &D' \ar[r] &E' \ar[r] &\cdots\\}
+	\end{equation}
+	if $f,g,h,s$ are isomorphism, then so is $r$.
+	
+\end{lemma}
+
+
+\begin{lemma}
+	Suppose $M=U\cup V$ with $U,V$ open. The pairing \eqref{eq:dualitypair} induces a map from the upper exact sequence to the dual of the lower exact sequence such that the following diagram is commutative:
+	\begin{equation}
+	\xymatrix{
+		\cdots \ar[r] &H^{n-k}(M) \ar[d] \ar[r] &H^{n-k}(U)\oplus H^{n-k}(V)\ar[d]\ar[r] &H^{n-k+1}(M) \ar[d] \ar[r] &\cdots\\
+		\cdots \ar[r] &H^{k}(M,\partial M)^*  \ar[r] &H^{k}(U,\partial M_U)^*\oplus H^{k}(V,\partial M_V)^*\ar[r] &H^{k-1}(M)^* \ar[r] &\cdots}
+	\end{equation}
+	
+\end{lemma}
+
+
+\begin{proof}
+	The proof follows that of \cite[Lem. 5.6]{Bott-Tu-82}.
+\end{proof}
+
+
+\noindent Now we are ready to prove the main theorem of this section:\\
+
+\noindent\textit{Proof of Poincar\'e-Lefschetz Duality}. Follow the argument given in \cite[Sec. 5]{Bott-Tu-82}. By the Five lemma if Poincar\'e-Lefschetz duality holds for $U,V$ and $U\cap V$, then it holds for $U\cup V$. Then it is sufficient to proceed by induction on the cardinality of a finite good cover.\hfill$\square$

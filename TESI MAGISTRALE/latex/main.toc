@@ -1,0 +1,39 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {english}{}
+\contentsline {chapter}{Abstract}{v}{section*.1}
+\contentsline {chapter}{Introduction}{1}{chapter*.4}
+\contentsline {chapter}{\numberline {1}Geometric preliminaries}{5}{chapter.7}
+\contentsline {section}{\numberline {1.1}Globally Hyperbolic spacetimes with timelike boundary}{5}{section.8}
+\contentsline {section}{\numberline {1.2}Differential forms and operators on manifolds with boundary}{9}{section.27}
+\contentsline {section}{\numberline {1.3}Bounded Geometry and associated functional spaces}{11}{section.43}
+\contentsline {subsection}{\numberline {1.3.1}Sobolev spaces}{12}{subsection.51}
+\contentsline {subsection}{\numberline {1.3.2}Restrictions and trace maps for differential forms}{13}{subsection.59}
+\contentsline {section}{\numberline {1.4}Green operators}{13}{section.64}
+\contentsline {section}{\numberline {1.5}Maxwell's equations for $k$-forms with empty boundary}{17}{section.90}
+\contentsline {chapter}{\numberline {2}Maxwell's equations for the field strength and interface conditions}{21}{chapter.96}
+\contentsline {section}{\numberline {2.1}Geometrical setup}{21}{section.97}
+\contentsline {section}{\numberline {2.2}Constraint equations: Hodge theory with interface}{23}{section.106}
+\contentsline {subsection}{\numberline {2.2.1}Hodge decomposition on compact manifold with non-empty boundary}{24}{subsection.116}
+\contentsline {subsection}{\numberline {2.2.2}Hodge decomposition for compact manifold with interface}{25}{subsection.131}
+\contentsline {subsection}{\numberline {2.2.3}Further perspectives on Hodge decomposition}{28}{subsection.150}
+\contentsline {subsection}{\numberline {2.2.4}Non-dynamical Maxwell's equations}{29}{subsection.157}
+\contentsline {section}{\numberline {2.3}Dynamical equations: Lagrangian subspaces}{30}{section.163}
+\contentsline {section}{\numberline {2.4}Perspectives on algebraic quantization of the field strength $F$}{36}{section.199}
+\contentsline {chapter}{\numberline {3}Maxwell's Equations for the vector potential and Boundary Conditions}{39}{chapter.201}
+\contentsline {section}{\numberline {3.1}On the D'Alembert--de Rham wave operator}{39}{section.202}
+\contentsline {subsection}{\numberline {3.1.1}Existence of Green operators on ultrastatic spacetimes}{42}{subsection.220}
+\contentsline {subsection}{\numberline {3.1.2}Properties of Green operators for D'Alembert-de Rham wave operator}{49}{subsection.253}
+\contentsline {section}{\numberline {3.2}On the Maxwell operator}{53}{section.276}
+\contentsline {subsection}{\numberline {3.2.1}Spaces of solutions for selected boundary conditions}{53}{subsection.277}
+\contentsline {section}{\numberline {3.3}Introduction to the algebraic formalism}{57}{section.302}
+\contentsline {subsection}{\numberline {3.3.1}The generators of the algebra of observables}{58}{subsection.305}
+\contentsline {subsubsection}{Symplectic structures}{60}{section*.314}
+\contentsline {section}{\numberline {3.4}The algebra of observables for $\operatorname {Sol}_{\mathrm {t}}(M)$ and for $\operatorname {Sol}_{\mathrm {nd}}(M)$}{63}{section.329}
+\contentsline {subsubsection}{The algebra of observables for $\operatorname {Sol}_{\mathrm {t}}(M)$}{63}{section*.330}
+\contentsline {subsubsection}{The algebra of observable for $\operatorname {Sol}_{\mathrm {nd}}(M)$}{65}{section*.340}
+\contentsline {subsection}{\numberline {3.4.1}An alternative algebra for $\delta \mathrm {d}$-normal boundary conditions}{67}{subsection.349}
+\contentsline {chapter}{Conclusions}{69}{chapter*.350}
+\contentsline {chapter}{\numberline {A}Cohomology and Poincar\'e-Lefschetz duality for manifold with boundary}{71}{appendix.351}
+\contentsline {chapter}{\numberline {B}An explicit computation}{77}{appendix.374}
+\contentsline {chapter}{\numberline {C}Proofs of statements in Subsection \ref {Sub: symplectic structures}}{81}{appendix.381}
+\contentsline {chapter}{Bibliography}{85}{appendix*.390}

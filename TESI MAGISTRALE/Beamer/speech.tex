@@ -1,0 +1,124 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{lmodern}
+%\renewcommand\rmdefault{ptm}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\setlength{\parindent}{0pt}
+
+\author{Rubens Longhi}
+\title{Discorso}
+\begin{document}
+	\maketitle
+	Good afternoon. I am Rubens Longhi, currently a PhD student at the University of Potsdam and today I will present you a joint work with Prof. Claudio Dappiaggi and Dr. Nicolò Drago entitled \emph{On Maxwell's equations on globally hyperbolic spacetimes with timelike boundary}. The aim of the work was to construct the space of solutions of Maxwell's equations for $k$-forms on a particular class of spacetimes with boundary. We first constructed advanced and retarded Green operators for the d'Alembert -- de Rham wave operator $\Box_k$ restricting to the static case for various boundary conditions using the method of Boundary Triples. Then, relying on these results, we impose on Maxwell's equations two particular classes of boundary conditions that lead to two different notions of gauge invariance. Moreover, we construct the associated $*$-algebras of observables in both cases, proving that, in analogy with the case of empty boundary, they possess non-trivial center.
+	
+	The problem has been
+	For the geometric aspects of globally hyperbolic spacetimes, we reference to the recent results obtained by
+	Ak\'e L., Flores J.L. , Sanchez M.,
+	\textit{``Structure of globally hyperbolic spacetimes with timelike boundary''},
+	arXiv:1808.04412 [gr-qc]
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	Buongiorno a tutti. La mia tesi di laurea magistrale tratta del ruolo delle condizioni al contorno nella costruzione di soluzioni fondamentali per le equazioni di Maxwell in uno spaziotempo con bordo di tipo tempo. Ci siamo quindi occupati di caratterizzare in termini di soluzioni fondamentali, dette anche funzioni di Green, lo spazio delle soluzioni classiche delle equazioni dell'elettromagnetismo. Le abbiamo ambientate, però, in un contesto non-Minkowskiano e dove lo spaziotempo possiede un bordo sul quale porre delle condizioni al contorno. Abbiamo quindi provato per alcune classi di condizioni al contorno l'esistenza, l'unicità e le proprietà delle funzioni di Green per le equazioni delle onde e le abbiamo sfruttate per caratterizzare le equazioni di Maxwell. \textit{???Come applicazione, costruire l'algebra delle osservabili classica e quantistica associata al sistema.???} Parte del nostro lavoro si è poi tradotto in un articolo, il quale è disponibile sull'archivio sotto forma di preprint\footnote{C. Dappiaggi, N. Drago, and R.L. \emph{On Maxwell’s Equations
+		on Globally Hyperbolic Spacetimes with Timelike Boundary.} In: arXiv:1908.09504 (2019)}. \\
+	
+	Notiamo che il nostro lavoro non è stato sviluppato con un unico modello fisico come riferimento. Il formalismo utilizzato, infatti, ci consente di applicare i risultati non soltanto in contesti ispirati dalla relatività generale in cui lo spaziotempo è curvo, ma anche in una vasta gamma di modelli fisici ambientati in regioni per le quali andiamo ad imporre condizioni al contorno tali che il flusso delle quantità fisiche rilevanti attraverso il bordo sia zero. In questo senso, gli esempi fisici più importanti sui quali sarà possibile applicare il nostro lavoro sono l'effetto Casimir e l'effetto Hall\footnote{se ci sto coi tempi aggiungo dettagli}.\\
+	
+	Incominciamo descrivendo la classe di spazitempi in cui abbiamo lavorato. Abbiamo preso in considerazione spazitempi $M$ di dimensione arbitraria $m$ globalmente iperbolici con un bordo di tipo tempo. Questo implica fondamentalmente che esiste un'orientazione temporale e che su questa imponiamo una condizione di causalità, ovvero richiediamo che non ci debbano essere traiettorie causali percorribili che si chiudano su se stesse, in modo tale da evitare paradossi temporali. In secondo luogo imponiamo che lo spaziotempo abbia un bordo di tipo tempo, ovvero richiediamo che il bordo $\partial M$ sia esso stesso uno spaziotempo temporalmente orientato, con una metrica ereditata da $M$. Sotto le suddette ipotesi, possiamo considerare lo spaziotempo $M$ come il prodotto cartesiano tra la retta reale, che parametrizza la direzione temporale, e una varietà Riemanniana $\Sigma$ con bordo.
+	
+	Le tecniche matematiche che abbiamo utilizzato nella costruzione delle funzioni di Green ci hanno però costretto a richiedere un'ipotesi aggiuntiva sullo spaziotempo: la staticità. Sostanzialmente, uno spaziotempo è statico se la geometria della varietà con bordo $\Sigma$, dello \emph{spazio} per intenderci, non cambia nel tempo ed inoltre è irrotazionale. Un esempio base di spaziotempo statico con bordo è certamente il semi-spaziotempo piatto di Minkowski, mentre un esempio senza bordo ispirato dalla relatività generale può essere lo spaziotempo di Schwarzschild, che fa da modello per il campo gravitazionale di un buco nero non rotante.\\
+	
+	Le funzioni di Green o soluzioni fondamentali sono un metodo per caratterizzare lo spazio delle soluzioni di un sistema di equazioni differenziali. Esse sono il nucleo integrale dei cosiddetti operatori di Green. Un operatore di Green $G$ per un operatore differenziale $P$ è un inverso di $P$ con delle prescritte condizioni al contorno e di supporto. In generale quindi richiediamo che $P\circ G=id$ e $G\circ P=id$. In questo modo, data una qualsiasi sorgente $f$ a supporto compatto, troviamo l'unica soluzione all'equazione differenziale $Pu=f$ nell'incognita $u$ con dati iniziali nulli semplicemente applicando $G$: $u=GPu=G(f)$.
+		
+	Noi abbiamo provato l'esistenza e l'unicità dei cosiddetti operatori di Green avanzato e ritardato $G^\pm$, tali che il supporto della soluzione trovata $G^\pm(f)$ sia contenuto rispettivamente nel futuro e nel passato del supporto della sorgente $f$. Questa condizione assicura che il segnale classico si propaghi all'interno del cono luce, ovvero a velocità finita. Inoltre come differenza tra gli operatori avanzato e ritardato si ottiene il \emph{propagatore causale}, ingrediente fondamentale per la quantizzazione della teoria di campo associata.\\
+	
+	Nella tesi abbiamo lavorato sulle equazioni di Maxwell formulate nel linguaggio delle $k$-forme differenziali, denotate con $\Omega^k(M)$. Il campo elettromagnetico è descritto dalla $2$-forma di Faraday $F$ o, nella versione in termini dei potenziali, dal potenziale vettore $A$ visto come $1$-forma. Ricordiamo che le $2$-forme sono tensori doppi antisimmetrici e che la forma di Faraday può essere scritta in termini dei familiari campi elettrico e magnetico nel seguente modo: $F=B+\mathrm{d}t\wedge E$. Il campo elettrico $E$ e il campo magnetico $B$ sono quindi visti rispettivamente come una $1$-forma spaziale e una $2$-forma spaziale tempo-dipendenti. A questo punto introduciamo le equazioni di Maxwell $\mathrm{d}F=0$, $\delta F=-J$, dove $\mathrm{d}$ e $\delta$ sono il differenziale e il codifferenzale e $J$ è la quadricorrente. Il campo di Faraday nel vuoto è quindi una $2$-forma chiusa e cochiusa. Ricordiamo che il differenziale agisce in componenti sul tensore di Faraday così: $(\mathrm{d}F)_{ijk}=\partial_i F_{jk}+\partial_j F_{ki}+\partial_k F_{ij}=0$, mentre il codifferenziale agisce semplicemente come una quadridivergenza: $(\delta F)_k=\partial^jF_{jk}=0$. Il motivo per cui usiamo questo formalismo è che la sua generalizzazione al curvo mantiene invariate in forma le equazioni. Infatti quando lo spaziotempo non è piatto, le derivate si computano tenendo conto di alcuni termini aggiuntivi di curvatura $\Gamma$ simmetrici. Essendo però le forme differenziali totalmente antisimmetriche, questi termini svaniscono.\\
+	
+	Come teoria di gauge, l'elettromagnetismo è però formulato in termini del quadri-potenziale $A\in\Omega^1(M)$. Per scrivere le equazioni per $A$ imponiamo che, almeno localmente, $A$ sia una primitiva di $F$, cioè valga $F=\mathrm{d}A$, o in componenti $F_{ij}=\partial_iA_j-\partial_jA_i$. Notiamo che l'esistenza di una primitiva globale per $F$, in altre parole l'esattezza della $2$-forma $F$, dipende dalla topologia dello spaziotempo sottostante. Se per esempio consideriamo la regione dello spaziotempo minkowskiano all'esterno di un solenoide percorso da corrente, essa non è semplicemente connessa e il potenziale generato non è definito globalmente. Questo effetto topologico è misurabile ed è noto come effetto Aharonov-Bohm.\\
+	
+	Inseriamo quindi $F=\mathrm{d}A$. Notiamo che la prima equazione è automaticamente soddisfatta poichè il differenziale è nihilpotente e la seconda diventa $\delta\mathrm{d}A=-J$. Concentrandoci per il momento sul caso classico di uno spaziotempo senza bordo, notiamo che l'equazione possiede un grado di libertà di gauge. Infatti, preso $A\in\Omega^1(M)$ che risolve l'equazione, anche $A'=A+\mathrm{d}\chi$, con $\chi$ funzione arbitraria, risolve l'equazione e dà luogo allo stesso campo di Faraday $F$. Questo avviene poichè $F'=\mathrm{d}A'=\mathrm{d}A+\mathrm{d}^2\eta=\mathrm{d}A=F$. In questo caso diciamo che $A$ e $A'$ sono \emph{gauge-equivalenti} e la trasformazione $A\to A+\mathrm{d}\chi$ è detta trasformazione di gauge. Sfruttiamo quindi l'invarianza di gauge per riformulare il problema. Ci chiediamo se esista una trasformazione di gauge in grado di rendere le equazioni dell'elettromagnetismo in forma iperbolica, cioè equazioni d'onda rette dall'operatore $\Box=\delta\mathrm{d}+\mathrm{d}\delta$. Senza bordo ciò è sempre possibile poichè all'interno di ogni classe di equivalenza del potenziale $[A]$  esiste un rappresentativo che soddisfa il gauge di Lorenz $\delta A=0$ ($\partial^k\!A_k=0$). In altre parole, fissato $A\in\Omega^1(M)$, cerchiamo una funzione $\chi$ tale che $A'=A+\mathrm{d}\chi$ soddisfi $\delta A'=\delta A+\delta\mathrm{d}\chi=\delta A+\Box\chi=0$ e l'equazione $\Box\chi=0$ ammette soluzione, in caso non vi sia il bordo. Il sistema diventa quindi il seguente: $\Box A=-J$, $\delta A=0$.\\
+	
+	L'esistenza e le proprietà delle funzioni di Green avanzata e ritardata per $\Box$ nel caso senza bordo, e quindi la caratterizzazione dello spazio delle soluzioni, sono risultati noti in letteratura. Una volta note le funzioni di Green per $\Box$, il sistema di Maxwell è risolto completamente in quanto anche il gauge di Lorenz è soddisfatto: $\delta A=-\delta G(J)=-G\delta J=0$\footnote{lo so che non funziona proprio così, il gauge si riflette come vincolo sui dati iniziali, ma la farei semplice.}. Notiamo che questo ultimo passaggio è possibile se l'operatore di Green e l'operatore quadri-divergenza $\delta$ commutano. Vedremo che nel caso con bordo non sempre questo risulta vero.\\
+	
+	Il nostro lavoro è stato quello di selezionare le condizioni al contorno per le quali si potesse generalizzare il procedimento appena mostrato anche al caso di spazitempi con bordo. Il punto fondamentale è che quando tentiamo di imporre il gauge di Lorenz dobbiamo trovare $\chi$ tale che $\Box\chi=-\delta A$ e questo non è sempre possibile se vengono imposte condizioni al contorno. Vediamo quindi per quali condizioni è possibile ottenere le funzioni di Green per all'operatore delle onde $\Box$. Come già menzionato, restringiamo la nostra attenzione alle condizioni al bordo che assicurano che il flusso delle quantità fisiche attraverso il bordo $\partial M$ sia zero. Matematicamente ciò si traduce nel richiedere che l'operatore delle onde sia simmetrico, cioè che il suo \emph{flusso simplettico} attraverso il bordo sia zero: $\sigma(\alpha,\beta)=(\Box\alpha,\beta)-(\alpha,\Box\beta)=0$, $\alpha,\beta\in\Omega^1(M)$ con intersezione dei supporti compatta. Qui le parentesi $(\,,\,)$ indicano il prodotto scalare non degenere $(\alpha,\beta)=\int_{M} \overline{\alpha}\wedge\star\beta=\int_{M}\overline{\alpha_k}\beta^k\,\mathrm{d}\mu_g$. Sfruttando il teorema di Stokes il flusso simplettico è esprimibile in funzione dei valori al bordo. Introduciamo quindi la traccia tangenziale $\mathrm{t}\eta$, che indica la proiezione sul bordo della $1$-forma $\eta$ e la traccia normale $\mathrm{n}\omega$, che indica la proiezione sulla normale al bordo della $1$-forma $\omega$. Allora esprimiamo il flusso simplettico come $\sigma(\alpha,\beta)=
+	(\mathrm{t}\delta\alpha,\mathrm{n}\beta)_\partial-
+	(\mathrm{n}\alpha,\mathrm{t}\delta\beta)_\partial-
+	(\mathrm{n}\mathrm{d}\alpha,\mathrm{t}\beta)_\partial+
+	(\mathrm{t}\alpha,\mathrm{n}\mathrm{d}\beta)_\partial$, dove $(\,,\,)_\partial$ indica il prodotto scalare nondegenere sul bordo $\partial M$.\\
+	
+	Tra la pletora di condizioni al contorno possibili che rendono nullo il flusso simplettico ne abbiamo selezionate alcune fisicamente sensate e sulle le quali è stato possibile applicare una tecnica matematica di analisi funzionale chiamata \emph{boundary triples} al fine di ottenere le funzioni di Green. Alcune delle condizioni al contorno selezionate sono
+	\begin{itemize}
+		\item quella di Dirichlet, indicata con $\mathrm{D}$, in cui poniamo semplicemente a zero sia la traccia tangenziale che quella normale;
+		\item $\Box$-tangential (...definizione...)
+		\item $\Box$-normal. (...definizione...)
+	\end{itemize}
+	Le ultime due saranno essenziali nello studio delle condizioni al contorno per l'operatore di Maxwell.\\
+	
+	Dato che le condizioni selezionate sono statiche, possiamo separare l'operatore delle onde nella sua componente spaziale e in quella temporale: $\Box=\partial_t^2+S$ e il flusso simplettico può essere riscritto istante per istante in termini di un solo operatore ellittico $S$ costruito a partire dal laplaciano $-\Delta$ sulla ipersuperficie di Cauchy $\Sigma$: $\sigma(\alpha,\beta)=(S\alpha|_\Sigma,\beta|_\Sigma)_\Sigma-(\alpha|_\Sigma,S\beta|_\Sigma)_\Sigma$, dove $(\,,\,)_\Sigma$ è il prodotto scalare hilbertiano nello spazio delle $1$-forme quadrato sommabili $\mathrm{L}^2\Omega^1(\Sigma)$\footnote{lo so, è un bel po' scorretto, ma avrei davvero perso un sacco di tempo}. Al fine di ottenere un'evoluzione temporale unitaria del sistema, però, non ci basta che il laplaciano sia simmetrico come operatore densamente definito in $\mathrm{L}^2\Omega^1(\Sigma)$: è anche necessario che sia autoaggiunto. Usiamo quindi un metodo che ci permette di selezionare estensioni autoaggiunte per gli operatori differenziali. Esso è noto in letteratura come \emph{boundary triples}.\\
+	
+	Dato un operatore differenziale $S$ su una varietà Riemannian con bordo $\Sigma$ densamente definito su $\mathrm{L}^2\Omega^1(\Sigma)$, una boundary triple per l'aggiunto $S^*$ è l'assegnazione di uno spazio di Hilbert al bordo $\mathrm{L}^2\Omega^1(\partial\Sigma)$ insieme a due mappe $\gamma_0$ e $\gamma_1$ che rendono vera la formula
+	$\sigma(\alpha,\beta)=(S\alpha,\beta)_\Sigma-(\alpha,S\beta)_\Sigma=(\gamma_1 \alpha,\gamma_0\beta)_{\partial\Sigma}-(\gamma_0 \alpha,\gamma_1\beta)_{\partial\Sigma}$ per ogni $\alpha,\beta$ nel dominio di $S^*$.\\
+	I risultati presenti in letteratura ci assicurano che se $S$ è chiuso e simmetrico (e questo è il caso per l'operatore $\Delta$ che prendiamo in considerazione), allora esiste una boundary triple e che ogni estensione autoaggiunta di $S$ è in corrispondenza biunivoca con gli operatori autoaggiunti $\Theta$ tali che $\gamma_1=\Theta\gamma_0$. Lo spazio $\ker(\gamma_1-\Theta\gamma_0)$ parametrizza quindi al variare di $\Theta$ autoaggiunto su $\mathrm{L}^2\Omega^1(\partial\Sigma)$ le possibili condizioni al contorno che annullano il flusso simplettico. La tecnica permette di controllare agilmente qualora una condizione al contorno a nostra scelta dia luogo ad un'estensione autoaggiunta di $S$. Basta infatti costruire le mappe $\gamma_{0,1}$ e l'operatore $\Theta$ e verificarne la sua autoaggiuntezza.\\
+	
+	Il risultato principale dimostrato in tesi è che per le tre condizioni al contorno selezionate precedentemente $\mathrm{D},\parallel,\perp$ esistono operatori autoaggiunti $\Theta_\sharp$ su $\mathrm{L}^2\Omega^1(\partial\Sigma)$ che le realizzano e di conseguenza esistono le estensioni autoaggiunte di $S$ associate, che denotiamo rispettivamente con $S_{\mathrm{D}}, S_\parallel, S_\perp$. A questo punto, grazie al calcolo spettrale, le funzioni di Green per $\Box_\sharp$ si costruiscono a partire dalle bidistribuzioni $\mathcal{G}_\sharp^+=\theta(t-t')\mathcal{G}_\sharp$ e $\mathcal{G}_\sharp^-=-\theta(t'-t)\mathcal{G}_\sharp$, dove: $$\mathcal{G}_\sharp(\alpha,\beta)=
+	\int_{\mathbb{R}^2}
+	\left(\alpha|_{\Sigma},S^{-1/2}_{\sharp}\sin(S^{1/2}_{\sharp}(t-t^\prime))\beta|_{\Sigma}\right)_{\Sigma}
+	\mathrm{d}t\mathrm{d}t'\,,$$
+	con $\sharp\in\{\mathrm{D},\parallel,\perp\}$.\\
+	
+	Cerchiamo ora di applicare quanto visto al caso delle equazioni di Maxwell nel vuoto $\delta\mathrm{d}A=0$. Anche per l'operatore $\delta\mathrm{d}$ scegliamo solo condizioni al contorno che annullino il flusso simplettico, che esplicitiamo in termini delle tracce al bordo:
+	$(\delta\mathrm{d}\alpha,\beta)-(\alpha,\delta\mathrm{d}\beta)=
+	(\mathrm{t}\alpha,\mathrm{n}\mathrm{d}\beta)_\partial
+	-(\mathrm{n}\mathrm{d}\alpha,\mathrm{t}\beta)_\partial$. Tra le condizioni al contorno che lo annullano consideriamo due classi chiamate $\delta\mathrm{d}$-tangential e $\delta\mathrm{d}$-normal per le quali gli operatori di Green commutano con gli operatori differenziali $\mathrm{d}$ e $\delta$. Esse sono definite rispettivamente da $\mathrm{t}\omega=0$ e da $\mathrm{n}\mathrm{d}\omega=0$. Per poter preservare la condizione al contorno, sarà necessario distingere due nozioni diverse di invarianza di gauge per i casi presi in esame. Per questo motivo trattiamo i due casi separatamente.\\
+	
+	Diciamo che due soluzioni $A$ e $A'$ delle equazioni di Maxwell con condizioni al contorno $\delta\mathrm{d}$-tangential sono gauge-equivalenti se differiscono per una forma che sia il differenziale di una funzione con traccia tangenziale nulla. In questo modo la condizione al contorno è preservata: $\mathrm{t}A'=\mathrm{t}(A+\mathrm{d}\chi)=\mathrm{t}\mathrm{d}\chi=\mathrm{d}\mathrm{t}\chi=0$.
+	
+	Per quanto riguarda le equazioni di Maxwell con condizioni $\delta\mathrm{d}$-normal, due soluzioni $A$ e $A'$ si dicono gauge-equivalenti se differiscono per il differenziale di una qualsiasi funzione. Questa nozione di gauge-equivalenza è analoga a quella del caso senza bordo poichè la condizione $\delta\mathrm{d}$-normal è essa stessa gauge-invariante secondo la classica nozione di equivalenza di gauge: $\mathrm{nd}A'=\mathrm{nd}(A+\mathrm{d}\chi)=\mathrm{nd}^2\chi=0$.
+	
+	Possiamo quindi riscrivere i due spazi delle soluzioni gauge-equivalenti per le equazioni di Maxwell con condizioni al contorno $\delta\mathrm{d}$-tangential e $\delta\mathrm{d}$-normal rispettivamente come quozienti $\displaystyle\operatorname{Sol}_{\mathrm{t}}(M)\doteq
+	\frac{\lbrace A\in\Omega^1(M)|\;\delta\mathrm{d}A=0\,,\mathrm{t}A=0\rbrace}{\mathrm{d}\Omega^{0}_{\mathrm{t}}(M)}$, $\displaystyle\operatorname{Sol}_{\mathrm{nd}}(M)\doteq
+	\frac{\lbrace A\in\Omega^1(M)|\;\delta\mathrm{d}A=0\,,\mathrm{nd}A=0\rbrace}{\mathrm{d}\Omega^{0}(M)}$.\\
+	
+	Le due condizioni $\delta\mathrm{d}$-tangential e $\delta\mathrm{d}$-normal sono legate alle condizioni al bordo $\parallel$ e $\perp$ per l'operatore delle onde $\Box$.
+	
+	Abbiamo infatti dimostrato che per ogni soluzione $A$ di Maxwell con condizioni $\delta\mathrm{d}$-tangential ne esiste una gauge equivalente $A'$ che soddisfa il gauge di Lorenz ed è soluzione dell'equazione delle onde con condizione al bordo $\parallel$: $\Box_\parallel A'=0$ con $\delta A'=0$.
+	
+	In contrasto, abbiamo dimostrato che per ogni soluzione $A$ di Maxwell con condizioni $\delta\mathrm{d}$-normal ne esiste una gauge equivalente $A'$ che soddisfa il gauge di Lorenz ed è soluzione dell'equazione delle onde con condizione al bordo $\perp$: $\Box_\perp A'=0$ con $\delta A'=0$. Entrambe le dimostrazioni si basano sul fatto che per queste particolari scelte di condizioni al bordo gli operatori di Green commutano con gli operatori differenziali $\mathrm{d},\delta$.\\
+	
+	Abbiamo quindi dimostrato che gli spazi delle soluzioni di Maxwell con le condizioni $\delta\mathrm{d}$-tangential e $\delta\mathrm{d}$-normal sono completamente descritti dalle funzioni di Green avanzata e ritardata per l'operatore delle onde, e cioè rispettivamente $G_\parallel^\pm$ e $G_\perp^\pm$.\\
+	
+		\textbf{Algebra delle osservabili??????}\\
+	
+	Possibili estensioni e generalizzazioni del nostro lavoro possono essere le seguenti:
+	\begin{itemize}
+		\item la classe di condizioni al contorno che abbiamo considerato in tesi per l'operatore delle onde, non è la più larga che lo rende simmetrico. Resta quindi da studiare se sia possibile costruire le funzioni di Green del sistema per condizioni più generali.
+		\item le conclusioni che abbiamo tratto riguardo alle equazioni di Maxwell restano valide nonappena è possibile provare l'esistenza delle funzioni di Green associate a $\Box$. Ci chiediamo quindi se esistano altri metodi diversi da quello delle boundary triples che permettano di stabilirne l'esistenza anche senza l'ipotesi di staticità, che per noi è stata fondamentale.
+		
+		\item Nello studiare le equazioni di Maxwell con bordo ci siamo ristretti a studiare quelle condizioni al contorno che ci permettessero di imporre il gauge di Lorenz e quindi passare allo studio di un'equazione delle onde. \'E naturale chiedersi se sia possibile caratterizzare lo spazio delle soluzioni delle equazioni di Maxwell anche senza dover per forza effettuare questo procedimento.
+		\item Le trasformazioni di gauge più generali possibili, anche nel caso senza bordo, non sono quelle della forma $A\to A+\mathrm{d}\chi$. Infatti l'elettromagnetismo, nella sua forma più generale e matematicamente elegante, è una teoria di Yang-Mills abeliana con gruppo di struttura $U(1)$ e dove le trasformazioni di gauge sono della forma $A\to A-ig^{-1}\mathrm{d}g$, con $g$ funzione liscia a valori in $U(1)$. Se ora ammettiamo $g=e^{i\chi}$ recuperiamo la trasformazione che abbiamo adottato durante il lavoro. In generale però, $g$ non è sempre esprimibile nella forma $e^{i\chi}$ per una qualche funzione $\chi\in C^\infty(M)$. Questo significa che esistono ulteriori trasformazioni di gauge che non abbiamo preso in cosiderazione e che andranno studiate in un futuro lavoro.
+	\end{itemize}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 
+
+\end{document}

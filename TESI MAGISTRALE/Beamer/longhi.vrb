@@ -1,0 +1,178 @@
+\frametitle{Spin properties}
+
+	\vspace{-0.5cm}
+	\begin{itemize}
+
+		\begin{columns}[t]
+
+			\begin{column}{.80\linewidth}
+
+
+				\item Spin $0$: The particle is unchanged after any rotation in spin space
+
+
+
+
+			\end{column}
+
+			\begin{column}{.15\linewidth}
+
+				\begin{block}
+
+					\centering
+						\begin{tikzpicture}[scale=0.7]
+					\tikzstyle{every node}=[font=\scriptsize]
+					\draw[color=red, fill=red!75!black] (0,0) circle (0.7);
+
+					\draw[visible on=<2->] (90:0.75) -- (90:1);
+					\draw[visible on=<2->]  (40:0.75) -- (40:1);
+					\draw[->,visible on=<2->] (90:0.85) ++ (0,0) arc (90:40:0.85) node[right] {$\theta$};
+					\end{tikzpicture}
+				\end{block}
+
+
+
+
+
+			\end{column}
+
+
+
+
+
+		\end{columns}
+
+
+
+	\begin{columns}[t]
+
+		\begin{column}{.80\linewidth}
+
+
+			\item Spin $1$: The particle needs an entire rotation to remain unchanged
+
+
+
+
+		\end{column}
+
+		\begin{column}{.15\linewidth}
+
+		\begin{block}
+
+			\centering
+			\begin{tikzpicture}[scale=0.7]
+			\tikzstyle{every node}=[font=\scriptsize]
+
+			\draw[color=red, fill=red!75!black
+			] (0,0) circle (0.7);
+			\draw[very thick, -latex, white,visible on=<-2>]	(0,-0.4) -- (0,0.4);
+
+			\draw[very thick, -latex, white,visible on=<3>]	(0,0.4) -- (0,-0.4);
+			\draw[very thick, -latex, white,visible on=<4->]	(0,-0.4) -- (0,0.4);
+
+			\draw[visible on=<3->] (90:0.75) -- (90:1);
+			\draw[visible on=<3>] (-90:0.75) -- (-90:0.95);
+			\draw[->,visible on=<3>] (90:0.85) ++ (0,0) arc (90:-90:0.85) node[midway, right] {$\pi$};
+
+			\draw[->,visible on=<4->] (90:0.85) ++ (0,0) arc (90:-270:0.85) node[right] at (0:0.85) {$2\pi$};
+
+			\end{tikzpicture}
+		\end{block}
+
+
+
+
+		\end{column}
+
+
+
+
+
+	\end{columns}
+
+
+
+
+		\begin{columns}[t]
+
+			\begin{column}{.800\linewidth}
+
+
+				\item Spin $2$: The particle needs half a rotation to remain unchanged
+
+
+
+
+			\end{column}
+
+			\begin{column}{.15\linewidth}
+
+				\begin{block}
+
+					\centering
+					\begin{tikzpicture}[scale=0.7]
+					\tikzstyle{every node}=[font=\scriptsize]
+
+					\draw[color=red, fill=red!75!black
+					] (0,0) circle (0.7);
+					\draw[very thick, latex-latex, white,visible on=<-4>]	(0,-0.4) -- (0,0.4);
+
+					\draw[very thick, latex-latex, white,visible on=<5>]	(0.4,0) -- (-0.4,0);
+					\draw[very thick, latex-latex, white,visible on=<6->]	(0,-0.4) -- (0,0.4);
+
+					\draw[visible on=<5->] (90:0.75) -- (90:1);
+					\draw[visible on=<5>] (0:0.75) -- (0:0.95);
+					\draw[->,visible on=<5>] (90:0.85) ++ (0,0) arc (90:0:0.85) node[right] {$\frac\pi2$};
+
+					\draw[visible on=<6>] (-90:0.75) -- (-90:0.95);
+					\draw[->,visible on=<6->] (90:0.85) ++ (0,0) arc (90:-90:0.85) node[midway, right] {$\pi$};
+
+					\end{tikzpicture}
+
+				\end{block}
+
+
+
+
+
+
+			\end{column}
+
+
+
+
+
+		\end{columns}
+
+%\begin{comment}
+\begin{columns}[t]
+
+\begin{column}{.800\linewidth}
+
+
+\item Spin $1/2$: The particle needs two complete rotations to remain unchanged
+
+
+\end{column}
+
+\begin{column}{.15\linewidth}
+
+\vspace{0.1cm}
+\includegraphics[width=2cm]{mobius}
+
+
+\end{column}
+
+
+
+
+
+\end{columns}
+%\end{comment}
+
+
+
+	\end{itemize}
+
+

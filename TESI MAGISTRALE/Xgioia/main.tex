@@ -1,0 +1,422 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Masters/Doctoral Thesis 
+% LaTeX Template
+% Version 2.5 (27/8/17)
+%
+% This template was downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Version 2.x major modifications by:
+% Vel (vel@latextemplates.com)
+%
+% This template is based on a template by:
+% Steve Gunn (http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/)
+% Sunil Patel (http://www.sunilpatel.co.uk/thesis-template/)
+%
+% Template license:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+11pt,,a4paper % The default document font size, options: 10pt, 11pt, 12pt
+%oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
+%english, % ngerman for German
+%singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
+%draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
+%nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
+%liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
+%toctotoc, % Uncomment to add the main table of contents to the table of contents
+%parskip, % Uncomment to add space between paragraphs
+%nohyperref, % Uncomment to not load the hyperref package
+%headsepline, % Uncomment to get a line under the header
+%chapterinoneline, % Uncomment to place the chapter title next to the number on one line
+%consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
+]{book} % The class file specifying the document structure
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+
+%\usepackage{mathptmx}
+\usepackage{lmodern} % Use the Palatino font by default
+\renewcommand\rmdefault{ptm}
+
+%\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+
+%\addbibresource{example.bib} % The filename of the bibliography
+
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+
+\usepackage{amsmath,amssymb,amsthm,amsfonts,amscd,color,eucal,latexsym,mathrsfs,mathtools,cancel,tikz}
+\usepackage{epsfig}  % ciao
+%\usepackage{refcheck} % to check references
+\usepackage{simplewick}
+%\usepackage{tikz-cd}
+\usepackage{hyperref}
+\usepackage[all,cmtip]{xy}
+\usetikzlibrary{matrix,calc}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\Ker}{\operatorname{Ker}}
+
+\newtheoremstyle{TheoremStyle}% <name>
+{3pt}% <Space above>
+{3pt}% <Space below>
+{\slshape}% <Body font>
+{}% <Indent amount>
+{\bf}%{\itshape}% <Theorem head font>
+{:}% <Punctuation after theorem head>
+{.5em}% <Space after theorem head>
+{}% <Theorem head spec (can be left empty, meaning 'normal')>
+\newtheoremstyle{ExampleAndRemarkStyle}% <name>
+{3pt}% <Space above>
+{3pt}% <Space below>
+{\slshape}% <Body font>
+{}% <Indent amount>
+{\bf}%{\itshape}% <Theorem head font>
+{:}% <Punctuation after theorem head>
+{.5em}% <Space after theorem head>
+{}% <Theorem head spec (can be left empty, meaning 'normal')>
+\newtheoremstyle{ProofStyle}% <name>
+{3pt}% <Space above>
+{3pt}% <Space below>
+{}% <Body font>
+{}% <Indent amount>
+{\bf}%{\itshape}% <Theorem head font>
+{:}% <Punctuation after theorem head>
+{.5em}% <Space after theorem head>
+{}% <Theorem head spec (can be left empty, meaning 'normal')>
+
+\theoremstyle{TheoremStyle}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{assumption}[theorem]{Assumption}
+%\theoremstyle{definition}[theorem]{Definition}
+\newtheorem{Definition}[theorem]{Definition}
+\theoremstyle{ExampleAndRemarkStyle}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{Example}[theorem]{Example} %[theorem]{Example}
+\theoremstyle{ProofStyle}
+\newtheorem*{Proof}{Proof}
+
+
+
+\begin{document}
+
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.3\textwidth]{unipv}\par\vspace{0.5cm}
+	{\scshape\huge Universit\`a degli Studi di Pavia\par}
+	\vspace{0.5cm}
+	{\scshape\LARGE Dipartimento di Fisica\par
+		\vspace{0.2cm}
+		\Large\textit{Corso di Laurea Magistrale in Scienze Fisiche}\par}
+	\vspace{0.5cm}
+	\rule{14cm}{0.1pt}
+	
+	\vspace{1.5cm}
+	{\huge\bfseries On Maxwell Equations on Globally Hyperbolic Spacetimes with Timelike Boundary \par}
+	\vspace{1.5cm}
+	\vfill\large\begin{flushright} Tesi per la Laurea Magistrale di:\\ \textbf{Rubens Longhi} % Text prior to the author name - right aligned and bold
+	\end{flushright}
+	\vspace{.5cm}
+	\begin{flushleft}
+		Relatore:\\
+		\textbf{Prof. Claudio Dappiaggi}\\[.3cm] % Advisor's/supervisor's name
+		Correlatore:\\
+		\textbf{Dott. Nicol\'o Drago}\\[.3cm] % Advisor's/supervisor's name
+	\end{flushleft}
+	
+	
+	
+	\vfill
+	
+	% Bottom of the page
+	{\large A.A. 2018-2019\par}
+\end{titlepage}
+
+%\begin{titlepage}
+%\begin{center}
+%
+%\vspace*{.06\textheight}
+%{\scshape\LARGE \univname\par}\vspace{1.5cm} % University name
+%\textsc{\Large Doctoral Thesis}\\[0.5cm] % Thesis type
+%
+%\HRule \\[0.4cm] % Horizontal line
+%{\huge \bfseries \ttitle\par}\vspace{0.4cm} % Thesis title
+%\HRule \\[1.5cm] % Horizontal line
+% 
+%\begin{minipage}[t]{0.4\textwidth}
+%\begin{flushleft} \large
+%\emph{Author:}\\
+%\href{http://www.johnsmith.com}{\authorname} % Author name - remove the \href bracket to remove the link
+%\end{flushleft}
+%\end{minipage}
+%\begin{minipage}[t]{0.4\textwidth}
+%\begin{flushright} \large
+%\emph{Supervisor:} \\
+%\href{http://www.jamessmith.com}{\supname} % Supervisor name - remove the \href bracket to remove the link  
+%\end{flushright}
+%\end{minipage}\\[3cm]
+% 
+%\vfill
+%
+%\large \textit{A thesis submitted in fulfillment of the requirements\\ for the degree of \degreename}\\[0.3cm] % University requirement text
+%\textit{in the}\\[0.4cm]
+%\groupname\\\deptname\\[2cm] % Research group name and department name
+% 
+%\vfill
+%
+%{\large \today}\\[4cm] % Date
+%%\includegraphics{Logo} % University/department logo - uncomment to place it
+% 
+%\vfill
+%\end{center}
+%\end{titlepage}
+
+%%----------------------------------------------------------------------------------------
+%%	DECLARATION PAGE
+%%----------------------------------------------------------------------------------------
+%
+%\begin{declaration}
+%\addchaptertocentry{\authorshipname} % Add the declaration to the table of contents
+%\noindent I, \authorname, declare that this thesis titled, \enquote{\ttitle} and the work presented in it are my own. I confirm that:
+%
+%\begin{itemize} 
+%\item This work was done wholly or mainly while in candidature for a research degree at this University.
+%\item Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
+%\item Where I have consulted the published work of others, this is always clearly attributed.
+%\item Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this thesis is entirely my own work.
+%\item I have acknowledged all main sources of help.
+%\item Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.\\
+%\end{itemize}
+% 
+%\noindent Signed:\\
+%\rule[0.5em]{25em}{0.5pt} % This prints a line for the signature
+% 
+%\noindent Date:\\
+%\rule[0.5em]{25em}{0.5pt} % This prints a line to write the date
+%\end{declaration}
+
+\cleardoublepage
+
+%----------------------------------------------------------------------------------------
+%	QUOTATION PAGE
+%----------------------------------------------------------------------------------------
+
+\vspace*{0.2\textheight}
+
+\noindent\enquote{\itshape The mathematician plays a game in which he himself invents the rules while the physicist plays a game in which the rules are provided by nature, but as time goes on it becomes increasingly evident that the rules which the mathematician finds interesting are the same as those which nature has chosen. }\bigbreak
+
+\hfill Paul A.M. Dirac
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{abstract}
+\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
+The Thesis Abstract is written here (and usually kept to just this page). The page is kept centered vertically so can expand into the blank space above the title too\ldots
+\end{abstract}
+
+
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+
+\tableofcontents % Prints the main table of contents
+
+%----------------------------------------------------------------------------------------
+%	DEDICATION
+%----------------------------------------------------------------------------------------
+
+\dedicatory{To my family} 
+
+
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\pagestyle{thesis} % Return the page headers back to the "thesis" style
+
+% Include the chapters of the thesis as separate files from the Chapters folder
+% Uncomment the lines as you write the chapters
+
+\include{Chapters/Chapter1}
+%\include{Chapters/Chapter2} 
+%\include{Chapters/Chapter3}
+%\include{Chapters/Chapter4} 
+%\include{Chapters/Chapter5} 
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+
+\appendix % Cue to tell LaTeX that the following "chapters" are Appendices
+
+% Include the appendices of the thesis as separate files from the Appendices folder
+% Uncomment the lines as you write the Appendices
+
+\include{Appendices/AppendixA}
+%\include{Appendices/AppendixB}
+%\include{Appendices/AppendixC}
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\begin{acknowledgements}
+	\addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
+	The acknowledgments and the people to thank go here, don't forget to include your project advisor\ldots
+\end{acknowledgements}
+
+%----------------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+
+%\tableofcontents % Prints the main table of contents
+
+%\listoffigures % Prints the list of figures
+
+%\listoftables % Prints the list of tables
+
+%----------------------------------------------------------------------------------------
+%	ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+
+\begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
+	
+	\textbf{LAH} & \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere\\
+	\textbf{WSF} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or\\
+	
+\end{abbreviations}
+
+
+%----------------------------------------------------------------------------------------
+%	SYMBOLS
+%----------------------------------------------------------------------------------------
+
+\begin{symbols}{lll} % Include a list of Symbols (a three column table)
+	
+	$a$ & distance & \si{\meter} \\
+	$P$ & power & \si{\watt} (\si{\joule\per\second}) \\
+	%Symbol & Name & Unit \\
+	
+	\addlinespace % Gap to separate the Roman symbols from the Greek
+	
+	$\omega$ & angular frequency & \si{\radian} \\
+	
+\end{symbols}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+%\printbibliography[heading=bibintoc]
+
+\begin{thebibliography}{}
+	
+	\bibitem[AFS18]{Ake-Flores-Sanchez-18}
+	Ak\'e L., Flores J.L. , Sanchez M.,
+	\textit{Structure of globally hyperbolic spacetimes with timelike boundary},
+	arXiv:1808.04412 [gr-qc].
+	
+	\bibitem[BGP15]{Baer-Ginoux-Pfaffle-07}
+	B\"{a}r, C., Ginoux, N., Pf\"{a}ffle, F.
+	\textit{Wave equations on Lorentzian Manifolds and quantization},
+	EMS Publishing House,
+	Zurich,
+	2007.
+	
+	\bibitem[B\"ar15]{Baer-15}
+	B\"ar C.,
+	\textit{Green-Hyperbolic Operators on Globally Hyperbolic Spacetimes},
+	Commun. Math. Phys. (2015) 333: 1585.
+	
+	\bibitem[BL12]{Behrndt-Langer-12}
+	Behrndt, J., Langer, M.,
+	Elliptic operators, Dirichlet-to-Neumann maps and quasi boundary triples.
+	In: de Snoo, H.S.V. (ed.) Operator Methods for Boundary Value Problems.
+	London Mathematical Society, Lecture Notes, p. 298. Cambridge University Press, Cambridge (2012)
+	
+	\bibitem[Ben16]{Benini-16}
+	Benini M.,
+	\textit{Optimal space of linear classical observables for Maxwell $k$-forms via spacelike and timelike compact de Rham cohomologies},
+	J. Math. Phys. {\bf 57} (2016) no.5,  053502
+	
+	\bibitem[BS05]{Bernal-Sanchez-05}
+	Bernal, A. N., Sanchez M.,
+	\textit{Smoothness of time functions and the metric splitting of globally hyperbolic spacetimes.} Commun. Math. Phys. 257 (2005), 43–50
+	
+	
+	
+	\bibitem[BT82]{Bott-Tu-82}
+	R. Bott, L. W. Tu,
+	\textit{Differential forms in algebraic topology},
+	Springer, New York, 1982.
+	
+	\bibitem[BFV03]{Brunetti-Fredenhagen-Verch-03}
+	Brunetti, R., Fredenhagen, K., Verch, R.,
+	\textit{The Generally Covariant Locality Principle ? A New Paradigm for Local Quantum Field Theory},
+	Commun. Math. Phys. (2003).
+	
+	\bibitem[DDF19]{Dappiaggi-Drago-Ferreira-19}
+	Dappiaggi, C., Drago, N., Ferreira, H.
+	\emph{``Fundamental solutions for the wave operator on static Lorentzian manifolds with timelike boundary''}, to appear in Lett. Math. Phys. (2019), arXiv:1804.03434 [math-ph].
+	
+	\bibitem[DFJ18]{Dappiaggi:2018pju}
+	C.~Dappiaggi, H.~R.~C.~Ferreira and B.~A.~Juárez-Aubry,
+	\emph{``Mode solutions for a Klein-Gordon field in anti?de Sitter spacetime with dynamical boundary conditions of Wentzell type,''}
+	Phys.\ Rev.\ D {\bf 97} (2018) no.8,  085022
+	[arXiv:1802.00283 [hep-th]].
+	
+	\bibitem[HS13]{Hack-Schenkel-13}
+	Hack T.P., Schenkel A.,
+	\textit{Linear bosonic and fermionic quantum gauge theories on curved spacetimes},
+	Gen Relativ Gravit (2013) 45: 877.
+	
+	\bibitem[Lee00]{Lee}
+	J.M. Lee
+	\textit{Introduction to Smooth Manifolds}, 2nd ed. (2013) Springer, 706p.
+	
+	\bibitem[Mau80]{Maunder}
+	C.~R.~F.~Maunder,
+	\textit{Algebraic Topology}, (1980) Cambridge University Press, 375p.
+	
+	\bibitem[Pfe09]{Pfenning:2009nx}
+	M.~J.~Pfenning,
+	{\em ``Quantization of the Maxwell field in curved spacetimes of arbitrary dimension,''}
+	Class.\ Quant.\ Grav.\  {\bf 26} (2009) 135017
+	[arXiv:0902.4887 [math-ph]].
+	
+	\bibitem[Sch95]{Schwarz-95}
+	G. Schwarz, 
+	\textit{Hodge Decomposition - A Method for Solving Boundary Value Problems}, (1995) Springer, 154p.
+	
+	\bibitem[Za15]{Zahn:2015due}
+	J.~Zahn,
+	\emph{``Generalized Wentzell boundary conditions and quantum field theory,''}
+	Annales Henri Poincare {\bf 19} (2018) no.1,  163
+	[arXiv:1512.05512 [math-ph]].
+	
+\end{thebibliography}
+
+
+%----------------------------------------------------------------------------------------
+
+\end{document}  

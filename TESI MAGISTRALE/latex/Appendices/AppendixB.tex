@@ -1,0 +1,195 @@
+
+
+\chapter{Cohomology and Poincar\'e-Lefschetz duality for manifold with boundary}\label{App: Poincare duality for manifold with boundary}
+
+In this appendix we summarize a few definitions and results concerning de Rham cohomology and Poincar\'e duality, especially when the underlying manifold has a non-empty boundary. A reader interested in more details can refer to \cite{Bott-Tu-82,Schwarz-95}. 
+
+For the purpose of this appendix $M$ refers to a smooth, oriented manifold of dimension $\dim M=m$ with a smooth boundary $\partial M$, together with an embedding map $\iota_{\partial M}:\partial M\to M$. In addition $\partial M$ comes endowed with orientation induced from $M$ via $\iota_{\partial M}$. We recall that $\Omega^\bullet(M)$ stands for the de Rham cochain complex which in degree  $k\in\mathbb{N}\cup\{0\}$ corresponds to $\Omega^k(M)$, the space of smooth $k$-forms. Observe that we shall need to work also with compactly supported forms and all definitions can be adapted accordingly.
+To indicate this specific choice, we shall use a subscript $\mathrm{c}$, {\it e.g.} $\Omega^\bullet_{\mathrm{c}}(M)$. We denote instead the $k$-th de Rham cohomology group of $M$ as 
+\begin{equation}\label{Eqn: cohomology}
+	H^k(M)\doteq\frac{\ker(\mathrm{d}_k\colon\Omega^k(M)\to\Omega^{k+1}(M))}{\operatorname{Im} (\mathrm{d}_{k-1}\colon\Omega^{k-1}(M)\to\Omega^k(M))},
+\end{equation}
+where we introduce the subscript $k$ to highlight that the differential operator $\mathrm{d}$ acts on $k$-forms. Equations \eqref{Eqn: k-forms with vanishing tangential or normal component} and \eqref{Eqn: relations-bulk-to-boundary} entail that we can define $\Omega^\bullet_{\mathrm{t}}(M)$, the subcomplex of $\Omega^\bullet(M)$, whose degree $k$ corresponds to $\Omega^k_{\mathrm{t}}(M)\subset\Omega^k(M)$. The associated de Rham cohomology groups will be denoted as $H^k_{\mathrm{t}}(M)$, $k\in\mathbb{N}\cup\{0\}$.
+
+Similarly we can work with the codifferential $\delta$ in place of $\mathrm{d}$, hence identifying a chain complex $\Omega^\bullet(M)$ which in degree  $k\in\mathbb{N}\cup\{0\}$ corresponds to $\Omega^k(M)$, the space of smooth $k$-forms. The associated $k$-th homology groups will be denoted with 
+$$H_k(M)\doteq\frac{\ker (\delta_k\colon\Omega^k(M)\to\Omega^{k-1}(M))}{\operatorname{Im} (\delta_{k+1}\colon\Omega^{k+1}(M)\to\Omega^k(M))}.$$
+Equations \eqref{Eqn: k-forms with vanishing tangential or normal component} and \eqref{Eqn: relations-bulk-to-boundary} entail that we can define the $\Omega^\bullet_{\mathrm{n}}(M)$ (\textit{resp.} $\Omega^\bullet_{\mathrm{c}}(M)$, $\Omega^\bullet_{\mathrm{c,n}}(M)$), the subcomplex of $\Omega^\bullet(M)$, whose degree $k$ corresponds to $\Omega^k_{\mathrm{n}}(M)\subset\Omega^k(M)$ (\textit{resp.} $\Omega^k_{\mathrm{c}}(M),\Omega^k_{\mathrm{c,n}}(M)\subseteq\Omega^k(M)$).
+The associated homology groups will be denoted as $H_{k,\mathrm{n}}(M)$ (\textit{resp.} $H_{k,\mathrm{c}}(M)$, $H_{k,\mathrm{c,n}}(M)$), $k\in\mathbb{N}\cup\{0\}$.
+Observe that, in view of its definition and on account of equation \eqref{Eqn: relations between d,delta,t,n}, the Hodge operator induces an isomorphism $H^k(M)\simeq H_{m-k}(M)$ which is realized as $H^k(M)\ni[\alpha]\mapsto [\star\alpha]\in H_{m-k}(M)$. Similarly, on account of Equation \eqref{Eqn: relations-bulk-to-boundary}, it holds $H^k_{\mathrm{t}}(M)\simeq H_{m-k,\mathrm{n}}(M)$ and $H^k_{\mathrm{c,t}}(M)\simeq H_{m-k,\mathrm{c,n}}(M)$.
+
+As last ingredient, we introduce the notion of relative cohomology, {\it cf.} \cite{Bott-Tu-82}. We start by defining the relative de Rham cochain complex $\Omega^\bullet(M;\partial M)$  which in degree  $k\in\mathbb{N}\cup\{0\}$ corresponds to 
+\begin{align*}
+\Omega^k(M;\partial M)\doteq \Omega^k(M)\oplus\Omega^{k-1}(\partial M),
+\end{align*}
+endowed with the differential operator $\underline{\mathrm{d}}_k:\Omega^k(M;\partial M)\to\Omega^{k+1}(M;\partial M)$ such that for any $(\omega,\theta)\in\Omega^k(M;\partial M)$
+\begin{equation}\label{Eq: relative-differential}
+\underline{\mathrm{d}}_k(\omega,\theta)=(\mathrm{d}_k\omega,\mathrm{t}\omega-\mathrm{d}_{k-1}\theta)\,.
+\end{equation}
+Per construction, each $\Omega^k(M;\partial M)$ comes endowed naturally with the projections on each of the defining components, namely $\pi_1:\Omega^k(M;\partial M)\to\Omega^k(M)$ and $\pi_2:\Omega^k(M;\partial M)\to\Omega^k(\partial M)$. With a slight abuse of notation we make no explicit reference to $k$ in the symbol of these maps, since the domain of definition will always be clear from the context. The relative cohomology groups associated to $\underline{\mathrm{d}}_k$ will be denoted instead as $H^k(M;\partial M)$ and the following proposition characterizes the relation with the standard de Rham cohomology groups built on $M$ and on $\partial M$, {\it cf.} \cite[Prop. 6.49]{Bott-Tu-82}:
+
+\begin{propositio}\label{Prop: long exact sequence}
+	Under the geometric assumptions specified at the beginning of the section, there exists an exact sequence
+	\begin{equation}
+	\ldots\to H^k(M;\partial M)\operatornamewithlimits{\longrightarrow}^{\pi_{1,*}} H^k(M) \operatornamewithlimits{\longrightarrow}^{\mathrm{t}_*} H^k(\partial M)\operatornamewithlimits{\longrightarrow}^{\pi_{2,*}} H^{k+1}(M;\partial M)\to\ldots,
+	\end{equation}
+	where $\pi_{1,*}$, $\pi_{2,*}$ and $\mathrm{t}_*$ indicate the natural counterpart of the maps $\pi_1$, $\pi_2$ and $\mathrm{t}$ at the level of cohomology groups.
+\end{propositio}
+
+\noindent The relevance of the relative cohomology groups in our analysis is highlighted by the following statement, of which we give a concise proof:
+
+\begin{propositio}\label{Prop: equivalence description of relative cohomology}
+	Under the geometric assumptions specified at the beginning of the section, there exists an isomorphism between $H^k_{\mathrm{t}}(M)$ and $H^k(M;\partial M)$ for all $k\in\mathbb{N}\cup\{0\}$.
+\end{propositio}
+
+\begin{proof}
+	Consider $\omega\in\Omega^k_{\mathrm{t}}(M)\cap\ker\mathrm{d}$ and let $(\omega,0)\in\Omega^k(M;\partial M)$, $k\in\mathbb{N}\cup\{0\}$. Equation \eqref{Eq: relative-differential} entails
+	\begin{align*}
+	\underline{\mathrm{d}}_k(\omega,0)=(\mathrm{d}_k\omega,\mathrm{t}\omega)=(0,0)\,.
+	\end{align*}
+	At the same time, if $\omega=\mathrm{d}_{k-1}\beta$ with $\beta\in\Omega_\mathrm{t}^{k-1}(M)$, then $(\mathrm{d}_{k-1}\beta,0)=\underline{\mathrm{d}}_{k-1}(\beta,0)$.
+	Hence the embedding $\omega\mapsto (\omega,0)$ identifies a map $\rho: H^k_{\mathrm{t}}(M)\to  H^k(M;\partial M)$ such that $\rho([\omega])\doteq [(\omega,0)]$.	
+	To conclude, we need to prove that $\rho$ is surjective and injective.
+	Let thus $[(\omega^\prime,\theta)]\in H^k(M;\partial M)$.
+	It holds that $\mathrm{d}_k\omega^\prime=0$ and $\mathrm{t}\omega^\prime-\mathrm{d}_{k-1}\theta=0$.
+	Recalling that $\mathrm{t}:\Omega^k(M)\to\Omega^k(\partial M)$ is surjective -- \textit{cf.} Remark \ref{Rmk: surjectivity of t,n,tdelta,nd} -- for all values of $k\in\mathbb{N}\cup\{0\}$, there must exists $\eta\in\Omega^{k-1}(M)$ such that $\mathrm{t}\eta=\theta$.
+	Let $\omega\doteq\omega^\prime -\mathrm{d}_{k-1}\eta$.
+	On account of \eqref{Eqn: relations-bulk-to-boundary} $\omega\in\Omega^k_{\mathrm{t}}(M)\cap\ker\mathrm{d}_k$ and $(\omega, 0)$ is a representative if $[(\omega^\prime,\theta)]$ which entails that $\rho$ is surjective.
+	
+	Let $[\omega]\in H^k(M)$ be such that $\rho[\omega]=[0]\in H^k(M;\partial M)$.
+	This implies that there exists $\beta\in\Omega^{k-1}(M)$, $\theta\in\Omega^{k-2}(\partial M)$ such that
+	\begin{align*}
+	(\omega,0)=
+	\underline{\mathrm{d}}_{k-1}(\beta,\theta)=
+	(\mathrm{d}_{k-1}\beta,\mathrm{t}\beta-\mathrm{d}_{k-2}\theta)\,.
+	\end{align*}
+	Let $\eta\in\Omega^{k-2}(M)$ be such that $\mathrm{t}\eta+\theta=0$.
+	It follows that
+	\begin{align*}
+	(\omega,0)=
+	\underline{\mathrm{d}}_{k-1}\left((\beta,\theta)+
+	\underline{\mathrm{d}}_{k-2}(\eta,0)\right)=
+	\underline{\mathrm{d}}_{k-1}(\beta+\mathrm{d}_{k-2}\eta,0)\,.
+	\end{align*}
+	This entails that $\omega=\mathrm{d}_{k-1}(\beta+\mathrm{d}_{k-2}\eta)$ where $\mathrm{t}(\beta+\mathrm{d}_{k-2}\eta)=0$.
+	It follows that $[\omega]=0$ that is $\rho$ is injective.
+	
+\end{proof}
+
+\noindent To conclude, we recall a notable result concerning the relative cohomology, which is a specialization to the case in hand of the Poincar\'e-Lefschetz duality, an account of which can be found in \cite{Maunder}:
+
+\begin{theore}\label{Thm: Poin-Lefs duality}
+	Under the geometric assumptions specified at the beginning of the section and assuming in addition that $M$ admits a finite good cover, it holds that, for all $k\in\mathbb{N}\cup\{0\}$
+	\begin{align}
+	H^{m-k}(M;\partial M)\simeq H^k_{\mathrm{c}}(M)^*\,,\qquad
+	[\alpha]\to\bigg(H^k_{\mathrm{c}}(M)\ni[\eta]\mapsto\int_M\overline{\alpha}\wedge\eta\in\mathbb{C}\bigg)\,.
+	\end{align}
+	where $m=\dim M$ and where on the right hand side we consider the dual of the $(m-k)$-th cohomology group built out compactly supported forms.
+\end{theore}
+
+\begin{remar}\label{Rmk: consequence of Poincare--Lefschetz duality}
+	On account of Propositions \ref{Prop: equivalence description of relative cohomology}-\ref{Thm: Poin-Lefs duality} and of the isomorphisms $H^k_{(\mathrm{c})}(M)\simeq H^{m-k}_{(\mathrm{c})}(M)$ the following are isomorphisms:
+	\begin{align}\label{Eqn: relative cohomology isomorphic to dual of compactly supported differential homology }
+	H^k_{\mathrm{t}}(M)\simeq
+	H^{m-k}_{\mathrm{c}}(M)^*\simeq
+	H_{k,\mathrm{c}}(M)^*\,,\qquad
+	H^k(M)\simeq H_{k,\mathrm{c,n}}(M)^*\,.
+	\end{align}
+\end{remar}
+
+The proof proceeds in some steps. Let $\iota:\partial M\to M$ be the immersion map. First of all we have to check that the spaces are finite-dimensional and that the pairing $\langle \,,\,\rangle:H^{m-k}(M)\otimes H_{\mathrm{c}}^{k}(M,\partial M)$ defined by
+\begin{align}
+\langle\alpha,(\omega,\theta)\rangle:=\int_M\alpha\wedge\omega+\int_{\partial M}\iota^*\alpha\wedge \theta\,\qquad\forall\alpha\in H^{m-k}(M)\text{ and } (\omega,\theta)\in H_{\mathrm{c}}^{k}(M,\partial M)\,,
+\label{eq:dualitypair}
+\end{align}
+is non-degenerate, equivalently the map $\alpha\to\langle\alpha,\cdot\rangle$ should be an isomorphism.\\
+
+Since a manifold $M$ with boundary is locally homeomorphic to $\mathbb{R}^m_+:=\{(x_1,\dots,x_n)\,|\, x_1\geq 0\}$ we need Poincar\'e lemmas for $\mathbb{R}^m_+$.
+
+
+\begin{lemm}[Poincar\'e lemmas for half spaces]
+	Let $\mathbb{R}^m_+:=\{(x_1,\dots,x_n)\,|\, x_1\geq 0\}$ and $k\geq 0$. Then
+	\begin{align}
+	H^k(\mathbb{R}^m_+)\simeq\begin{cases}
+	\mathbb{R}\quad &\text{if }k=0\\
+	\{0\}\quad &\text{otherwise}
+	\end{cases}\\
+	H^k_c(\mathbb{R}^m_+,\partial\mathbb{R}^m_+)\simeq\begin{cases}
+	\mathbb{R}\quad &\text{if }k=n\\
+	\{0\}\quad &\text{otherwise}
+	\end{cases}
+	\end{align}
+\end{lemm}
+
+\begin{proof}
+	The proof for the case $n=1$, i.e. $\mathbb{R}_+=[0,+\infty)$ is straightforward and the $n$-dimensional generalisation is obtained as in (\cite[Sec. 4]{Bott-Tu-82}).
+\end{proof}
+
+\begin{lemm}[Mayer-Vietoris sequences]
+	Let $M$ be an orientable manifold with boundary $\partial M$, suppose $M=U\cup V$ with $U,V$ open and denote $\partial M_A:=\partial M\cap A$. Then the following are exact sequences:
+	\begin{align}
+	\cdots\to H^k(M,\partial M)\operatornamewithlimits{\rightarrow} H^k(U,\partial M_{U})\oplus H^k(V,\partial M_{V})  \operatornamewithlimits{\rightarrow} H^k(U\cap V,\partial M_{U\cap V})\rightarrow H^{k+1}(M,\partial M)\to\cdots
+	\end{align}
+	\vspace{-0.6cm}
+	\begin{align}
+	\cdots\leftarrow H_c^k(M,\partial M)\operatornamewithlimits{\leftarrow} H_c^k(U,\partial M_{U})\oplus H^k(V,\partial M_{V})  \operatornamewithlimits{\leftarrow} H_c^k(U\cap V,\partial M_{U\cap V})\leftarrow H_c^{k+1}(M,\partial M)\leftarrow\cdots
+	\end{align}
+\end{lemm}
+
+\begin{proof} We will only prove the non-compact cohomology line.\\
+	We have the following Mayer-Vietoris short exact sequences for $M$ and $\partial M$:
+	\begin{align*}
+	0\longrightarrow\Omega^k(M)\longrightarrow\Omega^k(U)&\oplus\Omega^k(V)\longrightarrow\Omega^k(U\cap V)\longrightarrow 0\\
+	0\to  \Omega^{k-1}(\partial M)\to\Omega^{k-1}(\partial M_U)&\oplus\Omega^{k-1}(\partial M_V)\to\Omega^{k-1}(\partial M_{U\cap V})\to 0.
+	\end{align*}
+	Hence applying the direct sum between the two sequences we obtain
+	\begin{align*}
+	0\longrightarrow\Omega^k(M,\partial M)\longrightarrow\Omega^k(U,\partial M_U)\oplus\Omega^k(V,\partial M_V)\longrightarrow\Omega^k(U\cap V,\partial M_{U\cap V})\longrightarrow 0.
+	\end{align*}
+	The last row induces the desired long sequence because of the following commutative diagram
+	\begin{equation}
+	\xymatrix{
+		0 \ar[r] &\Omega^k(M,\partial M) \ar[d]^d \ar[r] &\Omega^k(U,\partial M_U)\oplus\Omega^k(V,\partial M_V)\ar[d]^{\mathrm{d}:=d\oplus d} \ar[r] &\Omega^k(U\cap V,\partial M_{U\cap V}) \ar[d]^d \ar[r] &0 \\
+		0 \ar[r] &\Omega^{k+1}(M,\partial M) \ar[r] &\Omega^{k+1}(U,\partial M_U)\oplus\Omega^{k+1}(V,\partial M_V)\ar[r] &\Omega^{k+1}(U\cap V,\partial M_{U\cap V}) \ar[r] &0}
+	\end{equation}
+	following the arguments in \cite{Bott-Tu-82}, section 2. Fix a closed form $\omega\in\Omega^k(U\cap V,\partial M_{U\cap V})$, since the first row is exact there exists a unique $\xi\in\Omega^{k+1}(M,\partial M)$ which is mapped to $\omega$. Now, since $\mathrm{d}\omega=0$ and the diagram is commutative $\mathrm{d}\xi$ is mapped to $0$. Hence from the exactness of the second row there exists $\chi$ which is mapped to $\mathrm{d}\xi$ and it easy to see $\chi$ is closed.
+\end{proof}
+
+\begin{lemm}
+	If the manifold with boundary $M$ has a \emph{finite good cover} (see \cite[Sec. 5]{Bott-Tu-82}) then its (relative) cohomology and (relative) compact cohomology is finite dimensional.
+\end{lemm}
+
+\begin{proof}
+	The proof is based on the existence of a Mayer-Vietoris sequence in any of the desired cases (proved in the previous proposition) and follows the outline of \cite[Prop. 5.3.1]{Bott-Tu-82}.
+\end{proof}
+
+\begin{lemm}[Five lemma]
+	Given the commutative diagram with exact rows
+	\begin{equation}
+	\xymatrix{
+		\cdots \ar[r] &A \ar[d]^f \ar[r]  &B \ar[d]^g \ar[r] &C \ar[d]^h \ar[r] &D \ar[d]^r \ar[r] &E \ar[d]^s \ar[r] &\cdots\\
+		\cdots \ar[r] &A' \ar[r]  &B' \ar[r] &C' \ar[r] &D' \ar[r] &E' \ar[r] &\cdots\\}
+	\end{equation}
+	if $f,g,h,s$ are isomorphism, then so is $r$.
+	
+\end{lemm}
+
+
+\begin{lemm}
+	Suppose $M=U\cup V$ with $U,V$ open. The pairing \eqref{eq:dualitypair} induces a map from the upper exact sequence to the dual of the lower exact sequence such that the following diagram is commutative:
+	\begin{equation}
+	\xymatrix{
+		\cdots \ar[r] &H^{m-k}(M) \ar[d] \ar[r] &H^{m-k}(U)\oplus H^{m-k}(V)\ar[d]\ar[r] &H^{m-k+1}(M) \ar[d] \ar[r] &\cdots\\
+		\cdots \ar[r] &H^{k}(M,\partial M)^*  \ar[r] &H^{k}(U,\partial M_U)^*\oplus H^{k}(V,\partial M_V)^*\ar[r] &H^{k-1}(M)^* \ar[r] &\cdots}
+	\end{equation}
+	
+\end{lemm}
+
+
+\begin{proof}
+	The proof follows that of \cite[Lem. 5.6]{Bott-Tu-82}.
+\end{proof}
+
+
+\noindent Now we are ready to prove the main theorem of this section:\\
+
+\noindent\textit{Proof of Poincar\'e-Lefschetz Duality}. Follow the argument given in \cite[Sec. 5]{Bott-Tu-82}. By the Five lemma if Poincar\'e-Lefschetz duality holds for $U,V$ and $U\cap V$, then it holds for $U\cup V$. Then it is sufficient to proceed by induction on the cardinality of a finite good cover.\hfill$\square$

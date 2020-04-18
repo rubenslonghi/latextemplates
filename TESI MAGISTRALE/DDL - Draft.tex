@@ -1,0 +1,1157 @@
+\documentclass[a4paper,10pt,openright]{article} % Per avere margini destro e sinistro diversi
+\usepackage[english]{babel} % per lingua. TeXnic dà warning per misteriosi motivi...
+\usepackage[latin1]{inputenc} % per gli accenti e carattere
+\usepackage{amsmath,amssymb,amsthm,amsfonts,amscd,color,eucal,latexsym,mathrsfs,mathtools,cancel,tikz}
+\usepackage{epsfig}  % ciao
+%\usepackage{refcheck} % to check references
+\usepackage{simplewick}
+%\usepackage{tikz-cd}
+\usepackage{hyperref}
+\usepackage[all,cmtip]{xy}
+\usetikzlibrary{matrix,calc}
+
+
+%\definecolor{NicoColor}{RGB}{56, 174, 199}
+\definecolor{NiColor}{RGB}{77,77,255}
+\definecolor{NiColoRed}{RGB}{255,77,77}
+\definecolor{NiCitation}{RGB}{77,255,77}
+\newcommand{\nicomment}[1]{\textbf{\textcolor{NiColor}{#1}}}
+\newcommand{\nicorrection}[1]{\textbf{\textcolor{NiColoRed}{#1}}}
+\newcommand{\nicitation}[1]{\textbf{\textcolor{NiCitation}{#1}}}
+
+\oddsidemargin 0cm      % left margin of right page 
+\evensidemargin 0cm     % left margin of left page 
+\textheight 20cm        % height of text  24 
+\textwidth 16cm         % width of text  
+\pagestyle{empty}
+\newtheoremstyle{TheoremStyle}% <name>
+        {3pt}% <Space above>
+        {3pt}% <Space below>
+        {\slshape}% <Body font>
+        {}% <Indent amount>
+        {\bf}%{\itshape}% <Theorem head font>
+        {:}% <Punctuation after theorem head>
+        {.5em}% <Space after theorem head>
+        {}% <Theorem head spec (can be left empty, meaning 'normal')>
+\newtheoremstyle{ExampleAndRemarkStyle}% <name>
+        {3pt}% <Space above>
+        {3pt}% <Space below>
+        {\slshape}% <Body font>
+        {}% <Indent amount>
+        {\bf}%{\itshape}% <Theorem head font>
+        {:}% <Punctuation after theorem head>
+        {.5em}% <Space after theorem head>
+        {}% <Theorem head spec (can be left empty, meaning 'normal')>
+\newtheoremstyle{ProofStyle}% <name>
+        {3pt}% <Space above>
+        {3pt}% <Space below>
+        {}% <Body font>
+        {}% <Indent amount>
+        {\bf}%{\itshape}% <Theorem head font>
+        {:}% <Punctuation after theorem head>
+        {.5em}% <Space after theorem head>
+        {}% <Theorem head spec (can be left empty, meaning 'normal')>
+
+\theoremstyle{TheoremStyle}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{assumption}[theorem]{Assumption}
+%\theoremstyle{definition}[theorem]{Definition}
+\newtheorem{Definition}[theorem]{Definition}
+\theoremstyle{ExampleAndRemarkStyle}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{Example}[theorem]{Example} %[theorem]{Example}
+\theoremstyle{ProofStyle}
+\newtheorem*{Proof}{Proof}
+
+\title{%
+	On Maxwell Equations on Globally Hyperbolic Spacetimes with Timelike Boundary
+}
+
+\author{%
+	Claudio Dappiaggi$^{1,2,3,a}$, Nicol\`o Drago$^{4,5,b}$ 
+	and Rubens Longhi$^{1,c}$\vspace{4mm}\\
+	{\small $^1$ Dipartimento di Fisica -- Universit{\`a} di Pavia, Via Bassi 6, I-27100 Pavia, Italy.}\vspace{1mm}\\
+	{\small $^2$ INFN, Sezione di Pavia -- Via Bassi 6, I-27100 Pavia, Italy.}\vspace{1mm}\\
+	{\small $^3$ Istituto Nazionale di Alta Matematica -- Sezione di Pavia, Via Ferrata, 5, 27100 Pavia, Italy.}\vspace{1mm}\\
+	{\small $^4$ Dipartimento di Matematica -- Universit{\`a} di Trento, via Sommarive 15, I-38123 Povo (Trento), Italy.}\vspace{1mm}\\
+	{\small $^5$ INFN, TIFPA -- via Sommarive 15, I-38123 Povo (Trento), Italy.}\vspace{4mm}\\
+	{\footnotesize  ~$^a$ claudio.dappiaggi@unipv.it~,~$^b$ 
+		nicolo.drago89@gmail.com~,~$^c$ rubens.longhi01@universitadipavia.it}
+}
+
+\date{\today}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+	
+	\maketitle
+	
+	\begin{abstract}
+		To be filled
+	\end{abstract}
+	\paragraph*{Keywords:}
+	to be filled
+	\paragraph*{MSC 2010:} 81T20, 81T05
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+\section{Introduction}\label{Section: Introduction}
+
+To be filled
+
+\section{Geometric Data}
+
+In this subsection, our goal is to fix notations and conventions, as well as to summarize the main geometric data, which play a key role in our analysis. Following the standard definition, see for example \cite[Ch. 1]{Lee}, $M$ indicates a smooth, second-countable, connected, oriented manifold of dimension $n> 1$ , with smooth boundary $\partial M$, assumed for simplicity to be connected. We assume also that $M$ admits a finite good cover. A point $p\in M$ such that there exists an open neighbourhood $U$ containing $p$, diffeomorphic to an open subset of $\mathbb{R}^m$, is called an {\em interior point} and the collection of these points is indicated with $Int(M)\equiv\mathring{M}$. As a consequence $\partial M\doteq M\setminus\mathring{M}$, if non empty, can be read as an embedded submanifold $(\partial M,\iota_{\partial M})$ of dimension $n-1$ with $\iota_{\partial M}\in C^\infty(\partial M; M)$.
+
+In addition we endow $M$ with a smooth Lorentzian metric $g$ of signature $(-,+,...,+)$ so that $\iota^*g$ identifies a Lorentzian metric on $\partial M$ and we require $(M,g)$ to be time oriented. As a consequence $(\partial M,\iota^*_{\partial M}g)$ acquires the induced time orientation and we say that $(M,g)$ has a {\em timelike boundary}. 
+
+Since we will be interested particularly in the construction of advanced and retarded fundamental solutions for normally hyperbolic operators, we focus our attention on a specific class of Lorentzian manifolds with timelike boundary, namely those which are globally hyperbolic. While, in the case of $\partial M=\emptyset$ this is a standard concept, in presence of a timelike boundary it has been properly defined and studied recently in \cite{Ake-Flores-Sanchez-18}. Summarizing part of their constructions and results, we say that a time-oriented, Lorentzian manifold with timelike boundary $(M,g)$ is {\em causal} if it possesses no closed, causal curve, while it is {\em globally hyperbolic} if it is causal and, for all $p,q\in M$, $J^+(p)\cap J^-(q)$ is either empty or compact. These conditions entail the following consequences, see \cite[Th. 1.1 \& 3.14]{Ake-Flores-Sanchez-18}:
+
+\begin{theorem}
+	Let $(M,g)$ be a time-oriented of dimension $n$. Then 
+	\begin{enumerate}
+		\item $(M,g)$ is a globally hyperbolic spacetime with timelike boundary if and only if it possesses a Cauchy surface, namely an achronal subset of $M$ which is intersected only once by every inextensible timelike curve,
+	\item if $(M,g)$ is globally hyperbolic, then it is isometric to $\mathbb{R}\times\Sigma$ endowed with the line-element
+	\begin{equation}\label{eq:line_element}
+	ds^2=-\beta d\tau^2+h_\tau,
+	\end{equation}
+	where $\tau:M\to\mathbb{R}$ is a Cauchy temporal function\footnote{Given a generic time oriented Lorentzian manifold $(N,\tilde{g})$, a Cauchy temporal function is a map $\tau:M\to\mathbb{R}$ such that its gradient is timelike and past-directed, while its level surfaces are Cauchy hypersurfaces.}, whose gradient is tangent to $\partial M$, $\beta\in C^\infty(\mathbb{R}\times\Sigma;(0,\infty))$ while $\mathbb{R}\ni\tau\to (\{\tau\}\times\Sigma,h_\tau)$ identifies a one-parameter family of $(n-1)-$dimensional spacelike, Riemannian manifolds with boundaries. Each $\{\tau\}\times\Sigma$ is a Cauchy surface for $(M,g)$.
+	\end{enumerate}
+\end{theorem} 
+
+Henceforth we will be tacitly assuming that, when referring to a globally hyperbolic spacetime with timelike boundary $(M,g)$, we work directly with \eqref{eq:line_element} and we shall refer to $\tau$ as the time coordinate. Furthermore each Cauchy surface $\Sigma_\tau\doteq\{\tau\}\times\Sigma$ acquires an orientation induced from that of $M$. In addition we shall say that $(M,g)$ is {\em static} if it possesses a timelike Killing vector field $\chi\in\Gamma(TM)$ whose restriction to $\partial M$ is tangent to the boundary, {\it i.e.} $g_p(\chi,\nu)=0$ for all $p\in\partial M$ where $\nu$ is the unit vector, normal to the boundary at $p$. With reference to \eqref{eq:line_element} this translates simply into the request that both $\beta$ and $h_\tau$ are independent from $\tau$.
+
+\vskip .2cm
+
+On top of a Lorentzian spacetime $(M,g)$ with timelike boundary we consider $\Omega^k(M)$, $k\in\mathbb{N}\cup\{0\}$, the space of real valued smooth $k$-forms endowed with the standard, metric induced, pairing $(,):\Omega^k(M)\times\Omega^k(M)\to\mathbb{R}$. A particular role will be played by the support of the forms that we consider. In the following definition we introduce the different possibilities that we will consider, which are a generalization of the counterpart used for scalar fields which correspond in our scenario to $k=0$, \textit{cf.}m \cite{Baer-15}.
+\begin{Definition}\label{Def: space of forms}
+	Let $(M,g)$ be a Lorentzian spacetime with timelike boundary. We denote with 
+	\begin{enumerate}
+		\item 	$\Omega_{\mathrm{c}}^k(M)$ the space of smooth $k$-forms with compact support in $M$ while with $\Omega_{\mathrm{cc}}^k(M)\subset\Omega^k_{\mathrm{c}}(M)$ the collection of smooth and compactly supported $k$-forms $\omega$ such that $\textrm{supp}(\omega)\cap\partial M=\emptyset$.
+		\item
+		$\Omega_{\mathrm{spc}}^k(M)$ (\textit{resp}. $\Omega_{\mathrm{sfc}}^k(M)$) the space of strictly past compact (\textit{resp.} strictly future compact) $k$-forms, that is the collection of $\omega\in\Omega^k(M)$ such that there exists a compact set $K\subseteq M$ for which $J^+(\textrm{supp}(\omega))\subseteq J^+(K)$ (\textit{resp.} $J^-(\textrm{supp}(\omega))\subseteq J^-(K)$), where $J^\pm$ denotes the causal future and the causal past in $M$.  Notice that $\Omega_{\mathrm{sfc}}^k(M)\cap\Omega_{\mathrm{spc}}^k(M)=\Omega_{\mathrm{c}}^k(M)$.
+		\item
+		$\Omega_{\mathrm{pc}}^k(M)$ (\textit{resp}. $\Omega_{\mathrm{fc}}^k(M)$) denotes the space of future compact (\textit{resp.} past compact) $k$-forms, that is, $\omega\in\Omega^k(M)$ for which
+		${\rm supp}(\omega)\cap J^-(K)$ (\textit{resp.} ${\rm supp}(\omega)\cap J^+(K)$) is compact for all compact $K\subset M$.
+		\item $\Omega_{\mathrm{tc}}^k(M):=\Omega_{\mathrm{fc}}^k(M)\cap\Omega_{\mathrm{pc}}^k(M)$, the space of timelike compact $k$-forms.
+		\item $\Omega_{\mathrm{sc}}^k(M):=\Omega_{\mathrm{sfc}}^k(M)\cap\Omega_{\mathrm{spc}}^k(M)$, the space of spacelike compact $k$-forms.
+	\end{enumerate}
+\end{Definition}
+
+
+We indicate with $d:\Omega^k(M)\to\Omega^{k+1}(M)$ the exterior derivative and, being $(M,g)$ oriented, we can identify a unique, metric-induced, Hodge operator $\ast:\Omega^k(M)\to\Omega^{m-k}(M)$, $m=\dim M$ such that, for all $\alpha,\beta\in\Omega^k(M)$, $\alpha\wedge\ast\beta=(\alpha,\beta)\mu_g$, where $\wedge$ is the exterior product of forms and $\mu_g$ the metric induced volume form. Since $M$ is endowed with a Riemannian metric it holds that, when acting on smooth $k$-forms, $\ast^{-1}=(-1)^{k(m-k)}\ast$. Combining these data first we define the {\em codifferential} operator $\delta:\Omega^{k+1}(M)\to\Omega^k(M)$ as $\delta\doteq\ast^{-1}\circ d\circ\ast$. Secondly we introduce the {\em D'Alembert-de Rham} wave operator $\Box_k:\Omega^k(M)\to\Omega^k(M)$ such that $\Box_k\doteq d\delta+\delta d$, as well as the {\em Maxwell} operator $\mathcal{M}_k:\Omega^k(M)\to\Omega^k(M)$ such that $\mathcal{M}_k\doteq\delta d$. The subscript $k$ is here introduced to make explicit on which space of $k$-forms the operator is acting. Observe, furthermore, that $\Box_k$ differs by the more commonly used D'Alembert wave operator acting on $k$-forms by $0$-order term built out of the metric and whose explicit form depends on the value of $k$, see for example \cite[Sec. II]{Pfenning:2009nx}. For later convenience we define 
+\begin{equation}\label{Eq: delta kernel}
+\Omega^k_\delta(M)=\{\omega\in\Omega^k(M)\;|\;\delta\omega=0\},\quad\Omega^k_{c,\delta}(M)=\{\alpha\in\Omega^k_c(M)\;|\;\delta\alpha=0\}
+\end{equation}
+where $k\in\mathbb{N}$. To conclude the section, we focus on the boundary $\partial M$ and on the interplay with $k$-forms lying in $\Omega^k(M)$. The first step consists of defining two notable maps. These relate $k$-forms defined on the whole $M$ with suitable counterparts living on $\partial M$ and, in the special case of $k=0$, they coincide either with the restriction to the boundary of a scalar function or with that of its derivative along the direction normal to $\partial M$.
+
+\begin{remark}
+	Since we will be considering not only form lying in $\Omega^k(M)$, $k\in\mathbb{N}\cup\{0\}$, but also those in $\Omega^k(\partial M)$, we shall distinguish the operators acting on this space with a subscript $_\partial$, {\it e.g.} $d_\partial$, $\ast_\partial$, $\delta_\partial$ or $(,)_\partial$.
+\end{remark}
+
+\begin{Definition}\label{Def: tangential and normal component}
+	Let $(M,g)$ be a Lorentzian spacetime with timelike boundary together with the embedding map $\iota_{\partial M}:\partial M\hookrightarrow M$. We call {\em tangential} and {\em normal} maps 
+	\begin{subequations}\label{Eqn: tangential and normal maps}
+		\begin{equation}\label{Eqn: tangential map}
+		\mathrm{t}\colon\Omega^k(M)\to\Omega^k(\partial M)\qquad\omega\mapsto\mathrm{t}\omega\doteq\iota_{\partial M}^*\omega
+		\end{equation}
+		\begin{equation}\label{Eqn: normal maps}
+		\mathrm{n}\colon\Omega^k(M)\to\Omega^{k-1}(\partial M)\qquad\omega\mapsto\mathrm{n}\omega\doteq\ast_{\partial}^{-1}\circ\mathrm{t}\circ\ast_M\,,
+		\end{equation}
+	\end{subequations}
+In particular, for all $k\in\mathbb{N}\cup\{0\}$ we define
+	\begin{align}\label{Eqn: k-forms with vanishing tangential or normal component}
+	\Omega_{\mathrm{t}}^k(M):=\lbrace\omega\in\Omega^k(M)\;|\;\mathrm{t}\omega=0\rbrace\,,\qquad
+	\Omega_{\mathrm{n}}^k(M):=\lbrace\omega\in\Omega^k(M)\;|\;\mathrm{n}\omega=0\rbrace\,.
+	\end{align}
+Similarly we will use the symbols $\Omega_{c,\mathrm{t}}^k(M)$ and $\Omega_{c,\mathrm{n}}^k(M)$ when we consider only smooth, compactly supported $k$-forms.
+\end{Definition}
+
+\begin{remark}
+The normal map $\mathrm{n}:\Omega^k(M)\to\Omega^{k-1}(\partial M)$ can be equivalently read as the restriction to $\partial M$ of the contraction $\nu\lrcorner\omega$ between $\omega\in\Omega^k(M)$ and the vector field $\nu\in\Gamma(TM)|_{\partial M}$ which corresponds pointwisely to the unit vector, normal to $\partial M$.
+\end{remark}
+
+\noindent As last step, we observe that \eqref{Eqn: tangential and normal maps} together with \eqref{Eqn: k-forms with vanishing tangential or normal component} entail the following series of identities on $\Omega^k(M)$ for all $k\in\mathbb{N}\cup\{0\}$.
+\begin{subequations}\label{Eqn: relations between d,delta,t,n}
+\begin{equation}\label{Eqn: relations-bulk}
+\ast\delta=(-1)^k\mathrm{d}\ast\,,\quad
+\delta\ast=(-1)^{k+1}\ast\mathrm{d}\,,
+\end{equation}
+\begin{equation}\label{Eqn: relations-bulk-to-boundary}
+\ast_\partial\mathrm{n}=\mathrm{t}\ast\,,\quad
+\ast_\partial\mathrm{t}=(-1)^k\mathrm{n}\ast\,,\quad
+\mathrm{d}_\partial\mathrm{t}=\mathrm{t}\mathrm{d}\,,\quad
+\delta_\partial\mathrm{n}=\mathrm{n}\delta\,.
+\end{equation}
+\end{subequations}
+A notable consequence of \eqref{Eqn: relations-bulk-to-boundary} is that, while on globally hyperbolic spacetimes with empty boundary, the operators $d$ and $\delta$ are one the formal adjoint of the other, in the case in hand, the situation is different. A direct application of Stokes' theorem yields that 
+\begin{align}\label{Eqn: boundary terms for delta and d}
+(\mathrm{d}\alpha,\beta)-(\alpha,\delta\beta)=
+(\mathrm{t}\alpha,\mathrm{n}\beta)_\partial\qquad
+\end{align}
+where the pairing in the right-hand side is the one associated to forms living on $\partial M$ and where $\alpha\in\Omega^k_(M)$ and $\beta\in\Omega^{k+1}(M)$ are arbitrary, though such that $\textrm{supp}(\alpha)\cap\textrm{supp}(\beta)$ is compact. In connection to the operators $d$ and $\delta$ we shall employ the notation
+\begin{equation}\label{Eqn: kernel of d and delta}
+\Omega^k_d(M)=\{\omega\in\Omega^k(M)\;|\;d\omega=0\}\;\textrm{and}\;\Omega^k_\delta(M)=\{\omega\in\Omega^k(M)\;|\;\delta\omega=0\},
+\end{equation}
+where $k\in\mathbb{N}$. Similarly we shall indicate with $\Omega^k_{\sharp,\delta}(M)\doteq\Omega^k_{\sharp}(M)\cap\Omega^k_\delta(M)$ and $\Omega^k_{\sharp,d}(M)\doteq\Omega^k_{\sharp}(M)\cap\Omega^k_d(M)$ where $\sharp\in\{c,sc,pc,fc,tc\}$.
+
+
+\section{Maxwell Equations and Boundary Conditions}\label{Sec: the algebra for the vector potential with Dirichlet boundary conditions}
+
+In this section we analyze the space of solutions of the Maxwell equations for arbitrary $k$-forms on a globally hyperbolic spacetime with timelike boundary $(M,g)$. We proceed in two separate steps. First we focus our attention on the D'Alembert - de Rham wave operator $\Box_k=\delta d+d\delta$ acting on $\Omega^k(M)$. We identify a large class of boundary conditions which correspond to imposing that the underlying system is closed ({\it i.e.} the symplectic flux across $\partial M$ vanishes) and we characterize the kernel of the operator in terms of its advanced and retarded fundamental solutions. These are assumed to exist and, following the same strategy employed in \cite{Dappiaggi-Drago-Ferreira-19} for the scalar wave equation, we prove that this is indeed the case whenever $(M,g)$ is a static spacetime.
+
+In the second part of the section we focus instead on the Maxwell operator $\mathcal{M}_k$. In order to characterize its kernel we will need to discuss the interplay between the choice of a boundary condition and that of a gauge fixing. This represent the core of this part of our work.
+
+
+
+\subsection{On the D'Alembert - de Rham wave operator}\label{Sec: preliminaries on the wave operator}
+
+Consider the operator $\Box_k:\Omega^k(M)\to\Omega^k(M)$, where $(M,g)$ is a globally hyperbolic spacetime with timelike boundary of dimension $\dim M=n\geq 2$. Then, for any pair $\alpha,\beta\in\Omega^k(M)$ such that $\textrm{supp}(\alpha)\cap\textrm{supp}(\beta)$ is compact, the following Green's formula holds true:
+\begin{align}\label{Eqn: boundary terms for wave operator}
+	(\square_k\alpha,\beta)-(\alpha,\square_k\beta)=
+	(\mathrm{t}\delta\alpha,\mathrm{n}\beta)_\partial-
+	(\mathrm{n}\alpha,\mathrm{t}\delta\beta)_\partial-
+	(\mathrm{n}\mathrm{d}\alpha,\mathrm{t}\beta)_\partial+
+	(\mathrm{t}\alpha,\mathrm{n}\mathrm{d}\beta)_\partial\,,
+\end{align}
+where $t,n$ are the maps defined in \eqref{Eqn: tangential and normal maps}, while $(,)$ is the standard, metric induced pairing between $k$-forms. In view of Definition \ref{Def: tangential and normal component}, it descends that the right-hand side of \eqref{Eqn: boundary terms for wave operator} vanishes automatically if we restrict our attention to $\Omega_{cc}(M)$, but boundary conditions ought to be imposed for the same property to hold true on a larger set of $k$-forms. From a physical viewpoint this requirement is tantamount to imposing that the system described by $k$-forms obeying the D'Alembert - de Rham wave equation is closed.
+
+\begin{lemma}\label{Lemma: boundary condition}
+	Let $f,f^\prime\in C^\infty(\partial M)$ and let 
+	\begin{equation}\label{Eqn: Robin boundary condition}
+	\Omega^k_{f,f^\prime}(M)\doteq\{\omega\in\Omega^k(M)\;|\;t\omega=fnd\omega\quad\textrm{and}\quad t\delta\omega=f^\prime n\omega \}.
+	\end{equation}
+	Then, $\forall\alpha,\beta\in\Omega^k(M)$, $k\in\mathbb{N}\cup\{0\}$ such that $\textrm{supp}(\alpha)\cap\textrm{supp}(\beta)$ is compact, it holds 
+	$$(\square_k\alpha,\beta)-(\alpha,\square_k\beta)=0.$$
+\end{lemma}
+
+\begin{proof}
+	This is a direct consequence of \eqref{Eqn: boundary terms for wave operator} together with the property that, for every $f\in C^\infty(\partial M)$ and for every $\alpha\in\Omega^k(\partial M)$, $*_\partial(f\alpha)=f(*_\partial\alpha)$. In addition observe that the assumption on the support of $\alpha$ and $\beta$ descend also to the forms present in each of the pairing in the right hand side of \eqref{Eqn: boundary terms for wave operator}.
+\end{proof}
+
+\begin{remark}
+	Observe that the boundary conditions necessary to let the right hand side of \eqref{Eqn: boundary terms for wave operator} are always since the first two terms involve $(k-1)$-forms and the last two $k$-forms. The only exception is the case $k=0$ when \eqref{Eqn: boundary terms for wave operator} reduces to the case studied in \cite{Dappiaggi-Drago-Ferreira-19}. In addition, in analogy to the terminology used in the scalar scenario, we shall say that \eqref{Eqn: Robin boundary condition} implements boundary conditions of Robin type. It is important to stress that these are not the largest class of boundary conditions which make the right hand side \eqref{Eqn: boundary terms for wave operator} vanish. As a matter of fact one can think of additional possibilities similar to the so-called Wentzell boundary conditions, which were considered in the scalar scenario, see {\it e.g.} \cite{Dappiaggi-Drago-Ferreira-19,Dappiaggi:2018pju,Zahn:2015due}.
+\end{remark}
+
+Lemma \eqref{Lemma: boundary condition} individuates therefore a class of boundary conditions which make the operator $\Box_k$ formally self-adjoint.  In between all these possibilities we highlight in the following definition four notable extremal cases, which are of particular interest to our analysis.
+
+\begin{Definition}\label{Def: Dirichlet-Neumann boundary conditions}
+Let $(M,g)$ be a globally hyperbolic spacetime with timelike boundary and let $k\in\mathbb{N}$. We call
+\begin{itemize}
+	\item space of $k$-forms with {\em Dirichlet} boundary condition
+	$$\Omega^k_D(M)\doteq\{\omega\in\Omega^k(M)\;|\;t\omega=0\;{\rm and}\;n\omega=0\},$$
+	\item space of $k$-forms with {\em Neumann} boundary condition
+	$$\Omega^k_N(M)\doteq\{\omega\in\Omega^k(M)\;|\;nd\omega=0\;{\rm and}\;t\delta\omega=0\},$$
+	\item space of $k$-forms with {\em tangential} boundary condition
+	$$\Omega^k_T(M)\doteq\{\omega\in\Omega^k(M)\;|\;t\omega=0\;{\rm and}\;t\delta\omega=0\},$$
+	\item space of $k$-forms with {\em normal} boundary condition
+	$$\Omega^k_\perp(M)\doteq\{\omega\in\Omega^k(M)\;|\;n\omega=0\;{\rm and}\;nd\omega=0\}.$$
+\end{itemize}
+Whenever the domain of the operator $\Box_k$ is restricted to one of these space we shall indicate it with symbol $\Box_{k,\sharp}$ where $\sharp\in\{D,N,T,\perp\}$.
+\end{Definition}
+
+
+\begin{remark}\label{Rmk: on nomenclature for Dirichlet and Neumann boundary conditions}
+	Observe that, in the previous definition, we have excluded the case $k=0$ since, in such case, only two possibilities survive, namely
+	$$\Omega^0_D(M)\doteq\{\omega\in C^\infty(M)\;|\;t\omega=\omega|_{\partial M}=0\},\quad\Omega^0_N(M)\doteq\{\omega\in C^\infty(M)\;|\;n\omega=\nu(\omega)|_{\partial M}=0\},$$
+	where, for all $p\in\partial M$ $\nu$ coincides with the unit vector, normal to the boundary. These two options coincide with the standard Dirichlet and Neumann boundary conditions for scalar functions.
+\end{remark}
+
+\begin{remark}\label{Rem: Hodge action}
+	It is interesting to observe that different boundary conditions can be related via the action of the Hodge operator. In particular, using Equation \eqref{Eqn: relations between d,delta,t,n} and \eqref{Eqn: Robin boundary condition}, one can infer that, for any $f,f^\prime\in C^\infty(\partial M)$ which are nowhere vanishing, it holds that 
+	$$\ast\Omega^k_{f,f^\prime}(M)=\Omega^{n-k}_{\tilde f,\tilde{f}^\prime}(M),$$
+	where $\tilde{f}=\frac{(-1)^k}{f^\prime}$ and $\tilde{f}^\prime=\frac{(-1)^k}{f}$. At the same time, with reference, to the space of $k$-forms in Definition \ref{Def: Dirichlet-Neumann boundary conditions} it holds
+		\begin{align}\label{Eqn: duality between Dirichlet-Neumann boundary conditions}
+\ast\Omega^k_D(M)=\Omega^{m-k}_D(M),\quad\ast\Omega^k_N(M)=\Omega^{m-k}_N(M),\quad\ast\Omega^k_T(M)=\Omega^{m-k}_\perp(M)
+	\end{align}
+\end{remark}
+
+\noindent In the following we shall make a key assumption on the existence of distinguished fundamental solutions for the operator $\Box_k$. Subsequently we shall prove that such hypothesis holds true whenever the underlying globally hyperbolic spacetime with timelike boundary is static. Recalling both Definition \ref{Def: space of forms} and Equation \eqref{Eqn: Robin boundary condition} we require the following:\\
+
+\begin{assumption}\label{Thm: assumption theorem}
+	For all $f,f^\prime\in C^\infty(\partial M)$ and for all $k\in\mathbb{N}\cup\{0\}$, there exist advanced $(-)$ and retarded $(+)$ fundamental solutions for the d'Alembert-de Rham wave operator $\Box_k$, $G^\pm_{f,f^\prime}\colon\Omega_{\mathrm{c}}^k(M)\to\Omega_{\mathrm{sc,f,f^\prime}}^k(M)\doteq\Omega_{\mathrm{sc}}^k(M)\cap\Omega_{f,f^\prime}^k(M)$ such that
+	\begin{align}\label{Eqn: properties of advanced and retarded propagators}
+		\square_k\circ G_{f,f^\prime}^\pm = \operatorname{Id}_{\Omega_{\mathrm{c}}^k(M)}\,,\qquad
+		G_{f,f^\prime}^\pm\circ\square_{k,sc,f,f^\prime}=\operatorname{Id}_{\Omega_{f,f^\prime}^k(M)}\,,\qquad
+		{\rm supp}(G_{f,f^\prime}^\pm\omega)\subseteq J^\pm({\rm supp}(\omega))\,,
+	\end{align}
+	for all $\omega\in\Omega_{\mathrm{c}}^k(M)$ where $J^\pm$ denote the causal future and past and where $\Box_{k,sc,f,f^\prime}$ indicates that the domain of $\Box_k$ is restricted to $\Omega_{\mathrm{sc,f,f^\prime}}^k(M)$.
+\end{assumption}
+
+\vskip.2cm
+
+\begin{remark}\label{Rmk: on the definition of advanced and retarded propagators}
+	Notice that domain of $G_{f,f^\prime}^\pm$ is not restricted to $\Omega^k_{f,f^\prime}(M)\cap\Omega^k_c(M)$. Furthermore the second identity in \eqref{Eqn: properties of advanced and retarded propagators} cannot be extended to  $G^\pm_{f,f^\prime}\circ\square_k=\operatorname{Id}_{\Omega_\sharp^k(M)}$ since it would entail $G_\mathrm{f,f^\prime}\square_k\omega=\omega$ for all $\omega\in\Omega_{\mathrm{c}}^k(M)$. Yet the left hand side also entails that $\omega\in\Omega^k_{sc,f,f^\prime}$, which is manifestly a contradiction. 	
+\end{remark}
+
+\vskip.2cm
+
+\begin{corollary}\label{Cor: uniqueness}
+	Under the same hypothesis of Assumption \ref{Thm: assumption theorem}, if the fundamental solutions $G^\pm_{f,f^\prime}$ exist, they are unique.
+\end{corollary}
+
+\begin{proof}
+	Suppose that, beside $G^-_{f,f^\prime}$, there exists a second map $\widetilde{G}^-_{f,f^\prime}\colon\Omega_{\mathrm{c}}^k(M)\to\Omega_{\mathrm{sc}}^k(M)$ enjoying the properties of Equation \eqref{Eqn: properties of advanced and retarded propagators}. Then, for any but fixed $\alpha\in\Omega^k_c(M)$ it holds
+	$$(\alpha,G^+_{f,f^\prime}\beta)=(\Box_k G^-_{f,f^\prime}\alpha,G^+_{f,f^\prime}\beta)=(G^-_{f,f^\prime}\alpha,\Box_kG^+_{f,f^\prime}\beta)=(G^-_{f,f^\prime}\alpha,\beta),\quad\forall\beta\in\Omega^k_c(M)$$
+where we used both the support properties of the fundamental solutions and Lemma \ref{Lemma: boundary condition} which guarantees that $\Box_k$ is formally self-adjoint on $\Omega^k_{f,f^\prime}(M)$. Similarly, replacing $G^-_{f,f^\prime}$ with $\widetilde{G}^-_{f,f^\prime}$, it holds $(\alpha,\widetilde{G}^+_{f,f^\prime}\beta)=(\widetilde{G}^-_{f,f^\prime}\alpha,\beta)$. It descends that $((\widetilde{G}^-_{f,f^\prime}-G^-_{f,f^\prime})\alpha,\beta)=0$, which entails $\widetilde{G}^-_{f,f^\prime}\alpha=G^-_{f,f^\prime}\alpha$ being the pairing between $\Omega^k(M)$ and $\Omega^k_c(M)$ separating. A similar result holds for the retarded fundamental solution.
+\end{proof}
+
+\noindent This corollary can be also read as a consequence of the property that, for all $\omega\in\Omega^k_c(M)$, $G_{f,f^\prime}^\pm\omega\in\Omega_{\mathrm{sc}}^k(M)$ can be characterized as the unique solution to the Cauchy problem
+\begin{align}\label{Eqn: Cauchy problem for propagators with boundary conditions}
+\square\psi=\omega\,,\qquad
+{\rm supp}(\psi)\cap M\setminus J^\pm({\rm supp}(\omega))=\emptyset\,,\qquad
+\psi\in\Omega^k_{f,f^\prime}(M)\,.
+\end{align}
+
+\begin{remark}\label{Rem: All Might -- One for all}
+	Observe that both Assumption \ref{Thm: assumption theorem} and Corollary \ref{Cor: uniqueness} have been stated for $\Omega^k_{f,f^\prime}(M)$. Per direct inspection one can infer that, mutatis mutandis, they hold true for $\Omega^k_\sharp(M)$ with $\sharp=\{N,D,T,\perp\}$, {\it cf.} Definition \ref{Def: Dirichlet-Neumann boundary conditions}. Henceforth we shall only be working with $\Omega^k_{f,f^\prime}$ but, unless stated otherwise, all results hold true also for $\Omega^k_\sharp(M)$. In particular in this case the associated fundamental solutions will be indicated as $G^\pm_\sharp:\Omega^k_c(M)\to\Omega^k_{sc}(M)\cap\Omega^k_\sharp(M)$.
+\end{remark}
+
+
+\begin{remark}\label{Rmk: Cauchy problem with non-compact source}
+	For all $f,f^\prime\in C^\infty(\partial M)$ the fundamental solutions $G_{f,f^\prime}^+$ (\textit{resp.} $G_{f,f^\prime}^-$) can be extended to a linear operator $G_{f,f^\prime}^+\colon\Omega_{\mathrm{pc}}^k(M)\to\Omega_{\mathrm{pc}}^k(M)\cap\Omega^k_{f,f^\prime}(M)$ (\textit{resp.} $G_{f,f^\prime}^-\colon\Omega_{\mathrm{pc}}^k(M)\to\Omega_{\mathrm{pc}}^k(M)\cap\Omega^k_{f,f^\prime}(M)$) -- \textit{cf.} \cite[Thm. 3.8]{Baer-15}.
+	As a consequence the problem $\square_k\psi=\omega$ with $\omega\in\Omega^k(M)$ always admits a solution lying in $\Omega^k_{f,f^\prime}(M)$. As a matter of facts, consider any smooth function $\eta\equiv\eta(\tau)$, where $\tau\in\mathbb{R}$, {\it cf.} Equation \eqref{eq:line_element}, such that $\eta(\tau)=1$ for all $\tau>\tau_1$ and $\eta(\tau)=0$ for all $\tau<\tau_0$. Then calling $\omega^+\doteq\eta\omega$ and $\omega^-=(1-\eta)\omega$, it holds $\omega^+\in\Omega_{\mathrm{pc}}^k(M)$ while $\omega^-\in\Omega_{\mathrm{fc}}^k(M)$. Hence  $\psi=G_{f,f^\prime}^+\omega^++G_{f,f^\prime}^-\omega^-\in\Omega_{f,f^\prime}^k(M)$ is the sought solution.\\
+\end{remark}
+
+We prove the main result of this section, which characterizes the kernel of $\Box_k$ on the space of smooth $k$-forms with prescribed boundary condition.
+
+\begin{proposition}\label{Prop: exact sequence and duality relations}
+	Whenever the Assumption \ref{Thm: assumption theorem} is fulfilled, then, for all $f,f^\prime\in C^\infty(\partial M)$, setting $G_{f,f^\prime}\doteq G_{f,f^\prime}^+-G_{f,f^\prime}^-:\Omega^k_c(M)\to\Omega^k_{sc,f,f^\prime}(M)$, the following statements hold true:
+	\begin{enumerate}
+		\item letting $\tilde{f}=\frac{(-1)^k}{f^\prime}$ and $\tilde{f}^\prime=\frac{(-1)^k}{f}$,
+		\begin{align}\label{Eqn: duality between propagators}
+		\ast\circ G_{f,f^\prime}^\pm= G_{\tilde{f},\tilde{f}^\prime}^\pm\circ\ast\,.
+		\end{align}
+		\item 
+		for all $\alpha,\beta\in\Omega_{\mathrm{c}}^k(M)$ it holds
+		\begin{align}\label{Eqn: adjont of propagators}
+		(\alpha,G_{f,f^\prime}^\pm\beta)=(G_{f,f^\prime}^\mp\alpha,\beta)\,.
+		\end{align}
+		\item
+		the interplay between $G_{f,f^\prime}$ and $\Box_k$ is encoded in the exact sequence:
+		\begin{align}\label{Eqn: short exact sequence_aa}
+		0\to\Omega^k_{\mathrm{c},f,f^\prime}(M)\stackrel{\square_k}{\longrightarrow}
+		\Omega^k_{\mathrm{c}}(M)\stackrel{G_{f,f^\prime}}{\longrightarrow}
+		\Omega^k_{sc,f,f^\prime}(M)\stackrel{\square_k}{\longrightarrow}
+		\Omega^k_{\mathrm{sc}}(M)\to 0\,,
+		\end{align}
+	where $\Omega^k_{\mathrm{c},f,f^\prime}(M)\doteq\Omega_{\mathrm{c}}^k(M)\cap\Omega_{f,f^\prime}^k(M)$
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+We prove the different items separately. Starting from {\em 1.}, observe that $\ast\Box_k=\Box_{n-k}\ast$. Together with Remark \ref{Rem: Hodge action}, this entails that, for all $\alpha\in\Omega^k_c(M)$, 
+$$\Box_{n-k}\ast G^\pm_{f,f^\prime}\alpha=\Box_{n-k} G^\pm_{\tilde{f},\tilde{f}^\prime}\ast\alpha=\ast\alpha.$$
+The uniqueness of the fundamental solutions as per Corollary \ref{Cor: uniqueness} entails \eqref{Eqn: duality between propagators}. 
+
+\vskip .2cm
+
+\noindent{\em 2.} Equation \eqref{Eqn: adjont of propagators} is a consequence of the following chain of identities valid for all $\alpha,\beta\in\Omega_{\mathrm{c}}^k(M)$ 
+	\begin{align*}
+	(\alpha,G_{\tilde{f},\tilde{f}^\prime}^\pm\beta)=
+	(\square_k G_{\tilde{f},\tilde{f}^\prime}^\mp\alpha,G_{\tilde{f},\tilde{f}^\prime}^\pm\beta)=
+	(G_{\tilde{f},\tilde{f}^\prime}^\mp\alpha,\square_k G_{\tilde{f},\tilde{f}^\prime}^\pm\beta)=
+	(G_{\tilde{f},\tilde{f}^\prime}^\mp\alpha,\beta)\,,
+	\end{align*}
+	where we used both the support properties of the fundamental solutions and Lemma \ref{Lemma: boundary condition}.
+
+\vskip .2cm
+
+\noindent{\em 3.} The exactness of the series is proven using the properties already established for the fundamental solutions $G^\pm_{f,f^\prime}$. The left exactness of the sequence is a consequence of the second identity in Equation \eqref{Eqn: properties of advanced and retarded propagators} which ensures that $\Box_k\alpha=0$, $\alpha\in\Omega^k_{\mathrm{c},f,f^\prime}(M)$, entails $\alpha=0$. In order to prove that $\ker(G_{f,f^\prime})=\Box_k[\Omega^k_{c,f,f^\prime}]$, it suffices to observe that, if $\beta\in\Omega^k_c(M)$ is such that $G_{f,f^\prime}(\beta)=0$, then $G^+_{f,f^\prime}(\beta)=G^-_{f,f^\prime}(\beta)$. Hence, in view of the support properties of the fundamental solutions $G^+_{f,f^\prime}(\beta)\in\Omega^k_{c}(M)\cap\Omega^k_{sc,f,f^\prime}(M)$ and $\beta=\Box_k(G^+_{f,f^\prime}(\beta))$. Subsequently we need to verify that $\ker\Box_k=G_{f,f^\prime}[\Omega^k_c(M)]$. This is a standard argument, namely, considering any smooth function $\eta\equiv\chi(\tau)$ such that $\eta=1$ for $\tau\geq\tau_1$ and $\eta=0$ for $\tau\leq\tau_0$ as well as any $\omega\in\Omega^k_{sc}(M)$ such that $\Box_k\omega=0$, let $\omega_\eta\doteq\Box_k\eta\omega\in\Omega_c(M)$. A direct computation shows that $G_{f,f^\prime}(\omega_\eta)=\omega$. To conclude we need to establish the right exactness of the sequence. Consider any $\alpha\in\Omega^k_{sc}(M)$ and the equation $\Box_k\omega=\alpha$. Consider the function $\eta(\tau)$ as above and let $\omega\doteq G^+_{f,f^\prime}(\chi\alpha)+G^-_{f,f^\prime}((1-\eta)\alpha)$. In view of Remark \ref{Rmk: Cauchy problem with non-compact source} and of the support properties of the fundamental solutions, $\omega\in\Omega^k_{sc,f,f^\prime}(M)$ and $\Box_k\omega=\alpha$.
+\end{proof}
+
+\noindent It is worth focusing specifically on the boundary conditions individuated in Definition \ref{Def: Dirichlet-Neumann boundary conditions} since it is possible to improve slightly the results of Proposition \ref{Prop: exact sequence and duality relations}.
+
+\begin{lemma}\label{Lem: exact sequence and duality relations}
+	Under the hypotheses of Assumption \ref{Thm: assumption theorem} and of Remark \ref{Rem: All Might -- One for all}, it holds that
+	\begin{enumerate}
+		\item
+		the fundamental solutions obey the following duality relations
+		\begin{align}\label{Eqn: duality between Dirichlet-Neumann propagators}
+			\ast\circ G_{\mathrm{T}}^\pm= G_{\perp}^\pm\circ\ast\,\quad \ast\circ G_{\mathrm{D}}^\pm= G_{\mathrm{D}}^\pm\circ\ast\quad \ast G_{\mathrm{N}}^\pm= G_{\mathrm{N}}^\pm\ast.
+		\end{align}
+		In addition
+		\begin{align}
+			\label{Eqn: relations between delta,d and Neumann advanced-retarded propagators}
+			G_{\mathrm{N}}^\pm\circ d&=d\circ G_{\mathrm{N}}^\pm
+			\;\mathrm{on}\;\Omega_{\mathrm{t}}^k(M)\cap\Omega^k_{pc/fc}(M)\,,\quad
+			G_{\mathrm{T}}^\pm\circ\mathrm{d}=\mathrm{d}\circ G_\mathrm{T}^\pm
+			\;\mathrm{on}\;\Omega_{\mathrm{t}}^k(M)\cap\Omega^k_{pc/fc}(M)\,,\\
+			\label{Eqn: relations between delta,d and Dirichlet advanced-retarded propagators}
+			G_{\mathrm{N}/\perp}^\pm\circ\delta&=\delta\circ G_{\mathrm{N}/\perp}^\pm
+			\;\mathrm{on}\;\Omega_{\mathrm{n}}^k(M)\cap\Omega^k_{pc/fc}(M)\,,\quad
+			G_{T}^\pm\circ\delta=\delta\circ G^\pm_{\perp}
+			\;\mathrm{on}\;\Omega^k_{pc/fc}(M)\,.
+		\end{align}
+		\item 
+		for all $\alpha,\beta\in\Omega_{\mathrm{c}}^k(M)$ it holds
+		\begin{align}\label{Eqn: adjont of propagators_a}
+			(\alpha,G_\sharp^\pm\beta)=(G_\sharp^\mp\alpha,\beta)\,,
+		\end{align}
+		where $\sharp\in\{D,N,T,\perp\}$.
+		\item
+		calling $G_\sharp\doteq G^+_\sharp-G^-_\sharp$, the following is a short exact sequence:
+		\begin{align}\label{Eqn: short exact sequence}
+			0\to\Omega_{\mathrm{c}}^k(M)\cap\Omega_\sharp^k(M)\stackrel{\square_k}{\longrightarrow}
+			\Omega_{\mathrm{c}}^k(M)\stackrel{G_\sharp}{\longrightarrow}
+			\Omega_{\mathrm{sc}}^k(M)\cap\Omega_n^k(M)\stackrel{\square_k}{\longrightarrow}
+			\Omega_{\mathrm{sc}}^k(M)\to 0\,.
+		\end{align}
+	\end{enumerate}
+\end{lemma}
+\begin{proof}
+	The second and the third item can be proven slavishly as in Proposition \ref{Prop: exact sequence and duality relations} and hence we omit it. The same applies to Equation \eqref{Eqn: duality between Dirichlet-Neumann propagators}, taking into account Equation \eqref{Eqn: duality between Dirichlet-Neumann boundary conditions}. With reference to \eqref{Eqn: relations between delta,d and Neumann advanced-retarded propagators} and \eqref{Eqn: relations between delta,d and Dirichlet advanced-retarded propagators} their proof is mutatis mutandis the same. Hence we shall only focus on the first identity
+	
+	For every $\alpha\in\Omega^k_c(M)\cap\Omega^k_t(M)$, $G^\pm_{\mathrm{N}} (d\alpha)$ and $dG^\pm_{\mathrm{N}}(\alpha)$ lie both in $\Omega^k_N(M)$. In particular, using Equation \eqref{Eqn: relations-bulk-to-boundary}, $t\delta d G^\pm_{\mathrm{N}}(\alpha)=t(\Box_k-d\delta)G^\pm_{\mathrm{N}}(\alpha)=t\alpha=0$ while the second boundary condition is automatically satisfied since $d^2=0$. Hence, considering $\beta=G^\pm_{\mathrm{N}}(d\alpha)-dG^\pm_{\mathrm{N}}(\alpha)$, it holds that $\Box_k\beta=0$ and $\beta\in\Omega^k_{\mathrm{n}}\cap\Omega^k_{pc/fc}(M)$. In view of Remark \ref{Rmk: Cauchy problem with non-compact source}, this entails $\beta=0$.
+\end{proof}
+
+\begin{remark}\label{Rmk: extension of short exact sequence}
+	Following the same reasoning as in \cite{Baer-15} and as in Remark \ref{Rem: All Might -- One for all} together with minor adaption of the proofs of \cite{Dappiaggi-Drago-Ferreira-19}, one may extend both $G_{f,f^\prime}$ and $G_\sharp$ to operators $G_{f,f^\prime}\colon\Omega_{\mathrm{tc}}^k(M)\to\Omega^k(M)$ and $G_\sharp\colon\Omega_{\mathrm{tc}}^k(M)\to\Omega^k(M)$ for all $f,f^\prime\in C^\infty(\partial M)$ and for all $\sharp\in\{D,N,T,\perp\}$. As a consequence the exact sequences of Proposition \ref{Prop: exact sequence and duality relations} and of Lemma \ref{Lem: exact sequence and duality relations} generalize as
+	\begin{align}\label{Eqn: short exact sequence for timelike k-forms}
+		0\to\Omega_{\mathrm{tc}}^k(M)\cap\Omega_\sharp^k(M)\stackrel{\square_k}{\longrightarrow}
+		\Omega_{\mathrm{tc}}^k(M)\stackrel{G_\sharp}{\longrightarrow}
+		\Omega_\sharp^k(M)\stackrel{\square_k}{\longrightarrow}
+		\Omega^k(M)\to 0\,.\\
+		0\to\Omega_{\mathrm{tc}}^k(M)\cap\Omega_{f,f^\prime}^k(M)\stackrel{\square_k}{\longrightarrow}
+		\Omega_{\mathrm{tc}}^k(M)\stackrel{G_{f,f^\prime}}{\longrightarrow}
+		\Omega_{f,f^\prime}^k(M)\stackrel{\square_k}{\longrightarrow}
+		\Omega^k(M)\to 0\,.
+	\end{align}
+\end{remark}
+
+We conclude with a corollary to Lemma \ref{Lem: exact sequence and duality relations} which shows that, when considering the difference between the advances and retarded fundamental solutions, the support restrictions present in Equation \eqref{Eqn: relations between delta,d and Neumann advanced-retarded propagators} and in Equation \eqref{Eqn: relations between delta,d and Dirichlet advanced-retarded propagators} disappear.
+
+\begin{corollary}\label{Cor: commuting with delta}
+Under the hypotheses of Assumption \ref{Thm: assumption theorem} and of Remark \ref{Rem: All Might -- One for all}, it holds that 
+\begin{align}
+\label{Eqn: propagator_1}
+G_{\mathrm{N}}\circ d&=d\circ G_{\mathrm{N}}
+\;\mathrm{on}\;\Omega^k_{tc}(M)\,,\quad
+G_{\perp/\mathrm{T}}\circ\mathrm{d}=\mathrm{d}\circ G_\mathrm{\perp/T}
+\;\mathrm{on}\;\Omega^k_{tc}(M)\,,\\
+\label{Eqn: propagator_2}
+G_{\mathrm{N}}\circ\delta&=\delta\circ G_{\mathrm{N}}
+\;\mathrm{on}\;\Omega^k_{tc}(M)\,,\quad
+G_{\perp/T}\circ\delta=\delta\circ G_{\perp/T}
+\;\mathrm{on}\;\Omega^k_{tc}(M)\,.
+\end{align}
+\end{corollary}
+
+\begin{proof}
+	In all cases the reasoning is the same as in the proof of Equation \eqref{Eqn: relations between delta,d and Neumann advanced-retarded propagators} and in Equation \eqref{Eqn: relations between delta,d and Dirichlet advanced-retarded propagators}. Focusing for simplicity on the first identity of Equation \eqref{Eqn: propagator_1}, the only additional necessary information comes from $t\delta d G^\pm_{\mathrm{N}}(\alpha)=t(\Box_k-d\delta)G^\pm_{\mathrm{N}}(\alpha)=t\alpha$, for all $\alpha\in\Omega^k_{tc}(M)$. This entails that, being $G_{\mathrm{N}}=G^+_{\mathrm{N}}-G^-_{\mathrm{N}}$, t$\delta d G_{\mathrm{N}}(\alpha)=0$.
+\end{proof}
+
+\subsection{On the Maxwell operator}\label{Sec: gauge-boundary conditions}
+
+In this section we focus our attention on the Maxwell operator $\mathcal{M}_k\doteq\delta d:\Omega^k(M)\to\Omega^k(M)$ studying its kernel in connection both to the D'Alembert - de Rham wave operator $\Box_k$ and to the identification of suitable boundary conditions. We shall keep the assumption that $(M,g)$ is a globally hyperbolic spacetime with timelike boundary of dimension $n\geq 2$. In addition we impose that $0<k<n$ since, if $k=n$, than the Maxwell operator becomes trivial, while, if $k=0$, $\mathcal{M}_0=\Box_0$. Hence this case falls in the one studied in the preceding section and in \cite{Dappiaggi-Drago-Ferreira-19}. 
+
+In complete analogy to the analysis of $\Box_k$, we observe that, for any pair $\alpha,\beta\in\Omega^k(M)$ such that $\textrm{supp}(\alpha)\cap\textrm{supp}(\beta)$ is compact, the following Green's formula holds true:
+\begin{align}\label{Eqn: boundary terms for delta d operator}
+	(\delta\mathrm{d}\alpha,\beta)-(\alpha,\delta\mathrm{d}\beta)=
+	(\mathrm{t}\alpha,\mathrm{n}\mathrm{d}\beta)_\partial
+	-(\mathrm{n}\mathrm{d}\alpha,\mathrm{t}\beta)_\partial\,.
+\end{align}
+
+In the same spirit of Lemma \ref{Lemma: boundary condition}, the operator $\mathcal{M}_k$ becomes formally self-adjoint if we restrict its domain to 
+\begin{equation}\label{Eqn: Maxwell_bdy_cond}
+\Omega^k_f(M)\doteq\{\omega\in\Omega^k(M)\;|\;t\alpha=fnd\alpha\},
+\end{equation}
+where $f\in C^\infty(\partial M)$ is arbitrary but fixed. Also in this scenario it is convenient to disentangle two distinguished classes of boundary conditions. Observe that one of the possibilities has been already introduced in \eqref{Eqn: k-forms with vanishing tangential or normal component}, but we feel necessary to repeat it, so to emphasize the connection with the Green's formula \eqref{Eqn: boundary terms for delta d operator}.
+
+\begin{Definition}\label{Def: g-Dirichelet, g-Neumann boundary conditions and solution spaces}
+	Let $(M,g)$ be a globally hyperbolic spacetime with timelike boundary and let $0<k<n$, $n=\dim M$. We call
+	\begin{itemize}
+		\item space of $k$-forms with tangential boundary condition 
+		\begin{align}\label{Eqn: g-Dirichlet boundary condition}
+		\Omega_{\mathrm{t}}^k(M):=\lbrace\omega\in\Omega^k(M)|\;\mathrm{t}\omega=0\rbrace\,.
+		\end{align}
+		\item space of $k$-forms with $d$-normal boundary condition
+		\begin{align}\label{Eqn: g-Neumann boundary conditions}
+		\Omega_{\mathrm{dn}}^k(M):=\lbrace\omega\in\Omega^k(M)|\;\mathrm{n}\mathrm{d}\omega=0\rbrace\,.
+		\end{align}
+	\end{itemize} 
+\end{Definition}
+
+In the following our first goal is to characterize the kernel of the Maxwell operator with a prescribed boundary condition, {\it cf.} Equation \eqref{Eqn: Maxwell_bdy_cond}. To this end we need to focus on the {\em gauge invariance} of the underlying theory. In the case in hand this translates in the following characterization.
+
+\vskip .2cm
+
+\begin{Definition}\label{Def: gauge equivalence k-forms}
+	Let $(M,g)$ be a globally hyperbolic spacetime with timelike boundary and let $\mathcal{M}_k$ be the Maxwell operators acting on $\Omega^k(M)$, $0<k<\dim M$. We say that 
+	\begin{itemize}
+		\item $A\in\Omega^k_f(M)\cap\ker(\mathcal{M}_k)$, $f\in C^\infty(\partial M)$, is {\em gauge equivalent} to $A^\prime\in\Omega^k_f(M)$ if $A-A^\prime\in [d\Omega^{k-1}(M)]_t$, namely there exists $\chi\in \Omega^{k-1}(M)$ such that $A^\prime=A+d\chi$ and $td\chi=0$.
+		\item $A\in\Omega^k_{dn}(M)\cap\ker(\mathcal{M}_k)$, is {\em gauge equivalent} to $A^\prime\in\Omega^k_{dn}(M)$ if there exists $\chi\in \Omega^{k-1}(M)$ such that $A^\prime=A+d\chi$.
+	\end{itemize}
+	
+\end{Definition}
+
+\noindent Observe that the boundary condition in Equation \eqref{Eqn: g-Neumann boundary conditions} leads to a different notion of gauge equivalence since the boundary condition is giving no additional constraint on account of the fact that $ndA^\prime= ndA$ for every choice of $\chi\in\Omega_{k-1}(M)$. In the following proposition we characterize the space of equivalence classes of solution to the Maxwell equation up to gauge transformations. To this end we recall that we are still working in the framework of Assumption \ref{Thm: assumption theorem}.
+
+\begin{proposition}\label{Prop: solution for k=1}
+	Let $(M,g)$ be a globally hyperbolic spacetime with timelike boundary and let $f\in C^\infty(\partial M)$. It holds that 
+	\begin{enumerate}
+		\item
+		for all $A\in\Omega^k_{f}(M)$, such that $\mathcal{M}_k(A)=0$, there exists $\chi\in\Omega^{k-1}_t(M)$ for which $A^\prime=A+d\chi\in\Omega^k_{f}(M)$ and
+		\begin{equation}\label{Eqn: system of sins}
+		\left\{\begin{array}{l}
+		\Box_k A^\prime=0\\
+		\delta A^\prime=0\\
+		tA^\prime + fndA^\prime =0
+		\end{array}
+		\right. ,
+		\end{equation}
+		\item if, in addition, $A\in\Omega_{\mathrm{sc}}^k(M)$, then $\chi$ can be fixed so that also $A^\prime\in\Omega_{\mathrm{sc}}^k(M)$.
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	We focus only on the first point, since the second is a direct consequence of the first one and of the exact sequence \eqref{Eqn: short exact sequence_aa}. Let $A\in\Omega^k_{f}(M)$ be as per hypothesis. Consider any $\chi\in\Omega^{k-1}(M)$ such that 
+	\begin{equation}\label{Eqn: gauge fixing}
+	\Box_{k-1}\chi=-\delta A,\quad\delta\chi=0,\quad t\chi=0.
+	\end{equation}
+ In view of Assumption \ref{Thm: assumption theorem} and of Remark \ref{Rmk: Cauchy problem with non-compact source}, we can fix $\chi=G_T(\delta A)$, since the constraint $\delta \chi=0$ entails $t\delta\chi=0$. On account of Corollary \ref{Cor: commuting with delta}, $\delta\chi=\delta(G_T(\delta A))=G_T(\delta^2 A)=0$. In addition since $t\chi=0$ then, Equation \eqref{Eqn: relations-bulk-to-boundary} yields $d_\partial t\chi=td\chi=0$. Hence $A^\prime$ is gauge equivalent to $A$ as per Definition \ref{Def: gauge equivalence k-forms}.
+\end{proof}
+
+\noindent If one considers instead $\Omega^k_{dn}(M)$ the scenario is markedly different and, thus, we discuss it separately.
+
+\begin{proposition}\label{Prop: solution for dn}
+	Let $(M,g)$ be a globally hyperbolic spacetime with timelike boundary. It holds that 
+	\begin{enumerate}
+		\item
+		for all $A\in\Omega^k_{dn}(M)$, such that $\mathcal{M}_k(A)=0$, there exists $\chi\in\Omega^{k-1}(M)$ for which $A^\prime=A+d\chi\in\Omega^k_{dn}(M)$ and
+		\begin{equation}\label{Eqn: system of sins 2}
+		\left\{\begin{array}{l}
+		\Box_k A^\prime=0\\
+		\delta A^\prime=0\\
+		ndA^\prime =0\;\textrm{and}\; nA^\prime=0
+		\end{array}
+		\right. ,
+		\end{equation}
+		\item if, in addition, $A\in\Omega_{\mathrm{sc}}^k(M)$, then $\chi$ can be fixed so that also $A^\prime\in\Omega_{\mathrm{sc}}^k(M)$.
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	As in the previous proposition, we can only focus on the first point. Consider first $\chi_0\in\Omega^{k-1}(M)$ such that $nd\chi_0=-nA$. The existence is guaranteed since the map $n\circ d$ is surjective. As a consequence we can exploit the residual gauge freedom to select $\chi_1\in\Omega^{k-1}(M)$ such that
+	\begin{equation}\label{Eqn: gauge fixing partial}
+	\left\{\begin{array}{l}
+	\Box_{k-1} \chi_1=-\delta \widetilde{A}\\
+	\delta\chi_1=0\\
+	nd\chi_1 =0\;\textrm{and}\; n\chi_1=0
+	\end{array}
+	\right. ,
+	\end{equation}
+	where $\widetilde{A}=A+d\chi_0$. Let $\eta\equiv\eta(\tau)$ be a smooth function such that $\eta=0$ if $\tau<\tau_0$ while $\eta=1$ if $\tau>\tau_1$. Since $n\delta\widetilde{A}=\delta_\partial n\widetilde{A}=0$ on account of \eqref{Eqn: relations-bulk-to-boundary}, we can fine tune $\eta$ in such a way that both $\widetilde{A}^+\doteq\eta\widetilde{A}$ and $\widetilde{A}^-\doteq(1-\eta)\widetilde{A}$ satisfy $n\widetilde{A}^\pm=0$. Hence we can apply Lemma \ref{Lem: exact sequence and duality relations} to conclude that $\chi_1=-G^+_\perp\star\delta\widetilde{A}^+-G^-_\perp\star\delta\widetilde{A}^-$. Setting $A^\prime=A+d(\chi_0+\chi_1)$ we obtained the desired result.
+\end{proof}
+
+\noindent A direct inspection of \eqref{Eqn: gauge fixing} and of \eqref{Eqn: system of sins 2} unveils that choosing a solution to these equations does not fix completely the gauge and a residual freedom is left. This amount either to 
+$$\widetilde{\mathcal{G}}_f(M)\doteq\{\chi^\prime\in\Omega^{k-1}(M)\;|\;\delta d\chi^\prime=0\;\textrm{and}\;t\chi^\prime=0\},$$
+whenever $f\in C^\infty(\partial M)$ or, in the case of a $d$-normal boundary condition, to
+$$\mathcal{G}_{dn}(M)\doteq\{\chi^\prime\in\Omega^{k-1}(M)\;|\;\delta d\chi^\prime=0,\;n\chi^\prime=0\;\textrm{and}\;nd\chi^\prime=0\}.$$
+\begin{remark}\label{Rem: useful}
+	Observe that, in the definition of $\mathcal{G}_{dn}(M)$, we require $\chi^\prime$ to be in the kernel of $\delta d$. Nonetheless if we consider $d\mathcal{G}_{dn}(M)$ we can work with $\chi^\prime_0\in\Omega^{k-1}(M)$ such that $\Box_{k-1}\chi^\prime_0=0$. As a matter of fact for all $\chi^\prime\in\mathcal{G}_{dn}$ we can set $\chi^\prime_0\doteq\chi+d\lambda$ where $\lambda\in\Omega^{k-2}(M)$ is such that $\Box_{k-2}\lambda=-\delta\chi^\prime$ and $n\lambda=nd\lambda=0$. In addition $d\chi^\prime=d\chi^\prime_0$.
+\end{remark}
+
+To better codify the results of the preceding discussion, it is also convenient to introduce the following linear spaces:
+\begin{gather}
+\mathcal{S}_{k,f}(M)\doteq\{A\in\Omega^k(M)\;|\;\mathcal{M}_k(A)=0\;\textrm{and}\;tA=fndA\},\\
+\mathcal{S}^\Box_{k,f}(M)\doteq\{A\in\Omega^k_\delta(M)\;|\;\Box_k(A)=0,\;\textrm{and}\;tA=fndA\},\label{sol-box-f}
+\end{gather}
+where $f\in C^\infty(\partial M)$ and where we adopt the convention that 
+\begin{gather}
+\mathcal{S}_{k,\infty}(M)\doteq\{A\in\Omega^k(M)\;|\;\mathcal{M}_k(A)=0\;\textrm{and}\;ndA=0\},\\
+\mathcal{S}^\Box_{k,\infty}(M)\doteq\{A\in\Omega^k_\delta(M)\;|\;\Box_k(A)=0,\;nA=0,\;\textrm{and}\;ndA=0\}.\label{sol-box-dn}
+\end{gather}
+Hence Proposition \ref{Prop: solution for k=1} can be summarized as stating the existence of the following isomorphisms: 
+\begin{equation}\label{eq: Isomorphisms}
+\mathcal{S}_{\mathcal{G}_f,k}(M)\doteq\frac{\mathcal{S}_{k,f}(M)}{d\Omega_t^{k-1}(M)}\simeq\frac{\mathcal{S}^\Box_{k,f}(M)}{d\mathcal{G}_f(M)}\quad\textrm{and}\quad\mathcal{S}_{\mathcal{G}_{dn},k}(M)\doteq\frac{\mathcal{S}_{k,\infty}(M)}{d\Omega^{k-1}(M)}\simeq\frac{\mathcal{S}^\Box_{k,\infty}(M)}{d\mathcal{G}_{dn}(M)},
+\end{equation}
+
+where the special case of $f=0$ corresponds to considering tangential boundary conditions. The spaces  $\mathcal{S}^{sc}_{\mathcal{G}_f,k}(M)$ and $\mathcal{S}^{sc}_{\mathcal{G}_{dn},k}(M)$, where the superscript $sc$ entails that we consider only those equivalence classes admitting a representative which is spacelike compact, can be endowed with a presymplectic form -- \textit{cf.} \cite[Prop. 5.1]{Hack-Schenkel-13}.
+
+\begin{proposition}\label{Prop: presymplectic structure on spacelike solutions with gauge boundary conditions}
+Let $(M,g)$ be a globally hyperbolic spacetime with timelike boundary and let $f\in C^\infty(\partial M)$. Then, for any $k$ such that $0<k<\dim M$, the following map $\sigma_{k,f}:\mathcal{S}^{sc}_{\mathcal{G}_f,k}(M)\times \mathcal{S}^{sc}_{\mathcal{G}_f,k}(M)\to\mathbb{R}$ is a presymplectic form:
+	\begin{align}\label{Eqn: presymplectic structure on solutions with gauge boundary conditions}
+	\sigma_{k,f}([A_1],[A_2])=(\delta\mathrm{d}A_1^+,A_2)\,,\quad\forall [A_1],[A_2]\in\mathcal{S}^{sc}_{\mathcal{G}_f,k}(M)
+	\end{align}
+where $(,)$ is the standard pairing between $k$-forms, while $A_1^+\doteq\eta(\tau)A_1$, with $\eta\equiv\eta(\tau)$ a smooth function such that $\eta=1$ for all $\tau>\tau_1$ while $\eta=0$ when $\tau<\tau_0$, $\tau_0<\tau_1$ being arbitrary. The similar result holds for $\mathcal{S}^{sc}_{\mathcal{G}_{dn},k}(M)$ and we denote the associated presymplectic form $\sigma_{k,dn}$.
+\end{proposition}
+\begin{proof}
+To start with we observe that the right hand side of \eqref{Eqn: presymplectic structure on solutions with gauge boundary conditions} is finite since $A_2$ is a spacelike compact $k$-form while $\delta\mathrm{d}A_1^+$ is compactly supported on account of $A_1$ being on-shell. Secondly the pairing does not depend on the choice of representative for any equivalence class in $\mathcal{S}^{sc}_{\mathcal{G}_f,k}(M)$. As a matter of fact, consider $[A_2]\in\mathcal{S}^{sc}_{\mathcal{G}_f,k}(M)$ and let $A_2, A_2+d\chi$ be two representatives. A direct calculations shows that 
+$$(\delta\mathrm{d}A_1^+, d\chi)=(\delta^2\mathrm{d}A_1^+,\chi)=0,$$
+where we used that $\delta\mathrm{d}A_1^+$ is compactly supported. As last consistency check we need to show that \eqref{Eqn: presymplectic structure on solutions with gauge boundary conditions} is independent from the choice of $\eta(\tau)$. Fix therefore a second cut off function $\widetilde{\eta}(\tau)$ and let $[A_1],[A_2]\in\mathcal{S}^{sc}_{\mathcal{G}_f,k}(M)$. It holds that 
+$$(\delta\mathrm{d}(A_1^+-\widetilde{A}^+_1),A_2)=(A_1^+-\widetilde{A}_1^+,\delta dA_2)=0,$$
+where $\widetilde{A}^+_1\doteq\widetilde{\eta}A_1$ and where we used implicitly that $A_1^+-\widetilde{A}_1^+$ is compactly supported. To conclude the proof we need to show that Equation \eqref{Eqn: presymplectic structure on solutions with gauge boundary conditions} identifies a presymplectic form. While the pairing between $k$-forms is bilinear per construction, $\sigma_{k,f}$ is antisymmetric on account of the following chain of identities:
+$$\sigma_{k,f}([A_1],[A_2])=(\delta dA_1^+,A_2)=-(\delta dA_1^-,A_2^+)=(A_1^-,\delta dA_2^+)=(A_1,\delta dA_2^+)=-\sigma_{k,f}([A_1],[A_2]),$$
+where $A_1^-\doteq(1-\eta)A_1$. Observe that, in the second equality, we used the equations of motion and that, switching from $A_1^+$ to $A_1^-$ has been necessary to ensure that $\textrm{supp}(A_1^-)\cap\textrm{supp}(A_2^+)$ is compact. The proof for $\mathcal{S}^{sc}_{\mathcal{G}_{dn,k}(M)}$ is identical, hence we omit it.
+\end{proof}
+
+ Working either with \eqref{sol-box-f} or with \eqref{sol-box-dn} leads to the natural question whether it is possible to give an equivalent representation of these spaces in terms of compactly supported $k$-forms. In the case of $f=0$ (tangential boundary conditions) and of \eqref{sol-box-dn}, using Assumption \ref{Thm: assumption theorem}, the following proposition holds true:
+ 
+ \begin{lemma}\label{Lem: test-forms-for-solutions}
+ 	Let $(M,g)$ be a globally hyperbolic spacetime with timelike boundary. Then both $\mathcal{S}^{\Box}_{0,k}(M)$ and $\mathcal{S}^{\Box}_{\infty,k}(M)$ are isomorphic respectively to $\frac{\widetilde{\Omega}^k_{tc}(M)}{\Box[\Omega^k_{tc}(M)\cap\Omega^k_{\textrm{T}}(M)]}$ 
+  and to 	$\frac{\widetilde{\Omega}^k_{tc}(M)}{\Box[\Omega^k_{tc}(M)\cap\Omega^k_{\perp}(M)]}$ where 
+ 	$$\widetilde{\Omega}^k_{tc}(M)\doteq\{\omega\in\Omega^k_{tc}(M)\;|\;\delta\omega=\delta d\lambda,\;\lambda\in\Omega^k_{tc,\delta}(M)\},$$
+ 	and where the isomorphism is implemented respectively by $G_T$ and $G_\perp$. The same statement holds true for spacelike compact solutions replacing timelike compact with compact test forms.
+ \end{lemma} 
+
+\begin{proof}
+	Mutatis mutandis, the proof is identical in both cases. Hence we focus only on $\mathcal{S}^{\Box}_{k,\infty}(M)$. If we combine \eqref{sol-box-dn} together with Assumption \ref{Thm: assumption theorem} and Remark \ref{Rem: All Might -- One for all}, it holds that every $A^\prime\in\Omega^k(M)$ such that $\Box_kA^\prime=0$ and $ndA^\prime=0$ can be written as $G_\perp(\omega)$, where $\omega\in\Omega^k_{tc}(M)$. In view of Lemma \ref{Lem: exact sequence and duality relations}, the constraint $\delta A^\prime=0$, implies that $\delta G_\perp(\omega)=G_\perp(\delta \omega)=0$. Hence $\delta\omega\in \operatorname{Ker}(G_\perp)$, which entails that there exists $\lambda\in\Omega^k_{tc}(M)$ such that $\delta\omega=\Box\lambda$. By applying $\delta$, one obtains $\Box\delta\lambda=0$, which implies $\delta\lambda=0$ and thus $\delta\omega=\delta d\lambda$. We have proven that $G_\perp$ is a surjective map from $\widetilde{\Omega}^k_{tc}(M)$ to $\mathcal{S}^{\Box}_{\infty,k}$. To conclude the proof it suffices to recall that, on account of Remark \ref{Rmk: extension of short exact sequence}, $\operatorname{Ker}(G_\perp)=\Box[\Omega^k_{tc}(M)\cap\Omega^k_{\perp}(M)]$ and that $\Box[\Omega^k_{tc}(M)]\subset\widetilde{\Omega}^k_{tc}(M)$.
+\end{proof}
+
+\begin{remark}
+	The characterization result of Lemma \ref{Lem: test-forms-for-solutions} cannot be reproduced for a generic $\mathcal{S}^{\Box}_{k,f}(M)$ since there is no guarantee that a counterpart of Lemma \ref{Lem: exact sequence and duality relations} holds true for $G_{f,0}$ which is the causal propagator associated to the equation $\Box A=0$, together with the boundary conditions $tA+fndA=0$ and $t\delta A=0$. Although it is easy to construct examples of coclosed solutions of this partial differential equation, the lack of a characterization in terms of test $k$-forms obstructs the analysis of the algebra of observables for this kind of free field theories. 
+\end{remark}
+
+We conclude by giving an equivalent characterization of the presymplectic spaces of Proposition \ref{Prop: presymplectic structure on spacelike solutions with gauge boundary conditions} in the special case of $\mathcal{S}^{sc}_{\mathcal{G}_0,k}(M)$ and of $\mathcal{S}^{sc}_{\mathcal{G}_{dn},k}(M)$.
+
+\begin{proposition}\label{Prop: Symplectomorphism_T}
+Let $(M,g)$ be a globally hyperbolic spacetime with timelike boundary. Then, setting $\Omega^{\prime,k}_c(M)\doteq d\Omega^{k-1}_{c,\delta}(M)+\Box_k[\Omega^k_{c,\delta}(M)\cap\Omega^k_T(M)]$ where $+$ stands for the algebraic sum, the following statements hold true:
+\begin{enumerate}
+	\item $\frac{\Omega^k_{c,\delta}(M)}{\Omega^{\prime,k}_c(M)}$ is a pre-symplectic space if endowed with the bilinear map $\widetilde{G}_T([\alpha],[\beta])\doteq(\alpha,G_T(\beta))$, where $G_T=G^+_T-G^-_T$ is defined in Remark \ref{Rem: All Might -- One for all} and where $(,)$ is the pairing between $k$-forms.
+	\item $\left(\frac{\Omega^k_{c,\delta}(M)}{\Omega^{\prime,k}_c(M)},\widetilde{G}_T\right)$ is symplectomorphic to $(\mathcal{S}^{sc}_{\mathcal{G}_0,k}(M),\sigma_{k,0})$.
+\end{enumerate} 
+\end{proposition}
+
+\begin{proof}
+	We observe that $\widetilde{G}_T$ is well-defined. As a matter of fact, let $\alpha\in\widetilde{\Omega}^k_c(M)$ and let $\chi\in\widetilde{\Omega}^{k-1}_c(M)$. Then it holds that 
+	$$(\alpha,G_T(d\chi))=(\alpha,dG_T(\chi))=(\delta\alpha, G_T\chi)=0,$$
+	where we used Corollary \ref{Cor: commuting with delta} in the first equality and \eqref{Eqn: boundary terms for delta and d} together with the condition $tG_T(\chi)=0$ in the second. Since $\widetilde{G}_T$ is per construction bilinear and antisymmetric, the first statement follows. Focusing on the second part of the proposition. We observe that Lemma \ref{Lem: test-forms-for-solutions} guarantees that $G_T[\widetilde{\Omega}^k_c(M)]\subseteq \mathcal{S}^{\Box}_{0,k}$ and, still on account of Corollary \ref{Cor: commuting with delta}, $G_T[d\Omega^{k-1}_{c,\delta}(M)]\subseteq d\mathcal{G}_0(M)$. This entails that $G_T$ descends to a map from $\frac{\Omega^k_{c,\delta}}{\Omega^{\prime,k}_c(M)}$ to $\mathcal{S}^{sc}_{\mathcal{G}_0,k}(M)$, {\it i.e.} $\frac{\Omega^k_{c,\delta}}{\Omega^{\prime,k}_c(M)}\ni[\alpha]\mapsto [G_T(\alpha)]\in\mathcal{S}^{sc}_{\mathcal{G}_0,k}(M)$. As a direct consequence of Lemma \ref{Lem: test-forms-for-solutions}, we know that every element of $\mathcal{S}^\Box_{0,k}(M)$ can be written as $G_T(\omega)$ with $\omega\in\Omega^k_c(M)$ and $\delta\omega=\delta d\lambda$, $\lambda\in\Omega^{k}_{c,\delta}(M)$. If we set $\omega^\prime\doteq\omega-d\lambda$, it descends that $\omega^\prime\in\Omega^k_{tc,\delta}(M)$. Since $G_T(d\lambda)\in d\mathcal{G}_0(M)$, we can conclude that $G_T(\omega)$ and $G_T(\omega+d\lambda)$ lie in the same equivalence class of $\mathcal{S}_{\mathcal{G}_0,k}(M)$. This entail that the map $\frac{\Omega^k_{c,\delta}}{\Omega^{\prime,k}_c(M)}\ni[\alpha]\mapsto [G_T(\alpha)]\in\mathcal{S}^{sc}_{\mathcal{G}_0,k}(M)$ is surjective. To prove that it is injective, suppose that there exists $[\alpha]\in\frac{\widetilde{\Omega}^k_c(M)}{\Omega^{\prime,k}_c(M)}$ such that $[G_T(\alpha)]=[0]$. In other words $G_T(\alpha)=d\chi$, $\chi\in\mathcal{G}_0(M)$. Since, up to an element in the kernel of $d$, we can impose $\delta\chi=0$, there must exist $\beta\in\Omega^{k-1}_{c,\delta}(M)$ such that  $d\chi=dG_T(\beta)$. Using Corollary \ref{Cor: commuting with delta} $G_T(\alpha)=G_T(d\beta)$ which entails that we can set $\alpha=d\beta$ up to elements in the kernel of $G_T$, hence $\alpha\in \Omega^{\prime,k}_c(M)$. To conclude, let $[\alpha],[\beta]\in\frac{\Omega^k_{c,\delta}}{\Omega^{\prime,k}_c(M)}$. As a direct consequence of the properties of $G_T$ and of $\Omega^{\prime,k}_c(M)$, letting $A_1=G_T(\alpha)$ and $A_2=G_T(\beta)$, we can write $A_2=G_T(\delta d A_2^+)$ where $A_2^+=\eta(\tau)A$ with $\eta(\tau)$ a smooth function such that $\eta=1$ for all $\tau>\tau_1$ while $\eta=0$ when $\tau<\tau_0$. Here $\tau_0,\tau_1$ are arbitrary and $\tau_0<\tau_1$. Hence
+	$$\widetilde{G}_T([\alpha],[\beta])=(\alpha,G_T(\beta))=(\alpha,G_T(\delta d A_2^+))=-(G_T(\alpha),\delta d A_2^+)=(\delta dA_1^+,A_2)=\sigma_{k,0}([A_1],[A_2]),$$
+	where in the third equality we exploited that the formal adjoint of $G_T$ is $-G_T$, while in the last we used Equation \eqref{Eqn: presymplectic structure on solutions with gauge boundary conditions} with $f=0$. This entails that the isomorphism between $\frac{\Omega^k_{c,\delta}}{\Omega^{\prime,k}_c(M)}$ and $\mathcal{S}^{sc}_{\mathcal{G}_0,k}(M)$ also preserves the symplectic form.
+\end{proof}
+
+\begin{proposition}\label{Prop: Symplectomorphism_dn}
+	Let $(M,g)$ be a globally hyperbolic spacetime with timelike boundary. Then, setting $\Omega^{0,k}_c(M)\doteq d\Omega^{k-1}_{c,\delta}(M)+\Box_k[\Omega^k_{c,\delta}(M)\cap\Omega^k_\perp(M)]$ where $+$ stands for the algebraic sum, the following statements hold true:
+	\begin{enumerate}
+		\item $\frac{\Omega^k_{c,\delta}(M)}{\Omega^{0,k}_c(M)}$ is a pre-symplectic space if endowed with the bilinear map $\widetilde{G}_\perp([\alpha],[\beta])\doteq(\alpha,G_T(\beta))$, where $G_\perp=G^+_\perp-G^-_\perp$ is defined in Remark \ref{Rem: All Might -- One for all} and where $(,)$ is the pairing between $k$-forms.
+		\item $\left(\frac{\Omega^k_{c,\delta}(M)}{\Omega^{0,k}_c(M)},\widetilde{G}_\perp\right)$ is symplectomorphic to $(\mathcal{S}^{sc}_{\mathcal{G}_{dn},k}(M),\sigma_{k,dn})$.
+	\end{enumerate} 
+\end{proposition}
+
+\begin{proof}
+	The first point can be proven as in Proposition \ref{Prop: Symplectomorphism_T} and thus we omit it. We focus on the second part. We observe that Lemma \ref{Lem: test-forms-for-solutions} guarantees that $G_\perp[\widetilde{\Omega}^k_c(M)]\subseteq \mathcal{S}^{\Box}_{\infty,k}$ and, still on account of Corollary \ref{Cor: commuting with delta}, $G_\perp[d\Omega^{k-1}_{c,\delta}(M)]\subseteq d\mathcal{G}_{dn}(M)$. This entails that $G_\perp$ descends to a map from $\frac{\widetilde{\Omega}^k_c(M)}{\Omega^{0,k}_c(M)}$ to $\mathcal{S}^{sc}_{\mathcal{G}_0,k}(M)$, {\it i.e.} $\frac{\widetilde{\Omega}^k_c(M)}{\Omega^{0,k}_c(M)}\ni[\alpha]\mapsto [G_T(\alpha)]\in\mathcal{S}^{sc}_{\mathcal{G}_{dn},k}(M)$. Since $G_\perp(d\lambda)\in d\mathcal{G}_0(M)$, we can conclude that $G_\perp(\omega)$ and $G_\perp(\omega+d\lambda)$ lie in the same equivalence class of $\mathcal{S}_{\mathcal{G}_{dn},k}(M)$. This entail that the map $\frac{\Omega^k_{c,\delta}}{\Omega^{\prime,k}_c(M)}\ni[\alpha]\mapsto [G_T(\alpha)]\in\mathcal{S}^{sc}_{\mathcal{G}_{dn},k}(M)$ is surjective. To prove that it is injective, suppose that there exists $[\alpha]\in\frac{\widetilde{\Omega}^k_c(M)}{\Omega^{0,k}_c(M)}$ such that $[G_\perp(\alpha)]=[0]$. In other words $G_\perp(\alpha)=d\chi$, $\chi\in\mathcal{G}_{dn}(M)$. Furthermore, up to an element in the kernel of $d$, we can impose $\delta\chi=0$. Hence there must exist $\beta\in\Omega^{k-1}_{c,\delta}(M)$ such that  $d\chi=dG_\perp(\beta)$. Using Corollary \ref{Cor: commuting with delta} $G_\perp(\alpha)=G_\perp(d\beta)$ which entails that we can set $\alpha=d\beta$ up to elements in the kernel of $G_\perp$, hence $\alpha\in \Omega^{0,k}_c(M)$. To conclude, let $[\alpha],[\beta]\in\frac{\widetilde{\Omega}^k_c(M)}{\Omega^{0,k}_c(M)}$. As a direct consequence of the properties of $G_T$ and of $\Omega^{0,k}_c(M)$, letting $A_1=G_\perp(\alpha)$ and $A_2=G_\perp(\beta)$, we can write $A_2=G_\perp(\delta d A_2^+)$ where $A_2^+=\eta(\tau)A$ with $\eta(\tau)$ a smooth function such that $\eta=1$ for all $\tau>\tau_1$ while $\eta=0$ when $\tau<\tau_0$. Here $\tau_0,\tau_1$ are arbitrary and $\tau_0<\tau_1$. Hence
+	$$\widetilde{G}_\perp([\alpha],[\beta])=(\alpha,G_\perp(\beta))=(\alpha,G_\perp(\delta d A_2^+))=-(G_\perp(\alpha),\delta d A_2^+)=(\delta dA_1^+,A_2)=\sigma_{k,0}([A_1],[A_2]),$$
+	where in the third equality we exploited that the formal adjoint of $G_\perp$ is $-G_\perp$, while in the last we used Equation \eqref{Eqn: presymplectic structure on solutions with gauge boundary conditions} with $f=0$. This entails that the isomorphism between $\frac{\widetilde{\Omega}^k_c(M)}{\Omega^{0,k}_c(M)}$ and $\mathcal{S}^{sc}_{\mathcal{G}_{dn},k}(M)$ also preserves the symplectic form.
+\end{proof}
+
+\begin{remark}\label{Rmk: on degeneracy on presymplectic structure}
+	Following \cite[Cor. 5.3]{Hack-Schenkel-13} -- \textit{cf.} also Proposition \ref{Prop: sufficient condition for degeneracy}, $\sigma_{k,f}$ does not define in general a symplectic form on the space of spacelike compact solutions of the Maxwell equation. A direct characterization of this deficiency is best understood considering the framework either of Proposition \ref{Prop: Symplectomorphism_T} or of Proposition \ref{Prop: Symplectomorphism_dn}. Working for simplicity with the former, the bilinear map $\widetilde{G}_T$ would be non-degenerate if $\widetilde{G}_T([\alpha],[\beta])=0$ for all $[\beta]\in\frac{\Omega^k_{c,\delta}(M)}{\Omega^{\prime,k}_c(M)}$ entails that $[\alpha]=[0]$. Working at the level of representatives and choosing $\beta=\delta\lambda$, $\lambda\in\Omega^{k+1}_c(M)$, one obtains that 
+	$$(G_T(\alpha),\delta\lambda)=(dG_T(\alpha),\lambda)=0.$$
+	On the one hand the arbitrariness of $\lambda$ entails $dG_T(\alpha)=0$. On the other hand, since $\beta$ is arbitrary and the pairing is non degenerate, $dG_T(\alpha)=0$. Since $tG_T(\alpha)=0$, it turns out that $G_t(\alpha)$ individuates an equivalence class $[G_T(\alpha)]\in H^k_t(M)$, {\it cf.} Appendix \ref{App: Poincare duality for manifold with boundary}. Calling $H^k_{c,\delta}(M)$ the $k$-th homology group built of $\delta$ and of compactly supported smooth forms and calling $\langle,\rangle$ the pairing between $H^k_{c,\delta}(M)$ and $H^k_t(M)$, $(G_T(\alpha),\beta)=0$ entails $\langle [G_T(\alpha)],[\beta]\rangle=0$. With a slight abuse of notation we have indicated with $[\beta]$ and with $[G_T(\alpha)]$ the cohomology classes. Since $H^k_{c,\delta}(M)\simeq H^{n-k}_c(M)$ and since $M$ is assumed to possess a finite good cover, Proposition \ref{Prop: Poin-Lefs duality} entails that $H^{n-k}_c(M)\simeq H^n(M;\partial M)^*$. On account of Proposition \ref{Prop: equivalence description of relative cohomology}, $\langle,\rangle$ is non degenerate whenever $M$ has a finite good cover and the arbitrariness of $[\beta]$ entails $[G_T(\alpha)]=0$. Hence $G_T(\alpha)=d\chi$ where $\chi\in\Omega^{k-1}_t(M)$. In addition $\delta d\chi=0$. Imposing $\delta\chi=0$, if necessary shifting $\chi\to\chi+d\lambda$, $\lambda\in\Omega^{k-2}_t(M)$, it holds $\Box\chi=0$. In other words there exists $\omega\in\Omega^{k-1}_{tc,\delta}(M)$ such that $\chi=G_T(\omega)$ while $d\chi\in\Omega^k_{sc,\delta}(M)$. Hence, up to elements in the kernel of $G_T$, $\alpha=d\omega$. 
+	
+	In other words $\alpha\in\Omega^k_{c,\delta}(M)\cap d\Omega^{k-1}_{tc,\delta}(M)$ which fails to identify a representative in the trivial equivalence class whenever $d\Omega^{k-1}_{tc,\delta}(M)\cap\Omega^k_{c,\delta}(M)$ is not isomorphic to $d\Omega^{k-1}_{c,\delta(M)}$. This is in agreement with the analysis in \cite{Benini:2013tra} for the case of globally hyperbolic spacetimes $(M,g)$ with $\partial M=\emptyset$.
+\end{remark}
+
+\subsection{The algebra of observables for $\mathcal{S}_{\mathcal{G}_0,k}(M)$ and for $\mathcal{S}_{\mathcal{G}_{dn},k}(M)$}\label{Sec: Algebra of observables for Sol(M)}
+
+In this section we discuss how to associate an algebra of observables to   $\mathcal{S}_{\mathcal{G}_0,k}(M),\mathcal{S}_{\mathcal{G}_{dn},k}(M)$ introduced in Equation \eqref{eq: Isomorphisms}. Recall that the corresponding question in when the underlying background is globally hyperbolic manifold with $\partial M=\emptyset$ has been thoroughly discussed in the literature -- \textit{cf.} \cite{Benini-16,Dappiaggi:2011cj,Hack-Schenkel-13,Sanders:2012sf}. Inspired by these references and taking into account the discussion in the preceding sections, particularly Equation \eqref{Eq: delta kernel} and Definition \ref{Def: tangential and normal component} we give the following definitions.
+
+\begin{Definition}\label{Def: Algebra for T}
+	Let $(M,g)$ be a globally hyperbolic spacetime with timelike boundary and let $\mathcal{O}_{\mathcal{G}_0,k}(M)\doteq\frac{\Omega^k_{c,\delta}(M;\mathbb{C})}{\Omega^{\prime,k}_{c}(M;\mathbb{C})}$, $0< k\leq\dim M$. We call {\em algebra of observables} associated to $\mathcal{S}_{\mathcal{G}_0,k}(M)$, the associative, unital $*$-algebra 
+	$$\mathcal{A}_{\mathcal{G}_0,k}(M)=\frac{\mathcal{T}[\mathcal{O}_{\mathcal{G}_0,k}(M)]}{\mathcal{I}[\mathcal{O}_{\mathcal{G}_0,k}(M)]},$$
+	where $\mathcal{T}[\mathcal{O}_{\mathcal{G}_0,k}(M)]\doteq\bigoplus_{n=0}^\infty\mathcal{O}_{\mathcal{G}_0,k}(M)^{\otimes n}$ is the universal tensor algebra with
+	 $\mathcal{O}_{\mathcal{G}_0,k}(M)^{\otimes 0}\equiv\mathbb{C}$, while the $*$-operation is the one induced from complex conjugation. In addition
+	  $\mathcal{I}[\mathcal{O}_{\mathcal{G}_0,k}(M)]$ is the $*$-ideal generated by elements of the form $[\alpha]\otimes[\beta]-[\beta]\otimes[\alpha]-i \widetilde{G}_T([\alpha],[\beta])$ , where
+   $[\alpha],[\beta]\in\mathcal{O}_{\mathcal{G}_0,k}(M)$ while $\widetilde{G}_T$ is defined in Proposition \ref{Prop: Symplectomorphism_T}.
+\end{Definition}
+
+\noindent We study the structural properties of the algebra of observables. The following proposition translates to the setting of Definition \ref{Def: Algebra for T} the language used in \cite{Benini-16}.
+
+\begin{proposition}\label{Prop: separability and optimality for the g-boundary conditions algebra of observables}
+	Let  $\mathcal{A}_{\mathcal{G}_0,k}(M)$ be the algebra introduced in Definition \ref{Def: Algebra for T}. Then, calling with $(,)$ the natural pairing between $\mathcal{O}_{\mathcal{G}_0,k}(M)$ and $\mathcal{S}_{\mathcal{G}_0,k}(M)$ induced from those between $k$-forms, the following statements hold true:
+	\begin{enumerate}
+		\item  $\mathcal{A}_{\mathcal{G}_0,k}(M)$ is {\em optimal}, namely
+		\begin{equation}\label{Eqn: separability for g-boundary condition algebra}
+		([\alpha],[A])=0\quad\forall [A]\in\mathcal{S}_{\mathcal{G}_0,k}(M)\Longrightarrow[\alpha]=[0]\in\mathcal{O}_{\mathcal{G}_0,k}(M)\,,
+		\end{equation}
+		\item  $\mathcal{A}_{\mathcal{G}_0,k}(M)$ is {\em separating}, namely
+		\begin{equation}
+		\label{Eqn: optimality for g-boundary condition algebra}
+		([\alpha],[A])=0\quad\forall [\alpha]\in\mathcal{O}_{\mathcal{G}_0,k}(M)\Longrightarrow [A]=[0]\in\mathcal{S}_{\mathcal{G}_0,k}(M)\,.
+		\end{equation}
+	\end{enumerate}
+\end{proposition}
+
+\begin{Proof}
+We prove the two items separately.
+
+\vskip .2cm
+
+\noindent {\em 1.} Assume $\exists[\alpha]\in\mathcal{O}_{\mathcal{G}_0,k}(M)$ such that $([\alpha],[A])=0$ $\forall [A]\in\mathcal{S}_{\mathcal{G}_0,k}(M)$. Working at the level of representatives, it turns out that $A=G_T(\omega)$ with $\omega\in\Omega^k_{c,\delta}(M)$, while $\alpha\in\Omega^k_{c,\delta}(M)$. Hence, in view of Lemma \ref{Lem: exact sequence and duality relations}, $0=(\alpha,A)=(\alpha,G_T(\omega))=-(G_t(\alpha),\omega)$. Choosing $\omega=\delta\beta$, $\beta\in\Omega^{k+1}_c(M)$ and using \eqref{Eqn: boundary terms for delta and d}, it descends $(dG_T(\alpha),\beta)=0$. Since $\beta$ is arbitrary and the pairing is non degenerate $dG_T(\alpha)=0$. Since $tG_T(\alpha)=0$, it turns out that $G_t(\alpha)$ individuates an equivalence class $[G_T(\alpha)]\in H^k_t(M)$, {\it cf.} Appendix \ref{App: Poincare duality for manifold with boundary}. Calling $H^k_{c,\delta}(M)$ the $k$-th homology group built of $\delta$ and of compactly supported smooth forms and calling $\langle,\rangle$ the pairing between $H^k_{c,\delta}(M)$ and $H^k_t(M)$, $(G_T(\alpha),\omega)=0$ entails $\langle [G_T(\alpha)],[\omega]\rangle=0$. With a slight abuse of notation we have indicated with $[\omega]$ and with $[G_T(\alpha)]$ the cohomology classes. Since $H^k_{c,\delta}(M)\simeq H^{n-k}_c(M)$ and since $M$ is assumed to possess a finite good cover, Proposition \ref{Prop: Poin-Lefs duality} entails that $H^{n-k}_c(M)\simeq H^n(M;\partial M)^*$. On account of Proposition \ref{Prop: equivalence description of relative cohomology}, $\langle,\rangle$ is non degenerate whenever $M$ has a finite good cover and the arbitrariness of $[\omega]$ entails $[G_T(\alpha)]=0$. Hence $G_T(\alpha)=d\chi$ where $\chi\in\Omega^{k-1}_t(M)$. Using that $\delta\alpha=0$, it descends that $\chi=G_T(\lambda)$ with $\delta\lambda=0$. This entails that $\alpha\in\Omega^{\prime, k}_{c,\delta}(M)$ which is the sought conclusion.
+
+\vskip .2cm
+
+\noindent {\em 2.} Assume $\exists [A]\in\mathcal{S}_{\mathcal{G}_0,k}(M)$ such that $([\alpha],[A])=0$, $\forall [\alpha]\in\mathcal{O}_{\mathcal{G}_0,k}(M).$ Working at the level of representative, since $\alpha\in\Omega^k_{c,\delta}(M)$ we can choose $\alpha=\delta\beta$ with $\beta\in\Omega^{k+1}_c(M)$. As a consequence $0=(\delta\beta, A)=(\beta, dA)$ where we used implicitly \eqref{Eqn: boundary terms for delta and d} and $tA=0$. The arbitrariness of $\beta$ entails $dA=0$. Hence $A$ individuates a de Rham cohomology class in $H^k_t(M)$, {\it cf.} Appendix \ref{App: Poincare duality for manifold with boundary}. Calling $H^k_{c,\delta}(M)$ the $k$-th homology group built of $\delta$ and of compactly supported smooth forms and calling $\langle,\rangle$ the pairing between $H^k_{c,\delta}(M)$ and $H^k_t(M)$, $([\alpha],[A])=0$ entails $\langle [\alpha],[A]\rangle=0$. With a slight abuse of notation we have indicated with $[\alpha]$ and with $[A]$ the cohomology classes. Since $H^k_{c,\delta}(M)\simeq H^{n-k}_c(M)$ and since $M$ is assumed to possess a finite good cover, Proposition \ref{Prop: Poin-Lefs duality} entails that $H^{n-k}_c(M)\simeq H^n(M;\partial M)^*$. On account of Proposition \ref{Prop: equivalence description of relative cohomology}, $\langle,\rangle$ is non degenerate whenever $M$ has a finite good cover and the arbitrariness of $[\alpha]$ entails $[A]=0$. 
+	
+\end{Proof}
+
+%\begin{remark}
+%	If we consider the solutions $\mathcal{S}^{sc}_{\mathcal{G}_{dn},k}(M)$ and Proposition \ref{Prop: Symplectomorphism_dn}, we could follow slavishly Definition \ref{Def: Algebra for T} constructing an associated algebra of observables. Yet we would fail in proving a counterpart for Proposition \ref{Prop: separability and optimality for the g-boundary conditions algebra of observables} since the natural pairing between $\mathcal{S}^{sc}_{\mathcal{G}_{dn},k}(M)$ and $\mathcal{O}_{\mathcal{G}_{dn},k}(M)$ is ill-defined. As a matter of fact, for the induced pairing to be independent from the representatives in the relevant equivalence class, it should be vanishing the pairing between $d\mathcal{G}_{dn,k}(M)$ and $\Omega^k_{c,\delta}(M)$. Yet, Equation \eqref{Eqn: boundary terms for delta and d} entails
+%	$$(d\chi,\omega)=(t\chi,n\omega)_\partial,\quad\forall \chi\in\mathcal{G}_{dn}(M),\;\textrm{and}\;\forall\omega\in\Omega^k_{c,\delta}(M)$$
+%	which does not vanish in general. In order to bypass this hurdle, we will need to restrict $\mathcal{O}_{\mathcal{G}_{dn},k}(M)$ accounting for the relevant additional boundary condition
+%\end{remark}
+
+\noindent We focus now on the algebra of observables associated to the symplectic space characterized in Proposition \ref{Prop: Symplectomorphism_dn}.
+
+\begin{Definition}\label{Def: Alegbra for perp}
+	Let $(M,g)$ be a globally hyperbolic spacetime with timelike boundary and let $\mathcal{O}_{\mathcal{G}_{dn},k}(M)\doteq\frac{\Omega^k_{c,\delta}(M;\mathbb{C})}{\Omega^{0,k}_c(M;\mathbb{C})}$, $0< k\leq\dim M$. We call {\em algebra of observables} associated to $\mathcal{S}_{\mathcal{G}_{dn},k}(M)$, the associative, unital $*$-algebra 
+	$$\mathcal{A}_{\mathcal{G}_{dn},k}(M)=\frac{\mathcal{T}[\mathcal{O}_{\mathcal{G}_{dn},k}(M)]}{\mathcal{I}[\mathcal{O}_{\mathcal{G}_{dn},k}(M)]},$$
+	where $\mathcal{T}[\mathcal{O}_{\mathcal{G}_{dn},k}(M)]\doteq\bigoplus_{n=0}^\infty\mathcal{O}_{\mathcal{G}_{dn},k}(M)^{\otimes n}$ is the universal tensor algebra with
+	$\mathcal{O}_{\mathcal{G}_{dn},k}(M)^{\otimes 0}\equiv\mathbb{C}$, while the $*$-operation is the one induced from complex conjugation. In addition
+	$\mathcal{I}[\mathcal{O}_{\mathcal{G}_{dn},k}(M)]$ is the $*$-ideal generated by elements of the form $[\alpha]\otimes[\beta]-[\beta]\otimes[\alpha]-i \widetilde{G}_\perp([\alpha],[\beta])$ , where
+	$[\alpha],[\beta]\in\mathcal{O}_{\mathcal{G}_0,k}(M)$ while $\widetilde{G}_\perp$ is defined in Proposition \ref{Prop: Symplectomorphism_dn}.
+\end{Definition}
+
+\noindent We study the structural properties of $\mathcal{A}_{\mathcal{G}_{dn},k}(M)$, again using the language introduce \cite{Benini-16}. In this case it is not straightforward to verify that the pairing between solutions and observables is well defined. Therefore we first prove the following ancillary lemma.
+
+\begin{lemma}\label{Lem:ancillary}
+	Let $(,)$ be the standard pairing between $k$-forms. It induces a well-defined counterpart between $\mathcal{O}_{\mathcal{G}_{dn},k}(M)$ and $\mathcal{S}_{\mathcal{G}_{dn},k}(M)$, namely $([A],[\omega])\doteq(A,\omega)$ for all $[A]\in\mathcal{S}_{\mathcal{G}_{dn},k}(M)$ and for all $[\omega]\in\mathcal{O}_{\mathcal{G}_{dn},k}(M)$.
+\end{lemma}
+
+\begin{proof}
+	We need to check that the pairing does not depend on the choice of the representative in the relevant equivalence classes. On the one hand, for all $A\in\mathcal{S}^{\Box}_{k,\infty}$ and for all $\lambda\in\Omega^{k-1}_{c,\delta}(M)$, Equation \eqref{Eqn: boundary terms for delta and d} entails that
+	$$(A,d\lambda)=(\delta A,\lambda)+(nA,t\lambda)_\partial=0,$$
+	since $A$ is coclosed and $nA=0$. On the other hand for all $\omega\in\Omega^k_{c,\delta}(M)$ and for all $\chi\in\mathcal{G}_{dn}(M)$, we need to evaluate $(\omega,d\chi)$. Observe that Remark \ref{Rem: useful} entails that $\chi=G_\perp(\alpha)$, with $\alpha\in\Omega^{k-1}_{c,\delta}(M)$. Hence
+	$$(\omega,d\chi)=(\omega,dG_T(\alpha))=(\omega,G_T(d\alpha))=-(G_T(\omega),d\alpha)=-(\delta G_T(\omega),\alpha)-(nG_T(\alpha),t\omega)=0,$$
+	where in the second and in the third equality we used Lemma \ref{Lem: exact sequence and duality relations} and Corollary \ref{Cor: commuting with delta}, while the last identity is a consequence of $\omega$ being coclosed and of the property that $G_T$ maps in the kernel of $n$.
+\end{proof}
+
+\noindent Using Lemma \ref{Lem:ancillary} and repeating slavishly the proof of Proposition \ref{Prop: separability and optimality for the g-boundary conditions algebra of observables}, it holds
+
+\begin{proposition}\label{Prop: separability and optimality for the dn-boundary conditions algebra of observables}
+	Let  $\mathcal{A}_{\mathcal{G}_{dn},k}(M)$ be the algebra introduced in Definition \ref{Def: Algebra for T}. Then, calling with $(,)$ the natural pairing between $\mathcal{O}_{\mathcal{G}_{dn},k}(M)$ and $\mathcal{S}_{\mathcal{G}_{dn},k}(M)$ induced from those between $k$-forms, the following statements hold true:
+	\begin{enumerate}
+		\item  $\mathcal{A}_{\mathcal{G}_{dn},k}(M)$ is {\em optimal}, namely
+		\begin{equation}\label{Eqn: separability for dn-boundary condition algebra}
+		([\alpha],[A])=0\quad\forall [A]\in\mathcal{S}_{\mathcal{G}_{dn},k}(M)\Longrightarrow[\alpha]=[0]\in\mathcal{O}_{\mathcal{G}_{dn},k}(M)\,,
+		\end{equation}
+		\item  $\mathcal{A}_{\mathcal{G}_{dn},k}(M)$ is {\em separating}, namely
+		\begin{equation}
+		\label{Eqn: optimality for dn-boundary condition algebra}
+		([\alpha],[A])=0\quad\forall [\alpha]\in\mathcal{O}_{\mathcal{G}_{dn},k}(M)\Longrightarrow [A]=[0]\in\mathcal{S}_{\mathcal{G}_{dn},k}(M)\,.
+		\end{equation}
+	\end{enumerate}
+\end{proposition}
+
+The following corollary translates at the level of algebra of observables the degeneracy of the presymplectic spaces discussed in Proposition \ref{Prop: Symplectomorphism_T} and \ref{Prop: Symplectomorphism_dn}, {\it cf.} Remark \ref{Rmk: on degeneracy on presymplectic structure}. As a matter of fact since both $\widetilde{G}_T$ and $\widetilde{G}_\perp$ can be degenerate, the algebra of observables will possess a non trivial centre. In other words
+
+\begin{corollary}
+	The algebras $\mathcal{A}_{\mathcal{G}_0,k}(M)$ and $\mathcal{A}_{\mathcal{G}_{dn},k}(M)$ are not semisimple.
+\end{corollary}
+
+
+\appendix
+\section{An explicit computation}\label{App: an explicit computation}
+
+\begin{lemma}\label{Lem: equivalence between M-boundary conditions and Sigma-boundary conditions}
+	Let $\mathrm{t}_\Sigma\colon\Omega^k(M)\to\Omega^k(\Sigma)$, $\mathrm{n}_\Sigma\colon\Omega^k(\Sigma)\to\Omega^{k-1}(\Sigma)$ be the tangential and normal maps on $\Sigma$, where $M=\mathbb{R}\times\Sigma$.
+	Moreover, let $\mathrm{t}_{\partial\Sigma}\colon\Omega^k(\Sigma)\to\Omega^k(\partial\Sigma)$, $\mathrm{n}_{\partial\Sigma}\colon\Omega^k(\Sigma)\to\Omega^{k-1}(\partial\Sigma)$ be the tangential and normal maps on $\partial\Sigma$.
+	If $\sharp\in\lbrace\mathrm{D},\mathrm{N}\rbrace$ then for all $\omega\in\Omega^k(M)$ it holds
+	\begin{align}\label{Eqn: equivalence between M-boundary conditions and Sigma-boundary conditions}
+		\omega\in\Omega_\sharp^k(M)\Longleftrightarrow\mathrm{t}_\Sigma\omega,\mathrm{n}_\Sigma\omega\in\Omega_\sharp^k(\Sigma)\,.
+	\end{align}
+	\end{lemma}
+\begin{proof}
+	The equivalence \eqref{Eqn: equivalence between M-boundary conditions and Sigma-boundary conditions} is shown for Neumann boundary condition.
+	The proof for Dirichlet boundary conditions follows by duality -- \textit{cf.} \eqref{Rmk: on nomenclature for Dirichlet and Neumann boundary conditions}.
+	Let $\mathrm{t}_{\partial M}\colon\Omega^k(M)\to\Omega^k(\partial M)$, $\mathrm{n}_{\partial M}\colon\Omega^k(M)\to\Omega^{k-1}(\partial M)$ denote the tangential and normal maps on $\partial M=\mathbb{R}\times\partial\Sigma$.
+	Locally we have $\Sigma\simeq\partial\Sigma\times\lbrace x\geq0\rbrace$, therefore we can decompose $\omega\in\Omega^k(M)$ as
+	\begin{align*}
+		\omega &=
+		\omega_\Sigma+
+		\omega_t\wedge\mathrm{d}t=
+		\omega_{\Sigma,\partial\Sigma}+
+		\omega_{\Sigma,x}\wedge\mathrm{d}x+
+		\omega_{t,\partial\Sigma}\wedge\mathrm{d}t+
+		\omega_{t,x}\wedge\mathrm{d}x\wedge\mathrm{d}t\,,\\
+		\omega &=
+		\omega_{\partial M}+
+		\omega_x\wedge\mathrm{d}x\,,
+	\end{align*}
+	where $\mathrm{t}_{\partial M}\omega:=\omega_{\partial M}|_{\partial M}$, $\mathrm{n}_{\partial M}\omega:=\omega_x|_{\partial M}$ and similarly $\mathrm{t}_{\Sigma}\omega:=\omega_{\Sigma}|_\Sigma$ and $\mathrm{n}_\Sigma\omega:=\omega_t|_\Sigma$.
+	With this notation it follows that
+	\begin{align*}
+		\mathrm{t}_{\partial M}\omega=
+		\mathrm{t}_{\partial\Sigma}\mathrm{t}_\Sigma\omega+
+		\mathrm{t}_{\partial\Sigma}\mathrm{n}_\Sigma\omega\wedge\mathrm{d}t\,,\qquad
+		\mathrm{n}_{\partial M}\omega=		
+		\mathrm{n}_{\partial\Sigma}\mathrm{t}_\Sigma\omega+
+		\mathrm{n}_{\partial\Sigma}\mathrm{n}_\Sigma\omega\wedge\mathrm{d}t\,.
+	\end{align*}
+	Therefore we find $\mathrm{n}_{\partial M}\omega=0$ if and only if $\mathrm{n}_{\partial\Sigma}\mathrm{n}_{\Sigma}\omega=0$ and $\mathrm{n}_{\partial\Sigma}\mathrm{t}_\Sigma\omega=0$.	
+	A similar computation leads to
+	\begin{align*}
+		\mathrm{n}_{\partial M}\mathrm{d}\omega&=
+		(-1)^{k-1}\partial_x\omega_{\Sigma,\partial\Sigma}+
+		\mathrm{d}_{\partial\Sigma}\omega_{\Sigma,x}+
+		(-1)^k\partial_t\omega_{\Sigma,x}\wedge\mathrm{d}t+
+		(-1)^k\partial_x\omega_{t,\partial\Sigma}\wedge\mathrm{d}t+
+		\mathrm{d}_{\partial\Sigma}\omega_{t,x}\\&=
+		(-1)^{k-1}\partial_x\omega_{\Sigma,\partial\Sigma}+
+		(-1)^k\partial_x\omega_{t,\partial\Sigma}\wedge\mathrm{d}t\,,
+	\end{align*}
+	where in the second equality we used the equivalence for $\mathrm{n}_{\partial M}\omega=0$.
+	It follows that $\mathrm{n}_{\partial M}\mathrm{d}\omega=0$ if and only if $\partial_x\omega_{\Sigma,\partial\Sigma}=0$ and $\partial_x\omega_{t,\partial\Sigma}=0$.
+	When $\mathrm{n}_{\partial\Sigma}\mathrm{t}_\Sigma\omega=0$ and $\mathrm{n}_{\partial\Sigma}\mathrm{n}_\Sigma\omega=0$ the latter conditions are equivalent to $\mathrm{n}_{\partial\Sigma}\mathrm{d}_\Sigma\mathrm{n}_\Sigma\omega=0$ and $\mathrm{n}_{\partial\Sigma}\mathrm{d}_\Sigma\mathrm{t}_\Sigma\omega=0$.
+\end{proof}
+
+\section{Relative de Rham cohomology}\label{App: Poincare duality for manifold with boundary}
+
+In this appendix we summarize a few definitions and results concerning de Rham cohomology and Poincar\'e duality, especially when the underlying manifold has a non empty boundary. A reader interested in more details can refer to \cite{Bott-Tu-82,Schwarz-95}. 
+
+For the purpose of this section $M$ refers to a smooth, oriented manifold of dimension $\dim M=d$ with a smooth boundary $\partial M$, together with an embedding map $\iota_{\partial M}:M\to\partial M$. In addition $\partial M$ comes endowed with orientation induced from $M$ via $\iota_{\partial M}$. We recall that $\Omega^\bullet(M)$ stands for the de Rham cochain complex which in degree  $k\in\mathbb{N}\cup\{0\}$ corresponds to $\Omega^k(M)$, the space of smooth $k$-forms. Observe that we shall need to work only with compactly supported forms and all definitions can be adapted accordingly. To indicate this specific choice, we shall use a subscript $c$, {\it e.g.} $\Omega^\bullet_c(M)$. We denote instead the $k$-th de Rham cohomology group of $M$ as 
+$$H^k(M)\doteq\frac{Ker (d_k)}{Im (d_{k-1})},$$
+where we introduce the subscript $k$ to highlight that the differential operator $d$ acts on $k$-forms. Equations \eqref{Eqn: k-forms with vanishing tangential or normal component} and \eqref{Eqn: relations-bulk-to-boundary} entail that we can define the $\Omega^\bullet_{\mathrm{t}}(M)$, the subcomplex of $\Omega^\bullet(M)$, whose degree $k$ corresponds to $\Omega^k_{\mathrm{t}}(M)\subset\Omega^k(M)$. The associated de Rham cohomology groups will be denoted as $H^k_t(M)$, $k\in\mathbb{N}\cup\{0\}$.
+
+Similarly we can work with the codifferential $\delta$ in place of $d$, hence identifying a chain complex $\Omega^\bullet(M;\delta)$ which in degree  $k\in\mathbb{N}\cup\{0\}$ corresponds to $\Omega^k(M)$, the space of smooth $k$-forms. The associated $k$-th homology groups will be denoted with 
+$$H_k(M;\delta)\doteq\frac{Ker (\delta_k)}{Im (\delta_{k+1})}.$$
+Equations \eqref{Eqn: k-forms with vanishing tangential or normal component} and \eqref{Eqn: relations-bulk-to-boundary} entail that we can define the $\Omega^\bullet_{\mathrm{n}}(M;\delta)$, the subcomplex of $\Omega^\bullet(M;\delta)$, whose degree $k$ corresponds to $\Omega^k_{\mathrm{n}}(M)\subset\Omega^k(M)$. The associated homology groups will be denoted as $H_{k,n}(M;\delta)$, $k\in\mathbb{N}\cup\{0\}$. Observe that, in view of its definition, the Hodge operator induces an isomorphism $H^k(M)\simeq H_{d-k}(M;\delta)$ which is realized as $H^k(M)\ni[\alpha]\mapsto [\ast\alpha]\in H_{d-k}(M;\delta)$. Similarly, on account of Equation \eqref{Eqn: relations-bulk-to-boundary}, it holds $H^k_t(M)\simeq H_{d-k,n}(M;\delta)$.
+
+As last ingredient, we introduce the notion of relative cohomology, {\it cf.} \cite{Bott-Tu-82}. We start by defining the relative de Rham cochain complex $\Omega^\bullet(M;\partial M)$  which in degree  $k\in\mathbb{N}\cup\{0\}$ corresponds to 
+\begin{align*}
+	\Omega^k(M,\partial M)\doteq \Omega^k(M)\oplus\Omega^{k-1}(\partial M),
+\end{align*}
+endowed with the differential operator $\underline{\mathrm{d}}_k:\Omega^k(M;\partial M)\to\Omega^{k+1}(M;\partial M)$ such that for any $(\omega,\theta)\in\Omega^k(M;\partial M)$
+\begin{equation}\label{Eq: relative-differential}
+\underline{\mathrm{d}}_k(\omega,\theta)=(\mathrm{d}\omega,\iota^*_{\partial M}\omega-\mathrm{d}_\partial\theta)\,.
+\end{equation}
+Per construction, each $\Omega^k(M;\partial M)$ comes endowed naturally with the projections on each of the defining components, namely $\pi_1:\Omega^k(M;\partial M)\to\Omega^k(M)$ and $\pi_2:\Omega^k(M;\partial M)\to\Omega^k(\partial M)$. With a slight abuse of notation we make no explicit reference to $k$ in the symbol of these maps, since the domain of definition will be always clear from the context. The relative cohomology groups associated to $\underline{\mathrm{d}}_k$ will be denoted instead as $H^k(M;\partial M)$ and the following proposition characterizes the relation with the standard de Rham cohomology groups built on $M$ and on $\partial M$, {\it cf.} \cite[Prop. 6.49]{Bott-Tu-82}:
+
+\begin{proposition}\label{Prop: long exact sequence}
+Under the geometric assumptions specified at the beginning of the section, there exists an exact sequence
+	\begin{equation}
+	\ldots\to H^k(M;\partial M)\operatornamewithlimits{\longrightarrow}^{\pi_{1,*}} H^k(M) \operatornamewithlimits{\longrightarrow}^{\iota_{\partial M,*}} H^k(\partial M)\operatornamewithlimits{\longrightarrow}^{\pi_{2,*}} H^{k+1}(M;\partial M)\to\ldots,
+	\end{equation}
+	where $\pi_{1,*}$, $\pi_{2,*}$ and $\iota_{\partial M,*}$ indicate the natural counterpart of the maps $\pi_1$, $\pi_2$ and $\iota_{\partial M}$ at the level of cohomology groups.
+\end{proposition}
+
+\noindent The relevance of the relative cohomology groups in our analysis is highlighted by the following statement, of which we give a concise proof:
+
+\begin{proposition}\label{Prop: equivalence description of relative cohomology}
+Under the geometric assumptions specified at the beginning of the section, there exists an isomorphism between $H^k_t(M)$ and $H^k(M,\partial M)$ for all $k\in\mathbb{N}\cup\{0\}$.
+\end{proposition}
+
+\begin{proof}
+	Consider $\omega\in\Omega^k_t(M)\cap\ker(d)$ and let $(\omega,0)\in\Omega^k(M;\partial M)$, $k\in\mathbb{N}\cup\{0\}$. Equation \eqref{Eq: relative-differential} entails
+	\begin{align*}
+		\underline{\mathrm{d}}_k(\omega,0)=(\mathrm{d}\omega,\iota^*_{\partial M}\omega)=(\mathrm{d}\omega,\mathrm{t}\omega)=(0,0)\,,
+	\end{align*}
+	where we used \eqref{Eqn: tangential map} in the second equality. At the same time, if $\omega=\mathrm{d}\beta$ with $\beta\in\Omega_\mathrm{t}^{k-1}(M)$, then $\underline{\mathrm{d}}_{k-1}(\beta,0)=(\mathrm{d}\beta,0)$.
+	Hence the embedding $\omega\mapsto (\omega,0)$ identifies an injective map $\rho: H^k_t(M)\to  H^k(M;\partial M)$ such that $\rho([\omega])\doteq [(\omega,0)]$.
+	
+	To conclude, we need to prove that $\rho$ is surjective. Let thus $[(\omega^\prime,\theta)]\in H^k(M;\partial M)$. It holds that $d\omega^\prime=0$ and $\iota^*_{\partial M}\omega^\prime-d_\partial\theta=t(\omega^\prime)-d_\partial\theta=0$. Recalling that $t:\Omega^k(M)\to\Omega^k(\partial M)$ is surjective for all values of $k\in\mathbb{N}\cup\{0\}$, there must exist $\eta\in\Omega^{k-1}(M)$ such that $t(\eta)=\theta$. Let $\omega\doteq\omega^\prime -d\eta$. On account of \eqref{Eqn: relations-bulk-to-boundary} $\omega\in\Omega^k_t(M)\cap\ker(d)$ and $(\omega, 0)$ is a representative if $[(\omega^\prime,\theta)]$ which entails the conclusion sought.
+\end{proof}
+
+\noindent To conclude, we recall a notable result concerning the relative cohomology, which is a specialization to the case in-hand of the Poincar\'e-Lefschetz duality, an account of which can be found in \cite{Maunder}:
+
+\begin{proposition}\label{Prop: Poin-Lefs duality}
+	Under the geometric assumptions specified at the beginning of the section and assuming in addition that $M$ admits a finite good cover, it holds that, for all $k\in\mathbb{N}\cup\{0\}$
+   $$H^k(M)\simeq H^{n-k}_c(M;\partial M)^*,$$
+   where $n=\dim M$ and where on the right hand side we consider the dual of the $(n-k)$-th cohomology group built out compactly supported forms.
+\end{proposition}
+
+\subsection*{Acknowledgements}
+The work of C. D. was supported by the University of Pavia, while that of N. D. was supported in part by a research fellowship of the University of Trento.
+We are grateful to Marco Benini, Sonia Mazzucchi, Valter Moretti, Ana Alonso Rodrigez and Alberto Valli for the useful discussions.
+This work is based partly on the MSc thesis of R. L. .
+
+
+\begin{thebibliography}{}
+
+\bibitem[AFS18]{Ake-Flores-Sanchez-18}
+Ak\'e L., Flores J.L. , Sanchez M.,
+\textit{Structure of globally hyperbolic spacetimes with timelike boundary},
+arXiv:1808.04412 [gr-qc].
+
+\bibitem[B\"ar15]{Baer-15}
+B\"ar C.,
+\textit{Green-Hyperbolic Operators on Globally Hyperbolic Spacetimes},
+Commun. Math. Phys. (2015) 333: 1585.
+
+\bibitem[BL12]{Behrndt-Langer-12}
+Behrndt, J., Langer, M.,
+Elliptic operators, Dirichlet-to-Neumann maps and quasi boundary triples.
+In: de Snoo, H.S.V. (ed.) Operator Methods for Boundary Value Problems.
+London Mathematical Society, Lecture Notes, p. 298. Cambridge University Press, Cambridge (2012)
+
+\bibitem[BDS14]{Benini:2013tra}
+M.~Benini, C.~Dappiaggi and A.~Schenkel,
+\textit{``Quantized Abelian principal connections on Lorentzian manifolds,''}
+Commun.\ Math.\ Phys.\  {\bf 330} (2014) 123
+[arXiv:1303.2515 [math-ph]].
+
+\bibitem[Ben16]{Benini-16}
+Benini M.,
+\textit{Optimal space of linear classical observables for Maxwell $k$-forms via spacelike and timelike compact de Rham cohomologies},
+J. Math. Phys. {\bf 57} (2016) no.5,  053502
+
+\bibitem[BT82]{Bott-Tu-82}
+R. Bott, L. W. Tu,
+\textit{Differential forms in algebraic topology},
+Springer, New York, 1982.
+
+\bibitem[BFV03]{Brunetti-Fredenhagen-Verch-03}
+Brunetti, R., Fredenhagen, K., Verch, R.,
+\textit{The Generally Covariant Locality Principle ? A New Paradigm for Local Quantum Field Theory},
+Commun. Math. Phys. (2003).
+
+\bibitem[DDF19]{Dappiaggi-Drago-Ferreira-19}
+Dappiaggi, C., Drago, N., Ferreira, H.
+\emph{``Fundamental solutions for the wave operator on static Lorentzian manifolds with timelike boundary''}, to appear in Lett. Math. Phys. (2019), arXiv:1804.03434 [math-ph].
+
+\bibitem[DFJ18]{Dappiaggi:2018pju}
+C.~Dappiaggi, H.~R.~C.~Ferreira and B.~A.~Juárez-Aubry,
+\emph{``Mode solutions for a Klein-Gordon field in anti?de Sitter spacetime with dynamical boundary conditions of Wentzell type,''}
+Phys.\ Rev.\ D {\bf 97} (2018) no.8,  085022
+[arXiv:1802.00283 [hep-th]].
+
+\bibitem[DS11]{Dappiaggi:2011cj}
+C.~Dappiaggi and D.~Siemssen,
+\emph{``Hadamard States for the Vector Potential on Asymptotically Flat Spacetimes,''}
+Rev.\ Math.\ Phys.\  {\bf 25} (2013) 1350002
+doi:10.1142/S0129055X13500025
+[arXiv:1106.5575 [gr-qc]].
+
+\bibitem[HS13]{Hack-Schenkel-13}
+Hack T.P., Schenkel A.,
+\textit{Linear bosonic and fermionic quantum gauge theories on curved spacetimes},
+Gen Relativ Gravit (2013) 45: 877.
+	
+\bibitem[Lee00]{Lee}
+J.M. Lee
+\textit{Introduction to Smooth Manifolds}, 2nd ed. (2013) Springer, 706p.
+
+\bibitem[Mau80]{Maunder}
+C.~R.~F.~Maunder,
+\textit{Algebraic Topology}, (1980) Cambridge University Press, 375p.
+
+\bibitem[Pfe09]{Pfenning:2009nx}
+M.~J.~Pfenning,
+{\em ``Quantization of the Maxwell field in curved spacetimes of arbitrary dimension,''}
+Class.\ Quant.\ Grav.\  {\bf 26} (2009) 135017
+[arXiv:0902.4887 [math-ph]].
+
+\bibitem[SDH12]{Sanders:2012sf}
+K.~Sanders, C.~Dappiaggi and T.~P.~Hack,
+{\em``Electromagnetism, Local Covariance, the Aharonov-Bohm Effect and Gauss' Law,''}
+Commun.\ Math.\ Phys.\  {\bf 328} (2014) 625
+[arXiv:1211.6420 [math-ph]].
+
+\bibitem[Sch95]{Schwarz-95}
+G. Schwarz, 
+\textit{Hodge Decomposition - A Method for Solving Boundary Value Problems}, (1995) Springer, 154p.
+
+\bibitem[Za15]{Zahn:2015due}
+J.~Zahn,
+\emph{``Generalized Wentzell boundary conditions and quantum field theory,''}
+Annales Henri Poincare {\bf 19} (2018) no.1,  163
+[arXiv:1512.05512 [math-ph]].
+
+\end{thebibliography}
+
+
+\end{document}
+	
+	
+
+
+
+%-- Alberti, Brown, Marletta, Essential Spectrum for Maxwell?s Equations
+
+%\bibitem{Alonso-Valli-96}
+%	Alonso A., Valli A.,
+%	\textit{Some remark on the characterization of the space of tangential trace of $H(\operatorname{rot},\Omega)$ and the construction of an extension operator},
+%	 Operator, Manuscripta Math., 89 (1996), 159-178.
+%
+%\bibitem{Amar-17}
+%	Amar E.,
+%	\textit{On the $L^r$ Hodge theory in complete non-compact Riemannian manifolds},
+%	Mathematische Zeitschrift, Springer, 2017, 287, pp.751-795.
+%
+%\bibitem{Axelsson-McIntosh-04}
+%	Axelsson A., McIntosh A. (2004)
+%	\textit{Hodge Decompositions on Weakly Lipschitz Domains.}
+%	In: Qian T., Hempfling T., McIntosh A., Sommen F. (eds) Advances in Analysis and Geometry. Trends in Mathematics. Birkh\"auser, Basel.
+%
+%\bibitem{Auchmann-Kurz-12}
+%	Kurz S., Auchmann B.
+%	\textit{Differential Forms and Boundary Integral Equations for Maxwell-Type Problems}.
+%	In: Langer U., Schanz M., Steinbach O., Wendland W. (eds) Fast Boundary Element Methods in Engineering and Industrial Applications. Lecture Notes in Applied and Computational Mechanics, vol 63. Springer, Berlin, Heidelberg (2012).
+
+
+
+%\bibitem{Baer-19}
+%	B\"ar C.,
+%	\textit{The curl operator on odd-dimensional manifolds},
+%	Journal of Mathematical Physics 60, 031501 (2019).
+
+
+	
+%\bibitem{Buffa-Costabel-Sheen-02}
+%	Buffa A., Costabel M., Sheen D.,
+%	\textit{On traces for $\mathrm{H}(\operatorname{curl},\Omega)$ in Lipschitz domains},
+%	J. Math. Anal. Appl. 276 (2002) 845?867.
+
+
+%-- Eells, Morrey, A variational method in the theory of harmonic integrals ;
+
+%\bibitem{Eichorn-93}
+%	Eichhorn, J,
+%	\textit{The manifold structure of maps between open manifolds.}
+%	Ann. Global Anal. Geom. 11, 253-300.
+%
+%\bibitem{Everitt-Markus-99}	
+%	Everitt W. N. , Markus L.,
+%	\textit{Complex symplectic geometry with applications to ordinary differential operators},
+%	Journal: Trans. Amer. Math. Soc. 351 (1999), 4905-4945 	
+%
+%\bibitem{Everitt-Markus-03}
+%	Everitt W., Markus L.,
+%	\textit{Elliptic Partial Differential Operators and Symplectic Algebra},
+%	no. 770 in Memoirs of the American Mathematical Society. American Mathematical Society, Providence (2003).
+%	
+%\bibitem{Everitt-Markus-05}
+%	Everitt W., Markus L.,
+%	\textit{Complex symplectic spaces and boundary value problems},
+%	Bull. A. Math. Soc 42, 461-500 (2005).
+%
+%%>> Friedrichs, Differential forms on Riemannian manifolds ;
+%
+%\bibitem{Gaffney-55}
+%	Gaffney M.P.,
+%	\textit{Hilbert space methods in the theory of harmonic integrals},
+%	Transactions of the American Mathematical Society Vol. 78, No. 2 (Mar., 1955), pp. 426-444
+%%	-- sembra esserci qualche claim su caso di open manifold, a.k.a. varietà con bordo non compatte ;
+%
+%\bibitem{Georgescu-79}
+%	Georgescu V.,
+%	\textit{Some boundary value problems for differential forms on compact Riemannian manifolds},
+%	Annali di Matematica (1979) 122: 159.
+%
+%\bibitem{Greub-Halperin-Vanston-72}
+%	Greub W., Halperin S., Vanstone R..
+%	\textit{Connections, curvature, and cohomology - Vol.1},
+%	Academic press New York and London (1972).
+%
+%\bibitem{Gromov-91}
+%	Gromov M.,
+%	Kahler hyperbolicity and L2-Hodge theory,
+%	J. Differential Geometry 33(1991) 263-292.
+
+	
+%\bibitem{Higson-Roe-00}
+%	Higson N., Roe J.,
+%	\textit{Analytic K-Homology},
+%	Oxford Mathematical Monographs, Oxford University Press, Oxford, 2000.
+%
+%\bibitem{Hiptmair-Kotiuga-Tordeux-12}
+%	Hiptmair, R., Kotiuga, P.R., Tordeux, S.,
+%	\textit{Self-adjoint curl operators},
+%	Annali di Matematica (2012) 191: 431.
+%
+%\bibitem{Kodaira-49}
+%	Kodaira K.,
+%	\textit{Harmonic fields in Riemannian manifolds - generalized potential theory},
+%	Annals of Mathematics Second Series, Vol. 50, No. 3 (Jul., 1949), pp. 587-665.
+%
+%\bibitem{Li-09}
+%	Li X-D.,
+%	On the strong $L^p$-Hodge decomposition over complete Riemannian manifolds,
+%	Journal of Functional Analysis Volume 257, Issue 11, 1 December 2009, Pages 3617-3646.
+%
+%\bibitem{Mcintosh-Morris-13}
+%	Mcintosh A., Morris A.J.,
+%	\textit{Finite propagation speed for I order systems and Huygens' principle for hyperbolic equations},
+%	Proceedings of the American Mathematical Society
+%	Vol. 141, No. 10 (OCTOBER 2013), pp. 3515-3527.
+%
+%\bibitem{Moretti-18}
+%	Moretti, V.,
+%	\textit{Spectral Theory and Quantum Mechanics},
+%	2nd edn, p. 950. Springer, Berlin (2018).
+%	
+%%-- Morrey, A variational method in the theory of harmonic integrals II ;
+%
+%\bibitem{Paquet-82}
+%	Paquet, L.,
+%	\textit{Problèmes mixtes pour le système de Maxwell},
+%	Annales de la Faculté des sciences de Toulouse : Mathématiques, Série 5, Volume 4 (1982) no. 2, pp. 103-141.
+%
+%\bibitem{Scott-95}
+%	Scott C.,
+%	$L^p$ theory of differential forms on manifolds
+%	Transactions of the Ametican Mathematical Society,
+%	Volume 347, Number 6, June 1995.
+%
+%\bibitem{Schwarz-95}
+%	 Schwarz G.,
+%	 \textit{Hodge Decomposition - A Method for Solving Boundary Value Problems},
+%	 \nicorrection{missing reference}.
+%%		-- decomposizione di Hodge per varietà con bordo ;
+%%		-- Referenze originali
+%%			-- Duff, Differential forms in manifolds with boundary ;
+%%				-- de Rham theorem for k-forms on manifolds with boundary
+%%			-- Duff, Spencer, Harmonic tensors on Riemannian manifolds with boundary ;
+%%			-- soluzioni per i problemi associati a d,delta, ddelta, deltad con condizioni al bordo tangenziali e/o normali;
+%
+%\bibitem{Weck-04}
+%	Weck N.,
+%	\textit{Traces of differential forms on Lipschitz boundaries},
+%	Analysis, 24(2), pp. 147-170 (2004).
+%
+%\bibitem{Zulfikar-Stroock-00}
+%	Zulfikar M. A., Stroock D.W.,
+%	\textit{A Hodge theory for some non-compact manifolds.}
+%	J. Differential Geom. 54 (2000), no. 1, 177--225. 
+
+\subsection{Brief introduction and main ideas}
+
+We would like to introduce the $*$-algebra of observables for the vector potential on a globally hyperbolic manifold $M$ with time-like boundary.
+The vector potential $A\in\Omega^k(M)$ is a solution of $\delta\mathrm{d}A=0$ up to the gauge transformation $A\to A+\mathrm{d}\chi$, where $\chi\in\Omega^{k-1}(M)$.
+
+The case $\partial M=\emptyset$ is well-known -- \textit{cf.} \cite{Benini-16,Hack-Schenkel-13} -- we shall discuss it briefly in order to grasp the main ideas which will be discussed also when $\partial M\neq\emptyset$.
+In this case the algebra of observables $\mathcal{O}(M)$ on the space of solutions $\operatorname{Sol}(M):=\ker\delta\mathrm{d}/\mathrm{d}\Omega^{k-1}(M)$ is identified with the vector space $\mathcal{O}(M):=\ker_{\mathrm{c}}\delta/\delta\mathrm{d}\Omega_{\mathrm{c}}^k(M)$.
+Elements $\widehat{\alpha}\in\mathcal{O}(M)$ are interpreted as local measurements of configurations $\widehat{A}\in\operatorname{Sol}(M)$ by means of the pairing $(\widehat{\alpha},\widehat{A}):=\int_M\alpha\wedge\ast A$ -- here $\alpha\in\widehat{\alpha}\,,A\in\widehat{A}$.
+Denoting with $F_{\widehat{\alpha}}\colon\operatorname{Sol}(M)\to\mathbb{C}$ the linear functional corresponding with $\widehat{\alpha}\in\mathcal{O}(M)$ the algebra of observables $\mathcal{A}(M)$ is defined as the algebra generated by $F_{\widehat{\alpha}}$.
+
+The algebra $\mathcal{A}(M)$ shares two important properties: (a) is separating for $\operatorname{Sol}(M)$ -- that is $(\widehat{\alpha},\widehat{A})=0$ for all $\widehat{\alpha}\in\mathcal{O}(M)$ implies $\widehat{A}=0$; (b) it is optimal, in the sense that it is the smallest algebra which is separating for $\operatorname{Sol}(M)$ -- this is equivalent to the fact that $(\widehat{\alpha},\widehat{A})=0$ for all $\widehat{A}\in\operatorname{Sol}(M)$ implies $\widehat{\alpha}=0$, \textit{cf.} \cite{Benini-16}.
+Property (a) implies that observables in $\mathcal{A}(M)$ are capable to distinguish all configurations $\widehat{A}\in\operatorname{Sol}(M)$.
+Property (b) assures that $\mathcal{A}(M)$ is the "minimal" algebra with property (a) and thus that there are no redundant observables.
+
+The vector space $\mathcal{O}(M)$ carries a presymplectic form -- an anti-Hermitian bilinear form $\varsigma\colon\mathcal{O}(M)^{\times 2}\to\mathbb{C}$ -- which induce a similar presymplectic structure on $\mathcal{A}(M)$ and thus allows to quantize the system in a canonical way -- \textit{cf.} \cite{Hack-Schenkel-13}.
+The degeneracy space of $\varsigma$ carries topological informations which play a crucial r\^ole in proving that the assignment $M\to\mathcal{A}(M)$ fails to satisfy the standard axioms of a local and covariance theory \cite{Brunetti-Fredenhagen-Verch-03} -- the failure of the isotony axiom is a characteristic feature of gauge theories.
+
+In order to describe explicitly the degeneracy of $\varsigma$ it is convenient to provide an equivalent description of $\mathcal{O}(M)$.
+For that, one introduces $\operatorname{Sol}^{\mathrm{sc}}(M):=\ker_{\mathrm{sc}}\delta\mathrm{d}/\mathrm{d}\Omega_{\mathrm{sc}}^{k-1}(M)$ which is nothing but the space of vector potential with spacelike support up to spacelike supported gauge transformations.
+It turns out -- \textit{cf.} \cite[Thm. 5.2]{Hack-Schenkel-13} -- that $\operatorname{Sol}^{\mathrm{sc}}(M)$ carries a presymplectic structure $\sigma$ and that there is a one-to-one map $\operatorname{Sol}^{\mathrm{sc}}(M)\simeq\mathcal{O}(M)$ which also preserves the presymplectic structure.
+This provides the equivalent description of $\mathcal{O}(M)$.
+Therefore the degeneracy of $\mathcal{O}(M)$ can be computed in terms of the degeneracy space over $\operatorname{Sol}^{\mathrm{sc}}(M)$.
+The latter is computed easily by observing that $\sigma$ extends to a pre-symplectic structure on the quotient space $\ker_{\mathrm{sc}}\delta\mathrm{d}/[\mathrm{d}\Omega^{k-1}(M)\cap\Omega_{\mathrm{sc}}^k(M)]$.
+The inclusion $\operatorname{Sol}^{\mathrm{sc}}(M)\hookrightarrow\ker_{\mathrm{sc}}\delta\mathrm{d}/[\mathrm{d}\Omega^{k-1}(M)\cap\Omega_{\mathrm{sc}}^{k-1}(M)]$ is surjective, thus the space $\operatorname{Sol}^{\mathrm{sc}}(M)$ is degenerate if $\mathrm{d}\Omega_{\mathrm{sc}}^{k-1}(M)\subseteq\mathrm{d}\Omega^{k-1}(M)\cap\Omega_{\mathrm{sc}}^k(M)$ is a strict inclusion. \nicomment{(When the previous if is an \textit{if and only if}?)}
+
+In this paper we will discuss the case of non-empty boundary $\partial M$.
+In particular section \ref{Sec: preliminaries on the wave operator} we recollect some prelimanary results on the wave operator $\square$ acting on smooth $k$-forms with Dirichlet or Neumann boundary conditions.
+In section \ref{Sec: gauge-boundary conditions} we study the space $\operatorname{Sol}_{\mathrm{g}\sharp}(M)$ of vector potential configurations $A\in\ker\delta\mathrm{d}$ which satisfy (gauge) Dirichlet or (gauge) Neumann boundary conditions.
+Section \ref{Sec: Algebra of observables for Sol(M)} deals with the algebra of observables $\mathcal{O}_{\mathrm{g}\sharp}(M)$ associated with $\operatorname{Sol}_{\mathrm{g}\sharp}(M)$.
+In particular we will introduce a presymplectic structure $\varsigma_{\mathrm{g}\sharp}$ on $\mathcal{O}_{\mathrm{g}\sharp}(M)$ and provide sufficient conditions for $\varsigma_{\mathrm{g}\sharp}$ to be degenerate.
+Appendices \ref{App: an explicit computation}-\ref{App: Poincare duality for manifold with boundary} contain additional materials.
+
+
+
+Let $\Omega_\sharp^k(M)$ be a subspace of $\Omega^k(M)$ and let $\star\in\lbrace\mathrm{c},\mathrm{cc},\mathrm{fc},\mathrm{pc}, \mathrm{sfc},\mathrm{spc},\mathrm{sc},\mathrm{tc}\rbrace$.
+For a linear operator $A_\sharp\colon\Omega_\sharp^k\to\Omega^k$ we shall denote
+\begin{align}\label{Eqn: notation for linear operator}
+\ker_\star A_\sharp:=\lbrace\omega\in\Omega_\sharp^k(M)\cap\Omega_\star^k(M)|\;A_\sharp\omega=0\rbrace\,,\qquad
+\operatorname{Im}_\star A_\sharp:=\lbrace A_\sharp\omega\in\Omega^k(M)|\;\omega\in\Omega_\sharp^k(M)\cap\Omega_\star^k(M)\rbrace\,.
+\end{align}
+
