@@ -1,0 +1,135 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[italian]{babel} 	%lingua principale
+\usepackage[utf8]{inputenc}	%caratteri accentati
+\usepackage[margin=1in]{geometry}
+%\usepackage{layaureo}
+
+
+\usepackage{graphicx}		%pacchetto per le immagini
+\usepackage{booktabs}		%pacchetto per separatori tabelle
+\usepackage{siunitx}		%pacchetto per le tabelle dati
+\usepackage{wrapfig}		%pacchetto per le immagini immerse nel testo
+\usepackage{latexsym}		%pacchetto per lettere greche
+
+
+%\usepackage{fourier}
+%\usepackage[sc]{mathpazo}
+%\linespread{1.05}  
+%\usepackage{cmbright}
+
+
+
+
+
+
+\usepackage[T1]{fontenc}
+
+
+
+\usepackage{bm}
+\usepackage{tabularx}
+\usepackage{amsmath,amssymb}
+%\usepackage{bbold}
+
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{subfig}
+\usepackage{rotating}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{pgfplots}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{shapes,arrows}
+\newcommand{\midarrowright}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+\newcommand{\midarrowup}{\tikz \draw[-triangle 90] (0,0) -- +(0,.1);}
+
+\usetikzlibrary{shadings, calc, decorations.markings}
+\tikzset{->-/.style={decoration={
+			markings,
+			mark=at position #1 with {\arrow{>}}},postaction={decorate}},
+	->-/.default=0.5,
+}
+
+	\newcommand\ds{\displaystyle}
+\newcommand\ts{\textstyle}
+\newcommand{\mb}{\mathbf}
+%\renewcommand{\thenotation}{}
+%\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\def\Caption #1{\caption{\footnotesize #1}}
+%\renewcommand\Caption{#1}{\Caption{\small{#1}}}
+%\def\Caption #1{\Caption{\small{{#1}}}}
+
+\def \Bfemph #1{\textbf{\emph{#1}}}
+
+
+%\def\Proof.{{\medbreak\noindent{\it Dimostrazione}\enspace}}
+\def\Proof{{\medbreak\noindent{\textbf{Dimostrazione.} }}}
+\def\endproof{~\hfill $\Box$\\}
+%\def\endproof{\hfill$\square$\par\medskip}
+
+\def\Svolgimento{{\medbreak\noindent{\textit{Svolgimento.} }}}
+\def\Suggerimento{{\medbreak\noindent{\textit{Suggerimento:} }}}
+
+
+\def\mR{{\mathbb R}}
+\def\mC{{\mathbb C}}
+\newcommand{\parz}[2]{\displaystyle \frac{\partial #1}{\partial #2}}
+\newcommand{\deri}[2]{\displaystyle \frac{d #1}{d #2}}
+\renewcommand{\Re}{\text{Re }}
+\renewcommand{\Im}{\text{Im }}
+%\renewcommand{\theta}{\vartheta}
+\newcommand{\Int}{\text{Int }}
+\newcommand{\Ext}{\text{Ext }}
+
+\renewcommand{\theta}{\vartheta}
+\newcommand{\res}{\mathop{\mathrm{Res }}}
+
+\newcommand{\colonna}[2]{\begin{pmatrix}
+		#1 \\ #2
+\end{pmatrix}}
+\newcommand{\riga}[2]{\begin{pmatrix}
+		#1 & #2
+\end{pmatrix}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Soluzioni fondamentali per equazioni di tipo onda su variet\`a curve}
+\author{Rubens Longhi}
+\date{}
+
+
+\begin{document}
+	
+\maketitle
+
+Buongiorno a tutti. La mia tesi tratta di \emph{Soluzioni fondamentali per equazioni di tipo onda su varietà curve}. Ci occupiamo quindi di trattare equazioni differenziali contenenti operatori di tipo ondulatorio, al fine di ottenere informazioni sulla dinamica dei sistemi fisici che prendiamo in considerazione. In particolare, tra le equazioni di tipo ondulatorio vi è quella che contiene l'operatore d'Alembertiano, la quale governa in generale la dinamica delle onde; vi sono le equazioni di Maxwell che, scelto un particolare Gauge, diventano vere e proprie equazioni d'onda con sorgente $J$ e, per quanto riguarda la teoria dei campi, vi è l'esempio dell'equazione di Klein-Gordon, che descrive la dinamica di bosoni di spin nullo e massa $m$.\\
+
+Approcciamo il problema attraverso il metodo delle \emph{soluzioni fondamentali}. Focalizzandoci su $\mR^N$ cerchiamo quindi, per non perdere eventuali gradi di libertà, le soluzioni distribuzionali $\psi$ di una generica equazione differenziale scalare $P\psi=f$ con sorgente $f$. Come è noto, le soluzioni saranno date sommando le soluzioni $\psi_0$ dell'equazione omogenea associata ad una soluzione particolare $\psi_f$ dell'equazione non omogenea.\\
+
+Per trovare una soluzione particolare, risolviamo innanzitutto l'equazione non omogenea nel caso in cui la sorgente è una delta centrata in un punto $x$ dello spazio. La soluzione distibuzionale $u_x$ di questa equazione è detta soluzione fondamentale per l'operatore $P$ in $x$. Una volta trovata la soluzione fondamentale, la soluzione particolare si ottiene facendo la convoluzione con la sorgente $f$.\\
+
+Ci concentriamo inizialmente sull'equazione di Klein-Gordon a massa nulla (eq. delle onde) ambientata nello spaziotempo piatto di Minkowski, dotato di una dimensione temporale e di $n$ dimensioni spaziali. La simmetria traslazionale che caratterizza lo spaziotempo piatto, ci consente di limitare la ricerca della soluzione fondamentale ad in un solo punto, in particolare scegliamo l'origine. Inoltre, per la stessa simmetria è possibile utilizzare le tecniche della trasformata di Fourier per risolvere l'equazione.\\
+
+Così facendo, la PDE nelle variabili $(t,\mf{x})$ si trasforma in questa equazione algebrica nello spazio delle fasi, della quale troviamo due soluzioni distribuzionali, le quali, trasformate, danno luogo a due soluzioni fondamentali linearmente indipendenti $G^+$ e $G^-$ dette rispettivamente soluzioni fondamentali \emph{ritardata} e \emph{avanzata}, ottenibili tramite quella formula.\\
+
+La soluzione ritardata ha il supporto, che è l'insieme dei punti in cui è non nulla, incluso nel futuro causale dell'origine di Minkowski, ovvero l'insieme degli eventi che posso raggiungere partendo dall'origine mantenendomi a velocità inferiore a quella della luce. Viceversa la soluzione fondamentale avanzata ha supporto nel passato causale dell'origine, ovvero l'insieme dei punti che possono raggiungere l'origine mantenendosi a velocità minore di quella della luce.\\
+
+Come abbiamo visto, la formula ottenuta tramite l'inversion di Fourier è la stessa per tutte le dimensioni, ma il risultato si specializza nei vari casi. In particolare, se consideriamo il caso monodimensionale, che può rappresentare la propagazione di onde su di una corda, si nota dalla formula, che contiene la funzione a gradino di Heaviside, che la ritardata è supportata uniformemente nel cono luce futuro, mentre la ritardata è supportata uniformemente nel cono luce passato.\\
+
+Nel caso bidimensionale di onde che si propagano su di una superficie, come si può vedere dagli insiemi di livello, la ritardata e la avanzata non hanno un unico valore all'interno dei rispettivi coni luce.\\
+
+Il caso di onde 3D, invece, presenta una particolarità. Infatti, sia la ritardata che la avanzata sono non nulle esclusivamente sul bordo del cono luce.\\
+
+Questa caratteristica, comune a tutte le dimensioni spaziali dispari a partire dalla terza, va sotto il nome di principio di Huygens. L'effetto fisico è che in due dimensioni, l'onda si propaga non solo sul fronte d'onda, ma anche al suo interno.  Quindi il segnale ondoso viene percepito anche a seguito del primo arrivo. In tre dimensioni, invece, il segnale si propaga esclusivamente sulla superficie sferica del fronte d'onda.\\
+
+
+
+
+
+
+
+
+	
+\end{document}

@@ -1,0 +1,237 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[italian]{babel} 	%lingua principale
+\usepackage[utf8]{inputenc}	%caratteri accentati
+\usepackage[margin=1in]{geometry}
+%\usepackage{layaureo}
+
+
+\usepackage{graphicx}		%pacchetto per le immagini
+\usepackage{booktabs}		%pacchetto per separatori tabelle
+\usepackage{siunitx}		%pacchetto per le tabelle dati
+\usepackage{wrapfig}		%pacchetto per le immagini immerse nel testo
+\usepackage{latexsym}		%pacchetto per lettere greche
+
+
+%\usepackage{fourier}
+%\usepackage[sc]{mathpazo}
+%\linespread{1.05}  
+%\usepackage{cmbright}
+
+
+
+
+
+
+\usepackage[T1]{fontenc}
+
+
+
+\usepackage{bm}
+\usepackage{tabularx}
+\usepackage{amsmath,amssymb}
+%\usepackage{bbold}
+
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{subfig}
+\usepackage{rotating}
+\setlength\parindent{0pt}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{pgfplots}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{shapes,arrows}
+\newcommand{\midarrowright}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+\newcommand{\midarrowup}{\tikz \draw[-triangle 90] (0,0) -- +(0,.1);}
+
+\usetikzlibrary{shadings, calc, decorations.markings}
+\tikzset{->-/.style={decoration={
+			markings,
+			mark=at position #1 with {\arrow{>}}},postaction={decorate}},
+	->-/.default=0.5,
+}
+
+\usepackage{fancyhdr}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+\pagestyle{fancy}
+
+
+
+\lhead{}
+%\chead{\chaptermark}
+%\rhead{}
+%\lfoot{}
+%\cfoot{\thepage}
+%\rfoot{}
+%\renewcommand{\headrulewidth}{0.4pt}
+%\renewcommand{\footrulewidth}{0.4pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{classicthm}% Nome
+{12pt}% Spazio che precede l’enunciato
+{12pt}% Spazio che segue l’enunciato
+{\sl}% Stile del font dell’enunciato
+{}% Rientro (se vuoto, non c’è rientro,
+% \parindent = rientro dei capoversi)
+{\bfseries}% Stile del font dell’intestazione
+{.}% Punteggiatura che segue l’intestazione
+{.5em}% Spazio che segue l’intestazione:
+% " " = normale spazio inter-parola;
+% \newline = a capo
+{}% Specifica l’intestazione dell’enunciato
+% (normalmente viene lasciata vuota)
+\swapnumbers
+\theoremstyle{classicthm}
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{theorem*}{Teorema}
+\newtheorem{*theorem}[theorem]{$^*$Teorema}
+\newtheorem{cor}[theorem]{Corollario}
+\newtheorem{*cor}[theorem]{$^*$Corollario}
+\newtheorem{**cor}[theorem]{$^{**}$Corollario}
+\newtheorem{lem}[theorem]{Lemma}
+\newtheorem{*lem}[theorem]{$^*$Lemma}
+\newtheorem{propo}[theorem]{Proposizione}
+\newtheorem{*propo}[theorem]{$^*$Proposizione}
+\newtheorem{**propo}[theorem]{$^{**}$Proposizione}
+\newtheorem{axiom}[theorem]{Assioma}
+\newtheorem{axiom*}{Assioma}
+
+\theoremstyle{classicthm}
+\newtheorem{defn}[theorem]{Definizione}
+\newtheorem{*defn}[theorem]{$^*$Definizione}
+\newtheorem{property}[theorem]{Propriet\`a}
+
+\newtheorem{notation*}{Notazione}
+\newtheorem{notation}[theorem]{Notazione}
+%\newtheorem{Postulato}{Postulato}
+
+
+\theoremstyle{definition}
+\newtheorem{oss}[theorem]{Osservazione}
+\newtheorem{exercise}[theorem]{Esercizio}
+\newenvironment{esercizio}{\begin{exercise}}{\hfill\endproof \end{exercise}}
+\newenvironment{esercizio*}{\begin{exercise}}{\endproof\end{exercise}}
+\newenvironment{prop}{\begin{propo}}{\hfill\endproof \end{propo}}
+\newenvironment{*prop}{\begin{*propo}}{\endproof\end{*propo}}
+
+\newenvironment{commento}{\begin{oss}}{\endproof \end{oss}}
+\newtheorem{*oss}[theorem]{$^*$Osservazione}
+\newenvironment{*commento}{\begin{*oss}}{\endproof \end{*oss}}
+\newenvironment{commento*}{\begin{oss}}{ \end{oss}}
+\newtheorem{example}[theorem]{Esempio}
+\newenvironment{esempio}{\begin{example}}{\endproof
+	\end{example}}
+	\newtheorem{*example}[theorem]{$^*$Esempio}
+	\newenvironment{*esempio}{\begin{*example}}{\endproof	\end{example}}
+	
+	
+	%\hypersetup{backref,pdfpagemode=FullScreen, colorlinks=true}
+	
+	\newcommand\ds{\displaystyle}
+	\newcommand\ts{\textstyle}
+	\newcommand{\mb}{\mathbf}
+	%\renewcommand{\thenotation}{}
+	%\renewcommand{\theequation}{\thesection.\arabic{equation}}
+	\def\Caption #1{\caption{\footnotesize #1}}
+	%\renewcommand\Caption{#1}{\Caption{\small{#1}}}
+	%\def\Caption #1{\Caption{\small{{#1}}}}
+	
+	\def \Bfemph #1{\textbf{\emph{#1}}}
+	
+	
+	%\def\Proof.{{\medbreak\noindent{\it Dimostrazione}\enspace}}
+	\def\Proof{{\medbreak\noindent{\textbf{Dimostrazione.} }}}
+	\def\endproof{~\hfill $\Box$\\}
+	%\def\endproof{\hfill$\square$\par\medskip}
+	
+	\def\Svolgimento{{\medbreak\noindent{\textit{Svolgimento.} }}}
+	\def\Suggerimento{{\medbreak\noindent{\textit{Suggerimento:} }}}
+	
+	
+	\def\mR{{\mathbb R}}
+	\def\mC{{\mathbb C}}
+	\newcommand{\parz}[2]{\displaystyle \frac{\partial #1}{\partial #2}}
+	\newcommand{\deri}[2]{\displaystyle \frac{d #1}{d #2}}
+	\renewcommand{\Re}{\text{Re }}
+	\renewcommand{\Im}{\text{Im }}
+	%\renewcommand{\theta}{\vartheta}
+	\newcommand{\Int}{\text{Int }}
+	\newcommand{\Ext}{\text{Ext }}
+	
+	\renewcommand{\theta}{\vartheta}
+	\newcommand{\res}{\mathop{\mathrm{Res }}}
+	
+	\newcommand{\colonna}[2]{\begin{pmatrix}
+			#1 \\ #2
+		\end{pmatrix}}
+		\newcommand{\riga}[2]{\begin{pmatrix}
+				#1 & #2
+			\end{pmatrix}}
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\title{Soluzioni fondamentali per equazioni di tipo onda su variet\`a curve}
+		\author{Rubens Longhi}
+		\date{}
+		
+		
+		\begin{document}
+			
+			\maketitle
+			
+			Buongiorno a tutti. La mia tesi tratta di \emph{Soluzioni fondamentali per equazioni di tipo onda su varietà curve}. Ci occupiamo quindi di trattare equazioni differenziali contenenti operatori di tipo ondulatorio, al fine di ottenere informazioni sulla dinamica dei sistemi fisici che prendiamo in considerazione. In particolare, tra le equazioni di tipo ondulatorio vi è quella rappresentata dall'operatore d'Alembertiano, la quale governa in generale la dinamica delle onde; vi sono le equazioni di Maxwell che, scelto un particolare Gauge, diventano vere e proprie equazioni d'onda con sorgente $J$ e, per quanto riguarda la teoria dei campi, vi è l'esempio dell'equazione di Klein-Gordon, che descrive la dinamica di bosoni di spin nullo e massa $m$.\\
+			
+			Approcciamo il problema attraverso il metodo delle \emph{soluzioni fondamentali}. Focalizzandoci su $\mR^N$ cerchiamo quindi, per non perdere eventuali gradi di libertà, le soluzioni distribuzionali $\psi$ di una generica equazione differenziale scalare $P\psi=f$ con sorgente $f$. Come è noto, le soluzioni saranno date sommando le soluzioni $\psi_0$ dell'equazione omogenea associata ad una soluzione particolare $\psi_f$ dell'equazione non omogenea.\\
+			
+			Per trovare una soluzione particolare, risolviamo innanzitutto l'equazione non omogenea nel caso in cui la sorgente è una delta centrata in un punto $x$ dello spazio. La soluzione distibuzionale $u_x$ di questa equazione è detta soluzione fondamentale per l'operatore $P$ in $x$. Una volta trovata la soluzione fondamentale, la soluzione particolare si ottiene facendo la convoluzione con la sorgente $f$. Nel caso di operatori di tipo ondulatorio, si può ottenere anche una soluzione della omogenea come differenza tra due soluzioni fondamentali.\\
+			
+			Ci concentriamo inizialmente sull'equazione di Klein-Gordon a massa nulla (eq. delle onde) ambientata nello spaziotempo piatto di Minkowski, dotato di una dimensione temporale e di $n$ dimensioni spaziali. L'inverianza traslazionale che caratterizza lo spaziotempo piatto ci consente di limitare la ricerca della soluzione fondamentale ad in un solo punto, in particolare scegliamo l'origine. Inoltre, per la stessa simmetria è possibile utilizzare le tecniche della trasformata di Fourier per risolvere l'equazione.\\
+			
+			Così facendo, la PDE nelle variabili $(t,\mathbf{x})$ si trasforma in questa equazione algebrica nello spazio delle fasi. Essa possiede una soluzione che però non è una distribuzione e quindi va regolarizzata. Ciò si può fare con due prescrizioni che forniscono due soluzioni fondamentali linearmente indipendenti $G^+$ e $G^-$, ottenibili tramite quella formula di inversione. Esse sono dette rispettivamente soluzioni fondamentali \emph{ritardata} e \emph{avanzata} e sono scelte in modo da avere le seguenti proprietà di supporto.\\
+			
+			Richiediamo che la soluzione ritardata abbia il supporto, che è l'insieme dei punti in cui è non nulla, incluso nel futuro causale dell'origine di Minkowski, ovvero l'insieme degli eventi che posso raggiungere partendo dall'origine mantenendomi a velocità inferiore a quella della luce. Viceversa la soluzione fondamentale avanzata ha supporto nel passato causale dell'origine, ovvero l'insieme dei punti che possono raggiungere l'origine mantenendosi a velocità minore di quella della luce.\\
+			
+			Come abbiamo visto, la formula ottenuta tramite l'inversione di Fourier ha la stessa forma per tutte le dimensioni, ma il risultato si specializza nei vari casi. In particolare, se consideriamo il caso monodimensionale, che può rappresentare la propagazione di onde su di una corda, si nota dalla formula, che contiene la funzione a gradino di Heaviside, che la ritardata è supportata uniformemente nel cono luce futuro, mentre l'avanzata è supportata uniformemente nel cono luce passato.\\
+			
+			Nel caso bidimensionale di onde che si propagano su di una superficie, come si può vedere dagli insiemi di livello, la ritardata e la avanzata non hanno un unico valore all'interno dei rispettivi coni luce.\\
+			
+			Il caso di onde 3D, invece, presenta una particolarità. Infatti, sia la ritardata che la avanzata sono non nulle esclusivamente sul bordo del cono luce.\\
+			
+			Questa caratteristica, comune a tutte le dimensioni spaziali dispari a partire dalla terza, va sotto il nome di principio di Huygens. L'effetto fisico è che in due dimensioni, l'onda si propaga non solo sul fronte d'onda, ma anche al suo interno.  Quindi il segnale ondoso viene percepito anche a seguito del primo arrivo. In tre dimensioni, invece, il segnale si propaga esclusivamente sulla superficie sferica del fronte d'onda.\\
+			
+Se ora immaginiamo di accendere un generico campo gravitazionale, siamo portati ad ambientare le equazioni di tipo ondulatorio su particolari varietà differenziabili.
+Una varietà differenziabile è uno spazio localmente omeomorfo allo spazio piatto $(n+1)$-dimensionale, con delle opportune regole di incollamento tra aperti. Inoltre una varietà è decorata da alcune strutture aggiuntive.\\
+Innanzitutto è decorata in ogni punto da uno spazio tangente, che è l'insieme di tutti i vettori tangenti ad una qualsiasi curva passante per un punto. Esso è per costruzione diffeomorfo a Minkowski.\\
+In secondo luogo deve essere definita una metrica $g$, controparte della metrica Minkowskiana $\eta$. In soldoni essa definisce una nozione di lunghezza per i vettori dello spazio tangente.\\
+In terzo luogo, richiediamo che la varietà possieda un'orientazione temporale, cioè deve essere possibile, in ogni punto, definire coerentemente cosa è il passato e cosa è il futuro. Se la varietà soddisfa quest'ultima ipotesi, è detta spaziotempo.\\
+
+In particolare, selezioniamo una classe di spazitempi di interesse fisico, detti Globalmente Iperbolici. Per essere Globalmente Iperbolico, uno spaziotempo $\mathrm{M}$ deve essere esprimibile come prodotto $\mR\times S$, dove $\mR$ indica una direzione temporale distinta e, per ogni $t$, $\{t\}\times S$ è una ipersuperficie a tempo costante sulla quale si possano porre dei dati iniziali per un'equazione differenziale. Inoltre, negli spazitempi Globalmente Iperbolici, devono essere assenti curve chiuse causali, che sono la traslitterazione matematica dell'idea dei viaggi all'indietro nel tempo.\\
+
+Degli esempi notevoli di spazitempi Globalmente Iperbolici di interesse fisico sono lo \emph{spaziotempo cosmologico}, avente una metrica dipendente dal tempo. Esso descrive un universo in espansione con un rate $f(t)$. Un altro esempio è lo Spaziotempo di Schwarzschild, che descrive l'esterno di un buco nero di massa $m$ e raggio dell'orizzonte degli eventi pari a $2m$.\\
+
+Ritornando alla fisica, in ambiente curvo, gli operatori di tipo ondulatorio si generalizzano nella classe di operatori detti generalizzati di d'Alembert, nei quali il \emph{leading term} contiene una combinazione di derivate seconde dipendente dalla metrica locale. In questa classe è di particolare interesse l'operatore d'onda, la cui generalizzazione al curvo assume questa forma.\\
+
+Essa si traduce, nei due casi di spazitempi citati precedentemente, in queste due espressioni, nelle quali è possibile notare che cade ogni tipo di simmetria traslazionale. La soluzione fondamentale $u_x$ deve quindi essere cercata punto per punto e senza poter usare la trasformata di Fourier.\\
+
+Sfruttiamo quindi un metodo analogo a quello di Fourier, ma che non richieda la presenza di alcuna invarianza globale, per ritrovare le soluzioni fondamentali in Minkowski. Esso si basa su di una famiglia di distribuzioni $R_\pm$ dipendenti da un parametro $\alpha$ dette distribuzioni di Riesz e definite, a partire da questa formula, rispettivamente sul cono luce futuro e su quello passato. Ponendo $\alpha=2$, ritroviamo le soluzioni fondamentali ritardata e avanzata.\\
+
+Per questione di tempo, descriviamo la strategia generale che può essere adottata per il generico spaziotempo al fine di ottenere le proprietà delle soluzioni, omettendo le formule esplicite che possono essere ottenute caso per caso.\\
+Mentre il metodo di Fourier richiede l'invarianza traslazionale globale, le distribuzioni di Riesz contengono invece oggetti geometrici che hanno una controparte nel curvo. Quindi le estendiamo localmente dal tangente Minkowski ad un intorno di un generico punto dello spaziotempo.\\
+
+Risolviamo quindi, solo localmente, il problema di Cauchy, nel quale assegnamo la sorgente $f$ e i dati iniziali $\psi^0$, $\psi^1$ per la soluzione e la sua derivata all'istante $t_0$, facendoli propagare tramite le soluzioni fondamentali trovate.\\
+
+Non trovandoci su Minkowski, si devono utilizzare quindi delle altre tecniche, che abbiamo studiato nella tesi, con le quali si costruisce una soluzione fondamentale globale incollando opportunamente le soluzioni locali. Esse ci permettono di trarre delle importanti conclusioni sulle proprietà delle soluzioni. In particolare, si dimostra che, se i dati sono lisci, la soluzione è liscia e unica. Inoltre, la soluzione è non nulla solo all'interno del futuro e del passato dei dati iniziali. Ciò è sintomo del fatto che la soluzione si propaga mantenendosi a velocità finita, inferiore a quella della luce.\\
+
+In conclusione, in questa tesi abbiamo costruito le soluzioni fondamentali per l'operatore d'onda inizialmente su spaziotempo piatto, sfruttando due tecniche. Dapprima la trasformata di Fourier, la quale fornisce risultati espliciti, ma si basa sulla simmetria dello spazio soggiacente, e in secondo luogo abbiamo sfruttato le distribuzioni di Riesz, le quali non richiedono invarianze globali. Sfruttando queste ultime, abbiamo esteso prima localmente e poi globalmente le soluzioni fondamentali negli spazitempi globalmente iperbolici, al fine di ottenere le proprietà delle soluzioni. Dei possibili spunti che emergono da questo lavoro possono riguardare l'estensione delle considerazioni fatte ad altri tipi di operatori, ad esempio l'operatore di Dirac, il cui quadrato è un operatore di tipo ondulatorio.
+
+
+Vi ringrazio per l'attenzione.
+			
+			
+			
+			
+			
+			
+			
+			
+		\end{document}

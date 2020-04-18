@@ -1,0 +1,31 @@
+\contentsline {chapter}{Introduction}{1}{chapter*.1}
+\contentsline {chapter}{\chapternumberline {1}Mathematical Tools}{5}{chapter.1}
+\contentsline {section}{\numberline {1.1}An overview of Differential Geometry}{5}{section.1.1}
+\contentsline {section}{\numberline {1.2}Lorentzian Manifolds}{13}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Causality and Global Hyperbolicity}{21}{subsection.1.2.1}
+\contentsline {section}{\numberline {1.3}Operators and integration on manifolds}{24}{section.1.3}
+\contentsline {chapter}{\chapternumberline {2}Fundamental solutions in Minkowski spacetime}{27}{chapter.2}
+\contentsline {section}{\numberline {2.1}Fundamental solutions}{27}{section.2.1}
+\contentsline {section}{\numberline {2.2}The d'Alembert wave operator in Minkowski}{28}{section.2.2}
+\contentsline {section}{\numberline {2.3}The Fourier transform approach}{29}{section.2.3}
+\contentsline {section}{\numberline {2.4}Fundamental solutions via Fourier transform}{31}{section.2.4}
+\contentsline {section}{\numberline {2.5}The Riesz distributions}{40}{section.2.5}
+\contentsline {section}{\numberline {2.6}General solution and Cauchy problem}{45}{section.2.6}
+\contentsline {chapter}{\chapternumberline {3}Fundamental solutions on manifolds}{49}{chapter.3}
+\contentsline {section}{\numberline {3.1}Examples of generalized d'Alembert operators}{50}{section.3.1}
+\contentsline {section}{\numberline {3.2}Local fundamental solutions}{51}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Formal ansatz}{55}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Approximate fundamental solutions}{58}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}True fundamental solutions}{59}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Asymptotic behaviour}{61}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Uniqueness and regularity}{62}{subsection.3.2.5}
+\contentsline {section}{\numberline {3.3}Local and global Cauchy problem}{64}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Local solvability}{64}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Global solvability}{67}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Global fundamental solutions}{68}{section.3.4}
+\contentsline {section}{\numberline {3.5}Green's operators}{69}{section.3.5}
+\contentsline {chapter}{Conclusions}{71}{chapter*.27}
+\contentsline {appendix}{\chapternumberline {A}Distributions and Fourier Transform}{73}{appendix.A}
+\contentsline {chapter}{List of Figures}{78}{section*.28}
+\contentsline {chapter}{Bibliography}{81}{section*.30}
+\contentsline {chapter}{Acknowledgements}{83}{appendix*.31}
