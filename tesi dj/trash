@@ -1,0 +1,102 @@
+But, first of all, we give the proof of this proposition which states essentially that backflow is independent from the interval time, in the sense that probability could flow in the "wrong" direction for a period of time arbitrary longer.
+
+\begin{prop}
+	For each time $T>0$ there exists a normalized right-mover $\phi\in L^2(\mR)$ whose evolution under the free-particle Schr\"{o}dinger equation is such that $j_\phi(0,t)<0$ for all $t\in[0,T)$.
+\end{prop}
+\begin{proof}
+	In the previous Section (see Equation \ref{ex2:def}) we've already shown that there surely exists some normalized right-moving function $\phi$ whose density probability current is negative in the origin. If we take his time evolution given by $U(t)\phi$ (where $U(t)=\exp(-iP^2t/2)$ is the unitary evolution operator), it could be check that $j_\phi(0,t)$ must hold negative values at least until some instant $t'>0$. Now we can take a positive real number $\lambda$ and define the following function:
+	\begin{equation}
+	\begin{aligned}
+	\phi^{(\lambda)}(x):=\frac{1}{\sqrt{\lambda}}\phi(x/\lambda).
+	\end{aligned}
+	\end{equation} 
+	Taking the Fourier transform of $\phi^{(\lambda)}$ we can see that $\hat{\phi}^{(\lambda)}(p)=\sqrt{\lambda}\hat{\phi}(\lambda p)$, proving that it's still a right-mover. Now, by change of variables we can note the following equation:
+	\begin{equation}
+		\phi^{(\lambda)}(x,t)=(U(t)\phi)(x)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}e^{i(px-p^2t/2)}\sqrt{\lambda}\hat{\phi}(\lambda p)\, dp=\frac{1}{\sqrt{\lambda}}\phi(x/\lambda,t/\lambda^2).
+	\end{equation}
+	Hence we obtain that:
+	\begin{equation}
+		j_{\phi^{(\lambda)}}(x,t)=\frac{1}{\lambda^2}j_\phi(x/\lambda,t/\lambda^2).
+	\end{equation}
+	But this implies:
+	\begin{equation}
+		\int_{0}^{t'}j_\phi(0,t)\, dt=\int_{0}^{\lambda^2t'} j_{\phi^{(\lambda)}}(0,t)\, dt.
+	\end{equation}
+	The last equation means that the probability that flows back through the origin in interval $[0,t')$ for the right-mover $U(t)\phi$ is the same of the solution $U(t)\phi^{(\lambda)}$ during an interval $\lambda^2$ times longer. But since $\lambda$ can be taken arbitrary big we can prove our thesis. 
+\end{proof}
+\\
+\\
+With the last proposition, we have proved that backflow can persist for a period of time arbitrary longer and that the probability that flows back could be the same, but we said nothing about the intensity of this effect and about the maximum amount of probability that can flow in the "wrong" direction.\\
+Now we come at the main result of this section in which we turn the research of the maximum amount of backflow into an eigenvalue problem.
+
+\begin{theorem}[\textbf{Temporal Boundedness of Backflow}]
+	Let be $K:L^2(\mR_+)\to L^2(\mR_+)$ an integral operator defined by
+	\begin{equation}
+		K(f)=\frac{1}{\pi}\int_{0}^{\infty}\frac{\sin(u^2-v^2)}{u-v}f(v)\, \dd v \ \ \forall f\in L^2(\mR_+)
+	\end{equation} 
+	and let be $\sigma_p(K)$ his point spectrum. Then:
+	\begin{itemize}
+		\item[(a)]$\sigma_p(K)\neq\emptyset$, $\exists\  \lambda=\min\{\sigma_p(K)\}$ and $\lambda<0$.
+		\item[(b)]for any $T>0$ and for	any normalized free right-mover $\phi\in E_+(L^2(\mR))$ one has
+		\begin{equation}
+			\Delta_T(\phi)=\int_{0}^{T}j_\phi(0,t)\, dt\ge\lambda.
+			\label{eq:probability_flow}
+		\end{equation} 
+		and there exists $\phi_{min}\in  E_+(L^2(\mR))$ so that $\Delta_T(\phi_{min})=\lambda$.
+	\end{itemize}	 
+\end{theorem}
+\begin{proof}
+	(a) Work in progress...\\
+	(b) Once we obtained the first point of our thesis, we are ready to prove that backflow is bounded from below by the value $\lambda$. In particular we want to understand in which condition the amount of probability flowing through the origin is minimized. Firstly, we must evaluate the density probability current for a generic normalized right-mover:
+	\begin{equation}
+		j_\phi(0,t)=\frac{1}{2i}[\partial_x\phi(0,t)\phi^*(0,t)-\phi(0,t)\partial_x\phi^*(0,t)],
+		\label{eq:density_current}
+	\end{equation}
+	where the evolution of the wave function under the free particle Hamiltonian is given by:
+	\begin{equation}
+		\phi(x,t)=\frac{1}{\sqrt{2\pi}}\int_{0}^{\infty}e^{ipx}e^{-ip^2t/2}\hat{\phi}(p,0)\, dp.
+		\label{eq:free_right_mover}
+	\end{equation}
+	Substitution of equation (\ref{eq:free_right_mover}) in (\ref{eq:density_current}) gives us:
+	\begin{equation}
+	\begin{aligned}
+	& j_\phi(0,t)=\frac{1}{4\pi}\left[\int_{0}^{\infty}pe^{-ip^2t/2}\hat{\phi}(p,0)\,dp\right]\left[\int_{0}^{\infty}e^{iq^2t/2}\hat{\phi}^*(q,0)\, dq\right]+\text{CC}\\
+	& = \frac{1}{4\pi}\int_{0}^{\infty}dp\,\int_{0}^{\infty}dq\,(p+q)e^{i(q^2-p^2)t/2}\hat{\phi}(p,0)\hat{\phi}^*(q,0)
+	\end{aligned}		
+	\end{equation}
+	Now we can fix the time $T>0$ in which we want to study the evolution of our right-mover and then we integrate the current $j_\phi$ in order to find the probability flow at the origin:
+	\begin{equation}
+		\Delta^T(\phi)=\int_{0}^{T}j_\phi(0,t)\, dt=\int_{0}^{\infty}dp\,\int_{0}^{\infty}dq\,\hat{\phi}(p)k(p,q)\hat{\phi}^*(q)
+	\end{equation} 
+	where we have set $\hat{\phi}(p)=\hat{\phi}(p,0)$. Here $k(q,p)$ is given by:
+	\begin{equation}
+		k(p,q)=\frac{i}{2\pi}\left[\frac{e^{iT(q^2-p^2)/2}-1}{p-q}\right].
+	\end{equation}	
+	Note that there is no singularity at $p=q$. Now we are interested in minimizing the value $\Delta_T(\phi)$ with the bound that $\phi\in E_+(L^2(\mR))$ and $\|\phi\|_{L^2}=1$. Using the Lagrange multipliers Theorem for functionals, in order to find the minimizing wave function we need to solve the following equation:
+	\begin{equation}
+		\delta I(\hat{\phi})=\delta\left[\int_{0}^{\infty}dp\,\int_{0}^{\infty}dq\, \hat{\phi}(p)k(p,q)\hat{\phi}^*(q)\, - \lambda\int_{0}^{\infty}dq\, |\hat{\phi}(q)|^2\right]=0
+	\end{equation}
+	where $\delta$ represents the Gateaux derivative and $\lambda$ is the Lagrange multiplier. So we take a variation $h\in L^2(\mR_+)$ and suppose that $h$ gives only real values. Now we evaluate $\delta I(\hat{\phi})$:
+	\begin{equation}
+	\delta I(\hat{\phi})=\left.\frac{d}{d\epsilon}\right|_{\epsilon=0}I(\hat{\phi}+\epsilon h)=2Re\left\{\int_{0}^{\infty}dq\, h(q)\left[\int_{0}^{\infty}dp\,k(p,q)\hat{\phi}(p)\,-\lambda\hat{\phi}(q)\right]\right\}.
+	\end{equation}
+	The equation $\delta I(\hat{\phi})=0$ says that the term inside the integral must be zero for each $h\in L^2(\mR_+)$ and so we obtain:
+	\begin{equation}
+		\int_{0}^{\infty}dp\,k(p,q)\hat{\phi}(p)=\lambda\hat{\phi}(q).
+		\label{eq:eigenvalue1}
+	\end{equation}
+    Using the fact that $\|\hat{\phi}\|_{L^2}=1$ we note that for those normalized right-movers which solve the equation (\ref{eq:eigenvalue1}) we have $\lambda=\Delta_T(\phi)$. Therefore the problem reduces to find the minimum eigenvalue of the integral operator whose kernel is $k$, but this is equivalent at finding $min\{\sigma(K)\}$. In fact rearranging the last equation we find:
+    \begin{equation}
+    	\begin{aligned}
+    	& \frac{1}{\pi}\int_{0}^{\infty}\frac{\sin(T(q^2-p^2)/4)}{q-p}\Phi(p)\,dp=\lambda\Phi(q).
+    	\end{aligned}\label{eq:eigenvalue2}
+    \end{equation}  
+    Where $\Phi(p)=\exp(-ip^2T/4)\hat{\phi}(p)$. Furthermore setting $q=2u/\sqrt{T}$ and $p=2v/\sqrt{T}$, reduces the last equation to:
+    \begin{equation}
+    	\frac{1}{\pi}\int_{0}^{\infty}\frac{\sin(u^2-v^2)}{u-v}\varphi(v)\, \dd v=\lambda\varphi(u)
+    \end{equation} 
+    Where $\varphi(u)=\Phi(2u/\sqrt{T})$. But this is exactly the eigenvalue equation for the operator $K$ that we studied before and for which we proved the existence of a minimum negative value for the point spectrum. In addition we can note that if we take the eigenfunction $\varphi_\lambda$ for this minimal $\lambda$, we can construct the minimizing right-mover $\phi_{min}$ simply by taking:
+    \begin{equation}
+    	\phi_{min}(x,t)=\frac{1}{\sqrt{2\pi}}\int_{0}^{\infty}\!\!\!e^{ipx}e^{-ip^2(t-T/2)/2}\varphi_\lambda(p\sqrt{T}/2)\, dp
+    \end{equation}
+	\end{proof}

@@ -1,0 +1,241 @@
+\documentclass[11pt,a4paper,twoside,openany]{book}
+
+\input{structure}
+
+\begin{document}
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.3\textwidth]{unipv}\par\vspace{0.5cm}
+	{\scshape\huge Universit\`a degli Studi di Pavia\par}
+	\vspace{0.5cm}
+	{\scshape\LARGE Dipartimento di Fisica\par
+		\vspace{0.2cm}
+		\Large\textit{Corso di Laurea Magistrale in Scienze Fisiche}\par}
+	\vspace{0.5cm}
+	\rule{14cm}{0.1pt}
+	
+	\vspace{1.5cm}
+	{\huge\bfseries On Maxwell Equations on Globally Hyperbolic Spacetimes with Timelike Boundary \par}
+	\vspace{1.5cm}
+	\vfill\large\begin{flushright} Tesi per la Laurea Magistrale di:\\ \textbf{Rubens Longhi} % Text prior to the author name - right aligned and bold
+	\end{flushright}
+	\vspace{.5cm}
+	\begin{flushleft}
+		Relatore:\\
+		\textbf{Prof. Claudio Dappiaggi}\\[.3cm] % Advisor's/supervisor's name
+		Correlatore:\\
+		\textbf{Dott. Nicol\'o Drago}\\[.3cm] % Advisor's/supervisor's name
+	\end{flushleft}
+	
+	
+	
+	\vfill
+	
+	% Bottom of the page
+	{\large A.A. 2018-2019\par}
+\end{titlepage}
+   
+   \blankpage
+   
+   
+   \newenvironment{abstract}%
+   {\null\vfill\begin{center}%
+   		\bfseries Abstract \end{center}}%
+   {\vfill\null}
+   
+   
+   
+   \begin{abstract}
+   	\noindent La tesi si propone di analizzare il fenomeno del \textit{backflow} quantistico per particelle vincolate a muoversi in una direzione. Dapprima si affronterà lo studio nel caso di particelle non interagenti e successivamente si generalizzeranno i risultati ottenuti nel caso interagente sotto l'effetto di potenziali a corto raggio.\\
+   	
+   	\hfill
+   	
+   	\noindent The aim of the thesis is to analyze the phenomenon of quantum \textit{backflow} for particles moving on a one-dimensional background. First of all, the phenomenon will be introduced and studied in a non-interacting framework and then the results will be generalized for an interacting scenario, in presence of a short-range potential.\\
+   \end{abstract}
+   \blankpage
+   
+    \blankpage
+    \frontmatter
+    \tableofcontents
+    
+    \blankpage
+    \blankpage
+    
+  \setcounter{page}{1}
+  
+     \pagestyle{fancy}
+     \fancyhf{}
+     \fancyhead[LE,RO]{\chaptermark \ INTRODUCTION}
+    % \fancyhead[RE,LO]{\sectionmark}
+    % \fancyfoot[CE,CO]{\sectionmark}
+     \fancyfoot[LE,RO]{\thepage}
+     
+     
+   %----------------------------------------------
+   % INTRODUCTION
+     
+    \include{chapters/introduction}
+    \setcounter{page}{1}
+    \mainmatter
+   
+   \fancyhf{}
+   \fancyhead[LE]{\leftmark}
+   \fancyhead[RO]{\rightmark}
+   % \fancyfoot[CE,CO]{\sectionmark}
+   \fancyfoot[LE,RO]{\thepage}
+   \renewcommand{\chaptermark}[1]{\markboth{{\thechapter.\ #1}}{}}
+   \renewcommand{\sectionmark}[1]{ \markright{\thesection.\ #1}{} }
+   
+  %----------------------
+   
+% CHAPTERS
+   
+    \include{chapters/chapter1}
+    
+    \include{chapters/chapter2}
+    
+    \include{chapters/chapter3}
+    
+    \backmatter
+    
+   
+ % CONCLUSION
+    
+    \pagestyle{fancy}
+    \fancyhf{}
+    \fancyhead[LE,RO]{\chaptermark \ CONCLUSION}
+    % \fancyhead[RE,LO]{\sectionmark}
+    % \fancyfoot[CE,CO]{\sectionmark}
+    \fancyfoot[LE,RO]{\thepage}
+    %\addcontentsline{toc}{chapter}{Conclusion}
+    
+    \include{chapters/conclusion}
+    
+    \pagestyle{fancy}
+    \fancyhf{}
+    \fancyhead[LE,RO]{\chaptermark \ BIBLIOGRAPHY}
+    % \fancyhead[RE,LO]{\sectionmark}
+    % \fancyfoot[CE,CO]{\sectionmark}
+    \fancyfoot[LE,RO]{\thepage}
+    
+\begin{thebibliography}{50}
+	\addcontentsline{toc}{chapter}{Bibliography}
+	\bibitem{more}
+	V. Moretti, 
+	\textit{Spectral Theory And Quantum Mechanics},
+	Springer,
+	2017.
+	
+	\bibitem{fried2}
+	F. Friedlander, M. Joshi, 
+	\textit{ Introduction to the theory of distributions (second
+		edition)}, Cambridge University Press, Cambridge, 1998	
+	
+	\bibitem{gila}
+	G. Gilardi,
+	\textit{Analisi 3},
+	McGraw-Hill,
+	2014.
+	
+	\bibitem{sakurai}
+	J.J. Sakurai, J.J. Napolitano,
+	\textit{Modern Quantum Mechanics},
+	Addison Wesley,
+	2010.
+	
+	\bibitem{allcock}
+    G.R. Allcock, 
+	\textit{The Time of Arrival in Quantum Mechanics. Formal Considerations.},
+	Annals of Physics \textbf{53},
+	1969.
+	
+	\bibitem{bracken}
+	A.J. Bracken, G.F. Melloy,
+	\textit{Probability backflow and a new dimensionless quantum
+	number},
+	J. Phys. A: Math. Gen. \textbf{27},
+	1994.
+	
+	
+	\bibitem{gand}
+	H. Bostelmann, D. Cadamuro, G. Lechner,
+	\textit{Quantum backflow and scattering},
+	Physical Review A. \textbf{96},
+	2017.
+	
+	\bibitem{verch}
+	S.P. Eveson, C.J. Fewster, R. Verch,
+	\textit{Quantum Inequalites in Quantum Mechanics},
+	Annales Henrì Poincaré,
+	2005.
+	
+	\bibitem{palmero}
+	M. Palmero, E. Torrontegui, J. G. Muga, and M. Modugno,
+	\textit{Detecting quantum backflow by the density of a Bose-Einstein condensate},
+	Phys. Rev. A \textbf{87},
+	2013.
+	
+	\bibitem{years}
+	J.M.Yearsley, J.J.Halliwell, R.Hartshorn, and A.Whitby,
+	\textit{An Introduction to the Quantum Backflow Effect},
+	e-print arXiv:1202.1783v4,
+	2012.
+	
+	\bibitem{years2}
+	J. M. Yearsley, J. J. Halliwell, R. Hartshorn, and A. Whitby, 
+	\textit{Analytical examples, measurement models, and classical limit of quantum backflow},
+	Phys. Rev. A \textbf{86},
+	2012.
+	
+	\bibitem{penz}
+	M. Penz 1 , G. Gr\"{u}bl, S. Kreidl and P. Wagner,
+	\textit{A new approach to quantum backflow},
+	J. Phys. A: Math. Gen. \textbf{39},
+	2005.
+	
+	\bibitem{blanch}
+	P. Blanchard, E. Bruening,
+	\textit{Mathematical Methods in Physics}, 
+	Birkhauser,
+	2003. 
+	
+	\bibitem{matrix}
+	G. Golub, C. Van Loan,
+	\textit{Matrix Computations (third edition)},
+	Johns Hopkins University Press,
+	1996
+	
+	\bibitem{kato}
+	T. Kato,
+	\textit{Perturbation theory for linear operators},
+	Springer,
+	1995.
+	
+	\bibitem{scattering}
+	D. R. Yafaev,
+	\textit{Mathematical Scattering Theory: Analytic Theory},
+	Mathematical Surveys and Monographs Vol. 158,
+	American Mathematical Society, Providence, RI,
+	2010.
+	
+	\bibitem{deift}
+	P. Deift and E. Trubowitz,
+	\textit{Inverse scattering on the line},
+	Comm. Pure Appl. Math. \textbf{32},
+	1979.
+	
+	\bibitem{bragg}
+	M. Kozuma, L. Deng, E. W. Hagley, J. Wen, R. Lutwak, K. Helmerson, S. L. Rolston, and W. D. Phillips,
+	\textit{Coherent Splitting of Bose-Einstein Condensed Atoms with Optically Induced Bragg Diffraction},
+	Phys. Rev. Lett. \textbf{82},
+	1999.
+	
+	
+\end{thebibliography}
+
+% AKNOWLEDGEMENTS
+
+\include{chapters/grazie}
+  
+		
+	\end{document}

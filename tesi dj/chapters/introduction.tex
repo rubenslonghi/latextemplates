@@ -1,0 +1,36 @@
+\chapter{Introduction}
+\label{introduction}
+
+\textit{Backflow} is an exotic quantum-mechanical phenomenon which can be heuristically depicted as a probability current associated to the quantum mechanical description of a particle moving on a line, flowing in the opposite direction with respect to the underlying momentum\footnote{see [\citealp[Abstract]{gand}]}.\\
+In detail, we consider non-relativistic particles moving on a straight line. In \textit{quantum mechanics}, we describe the state of this particles at a given instant of time with a \textit{wave-function} $\psi\in L^2(\mR;\mC)$ where $|\psi(x)|^2$ represents the probability density of finding the particle in any open subset $I\subseteq\mR$. The time-evolution of such wave-functions $\psi(t)$ is ruled by the \textit{Schr\"{o}dinger equation}
+\begin{equation}
+	i\partial_t\psi(t)=H\psi(t)\, ,
+\end{equation}
+where $H$ is the \textit{Hamiltonian} which codifies the dynamics of the system. Here, for simplicity, we set all parameters and physical constants to $1$. Furthermore, we restrict ourselves to considering particles "travelling to the right". This statement can be formulated by requiring that the Fourier transform of this wave-function in \textit{momentum space} is supported only on $(0,+\infty)$. These wave-functions will be called \textit{right-movers}.\\
+In this scenario, one might think that the probability density must flow to the right for all $t\in(0,+\infty)$ and everywhere in space. Hence the probability of finding the particle on the right of a given reference point might seem to be increasing with time. Counterintuitively, instead the probability can decrease in time. this phenomenon is referred to as \textit{quantum backflow}.\\
+The scope of this work is to report and to discuss the main results regarding the fundamental properties as well as the magnitude of backflow in two different scenarios: the \textit{non-interacting} and the \textit{interacting} one.\\
+For \textit{free particles}, we will prove that the amount of probability which can 
+"flow back" through a reference point in a given interval of time is ruled by a suitable bounded and self-adjoint  $B$, called \textit{backflow operator}. Then, we will prove that the maximum amount of backflow $\lambda$ is equal to the supremum of the spectrum of $B$. We refer to $\lambda$ as \textit{backflow constant}. Using numerical methods, we will estimate $\lambda\approx0.038452$. We will also study the spatial extension of backflow using the density current $j_\psi(x)=i/2(\psi(x)\partial_x\psi^*(x)-\psi^*(x)\partial_x\psi(x))$. In detail, we will prove that there exists a constant $\beta_0(f)$ such that
+\begin{equation}
+	\int_{-\infty}^{\infty}\nspace f(x)j_\psi(x)\, \dd x \ge \beta_0(f)>-\infty
+	\label{eq:first}
+\end{equation}
+for all normalized right-moving wave functions and for all positive averaging functions $f\ge0$.\\
+In the \textit{interacting scenario}, we will investigate the presence of backflow for particles scattering against a potential wall $V$. Herein, complications arise since the presence of a potential $V$ implies the splitting of the incident wave-function into a transmitted and a reflected component which travel in opposite direction. This makes the concept of "right-moving" particle less clear. Hence we will introduce \textit{asymptotic} right-movers as those wave-functions that far away in the past, and far away from the potential wall $V$, behave like free and right-moving wave-functions. If we consider a non-interacting right-mover $\phi$, it might be seen as the incoming asymptotic form of an interacting state $\psi$. The link between the two wave-functions is given by the \textit{M\o{}ller operator} $\Omega_V$ of the Hamiltonian with the potential $V$, $\psi=\Omega_V\phi$. In this scattering scenario, our scope is to generalize the result (\ref{eq:first}). Stated differently, we shall study the existence of lower bounds for the average
+\begin{equation}
+	\int_{-\infty}^{\infty}\nspace\!f(x)j_{\Omega_V\psi}(x)\,\dd x
+\end{equation}
+for a generic normalized right-mover $\psi$ and for a positive function $f\ge0$. Although the reflection component can interfere, we will prove that there exists, for all short range potentials $V$ and for all positive smearing functions $f\ge0$, a constant $\beta_V(f)>-\infty$ such that
+\begin{equation}
+	\int_{-\infty}^{\infty}\nspace\!f(x)j_{\Omega_V\psi}(x)\,\dd x\ge\beta_V(f)
+	\label{eq:second}
+\end{equation}
+for all normalized right-mover $\psi$.\\
+ \\ 
+
+The thesis is organized as follows.\\
+In the first chapter, it will be presented an overview of the main mathematical
+notions needed in order to set the discussion on quantum mechanics and backflow. The main
+topics will be \textit{Hilbert spaces}, \textit{operators} and their \textit{spectrum}, \textit{Schwartz test-functions}, \textit{Fourier transform} as well as the basic concepts of quantum mechanics with particular attention both to the \textit{interacting picture} in scattering scenarios and to \textit{M\o{}ller operators}. \\
+In the second chapter, it will be discussed the backflow effect in a non-interacting scenario. First of all, we will begin with an historical overview of the results obtained in the past concerning quantum backflow, from the first theoretical formulations, until the most recent analytical and numerical results. Then we introduce the problem of backflow for a free-particle. We will define rigorously the concept of \textit{right-mover} and give some examples of wave-functions in which backflow occurs. Then, we will search a lower bound for the flux of probability across a reference point in a given time interval. To do this, we must reformulate the problem as the search for an supremum of the spectrum of an operator called \textit{backflow operator}. We will prove that such a lower bound exists and hence that the flux of probability across the reference point is always greater than $-\lambda$, where $\lambda\in(0,1)$ is the \textit{backflow constant}. At the end of the chapter, numerical methods will be presented in order to estimate $\lambda$. In particular, using the \textit{power method} we will evaluate the backflow constant $\lambda\approx0.038452$.\\
+The third chapter is divided in two main sections. In the first one, we will discuss the spatial extension of backflow for normalized right-movers at a given instant of time. It will be proved that the average of the density current for a right-moving state, as in (\ref{eq:first}), is bounded from below by a constant $\beta_0(f)\in(-\infty,0)$. The second section will be devoted to the analysis of backflow in scattering theory. First, the problem of backflow will be reformulated introducing the concept of \textit{asymptotic} right-moving wave-functions. Then, we will study the existence of a negative lower bound for the average current, as in (\ref{eq:second}). To do so, the infimum of the spectrum of an unbounded operator, called \textit{asymptotic current operator} will be investigated. At the end, we will prove that backflow can occur also in scattering scenarios and that the average current is always bigger than a suitable constant $\beta_V(f)$ determined by the potential $V$ and the positive smearing functions $f\ge0$. 

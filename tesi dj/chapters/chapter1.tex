@@ -1,0 +1,595 @@
+\chapter{Mathematical Tools}
+\label{chapter1}
+
+The aim of the first chapter is to introduce the theoretical set-up needed for our investigations. Here, we will outline the main mathematical tools and theorems that will be used in the study of quantum backflow. First of all, we will sum up the basic concepts of Hilbert spaces and the linear operators living on it. The second section will be entirely devoted to the introduction of the Fourier transform and of its properties which are essential in the study of kinematic aspects of particles. Last, we will focus on quantum mechanics summarizing the Schr\"{o}dinger equation and the concept of observable as well as its connection with linear operators. 
+
+\section{Hilbert Spaces and Operators}
+
+In quantum mechanics a wave function is a complex valued map $\phi$ whose square of absolute value $|\phi(x)|^2$ represents the distribution probability of finding the particle somewhere in the physical space. Generally, those functions are thought as elements of a particular vector space called Hilbert space. In this section it will be given a complete definition of such concept.\\
+
+
+First of all, we introduce a class of vector spaces in which we could define the "length" of a vector or the "distance" between two different vectors. Hence we have
+\begin{definition}[\textbf{Normed vector space}]	
+	Let $V$ be a vector space in complex field. $V$ is called \textit{normed space} if there exists a map $\|\cdot\|:V\to\mR$ such that:
+	\begin{itemize}
+		\item[(a)] $\|v\|\ge0\ \forall v\in V$, and $\|v\|=0$ if and only if $v=0$
+		\item[(b)] $\|\alpha v\|=|\alpha|\|v\|\ \ \forall\alpha\in\mC,\ \forall v\in V$
+		\item[(c)] $\|v+w\|\le\|v\|+\|w\|\ \forall v,w\in V$
+	\end{itemize}
+	and this map $\|\cdot\|$ is called \textit{norm} of the space $V$.
+\end{definition}
+\begin{example}
+	Consider the vector space $\mC^n$ with the norm defined by
+$||z||=\bigg[\sum_{i=1}^n|z_i|^2\bigg]^{\frac{1}{2}}$, where $z=(z_1,\ldots,z_n)\in\mathbb{C}^n$. This is a normed space. 
+\end{example}
+The definition of norm naturally introduce a concept of convergence in such vector space. In fact, we can define that a certain sequence $\{v_n\}\in V$ converges to a vector $v\in V$ if $\lim_{n\to\infty}\|v_n-v\|=0$.\\
+A well-known fact from theory on $\mR^n$ is that convergent sequences $\{v_n\}_{n\in\mathbb{N}}$ in a normed space $V$ satisfy the \textit{Cauchy property} (see [\citealp[Chap. 2]{more}]):
+
+\begin{definition}[\textbf{Cauchy sequences}] A sequence $\{v_n\}_{n\in\mathbb{N}}$ in a normed space $V$ is called a \textit{Cauchy sequence} if, for any $\varepsilon>0$, there exists $N_\varepsilon\in\mR$ such that $\|v_n-v_m\|<\varepsilon$ whenever $n,m>N_\varepsilon$.
+\end{definition}
+
+Now, we introduce the concept of \textit{complete normed space}. 
+
+\begin{definition}[\textbf{Banach spaces}]
+ A normed space is called a \textit{Banach space} if it is
+ \textit{complete}, i.e. if any Cauchy sequence inside the space converges to a point of the
+ space.
+\end{definition}
+
+ Now, we want to identify Hilbert spaces. In this new class of vector spaces we will be able to define the fundamental concept of scalar product.  
+ \begin{definition}[\textbf{Hilbert space}]
+ 	Let $\mathcal{H}$ be a vector space over the complex field. $\mathcal{H}$ is a \textit{Hilbert space} if there exists a map $(\cdot|\cdot):\mathcal{H}\times \mathcal{H}\to \mC$ (called \textit{scalar product}) such that:
+ 	\begin{itemize}
+ 		\item[(a)] $(w|\alpha v_1+ \beta v_2)=\alpha(w|v_1)+\beta(w|v_2)\ \forall w,v_1,v_2 \in \mathcal{H},\ \forall \alpha,\beta\in\mC$
+ 		\item[(b)] $(w|v)=\overline{(v|w)}\ \forall v,w\in \mathcal{H}$
+ 		\item[(c)] $(v|v)\ge0\ \forall v\in \mathcal{H}$ and $(v|v)=0$ if and only if $v=0$
+ 	\end{itemize}
+ 	and if $\mathcal{H}$ is complete with the norm defined by $\sqrt{(\cdot|\cdot)}$.
+ \end{definition}
+ 
+ \begin{example} 
+ 	\begin{itemize}
+ 		\item[\textbf{(a)}] $\mC^n$ with the inner product $(u|v):=\sum_{i=1}^{n}\overline{u_i}v_i$, where $u=(u_1,...,u_n)$, $v=(v_1,...,v_n)$, is a Hilbert space.
+ 		\item[\textbf{(b)}] Consider the set
+ 		\begin{equation}
+ 			L:=\left\{f:\mR^n\to\mC \ \bigg| \int_{\mR^n}\nspace|f(x)|^2\,\dd^n x<\infty \right\}\big.
+ 		\end{equation}
+ 		 and the equivalence class $[f]$ of a function $f\in L$: 
+ 		 \begin{equation}
+ 		 	[f]=\{g\in L\ |\ f=g\ \text{almost everywhere}\}.
+ 		 \end{equation}
+ 		 Then, we define the space $L^2(\mR^n)$ as
+ 		 \begin{equation}
+ 		 	L^2(\mR^n)=\{ [f] \ |\ f\in L \}.
+ 		 \end{equation}
+ 		 $L^2(\mR^n)$ is a Hilbert space with the scalar product defined by:
+ 		 \begin{equation}
+ 		 ([f]|[g])=\int_{\mR^n}\!\nspace \overline{f(x)}g(x)\, \dd^n x.
+ 		 \end{equation}
+ 		 This space plays a key role in quantum mechanics. In fact each wave function $\phi$ is considered an element of this space with $\int_{\mR^n}|\phi(x)|^2\, \dd^n x=1$.\footnote{Hereafter, we shall write $f$ instead of $[f]$.}
+ 	\end{itemize}
+ \end{example}
+
+Now we enunciate some notable definitions and results concerning the linear operators on normed and Hilbert spaces. 
+ \begin{definition}
+ 	Let $V$ and $V'$ be normed spaces. A linear map $T:D(T)\to V'$, where $D(T)\subseteq V$ is a subspace of $V$, is called a \textbf{linear operator}. Furthermore,
+ 	\begin{itemize}
+ 		\item[(a)] if $D(T)$ is dense in $V$, $T$ is called a \textbf{dense} operator\footnote{$D(T)$ is dense in $V$ when for all $v\in V$ there exists a sequence $\{v_n\}\in D(T)$ converging to $v$.}.
+ 		\item[(b)] The set $\{Tv\ |\ v\in D(T) \}$ it is called \textbf{Range} of the operator $T$ and it is indicated with the symbol $Ran(A)$.
+ 		\item[(c)] The set $\{v\in D(T)\ |\ Tv=0\}$ it is called \textbf{Kernel} of the operator $T$ and it is indicated with the symbol $Ker(A)$.
+ 		\item[(d)] $T$ is a \textbf{closed} operator if its graph $G(T):=\{(v,Tv)\in V\times V'\ |\ v\in D(T)\}$ is a closed set. Instead $T$ is a \textbf{closable} operator if there exists a closed extension of $T$ (called $\overline{T}$).
+ 		\item[(e)] An operator $T:V\to V'$ is \textbf{bounded} if $\exists k\in(0,+\infty)$ such that
+ 		\begin{equation}
+ 				\|Tv\|\le k\|v\|\ \forall v\in V
+ 		\end{equation}
+ 		or equivalently,
+ 		\begin{equation}
+ 			\|T\|:=\sup_{\|v\|=1}\|Tv\|<+\infty
+ 				\label{eq:operator_norm}
+ 		\end{equation}
+ 	\end{itemize}
+ 	We represent the set of linear operators from $V$ to $V'$ with the symbol $\mathcal{L}(V,V')$ while bounded operators are indicated with $\mathcal{B}(V,V')$.
+ \end{definition}
+ 
+ \begin{oss}
+ The basic property of bounded operators is that for any bounded subset of the domain $V$ its image remains bounded. Furthermore, one can prove that $\mathcal{B}(V)\equiv\mathcal{B}(V,V)$ is also a normed space with the definition of norm given in (\ref{eq:operator_norm}).  
+ \end{oss}
+ 
+ \begin{example}
+ 	\label{ex:momentum_op}
+ 	Consider the Hilbert space $L^2(\mR)$ and the derivative operator $P:=-i\partial_x$ (called the \textit{momentum} operator). $P$ could not be defined for all the elements in $L^2(\mR)$. But it is well defined in the space of test-functions $C^\infty_0(\mR)$, which is a dense subspace of $L^2(\mR)$. Other examples of dense operators in $L^2(\mR)$ are the multiplication operator $X:=x$ (called \textit{position} operator) and $P^2:=-\partial_x^2$. All these operators will be investigated more in detail in the third part of the chapter.
+ \end{example}
+
+
+\begin{theorem}
+	Let be $V$ and $V'$ two normed space and $T:V\to V'$ a linear operator. Then the following statements are equivalent:
+	\begin{itemize}
+		\item[(a)] $T\in\mathcal{B}(V,V')$
+		\item[(b)] $T$ is continuous,
+		\item[(c)] $T$ is continuous in $0$.
+	\end{itemize}
+\end{theorem}
+A proof of this theorem could be found in [\citealp[Th. 2.43]{more}].\\
+
+ Another fundamental concept is that of \textit{adjoint operator}. It is common to have to deal with the scalar product of a vector and the image of another vector under a linear operator. Take for example a linear operator $T:D(T)\to\mathcal{H}'$ and consider the scalar product:
+ \begin{equation}
+ \label{eq:scalar_product}
+ 	(w|Tv)\ \text{with}\ v\in D(T)\subseteq \mathcal{H},\ w\in \mathcal{H}'.
+ \end{equation}  
+  We wonder if there exists a particular operator $T^*$ defined in some subspace $D(T^*)\subseteq\mathcal{H}'$ such that
+ \begin{equation}
+ 	(T^* w|v)=(w|Tv) \ \forall w\in D(T^*), v\in D(T)
+ 	\label{eq:adjoint_scalar_product}
+ \end{equation}
+ More generally, we may consider the scalar product in (\ref{eq:scalar_product}) as a linear functional $f_T:D(T)\to \mC$ which maps $v\mapsto f_T(v):=(w|Tv)$ and we ask whether there exists a particular vector $w_f$ which \textit{represents} our functional, i.e. $f_T(v)=(w_f|v)$. Here $w_f$ has the same role of $T^*w$ in the previous equation. In order to investigate $w_f$ existence:
+ \begin{prop}[\textbf{Existence of adjoint operator}]
+ 	 If $\mathcal{H}$ and $\mathcal{H}'$ are Hilbert spaces and $T\in\mathcal{B}(\mathcal{H},\mathcal{H}')$, then there exists a unique adjoint operator $T^*\in\mathcal{B}(\mathcal{H}',\mathcal{H})$ such that
+ \begin{equation}
+ 	(w|Tv)=(T^*w|v)\ \forall w\in\mathcal{H}',\ \forall v\in\mathcal{H}.
+ \end{equation}
+ \end{prop}
+% \begin{oss}
+ %	The name "bounded" lies in the fact that the norm of the image of a vector by the operator $T$ is just bounded by
+ %	\begin{equation}
+ %		\|Tv\|\le\|T\|\|v\|\ \forall v\in V
+ %	\end{equation}
+ %	Furthermore, it could be proved that set $\mathcal{B}(V)$ with the definition of norm given here, is also a normed space.
+ %\end{oss}
+ The existence of $T^*$ is a consequence of the \textit{Riesz's representation theorem} and a complete proof of the equivalence and of the other points above could be found on [\citealp[Chapter 2-3]{more}].\\
+ 
+ 
+ Now, we classify different types of bounded operators.
+ \begin{definition}
+ 	Let $\mathcal{H}$ and $\mathcal{H}'$ be Hilbert spaces.
+ 	\begin{itemize}
+ 		\item[(a)] $T\in\mathcal{B}(\mathcal{H})$ is \textbf{self-adjoint} if $T=T^*$.
+ 		\item[(b)] $T\in\mathcal{L}(\mathcal{H},\mathcal{H}')$ is \textbf{isometric} if $(Tv|Tw)=(v|w)$ for all $v,w\in\mathcal{H}$, or equivalently if $T\in\mathcal{B}(\mathcal{H},\mathcal{H}')$ and $T^*T=\mathbb{I}_{\mathcal{H}}$.
+ 		\item[(c)] $T\in\mathcal{L}(\mathcal{H},\mathcal{H}')$ is \textbf{unitary} if it is isometric and surjective , or equivalently if $T\in\mathcal{B}(\mathcal{H},\mathcal{H}')$, $T^*T=\mathbb{I}_{\mathcal{H}}$ and $TT^*=\mathbb{I}_{\mathcal{H}'}$.
+ 		\item[(d)]$T\in\mathcal{L}(\mathcal{H},\mathcal{H})$ is \textbf{positive} if $(v|Tv)\ge0$ for all $v\in\mathcal{H}$.\footnote{Generally, a positive operator is indicated with "$T\ge0$".}
+ 	\end{itemize}
+ \end{definition}
+ 
+Now, we consider the set of all operators. In particular, we want to study the existence of an adjoint for these operators. In this scenario, complications arise since the choice of $T^*w$ as in (\ref{eq:adjoint_scalar_product}) could not be unique. In fact, if we take a vector $T^*w$ such that equation (\ref{eq:adjoint_scalar_product}) holds for any $v\in D(T)$, and sum $v_0\in D(T)^\perp$, the equation still holds true and $T^*$ could not be a function. In order to avoid this problem, we need to impose our operators to be at least dense so that $D(T)^\perp=\emptyset$). In this case:
+ 
+ \begin{definition}
+ 	Let $\mathcal{H}$ be an Hilbert space let and $T:D(T)\to\mathcal{H}$ be a dense operator. Then we call the adjoint operator $T^*$ the operator defined in
+ 	\begin{equation}
+ 		D(T^*)=\{v\in\mathcal{H}\ |\ \exists z_{T,v}\in\mathcal{H} \ \text{such that } (v|Tw)=(z_{T,v}|w)\ \forall w\in D(T)\},
+ 	\end{equation}
+ 	and which maps $v\mapsto T^*v:=z_{T,v}$. Furthermore, $T$ is
+ 	\begin{itemize}
+ 		\item[(a)] \textbf{Hermitian} if $\forall v,w\in D(T)$ we have $(v|Tw)=(Tv|w)$,
+ 		\item[(b)] \textbf{symmetric} if it is Hermitian and $D(T)$ is dense,
+ 		\item[(c)] \textbf{self-adjoint} if it is symmetric and $T=T^*$,
+ 		\item[(d)] \textbf{essentially self-adjoint} if $D(T)$ and $D(T^*)$ are dense and $T^*=T^{**}$,
+ 		\item[(e)] \textbf{normal} if $T^*T=TT^*$ in their standard domain.
+ 	\end{itemize} 
+ \end{definition}
+ 
+ \begin{example}
+ 	Let us consider the momentum operator $P:=-i\partial_x$ as Example \ref{ex:momentum_op}. As we said before, $P$ is dense since we could define it over the dense subspace of smooth functions with compact support $C^\infty_0(\mR)$. Using integration by parts it holds that $\forall f,g\in C^\infty_0(\mR)$ $(f|-i\partial_x g)=(-i\partial_x f|g)$. Then $P$ is Hermitian as well. 
+ \end{example}
+ 
+ The next concept we have to describe is that of \textit{spectrum} of a linear operator. It is assumed in quantum mechanics that the possible results of a measurement are given by the "eigenvalues" of suitable linear operators. We define the spectrum has the complement of another set of complex numbers called \textit{resolvent set}.
+ \begin{definition}[\textbf{Resolvent and Spectrum}]
+ 	Let be $T$ an operator in a normed space $X$.
+ 	\begin{itemize}
+ 		\item[(a)] The \textit{resolvent set} of $T$ the set $\rho(T)$ containing the values $\lambda\in\mC$ such that:
+ 		\begin{itemize}
+ 			\item[(i)] $\overline{Ran(T-\lambda\mathbb{I})}=X$,
+ 			\item[(ii)] $(T-\lambda\mathbb{I}):D(T)\to X$ is injective,
+ 			\item[(iii)] $(T-\lambda\mathbb{I})^{-1}:Ran(T-\lambda\mathbb{I})\to X$ is bounded.
+ 		\end{itemize}
+ 		\item[(b)] The \textit{spectrum} of $T$ is the set $\sigma(T):=\mC\setminus\rho(T)$.\\
+ 		It is the union of the following three sets:
+ 		\begin{itemize}
+ 			\item[(i)] the \textit{point spectrum} of $T$, $\sigma_p(T)$, containing all $\lambda\in\mC$ such that $T-\lambda\mathbb{I}$ is not injective,
+ 			\item[(ii)] the \textit{continuous spectrum}, $\sigma_c(T)$, containing all $\lambda\in\mC$ such that $T-\lambda\mathbb{I}$ is injective and $\overline{Ran(T-\lambda\mathbb{I})}=X$, but $(T-\lambda\mathbb{I})^{-1}$ is not bounded,
+ 			\item[(iii)] the \textit{residual spectrum}, $\sigma_r(T)$, containing all $\lambda\in\mC$  such that $T-\lambda\mathbb{I}$, but $\overline{T-\lambda\mathbb{I}}\neq X$.
+ 		\end{itemize} 
+ 	\end{itemize}
+ \end{definition}
+ \begin{oss}
+ 	 Note that from this definition the spectrum has a more complicate structure than the simple set of all complex numbers $\lambda$ such that exist a solution $v$ for the equation $Tv=\lambda v$ (the only point spectrum $\sigma_p(T)$).
+ \end{oss}
+
+ In our dissertation, the following relation between self-adjoint operators and their spectrum will be useful.
+ \begin{prop}
+ 	Consider a Hilbert space $\mathcal{H}$ and $T\in\mathcal{B}(\mathcal{H})$. Then, $\sigma(T)\subseteq[-\|T\|,\|T\|]$ holds. Furthermore, if $T=T^*$ we have
+ 	\begin{itemize}
+ 		\item[(a)]$\sigma(T)\subset[m,M]$, where $m=\inf_{\|v\|=1}(v|Tv)$ and $M=\sup_{\|v\|=1}(v|Tv)$,
+ 		\item[(b)] $m,M\in\sigma(T)$,
+ 		\item[(c)] $\|T\|=\max\{-m,M\}$.
+ 	\end{itemize}
+ \end{prop}
+ 
+ 
+Now, We need to introduce another tool: \textit{projectors}. We will see that evaluating the probability of an outcome from given measure is tantamount to projecting of a state $v\in\mathcal{H}$ on a closed subspace of a $\mathcal{H}$
+
+ \begin{definition}[\textbf{Projector operator}]
+ 	\label{def:projector}
+ 	Let $\mathcal{H}$ be a Hilbert space and let $P\in\mathcal{B}(\mathcal{H})$ be a bounded operator. $P$ is called an orthogonal projector if $P^2=P$ and $P=P^*$.
+ \end{definition}
+ 
+ %\begin{oss}
+ %	 It could be proved (see [\citealp[Prop. 3.53]{more}]) that, for each projector $P$, there exists a closed subspace $W\subseteq\mathcal{H}$ such that $P$ acts on a vector $v\in\mathcal{H}$ just by projecting him into $W$. \\
+% \end{oss}
+ 
+ \begin{oss}
+ An important result linked with projectors operators is the \textit{spectral theorem}. It states that, given a self-adjoint operators, it could be decomposed into an "integral"\footnote{For a more detailed discussion, see [\citealp[Chap. 8]{more}]} of projectors, each one  associated with an element of the spectrum.
+ \end{oss}
+ 
+ 
+ In quantum mechanics, dynamics is given by Schr\"{o}dinger equation. General solutions of this equation could be found using the following definition.
+ 
+ \begin{definition}
+ 	Let $A\in\mathcal{B}(\mathcal{H})$ where $\mathcal{H}$ is an Hilbert space. Then we define the operator $\exp(A)$ as
+ 	\begin{equation}
+ 	\exp(A):=\sum_{n=0}^{\infty}\frac{A^n}{n!}
+ 	\label{eq:exp_op}
+ 	\end{equation}
+ 	\label{def:exp}
+ \end{definition}
+ \begin{oss}
+ 	The sum reported in Eq. (\ref{eq:exp_op}) must be read as follows: The sequence of partial sums $S_m:=\sum_{n=0}^{m}A^n/n!$ converges to an operator in $\mathcal{B}(\mathcal{H})$, i.e. there exists an operator $\exp(A)\in\mathcal{B}(\mathcal{H})$ such that $\lim_{m\to\infty}\|S_m-\exp(A)\|=0$.
+ \end{oss}
+ 
+ \begin{theorem}[\textbf{Stone's Theorem}]
+ 	\label{th:stone}
+ 	Let $H$ be a Hilbert space. If $T\in\mathcal{B}(\mathcal{H})$ is self-adjoint, then the operators $U_t:=\exp(itT)$ (with $t\in\mR$):
+ 	\begin{itemize}
+ 		\item[(a)] form a strongly continuous one-parameter unitary group, i.e. for all $t_0\in\mR$, $\lim_{t\to t_0}U_t=U_{t_0}$ and $U_{t_0}$ is unitary.
+ 		\item[(b)] if $\psi\in\mathcal{H}$, the limit
+ 		\begin{equation}
+ 			\partial_t|_{t=0}U_t\psi:=\lim_{t\to 0} \frac{U_t\psi-\psi}{t}
+ 		\end{equation}
+ 		exists;
+ 		\item[(c)] if $\psi\in\mathcal{H}$:
+ 		\begin{equation}
+ 			\partial_t|_{t=0}\psi=iT\psi.
+ 		\end{equation}
+ 	\end{itemize}
+ \end{theorem}
+ 
+ A proof of this theorem is found in [\citealp[Th. 9.33]{more}]
+ 
+ 
+ \section{Fourier Transform}
+ The second part of this section will be devoted to the concept of \textit{Fourier transform}. First of all, we need to introduce the class of rapidly-decreasing test function (or Schwartz function) and tempered distributions. Then we will give a definition of Fourier Transform for these spaces and in the end extend this definition to the class of square-summable functions $L^2(\mR)$.
+ 
+ %It is known that if we take a real function $f$ defined in some interval it could be decomposed as an infinite sum of trigonometric function (called the Fourier series), unless $f$ breaks some necessary hypothesis. In general, for functions defined in $\mR$ (i.e. $L^2(\mR)$) things are more complicated but we are able to write a decomposition on the space of frequencies. In this case we will no longer have an infinite countable sum, but we have to integrate all the \textit{frequencies} over $\mR$. The function defined by all these frequencies components is called the Fourier transform of our function. But before to arrive at the rigorous definition we need to do a necessary preamble. Then, we start with the following definition:
+ 
+ \begin{definition}[\textbf{Schwartz test function}]
+ 	Let $f:\mR\to \mC$ a smooth function. Then, $f$ its called a \textit{Schwartz test function} (or \textit{rapidly decreasing functions}) if for all $\alpha,\beta\in\mathbb{N}$ we have $\|f\|_{\alpha,\beta}:=\sup_{x\in\mR}|x^\alpha\partial_x^\beta f(x)|<+\infty$. This class of functions is indicated with the symbol $\mathcal{S}(\mR)$. Furthermore, a sequence $\{f_n\}\in\mathcal{S}(\mR)$ converges in $\mathcal{S}(\mR)$ if there exists a function $f\in\mathcal{S}(\mR)$ such that for all $\alpha,\beta\in\mathbb{N}$ we have $\lim_{n\to\infty}\|f_n-f\|_{\alpha,\beta}=0$. In this case we write $f_n\to f$ ("converges to").
+  \end{definition}
+  \begin{oss}
+  	The reason we introduce the class of function $\mathcal{S}(\mR)$ is the following: We want to see the space $L^2(\mR)$ (which represents the physical wave functions) as linear functional over $\mathcal{S}(\mR)$.
+  \end{oss}
+  
+  \begin{definition}[\textbf{Tempered distributions}]
+  	Let be $u:\mathcal{S}(\mR)\to\mC$ be a functional. We call $u$ a \textit{temperate distribution} if it is continuous with respect to the topology $\mathcal{S}(\mR)$, in the sense that, for every sequence $\{f_n\}\in\mathcal{S}(\mR)$ which converges to $f\in\mathcal{S}(\mR)$, $\lim_{n\to\infty} u(f_n)=u(f)$. We indicate the set of these functionals as $\mathcal{S}'(\mR)$.
+  	\end{definition}
+  	
+  	We need to define the elementary operations for distributions: \textit{derivatives} and \textit{multiplications} with smooth functions.
+  	
+  	\begin{definition}
+  	 Let $u\in\mathcal{S}'(\mR)$ and $\alpha\in\mathbb{N}$. We define the $\alpha$-th \textit{derivative}\footnote{Here $\alpha$ is the order of derivation} of $u$ a distribution $\partial_x^\alpha u\in\mathcal{S}'(\mR)$ such that
+  	\begin{equation}
+  		\partial_x^\alpha u(f)=(-1)^\alpha u(\partial_x^\alpha f)\ \forall\alpha\in\mathbb{N},\ \forall f\in\mathcal{S}(\mR).
+  	\end{equation}
+  	We also define the \textit{multiplication} of a temperate distribution $u\in\mathcal{S}'(\mR)$ with a smooth function $\varphi\in C^\infty(\mR)$, the temperate distribution $\varphi u$ defined as
+  	\begin{equation}
+  		\varphi u(f):=u(\varphi f)\ \forall f\in\mathcal{S}(\mR).
+  	\end{equation}
+  	\label{def:temp_distribution}
+  \end{definition}
+  Now we have the following proposition
+  \begin{prop}
+  	There exists a continuous embedding $L^2(\mR)\hookrightarrow\mathcal{S}'(\mR)$; for all $g\in L^2(\mR)$ the functional defined in $\mathcal{S}(\mR)$ as
+  	\begin{equation}
+  		(g|f)=\int_{-\infty}^{+\infty}\nspace\! \overline{g(x)}f(x)\, \dd x,\ \forall\ f\in\mathcal{S}(\mR)
+  	\end{equation}
+  	is a tempered distribution.
+  \end{prop}
+  \begin{oss}
+  	The last proposition entails that every square-integrable function generates a continuous functional in this space of rapidly-decreasing test-functions.
+  \end{oss}
+  
+ \begin{definition}[\textbf{Fourier transform}]
+ 	Let $f\in \mathcal{S}(\mR)$. We call the Fourier transform of $f$:
+ 	\begin{equation}
+ 		\hat{f}(p)\equiv\mathcal{F}[f](p)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}\nspace\nspace e^{-ipx}f(x)\, \dd x.
+ 		\label{eq:fourier_transform}
+ 	\end{equation}
+ 	On the contrary, if $u\in\mathcal{S}'(\mR)$, its Fourier transform is the functional $\hat{u}$:
+ 	\begin{equation}
+ 		\hat{u}(f)\equiv\mathcal{F}[u](f)=u(\hat{f})\ \forall f\in\mathcal{S}(\mR).
+ 	\end{equation}
+ 	\label{def:fourier_transform}
+ \end{definition}
+ 
+ \begin{oss}
+ 	 Observe (see [\citealp[Chap. 8]{fried2}]) that for each $f\in\mathcal{S}(\mR)$ and $u\in\mathcal{S}'(\mR)$, their Fourier transform also lies respectively in $\mathcal{S}(\mR)$ and in $\mathcal{S}'(\mR)$. In addition, there exists an inverse transformation $\mathcal{F}^{-1}$ defined as
+ 	 \begin{equation}
+ 	 \mathcal{F}^{-1}[g](x)\equiv\check{g}(x):=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}\nspace\!e^{ipx}g(p)\, \dd p\ \text{with}\ g\in\mathcal{S}(\mR),
+ 	 \end{equation}
+ 	 \begin{equation}
+ 	 \mathcal{F}^{-1}[u](f)\equiv \check{u}(f):=u(\check{f})\ \text{with}\ u\in\mathcal{S}'(\mR),\ \forall f\in\mathcal{S}(\mR).
+ 	 \end{equation}
+ \end{oss}
+
+  Once we defined $\mathcal{F}$, we state a few important properties;
+  
+ \begin{theorem}
+ 	\label{th:derivation}
+ 	Let $f\in \mathcal{S}(\mR)$. Then, we have:
+ 	\begin{itemize}
+ 		\item[(a)] $\hat{x^\alpha f}(p)=(-i)^\alpha\partial_p^\alpha\hat{f}(p)\ \forall \alpha\in\mathbb{N}$.
+ 		\item[(b)] $\hat{\partial_x^\alpha f}(p)=(-i)^\alpha p^\alpha\hat{f}(p)\ \forall \alpha\in \mathbb{N}.$ 
+ 	\end{itemize}
+ 	Now let $u\in\mathcal{S}'(\mR)$. Then, we have
+ 	\begin{itemize}
+ 	\item[(c)] $\hat{x^\alpha u}=(-i)^\alpha\partial_p^\alpha\hat{u}\ \forall \alpha\in\mathbb{N}$.
+ 	\item[(d)] $\hat{\partial_x^\alpha u}=(-i)^\alpha p^\alpha\hat{u}\ \forall \alpha\in \mathbb{N}.$ 
+ 	\end{itemize}
+ \end{theorem}
+ \begin{proof}
+ 	For point (a), we only need to re-write the function inside the integral (\ref{eq:fourier_transform}) $e^{ipx}x^\alpha f(x)$ as $(-i)^\alpha\partial_p^\alpha e^{-ipx}f(x)$ and take the derivative outside the integral. In order to prove point (b), we must use integration by parts and transfer the derivation on $f$ into a derivation on $e^{-ipx}$. So we can obtain our hypotesis. Point (c) and (d) can be proved by considering the distributions $ \hat{x^\alpha u}$ and $\hat{\partial_x^\alpha u}$ acting on some test function $f\in\mathcal{S}(\mR)$, and then using the definitions \ref{def:temp_distribution}, \ref{def:fourier_transform} and points (a), (b) to verify our thesis.
+ \end{proof}
+ 
+ \begin{theorem}[\textbf{Plancherel's Theorem}]
+ 	\label{th:planch}
+ 	Let $u\in \mathcal{S}'(\mR)$. Then $u\in L^2(\mR)$ if and only if $\hat{u}\in L^2(\mR)$. Furthermore, for all $u\in L^2(\mR)$
+ 	\begin{equation}
+ 		\|u\|_{L^2}=\|\hat{u}\|_{L^2}.
+ 	\end{equation}
+ 	Then the Fourier transform could be thought as a linear isometric operator in $L^2(\mR)$.
+ \end{theorem}
+ 
+%\begin{oss}
+ 	 The proof of this Theorem could be found in [\citealp[Th. 6.1]{gila}].% Note that Th. \ref{th:planch} allow us to   At this point of the section we are interested on thinking about the set $L^2(\mR)$ as true functions and giving sense to equation (\ref{eq:fourier_transform}) for those set, too. For this purpose, we enunciate the Plancherel's Theorem satisfying all our requests.
+% \end{oss}
+
+
+\begin{definition}[\textbf{Convolution product}]
+	Let be $f,g\in L^2(\mR)$. We define the \textit{convolution product} of $f$ and $g$ the function defined as 
+	\begin{equation}
+		f\star g(x):=\int_{-\infty}^{+\infty}\nspace\! f(x-y)g(y)\, \dd y
+		\label{eq:convolution}
+	\end{equation}
+\end{definition} 
+Once we defined the convolution product, we need to enunciate a theorem that will be useful during the investigation of our thesis.
+\begin{theorem}[\textbf{Convolution theorem}]
+	\label{th:conv_theorem}
+	For all $v,u\in L^2(\mR)$, the following identities holds:
+	\begin{itemize}
+		\item[(i)] $\hat{u\star v}=\hat{u}\hat{v},$
+		\item[(ii)] $ \hat{uv}=(2\pi)^{-\frac{1}{2}}\hat{u}\star \hat{v}$
+	\end{itemize}
+\end{theorem}
+  Now we can pass to the final section this first chapter and discuss about the basic concepts of quantum mechanics.
+ 
+ \section{Quantum Mechanics}
+ \label{sec:quantum_mechanincs}
+ \subsection{Axioms}
+ In the last part of this chapter we are going to investigate the foundations of quantum mechanics. The crucial points about the behavior of quantum systems could be outlined as follows (a more in-depth investigation on the axioms of quantum mechanics is present in [\citealp[Chap. 7]{more}]):
+ 
+ \begin{itemize}
+ 	\item[\textbf{(A1)}] The result of a measurement on a quantum system with fixed state has only probabilistic outcome. It is not possible to know the exact result of a measure (i.e. the position of a particle), but only the probability of each possible result. However, if a physical quantity has been measured, a second measure done immediately after the first one, will give the same result.
+ 	\item[\textbf{(A2)}]There exist \textit{non-compatible} physical quantities, in the following sense. Consider $A$, $B$ such quantities and a physical system in a given state. If we first measure $A$ and read the outcome $a$, and immediately after we make a measurement of $B$ obtaining $b$, Then a subsequent measuring of $A$ - as close as we want to the measurement of $B$ to avoid ascribing the result to the evolution of the state - will give a value $a_1\neq a$ in general. Furthermore, it's been seen that incompatible quantities are never functions one of the other and there not exist experimental apparatus able to measure at the same time the two quantities.\\
+ 	There also exist \textit{compatible} quantities in the following sense. Suppose that $A'$ and $B'$ are physical quantities of this type, then we make two successive and arbitrarily close measures of $A'$ and $B'$, obtaining the values $a$ and $b$ respectively. If we make a third measure arbitrarily close to the other two of the quantity $A'$, we will obtain again the value $a$. And the same happens if we exchange $A'$ with $B'$. It's has been seen that each quantity $A$ is self-compatible and that if a quantity $B$ is function of another quantity $C$, then they are compatible.
+ \end{itemize}
+ 
+ In Quantum Mechanics measurable quantities whose behavior is ruled by \textbf{(A1)} and \textbf{(A2)} are called \textit{observables}. In classical mechanics, the counterpart is described as "smooth" functions on the phase space. Instead in quantum mechanics, observables are thought as Hermitian operators defined on a suitable Hilbert space and the physical state of the underlying quantum system is thought as a vector of such space. Hence, we have the following statements:
+ \begin{itemize}
+ 	\item[\textbf{(A3)}] Observables correspond to Hermitian operators $A:D(A)\subseteq\mathcal{H}\to\mathcal{H}$ defined in some Hilbert space $\mathcal{H}$ and all possible results of a measurement are given by the elements of the spectrum $\sigma(A)$.%\footnote{Things are more complicated than that. }
+ 	\item[\textbf{(A4)}] The physical state of a quantum system is associated with a vector $\psi$ on this Hilbert space $\mathcal{H}$. This vector gives us all information required to define the distribution probability of all possible outcomes. In fact, the probability of measuring a certain value or set of values $P_\Delta^{(A)}$ (probability that a measure of $A$ gives a number inside the set $\Delta\subseteq\mR$) is:
+ 	\begin{equation}
+ 		P_\Delta^{(A)}:=(\psi|P\psi),
+ 		\label{eq:prob_proj}
+ 	\end{equation} 
+ 	where $P$ is a projector operator on the eigenspace associated with the elements of $\sigma(A)$ lying in $\Delta$. Furthermore, the expectation value $\braket{A} $ of $A$ is
+ 	\begin{equation}
+ 		\braket{A}=(\psi|A\psi).
+ 	\end{equation} 
+ 	In addition, a consequence of what said before is that the projector associated to $\mR$ is the identity $\mathbb{I}$
+ 	\begin{equation}
+ 		P^{(A)}_\mR=(\psi|\psi)=1,
+ 	\end{equation}
+ 	which implies $\|\psi\|=1$.
+ \end{itemize}
+ 
+ \begin{rem}
+ 	From the last equation we can understand why an observable $A$ has to be an Hermitian operator. Since the result of our measurements are real numbers, we want $\braket{A}\in\mR$ and $\sigma(A)\subseteq\mR$, but these conditions are implied by the fact that $A$ is Hermitian.
+ \end{rem} 
+  
+ \begin{oss}
+ 	The existence of projectors as in (\ref{eq:prob_proj}) is guaranteed by the \textit{spectral theorem}. More precisely, it states that for any self-adjoint operator $A$ there exists a one-parameter family of projectors that associates an element, or a subset, of $\sigma(A)$ the orthogonal projector into the corresponding eigenspace.
+ \end{oss}
+ 
+ \begin{example}
+ 	Let us consider the "position" operator defined in Ex. \ref{ex:momentum_op}. It is an operator $X:D(X)\to L^2(\mR)$ with $D(X)=C^\infty_0(\mR)$, which maps $f\mapsto xf$. It is called the "position" operator because it is really the Hermitian and symmetric operator associated with the measure of the position of a particle. A particle instead is described by a $\psi\in L^2(\mR)$ (also called "wave function") such that
+ 	\begin{equation}
+ 		\|\psi\|_{L^2}^2=\int_{-\infty}^{+\infty}\nspace\!|\psi(x)|^2\, \dd x =1.
+ 	\end{equation}
+ 	Here $|\psi(x)|^2$, following statement \textbf{(A4)}, has the value a of density probability function for the position of the particle. Moreover, the projector operator associated with a certain interval $(a,b)\subset\mR$ is the characteristic function $\chi_{(a,b)}$\footnote{$\chi_{(a,b)}$ is the function which maps to zero outside $(a,b)$ and one inside} and the probability of finding the particle within the interval $(a,b)$ is:
+ 	\begin{equation}
+ 		P_\Delta^{(X)}=(\psi|\chi_{(a,b)}\psi)=\int_{-\infty}^{+\infty}\nspace\! \chi_{(a,b)}(x)|\psi(x)|^2\, \dd x=\int_{a}^{b}\nspace\!|\psi(x)|^2\, \dd x.
+ 	\end{equation} 
+ 	The expectation value of $X$ is given by:
+ 	\begin{equation}
+ 		\braket{X}=(\psi|X\psi)=\int_{-\infty}^{+\infty}\nspace\!x|\psi(x)|^2\, \dd x.
+ 	\end{equation}
+ \end{example}
+ \begin{example}
+ 	Another example is the "momentum" operator $P:=-i\partial_x$ defined in $D(P)=C_0^\infty(\mR)$. Using integration by parts, one can prove that $P$ is Hermitian and symmetric. As well as $X$ is the operator associated to a position measurement, so $P$ is the operator associated to the physical quantity of momentum and it is defined in the same Hilbert space of $X$. Its expectation value is
+ 	\begin{equation}
+ 		\braket{P}=(\psi|P\psi)=-i\int_{-\infty}^{\infty}\nspace\!\psi^*(x)\partial_x\psi(x)\, \dd x
+ 	\end{equation} 
+ 	Note that if we take the Fourier transform of a wave function $\psi\in L^2(\mR)$ we have (using Th. \ref{th:derivation})
+ 	\begin{equation}
+ 		P\psi=P\mathcal{F}^{-1}\mathcal{F}\psi=\frac{-i}{\sqrt{2\pi}}\partial_x\int_{-\infty}^{+\infty}\nspace\! e^{ipx}\hat{\psi}(p)\, \dd p=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}\nspace\!e^{ipx}p\hat{\psi}(p)\, \dd p,
+ 	\end{equation}
+ 	while
+ 	\begin{equation}
+ 		\braket{P}=(\mathcal{F}^{-1}\mathcal{F}\psi|P\mathcal{F}^{-1}\mathcal{F}\psi)=(\mathcal{F}^{-1}\mathcal{F}\psi|\mathcal{F}^{-1}\mathcal{F}\hat{P}\psi)=\int_{-\infty}^{\infty}\nspace\!p|\hat{\psi}(p)|^2\, \dd p,
+ 	\end{equation}
+ 	where we defined $\hat{P}:\phi(p)\mapsto p\phi(p)$. This entails that $P$ could be transformed from a derivative operator in one space (which could be called the "position" space), to a multiplicative operator $\hat{P}$ in the transformed space (called the "momentum" space). The same thing could be said in the opposite way for the operator $X$.
+ \end{example}
+ \begin{rem}
+ 	Considering particles of mass $m>0$, it will be convenient to work with dimensionless variables $x$, $p$, etc., and dimensionless functions by using a length scale $\ell$ as the unit of length, $\hbar/\ell$ as the unit of momentum, $m\ell^2/\hbar$ as the unit of time, and $\hbar^2/m\ell^2$ as the unit of energy, effectively setting $m=\hbar=1$.
+ \end{rem}
+ 
+ \subsection{Dynamics}
+We now focus on the time evolution of a physical system. We are interested in the equation which determines how the vector $\psi$, which describes the underlying system, evolves in the Hilbert space when the system is interacting. This role, in non-relativistic quantum mechanics, is played by \textit{Schr\"{o}dinger equation}. Hence we have
+ \begin{itemize}
+ 	\item[\textbf{(A5)}] The time evolution of a physical state, described by a vector $\psi$ in a Hilbert space $\mathcal{H}$ is given by the \textit{Schr\"{o}dinger equation}
+ 	\begin{equation}
+ 		i\partial_t\psi=H\psi
+ 	\end{equation}
+ 	where $H$ is the Hamiltonian operator, it is Hermitian and it represents the energy of a physical system. We can write its expectation value as
+ 	\begin{equation}
+ 		\braket{H}=(\psi|H\psi).
+ 	\end{equation}
+ \end{itemize} 
+ In the case of particles which travel in the physical space under the action of a potential $V(x)$, the Hilbert space $L^2(\mR)$\footnote{For particles moving in three dimensions we consider $L^2(\mR^3)$}, the Hamiltonian $H$ is
+ \begin{equation}
+ 	H:=\frac{1}{2}P^2+V(X) 
+ 	\label{eq:hamiltonian}
+ \end{equation}
+ where $P^2/2$ is the "kinetic energy" operator while $V(X)$ is the operator $\psi\mapsto V(X)\psi:=V(x)\psi(x)$. Here $H$ could be interpreted as the energy of a unit mass particle which travels in a potential well ruled by $V$.\\
+ 
+  Now we want to find a general solution for Schr\"{o}dinger equation. In particular, given a fixed initial state $\psi(0)$ for our physical system, we want to determine the final state at a certain time $\psi(t)$. In order to find these solutions, we must resume Def. \ref{def:exp} for exponential operators and Stone's Theorem \ref{th:stone}.\\
+  Given an Hamiltonian $H$, let us consider the operator
+  
+% \begin{definition}
+ %	Let $A\in\mathcal{B}(\mathcal{H})$ where $\mathcal{H}$ is an Hilbert space. Then we define the operator $\exp(A)$ as
+ %	\begin{equation}
+ %		\exp(A):=\sum_{n=0}^{\infty}\frac{A^n}{n!}
+ %	\end{equation}
+ %\end{definition}
+ %\begin{oss}
+ %	The sum reported in the previous definition must be read in this way: the sequence of partial sums $S_m:=\sum_{n=0}^{m}A^n/n!$ converges to some operator in the space $\mathcal{B}(\mathcal{H})$, in the sense that there exists an operator $\exp(A)\in\mathcal{B}(\mathcal{H})$ such that $\lim_{m\to\infty}\|S_m-\exp(A)\|=0$.
+ %\end{oss}
+ %Once we defined the map $\exp$ for bounded operators, we can give a general formula for the solutions of Schr\"{o}dinger equation. In fact, given a certain Hamiltonian $H$ for our system, let's consider the operator
+ \begin{equation}
+ 	U(t):=\exp(-iHt)=\sum_{n=0}^{\infty}\frac{(iHt)^n}{n!}
+ \end{equation}
+ and suppose that this sum is well-defined. $U(T)$ is called \textit{unitary evolution operator} and it indicates how a fixed initial state evolve with time. In fact, if we take $\psi_0\in\mathcal{H}$ with $\|\psi_0\|=1$ as initial state, Then, according to Stone's theorem, $\psi_t:=U(t)\psi_0$ is the solution of our Schr\"{o}dinger equation since
+ \begin{equation}
+ 	i\partial_t\psi_t=i\partial_t\exp(-iHt)\psi_0=i(-iH)\exp(-iHt)\psi_0=H\psi_t.
+ \end{equation}
+ It could be seen that $U(t)$ is Hermitian and that $U(t)^*U(t)=\mathbb{I}$ (from here the term \textit{unitary}). Hence
+ \begin{equation}
+ 	\|\psi_t\|^2=(U(t)\psi_0|U(t)\psi_0)=(\psi_0|U(t)^*U(t)\psi_0)=\|\psi_0\|^2=1.
+ \end{equation}
+ %At this level, it's useful to introduce the concept of \textit{density probability current}.
+ \begin{definition}
+ 	\label{def:density_current}
+ 	Let $\psi\in L^2(\mR)$. Then the density probability current is
+ 	\begin{equation}
+ 	j_\psi(x,t):=\frac{1}{2i}[\partial_x\psi(x,t)\psi^*(x,t)-\psi(x,t)\partial_x\psi^*(x,t)],
+ 	\label{eq:density_current}
+ 	\end{equation}
+ \end{definition}
+This quantity gives us information how probability flows in space and it is bounded with the density probability function $\rho(x,t):=|\psi(x,t)|^2$ by the \textit{continuity equation}
+\begin{equation}
+	\partial_t\rho(x,t)+\partial_x j_\psi(x,t)=0.
+\end{equation}
+Now, we turn back to our physical particles described by square-integrable functions and consider the Hamiltonian $H_0$ given by only the kinetic term of equation (\ref{eq:hamiltonian}) $H_0=P^2/2$. This Hamiltonian represents the evolution of free particles which are not subjected by any external potential. We note that in this case, solutions given by $U(t)\psi_0=\exp(-iH_0t)\psi_0$ have a simple form. Since the derivative operator $P$ could be transformed to a multiplicative operator in the Fourier-transformed space, then the exponential operator $\exp(-iP^2t/2)$ could be seen as a multiplicative phase in the "momentum" space.
+\begin{equation}
+	\exp(-iP^2t/2)\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}\nspace\! e^{ipx}\hat{\psi_0}(p)\, \dd p=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}\nspace\! e^{ip(x-pt/2)}\hat{\psi_0}(p)\, \dd p
+\end{equation} 
+In presence of a generic potential $V(x)$, complications arise. In this case it is helpful to introduce the \textit{interaction picture}\footnote{see [\citealp[Chap. 5, Sect. 5]{sakurai}]}.
+We consider an Hamiltonian
+\begin{equation}
+	H=H_0+V(X)
+	\label{eq:general_H}
+\end{equation}
+where $H_0=P^2/2$. Given a solution of the Schr\"{o}dinger equation $\psi(t)$, with initial condition $\psi(0)=\psi_0$, we define
+\begin{equation}
+	\psi_I(t):=e^{iH_0t}\psi(t)\, ,
+	\label{eq:interacting_picture}
+\end{equation}
+where $\psi_I(t)$ stands for a state that represents the same physical situation in \textit{interacting picture}. At $t=0$, $\psi_I(0)=\psi(0)=\psi_0$. On the contrary, we define observables in the interacting picture as
+\begin{equation}
+ A_I=e^{iH_0t}Ae^{-iH_0t}\, ,
+\end{equation}
+where $A$ is the operator associated with the observable. In particular,
+\begin{equation}
+	V_I(X)=e^{iH_0t}V(X)e^{-iH_0t}\,,
+\end{equation}
+where $V(X)$ is the potential in (\ref{eq:general_H}). To derive the fundamental solution that characterized the evolution of a state in interacting picture, consider the derivative of (\ref{eq:interacting_picture})
+\begin{equation}
+\begin{aligned}
+i\partial_t\psi_I(t)&=i\partial_t(e^{iH_0t}\psi(t))\\
+&= -H_0e^{iH_0t}\psi(t)+e^{iH_0t}(H_0+V(X))\psi(t)\\
+& = e^{iH_0t}V(X)e^{-iH_0t}e^{iH_0t}\psi(t)\,.
+\end{aligned}
+\end{equation}
+Thus, we have
+\begin{equation}
+ i\partial_t\psi_I(t)=V_I(X)\psi_I(t)\,.
+ \label{eq:schrodinger_interacting}
+\end{equation}
+\begin{oss}
+	\eqref{eq:schrodinger_interacting} is a Schr\"{o}dinger-like equation with total Hamiltonian $H$ replaced by $V_I(X)$. Stated differently, $\psi_I(t)$ would be a fixed vector in his Hilbert space if $V_I=0$. We can also show for an observable $A$ (which does not depends explicitly with time) that
+	\begin{equation}
+		\partial_tA_I=-i[A_I,H_0]\,.
+	\end{equation}
+\end{oss}
+At this point, we wonder what relation lies between the solutions of the interacting and the free scenario\footnote{For a more detailed discussion, see [\citealp[Chap. 13, Sect. 1.5]{more}]}. To do this, we consider an Hamiltonian $H=H_0+V$, as in (\ref{eq:general_H}), and one particle, initially free, which scatters against the potential $V$. Stated differently, we can say that the system is prepared at $t\to-\infty$ in an approximately free state, and after interaction, as $t\to\infty$, it manifests itself in a state that can still be seen as free.\\
+The fact that for certain state vectors, indicated at $t=0$ by $\psi_0$, the evolution in time is approximated by the non-interacting evolution in the far future and past, is expressed by
+\begin{equation}
+	\lim_{t\to\pm\infty}\|e^{-itH}\psi_0-e^{-itH_0}\phi_\pm\|=0\,,
+\end{equation}
+for some state $\phi_\pm$. Equivalently
+\begin{equation}
+	\lim_{t\to\pm\infty}\|\psi_0-e^{itH}e^{-itH_0}\phi_\pm\|=0\,.
+\end{equation} 
+In scattering theory, it is convenient to describe interactions using vectors like $\phi_\pm$, that evolve by the Hamiltonian of the non-interacting theory, rather than $\psi_0$, which evolves with the interacting Hamiltonian $H$. This motivets us to introduce the \textit{M\o{}ller operators} $\Omega^\pm_V$. 
+\begin{definition}
+\label{def:moller}
+Let $H_0=P^2/2$ the free Hamiltonian and $H=P^2/2+V(X)$ an interacting Hamiltonian for some potential $V$. We define \textbf{M\o{}ller operators} $\Omega_V^\pm$ as:
+\begin{equation}
+\Omega_V^\pm:=\lim_{t\to\pm\infty}e^{iHt}e^{-iH_0t}
+\end{equation}
+\end{definition}
+\begin{oss}
+	If the operators $\Omega_V^\pm:\mathcal{H}\to\mathcal{H}$ exist they must be isometries, since they are limits of unitary operators. More precisely, they are isometries with initial space $\mathcal{H}$ and final space
+	\begin{equation}
+		\mathcal{H}_\pm:=\mathrm{Ran}(\Omega_V^\pm)\,.
+	\end{equation}
+	It can be proved that $\mathcal{H}_\pm$ are closed subspace of $\mathcal{H}$.  
+\end{oss}
+By construction, if $\phi\in\mathcal{H}$, it holds
+\begin{equation}
+	\|e^{-itH}\psi_\pm-e^{-itH_0}\phi\|\to 0\ \text{as}\ t\to\pm\infty\,
+	\label{eq:free_asymptotics_2}
+\end{equation}
+for some $\psi_\pm\in\mathcal{H}_\pm$, such that $\psi_\pm=\Omega_V^\pm\phi$. Hence $\mathcal{H}$ indicates the class of states whose long time future evolution, or long-time past evolution, can be approximated by the free evolution of the states obtained swapping the $\Omega_V^\pm$. (\ref{eq:free_asymptotics_2}) tells us that the state of the interacting system $\psi_\pm$ has the asymptotic behavior (as $t\to\pm\infty$, respectively) of the state $\phi$ in the non-interacting system.\\
+Following, we enunciate some fundamental properties for the M\o{}ller operators.
+
+\begin{theorem}
+Let $H_0$ and $H$ be the Hamiltonian in Definition \ref{def:moller}, and let $\Omega_V^\pm:\mathcal{H}\to\mathcal{H}_\pm$ exist. Then 
+\begin{itemize}
+	\item[(a)] $e^{-itH}\Omega_V^\pm=\Omega_V^\pm e^{-itH_0}\,.$
+	\item[(b)] ${\Omega_V^\pm}^*=\lim_{t\to\pm\infty}e^{iH_0t}e^{-iHt}$ if the limit in the right hand side exists\footnote{see [\citealp[Th. 3.5]{kato}]}.
+\end{itemize}
+%\begin{equation}
+%	\Omega_V^*=\lim_{t\to-\infty}e^{iH_0t}e^{-iHt}
+%\end{equation}
+\end{theorem}
+
+\begin{rem}
+	In the following discussion, we will restrict us to consider the only $\Omega_V^-$. Hence we set $\Omega_V^-\equiv\Omega_V$ in order to simplify the notation.
+\end{rem}
+%The following theorem holds\footnote{see [\citealp[Th. 3.5]{kato}]}:
+
+%\begin{oss}
+%	$\Omega_V$ and $\Omega_V^*$ are one the inverse of the other. 
+%\end{oss}
+%This considerations will be useful in the last part of our thesis.\\
+%Now we introduced all the mathematical tools necessary to deal with all the contents of our thesis and we are ready to start our relation about \textit{quantum backflow}.
+
+ 
